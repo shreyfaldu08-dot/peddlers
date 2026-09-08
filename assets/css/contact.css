@@ -1,0 +1,428 @@
+/* ==========================================================================
+   Peddlers 30A — Contact page
+   Loads after sections.css, which supplies the shared header, footer and the
+   "Visit the Pavilion" block. Geometry is measured from the 1920 × 4612
+   Figma export. The blue header/footer pair comes from about.css via the
+   .page-about body class, so the rule is repeated here to keep this page
+   standalone.
+   ========================================================================== */
+
+main > section + section {
+  margin-top: 0;
+}
+
+.page-about .site-header,
+.page-about .site-footer {
+  background: var(--p2);
+}
+
+/* --------------------------------------------------------------------------
+   01 — Hero                                                   y104 – y1024
+   -------------------------------------------------------------------------- */
+
+.ct-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: calc(100vh - var(--nav-h));
+  height: calc(100dvh - var(--nav-h));
+  min-height: 35rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ct-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The export's hero averages a brightness of 58 outside the baked text; the
+   stand-in sits at 137, so it needs a 0.58 scrim. Re-check once the real
+   ct-hero.jpg is dropped in. */
+.ct-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.58);
+}
+
+.ct-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ct-hero__title {
+  color: var(--s3);
+}
+
+.ct-hero__lead {
+  max-width: 39.375rem;
+  margin-top: 1.875rem;
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-xs);
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--s1);
+}
+
+.ct-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.375rem;
+  margin-top: 3rem;
+}
+
+.ct-hero__actions .btn {
+  min-height: 4rem;
+  padding-inline: 2.75rem;
+  font-size: var(--fs-body-md);
+}
+
+/* --------------------------------------------------------------------------
+   02 — Send an Inquiry                                       y1024 – y1727
+   Photograph on the left, form panel filling the right half.
+   -------------------------------------------------------------------------- */
+
+.ct-inquiry {
+  display: grid;
+  grid-template-columns: minmax(0, 960fr) minmax(0, 960fr);
+  min-height: 43.9375rem; /* 703px */
+}
+
+.ct-inquiry__media {
+  position: relative;
+  min-height: 23.75rem;
+}
+
+.ct-inquiry__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ct-inquiry__panel {
+  display: grid;
+  place-items: center;
+  padding: 3.625rem 3.875rem;
+  background: var(--s1);
+}
+
+.ct-inquiry__content {
+  width: 100%;
+  max-width: 52.5rem; /* 840px */
+}
+
+.ct-inquiry__title {
+  margin-bottom: 2.4375rem;
+}
+
+/* Underlined fields with the label sitting above the rule. */
+.ct-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.ct-form__field + .ct-form__field,
+.ct-form__row + .ct-form__field,
+.ct-form__field + .ct-form__row {
+  margin-top: 1.75rem;
+}
+
+.ct-form__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.ct-form label {
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--s2);
+}
+
+.ct-form input,
+.ct-form textarea {
+  width: 100%;
+  padding: 0 0 0.625rem;
+  border: 0;
+  border-bottom: 1px solid var(--s3);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-md);
+  color: var(--p1);
+  transition: border-color var(--dur) var(--ease);
+}
+
+.ct-form textarea {
+  min-height: 4rem;
+  resize: vertical;
+}
+
+.ct-form input:focus,
+.ct-form textarea:focus {
+  outline: none;
+  border-bottom-color: var(--s2);
+}
+
+.ct-form__submit {
+  width: 100%;
+  min-height: 3.5rem;
+  margin-top: 2.625rem;
+}
+
+/* --------------------------------------------------------------------------
+   03 — Direct Connection                                     y1727 – y2321
+   -------------------------------------------------------------------------- */
+
+.ct-direct {
+  padding-block: 4.5rem 2.875rem;
+}
+
+.ct-direct__title {
+  text-align: center;
+}
+
+.ct-direct__lead {
+  max-width: 43.75rem;
+  margin: 1.5rem auto 0;
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-xs);
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--text);
+}
+
+/* Three cards, 528px each, inset 138px from the canvas edges. */
+.ct-direct__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 102.75rem; /* 1644px */
+  margin: 2.5rem auto 0;
+}
+
+.ct-channel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 14.5rem; /* 232px */
+  padding: 2.25rem 1.5rem;
+  background: var(--s1);
+  text-align: center;
+}
+
+.ct-channel__icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.ct-channel__label {
+  margin-top: 1.5rem;
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.ct-channel__value {
+  margin-top: 0.75rem;
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-md);
+  letter-spacing: var(--tracking-wide);
+  color: var(--p1);
+}
+
+.ct-channel__value a:hover {
+  text-decoration: underline;
+}
+
+.ct-direct__note {
+  margin-top: 1.9375rem;
+  font-size: var(--fs-body-sm);
+  text-align: center;
+  color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   04 — Seasonal Hours                                        y2321 – y2930
+   A two-part card floating over a full-bleed photograph.
+   -------------------------------------------------------------------------- */
+
+.ct-hours {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 38rem; /* 608px */
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ct-hours__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The photograph sits well back: outside the panel the export averages a
+   brightness of 34, which needs a 0.73 scrim over the stand-in photo.
+   Re-check once the real ct-hours-bg.jpg is dropped in. */
+.ct-hours::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.73);
+}
+
+.ct-hours__panel {
+  display: grid;
+  /* Even halves: teal 469px + pale 469px = 938px, 487px tall. */
+  grid-template-columns: 1fr 1fr;
+  width: min(58.625rem, 100% - var(--gutter) * 2);
+  min-height: 30.4375rem;
+}
+
+.ct-hours__intro {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2.375rem;
+  background: var(--s2);
+}
+
+.ct-hours__title {
+  color: var(--p3);
+}
+
+.ct-hours__copy {
+  margin-top: 1.25rem;
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-body-sm);
+  line-height: 1.6;
+  letter-spacing: 0;
+  color: var(--s1);
+}
+
+/* Bordered aside pinned to the bottom of the teal panel. */
+.ct-hours__note {
+  margin-top: auto;
+  padding: 1.125rem 1.25rem 1.125rem 2.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: var(--fs-body-xs);
+  line-height: 1.5;
+  color: var(--s1);
+  position: relative;
+}
+
+.ct-hours__note::before {
+  content: "?";
+  position: absolute;
+  left: 1.125rem;
+  top: 1.125rem;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  text-align: center;
+}
+
+.ct-hours__table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  padding: 2.5rem 2.75rem;
+  background: var(--s1);
+}
+
+.ct-hours__table > div {
+  padding-block: 1.375rem;
+}
+
+.ct-hours__table > div + div {
+  border-top: 1px solid var(--s3);
+}
+
+.ct-hours__table dt {
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--p2);
+}
+
+.ct-hours__table dd {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-md);
+  letter-spacing: var(--tracking-wide);
+  color: var(--p1);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .ct-inquiry,
+  .ct-hours__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .ct-inquiry__media {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  .ct-direct__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-5);
+  }
+
+  .ct-hours__note {
+    margin-top: var(--sp-6);
+  }
+}
+
+@media (max-width: 860px) {
+  .ct-direct__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ct-form__row {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .ct-hero {
+    height: auto;
+    min-height: 30rem;
+    padding-block: var(--sp-11);
+  }
+}

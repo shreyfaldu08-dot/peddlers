@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinations Along 30A — Peddlers 30A</title>
+  <meta name="description"
+    content="From quiet stretches of white sand to vibrant coastal communities, every beach along 30A offers something unique. Let us guide you through the hidden gems of our emerald shoreline." />
+
+  <link rel="stylesheet" href="assets/css/tokens.css?v=80" />
+  <link rel="stylesheet" href="assets/css/fonts.css?v=80" />
+  <link rel="stylesheet" href="assets/css/base.css?v=80" />
+  <link rel="stylesheet" href="assets/css/components.css?v=80" />
+  <link rel="stylesheet" href="assets/css/sections.css?v=80" />
+  <link rel="stylesheet" href="assets/css/mobile.css?v=1" />
+</head>
+
+<body class="page-location">
+  <!-- ====================================================================
+         01 — Top navigation (Header)
+         ==================================================================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html" aria-label="Peddlers 30A — home">
+        <img src="assets/img/logo-peddlers-30a.png" alt="Peddlers 30A" />
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a class="site-nav__link" href="index.html">HOME</a>
+        <a class="site-nav__link is-active" href="location.html">LOCATION</a>
+        <a class="site-nav__link" href="about.html">ABOUT</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--primary" href="tel:+18502130040">
+          <img class="btn__icon" src="assets/icons/phone.svg" alt="" />
+          (850) 213-0040
+        </a>
+        <a class="btn btn--sand" href="rentals.html">RESERVE NOW</a>
+      </div>
+
+      <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+        aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================================================================
+           02 — Hero (Find Your Perfect Beach Along 30A)
+           ================================================================== -->
+    <section class="hero hero--location" style="background-image: url('assets/img/location-hero.jpg'); background-size: cover; background-position: center; height: 80vh; min-height: 700px;">
+      <div class="container hero__inner">
+        <h1 class="hero__title" style="color: var(--s3); font-weight: 400; font-size: 6rem; letter-spacing: -0.08rem;">Find Your Perfect Beach Along 30A</h1>
+        <p class="hero__lead" style="max-width: 800px; margin: 0 auto; font-size: 1.5rem;">
+          From quiet stretches of white sand to vibrant coastal communities, every beach along 30A offers something
+          unique. Let us guide you through the hidden gems of our emerald shoreline.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           03 — Trust Feature Bar (5 Pills)
+           ================================================================== -->
+    <section class="trust-bar" style="background: #ffffff; padding: 3rem 0;">
+      <div class="container">
+        <div style="background: #e2d1bc; padding: 2rem; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; align-items: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; font-family: var(--font-body); font-weight: 600; font-size: 14px; color: var(--p3);">
+            <img src="assets/img/trust-icon-1.png" alt="Family Friendly" style="width: auto; height: 24px;" />
+            <span>FAMILY FRIENDLY</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; font-family: var(--font-body); font-weight: 600; font-size: 14px; color: var(--p3);">
+            <img src="assets/img/trust-icon-2.png" alt="Basket Included" style="width: auto; height: 24px;" />
+            <span>BASKET INCLUDED</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; font-family: var(--font-body); font-weight: 600; font-size: 14px; color: var(--p3);">
+            <img src="assets/img/trust-icon-3.png" alt="Lock Included" style="width: auto; height: 24px;" />
+            <span>LOCK INCLUDED</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; font-family: var(--font-body); font-weight: 600; font-size: 14px; color: var(--p3);">
+            <img src="assets/img/trust-icon-4.png" alt="Walk-in Rentals" style="width: auto; height: 24px;" />
+            <span>WALK-IN RENTALS</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; font-family: var(--font-body); font-weight: 600; font-size: 14px; color: var(--p3);">
+            <img src="assets/img/trust-icon-5.png" alt="Online Booking" style="width: auto; height: 24px;" />
+            <span>ONLINE BOOKING</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           04 — Largest Bike Rental (4 Cards)
+           ================================================================== -->
+    <section class="section popular-rentals" style="padding: 5rem 0;">
+      <style>
+        .custom-book-btn {
+          margin-top: auto;
+          border-radius: 0;
+          border: 1px solid var(--p2);
+          color: var(--p2);
+          font-size: 20px;
+          font-weight: 600;
+          text-align: center;
+          display: block;
+          padding: 0.75rem;
+          transition: all 0.3s ease;
+        }
+        .custom-book-btn:hover {
+          background-color: var(--p2);
+          color: #ffffff !important;
+        }
+      </style>
+      <div class="container text-center">
+        <p class="eyebrow" style="color: #999; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; margin-bottom: 0.5rem;">RENT A BIKE</p>
+        <h2 class="why__title" style="margin-bottom: 1rem; color: var(--p3); font-weight: 600; font-size: 2.5rem;">Largest bike rental</h2>
+        <p class="lead-copy" style="max-width: 48rem; margin: 0 auto 3rem; color: #777; font-size: 1.1rem;">
+          Peddlers is known for super friendly service and a HUGE selection of bikes for all ages and styles.
+        </p>
+
+        <!-- Dummy filter tabs (UI only) -->
+        <div class="rental-filters" style="margin-bottom: 3rem; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: nowrap; overflow-x: auto;">
+          <button class="btn btn--outline" style="border-radius: 0; font-size: 16px; padding: 1rem 0.5rem; flex: 1; max-width: 336px; white-space: nowrap; color: var(--p1); border-color: rgba(57, 89, 186, 0.3);">BIKE RENTALS</button>
+          <button class="btn btn--outline" style="border-radius: 0; font-size: 16px; padding: 1rem 0.5rem; flex: 1; max-width: 336px; white-space: nowrap; color: var(--p1); border-color: rgba(57, 89, 186, 0.3);">KIDS BIKES</button>
+          <button class="btn btn--primary" style="border-radius: 0; font-size: 16px; padding: 1rem 0.5rem; flex: 1; max-width: 336px; white-space: nowrap; background: var(--p1); color: white;">PEDDLER'S PRODUCTS</button>
+          <button class="btn btn--outline" style="border-radius: 0; font-size: 16px; padding: 1rem 0.5rem; flex: 1; max-width: 336px; white-space: nowrap; color: var(--p1); border-color: rgba(57, 89, 186, 0.3);">TAKE YOUR KIDS ALONG</button>
+          <button class="btn btn--outline" style="border-radius: 0; font-size: 16px; padding: 1rem 0.5rem; flex: 1; max-width: 336px; white-space: nowrap; color: var(--p1); border-color: rgba(57, 89, 186, 0.3);">ADULT BIKES</button>
+        </div>
+
+        <div class="rental__grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: left;">
+          <article class="bike-card" style="display: flex; flex-direction: column;">
+            <figure class="bike-card__media" style="margin-bottom: 1rem; aspect-ratio: 1/1; overflow: hidden;">
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/s05-1.jpg" alt="Adult Female Cruiser" />
+            </figure>
+            <div class="bike-card__body" style="display: flex; flex-direction: column; flex-grow: 1;">
+              <h3 style="font-family: var(--font-body); font-size: 1.25rem; font-weight: 700; color: var(--p3); margin-bottom: 0.25rem;">Adult Female Cruiser</h3>
+              <p style="font-size: 0.95rem; color: var(--p1); font-weight: 500; margin-bottom: 1.25rem;">From: $40.00</p>
+              <a class="btn custom-book-btn" href="product-detail.html">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" style="display: flex; flex-direction: column;">
+            <figure class="bike-card__media" style="margin-bottom: 1rem; aspect-ratio: 1/1; overflow: hidden;">
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/s05-4.jpg" alt="20 inch Kids Cruiser-Coral" />
+            </figure>
+            <div class="bike-card__body" style="display: flex; flex-direction: column; flex-grow: 1;">
+              <h3 style="font-family: var(--font-body); font-size: 1.25rem; font-weight: 700; color: var(--p3); margin-bottom: 0.25rem;">20&Prime; Kids Cruiser-Coral</h3>
+              <p style="font-size: 0.95rem; color: var(--p1); font-weight: 500; margin-bottom: 1.25rem;">From: $40.00</p>
+              <a class="btn custom-book-btn" href="product-detail.html">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" style="display: flex; flex-direction: column;">
+            <figure class="bike-card__media" style="margin-bottom: 1rem; aspect-ratio: 1/1; overflow: hidden;">
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/s05-3.jpg" alt="Bike and Burley Combo" />
+            </figure>
+            <div class="bike-card__body" style="display: flex; flex-direction: column; flex-grow: 1;">
+              <h3 style="font-family: var(--font-body); font-size: 1.25rem; font-weight: 700; color: var(--p3); margin-bottom: 0.25rem;">Bike and Burley Combo</h3>
+              <p style="font-size: 0.95rem; color: var(--p1); font-weight: 500; margin-bottom: 1.25rem;">From: $70.00</p>
+              <a class="btn custom-book-btn" href="product-detail.html">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" style="display: flex; flex-direction: column;">
+            <figure class="bike-card__media" style="margin-bottom: 1rem; aspect-ratio: 1/1; overflow: hidden;">
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/s05-2.jpg" alt="Bike Basket" />
+            </figure>
+            <div class="bike-card__body" style="display: flex; flex-direction: column; flex-grow: 1;">
+              <h3 style="font-family: var(--font-body); font-size: 1.25rem; font-weight: 700; color: var(--p3); margin-bottom: 0.25rem;">Bike Basket</h3>
+              <p style="font-size: 0.95rem; color: var(--p1); font-weight: 500; margin-bottom: 1.25rem;">From: $5.00</p>
+              <a class="btn custom-book-btn" href="product-detail.html">BOOK NOW</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           05 — The 30A Way / Local Introduction
+           ================================================================== -->
+    <section class="section local-intro" style="background: #f4f4f4; padding: 5rem 0; text-align: center;">
+      <div class="container">
+        <p class="eyebrow" style="color: #999; font-size: 20px; margin-bottom: 0.5rem; font-weight: 500;">The 30A Way</p>
+        <h2 class="why__title" style="margin-bottom: 2.5rem; color: var(--p3); font-weight: 600; font-size: 52px;">Local Introduction</h2>
+        <p style="color: var(--p1); font-size: 28px; line-height: 1.7; margin-bottom: 2rem; text-align: center;">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets.
+        </p>
+        <p style="color: var(--p1); font-size: 28px; line-height: 1.7; text-align: center;">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           06 — Come for the Ride. Stay for Everything Else. (4 Pillars)
+           ================================================================== -->
+    <section class="section pillars" style="background: #ffffff; padding: 5rem 0;">
+      <div class="container text-center">
+        <p class="eyebrow" style="color: #999; font-size: 20px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 500;">MORE THAN BIKES</p>
+        <h2 class="why__title" style="margin-bottom: 1rem; color: var(--p3); font-weight: 600; font-size: 52px;">Come for the Ride. Stay for Everything Else.</h2>
+        <p class="lead-copy" style="max-width: 100%; margin: 0 auto 3.5rem; color: #888; font-size: 20px; line-height: 1.5;">
+          Peddlers Pavilion brings food, drinks, shopping, and laid-back coastal energy together in one place.<br>Stop in before your ride, come back afterward, or make the Pavilion part of the day itself.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: left;">
+          <!-- Pillar 1 -->
+          <article style="display: flex; flex-direction: column;">
+            <div style="aspect-ratio: 3/4; overflow: hidden; margin-bottom: 1rem;">
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/loc-pillar-1.jpg" alt="Classic Cruisers" />
+            </div>
+            <div style="display: flex; flex-direction: column; flex-grow: 1;">
+              <p style="font-size: 0.85rem; font-weight: 700; color: var(--p2); text-transform: uppercase; margin-bottom: 0.5rem;">01 &mdash; CLASSIC CRUISERS</p>
+              <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--p3); margin-bottom: 0.75rem;">Take It Easy.</h3>
+              <p style="font-size: 1.1rem; color: var(--p2); line-height: 1.5; margin-bottom: 1.5rem;">
+                Comfortable, relaxed, and made for the coast. Perfect for morning coffee runs, neighborhood exploring, beach stops, and sunset rides.
+              </p>
+              <a style="margin-top: auto; border: 1px solid #e2d1bc; color: #d6c6b2; font-size: 1rem; font-weight: 600; text-transform: uppercase; text-align: center; padding: 0.75rem; display: block;" href="rentals.html">Learn more</a>
+            </div>
+          </article>
+
+          <!-- Pillar 2 -->
+          <article style="display: flex; flex-direction: column;">
+            <div style="aspect-ratio: 3/4; overflow: hidden; margin-bottom: 1rem;">
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/loc-pillar-2.jpg" alt="Multi-speed Bikes" />
+            </div>
+            <div style="display: flex; flex-direction: column; flex-grow: 1;">
+              <p style="font-size: 0.85rem; font-weight: 700; color: var(--p2); text-transform: uppercase; margin-bottom: 0.5rem;">02 &mdash; MULTI-SPEED BIKES</p>
+              <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--p3); margin-bottom: 0.75rem;">Go a Little Farther.</h3>
+              <p style="font-size: 1.1rem; color: var(--p2); line-height: 1.5; margin-bottom: 1.5rem;">
+                More gears mean more freedom to explore. A versatile choice when your plans take you beyond a casual cruise around the neighborhood.
+              </p>
+              <a style="margin-top: auto; border: 1px solid #e2d1bc; color: #d6c6b2; font-size: 1rem; font-weight: 600; text-transform: uppercase; text-align: center; padding: 0.75rem; display: block;" href="rentals.html">Learn more</a>
+            </div>
+          </article>
+
+          <!-- Pillar 3 -->
+          <article style="display: flex; flex-direction: column;">
+            <div style="aspect-ratio: 3/4; overflow: hidden; margin-bottom: 1rem;">
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/loc-pillar-3.jpg" alt="Kids & Family" />
+            </div>
+            <div style="display: flex; flex-direction: column; flex-grow: 1;">
+              <p style="font-size: 0.85rem; font-weight: 700; color: var(--p2); text-transform: uppercase; margin-bottom: 0.5rem;">03 &mdash; KIDS &amp; FAMILY</p>
+              <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--p3); margin-bottom: 0.75rem;">Bring the Whole Crew.</h3>
+              <p style="font-size: 1.1rem; color: var(--p2); line-height: 1.5; margin-bottom: 1.5rem;">
+                Make exploring part of the family vacation with bike options designed to help younger riders and families enjoy 30A together.
+              </p>
+              <a style="margin-top: auto; border: 1px solid #e2d1bc; color: #d6c6b2; font-size: 1rem; font-weight: 600; text-transform: uppercase; text-align: center; padding: 0.75rem; display: block;" href="rentals.html">Learn more</a>
+            </div>
+          </article>
+
+          <!-- Pillar 4 -->
+          <article style="display: flex; flex-direction: column;">
+            <div style="aspect-ratio: 3/4; overflow: hidden; margin-bottom: 1rem;">
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/loc-pillar-4.jpg" alt="Specialty" />
+            </div>
+            <div style="display: flex; flex-direction: column; flex-grow: 1;">
+              <p style="font-size: 0.85rem; font-weight: 700; color: var(--p2); text-transform: uppercase; margin-bottom: 0.5rem;">04 &mdash; SPECIALTY</p>
+              <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--p3); margin-bottom: 0.75rem;">A Ride for Every Adventure.</h3>
+              <p style="font-size: 1.1rem; color: var(--p2); line-height: 1.5; margin-bottom: 1.5rem;">
+                From tandems and tricycles to tow-along options, find flexible ways to make the ride work for your group.
+              </p>
+              <a style="margin-top: auto; border: 1px solid #e2d1bc; color: #d6c6b2; font-size: 1rem; font-weight: 600; text-transform: uppercase; text-align: center; padding: 0.75rem; display: block;" href="rentals.html">Learn more</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           07 — Come for the Ride. Stay for Everything Else. (Craving Cards)
+           ================================================================== -->
+    <section class="section cravings" style="background: #ffffff; padding: 5rem 0;">
+      <div class="container text-center">
+        <p class="eyebrow" style="color: #999; font-size: 20px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 500;">MORE THAN BIKES</p>
+        <h2 class="why__title" style="margin-bottom: 1rem; color: var(--p3); font-weight: 600; font-size: 52px;">Come for the Ride. Stay for Everything Else.</h2>
+        <p class="lead-copy" style="max-width: 100%; margin: 0 auto 3.5rem; color: #888; font-size: 20px; line-height: 1.5;">
+          Peddlers Pavilion brings food, drinks, shopping, and laid-back coastal energy together in one place.<br>Stop in before your ride, come back afterward, or make the Pavilion part of the day itself.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; text-align: left;">
+          <!-- Card 1 -->
+          <div style="background: var(--p1); padding: 4rem 2.5rem; display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 3rem;">
+              <img src="assets/img/Vector-1.png" alt="Icon" style="height: 36px; width: auto;" />
+              <div style="flex-grow: 1; height: 1px; background: rgba(255,255,255,0.2); margin: 0 1rem;"></div>
+              <span class="script" style="font-size: 1.75rem; color: var(--p2);">Step 01</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--p2); line-height: 1.3;">Something for Every<br>Craving.</h3>
+            <p style="font-size: 1rem; color: #fff; opacity: 0.9; line-height: 1.6; margin-bottom: 2.5rem;">From quick bites and savory favorites to something sweet after a day in the sun.</p>
+            <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; color: #fff; text-transform: uppercase; margin-top: auto;">
+              BITES &bull; PIZZA &bull; BURGERS &bull; SEAFOOD &bull; SWEETS</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div style="background: #f4f4f4; padding: 4rem 2.5rem; display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 3rem;">
+              <img src="assets/img/Union-1.png" alt="Icon" style="height: 36px; width: auto;" />
+              <div style="flex-grow: 1; height: 1px; background: rgba(57, 89, 186, 0.2); margin: 0 1rem;"></div>
+              <span class="script" style="font-size: 1.75rem; color: var(--p1);">Step 02</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--p3); line-height: 1.3;">Something for Every<br>Craving.</h3>
+            <p style="font-size: 1rem; color: var(--p1); opacity: 0.9; line-height: 1.6; margin-bottom: 2.5rem;">From quick bites and savory favorites to something sweet after a day in the sun.</p>
+            <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; color: var(--p1); text-transform: uppercase; margin-top: auto;">
+              BITES &bull; PIZZA &bull; BURGERS &bull; SEAFOOD &bull; SWEETS</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div style="background: var(--p2); padding: 4rem 2.5rem; display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 3rem;">
+              <img src="assets/img/Union.png" alt="Icon" style="height: 36px; width: auto;" />
+              <div style="flex-grow: 1; height: 1px; background: rgba(57, 89, 186, 0.2); margin: 0 1rem;"></div>
+              <span class="script" style="font-size: 1.75rem; color: var(--p1);">Step 03</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--p3); line-height: 1.3;">Something for Every<br>Craving.</h3>
+            <p style="font-size: 1rem; color: var(--p1); opacity: 0.9; line-height: 1.6; margin-bottom: 2.5rem;">From quick bites and savory favorites to something sweet after a day in the sun.</p>
+            <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; color: var(--p1); text-transform: uppercase; margin-top: auto;">
+              BITES &bull; PIZZA &bull; BURGERS &bull; SEAFOOD &bull; SWEETS</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div style="background: var(--s2); padding: 4rem 2.5rem; display: flex; flex-direction: column;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 3rem;">
+              <img src="assets/img/Vector.png" alt="Icon" style="height: 36px; width: auto;" />
+              <div style="flex-grow: 1; height: 1px; background: rgba(255,255,255,0.3); margin: 0 1rem;"></div>
+              <span class="script" style="font-size: 1.75rem; color: rgba(255,255,255,0.7);">Step 04</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--p3); line-height: 1.3;">Something for Every<br>Craving.</h3>
+            <p style="font-size: 1rem; color: #fff; opacity: 0.9; line-height: 1.6; margin-bottom: 2.5rem;">From quick bites and savory favorites to something sweet after a day in the sun.</p>
+            <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; color: #fff; text-transform: uppercase; margin-top: auto;">
+              BITES &bull; PIZZA &bull; BURGERS &bull; SEAFOOD &bull; SWEETS</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           11 — The Pavilion Collection / A Curated Gathering (3x3 Grid)
+           ================================================================== -->
+    <section class="section gathering" id="gathering">
+      <div class="container">
+        <header class="gathering__head text-center">
+          <p class="eyebrow">The Pavilion Collection</p>
+          <h2 class="gathering__title">A Curated Gathering</h2>
+        </header>
+
+        <div class="gathering__grid">
+          <!-- 01 Peddler's Pub -->
+          <!-- 01 Peddler's Pub -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="assets/img/Rectangle-19.png" alt="Peddler's Pub" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Peddler's Pub</h3>
+              <p class="venue-card__copy">
+                Cool down with an ice-cold draft beer or a tasty cocktail from our fully stocked bar. It's 5 o'clock
+                somewhere.
+              </p>
+            </div>
+          </article>
+
+          <!-- 02 Beachside Burger Co. -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="assets/img/Rectangle-19-1.png" alt="Beachside Burger Co." />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Beachside Burger Co.</h3>
+              <p class="venue-card__copy">
+                Handcrafted burgers with a laid-back coastal vibe. Classic American comfort food perfect for fueling
+                your adventure.
+              </p>
+            </div>
+          </article>
+
+          <!-- 03 LMN -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="assets/img/Rectangle-19-2.png" alt="LMN Boutique" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">LMN</h3>
+              <p class="venue-card__copy">
+                The latest and greatest brands in clothing, jewelry, and accessories. Stay up to date with beachy
+                fashion trends.
+              </p>
+            </div>
+          </article>
+
+          <!-- 04 Sweet Peddler -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="assets/img/Rectangle-19-3.png" alt="Sweet Peddler Ice Cream" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Sweet Peddler</h3>
+              <p class="venue-card__copy">
+                A fun and funky ice cream and candy shop with all the feel-good, nostalgic vibes to put a smile on any
+                face.
+              </p>
+            </div>
+          </article>
+
+          <!-- 05 Reel 'Em In -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="assets/img/Rectangle-19-4.png" alt="Reel 'Em In Fresh Seafood" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Reel 'Em In</h3>
+              <p class="venue-card__copy">
+                You'll be hooked! Fresh seafood and homemade recipes that capture the essence of the Emerald Coast.
+              </p>
+            </div>
+          </article>
+
+          <!-- 06 Ticheli's Pizza -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="assets/img/Rectangle-19-5.png" alt="Ticheli's Wood Oven Pizza" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Ticheli's Pizza</h3>
+              <p class="venue-card__copy">
+                Homemade Italian pizza sauce and imported flour make for the best tasting wood-oven pizza on 30A.
+              </p>
+            </div>
+          </article>
+
+          <!-- 07 Charlie's Donuts -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="assets/img/Rectangle-19-6.png" alt="Charlie's Donuts" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Charlie's Donuts</h3>
+              <p class="venue-card__copy">
+                Famous gourmet donuts served up with fresh coffee and smoothies. The perfect place to start your day.
+              </p>
+            </div>
+          </article>
+
+          <!-- 08 Kickstand Bar -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="assets/img/Rectangle-19-7.png" alt="Kickstand Cocktails & Coffee" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Kickstand Bar</h3>
+              <p class="venue-card__copy">
+                From dirty martinis to spiked cherry limeade, our walk-up bar serves all the best liquor drinks on 30A.
+              </p>
+            </div>
+          </article>
+
+          <!-- 09 Little Pedal Boutique -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="assets/img/Rectangle-19-8.png" alt="Little Pedal Boutique" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Little Pedal Boutique</h3>
+              <p class="venue-card__copy">
+                A boutique blending personalization and style. Build your own look at our charm bar or shop trendy
+                jewelry.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           08 — THE SERVICE STANDARD / Why Rent Our Bike
+           ================================================================== -->
+    <section class="section service-standard" style="background: #f4f4f4; padding: 5rem 0;">
+      <div class="container">
+        <p class="eyebrow text-center">THE SERVICE STANDARD</p>
+        <h2 class="why__title text-center" style="margin-bottom: 3.5rem;">Why Rent Our Bike</h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+          <div style="background: #ffffff; padding: 3rem; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+            <span class="script"
+              style="font-size: 3.5rem; color: var(--p1); line-height: 1; display: block; margin-bottom: 1rem;">01</span>
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--p1); margin-bottom: 1rem;">Premium Cruisers
+            </h3>
+            <p style="font-size: 1.05rem; color: var(--text); line-height: 1.6;">
+              Meticulously maintained with leather touchpoints and silent chains for an effortless coastal glide.
+            </p>
+          </div>
+
+          <div style="background: #ffffff; padding: 3rem; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+            <span class="script"
+              style="font-size: 3.5rem; color: var(--p1); line-height: 1; display: block; margin-bottom: 1rem;">02</span>
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--p1); margin-bottom: 1rem;">Daily Maintenance
+            </h3>
+            <p style="font-size: 1.05rem; color: var(--text); line-height: 1.6;">
+              Every bike is inspected and tuned before each rental, ensuring your journey is as smooth as the scenery.
+            </p>
+          </div>
+
+          <div style="background: #ffffff; padding: 3rem; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+            <span class="script"
+              style="font-size: 3.5rem; color: var(--p1); line-height: 1; display: block; margin-bottom: 1rem;">03</span>
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--p1); margin-bottom: 1rem;">Free Delivery</h3>
+            <p style="font-size: 1.05rem; color: var(--text); line-height: 1.6;">
+              Complimentary white-glove drop-off and pickup for rentals over 3 days, directly to your Alys Beach
+              doorstep.
+            </p>
+          </div>
+
+          <div style="background: #ffffff; padding: 3rem; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+            <span class="script"
+              style="font-size: 3.5rem; color: var(--p1); line-height: 1; display: block; margin-bottom: 1rem;">04</span>
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--p1); margin-bottom: 1rem;">Local Expertise</h3>
+            <p style="font-size: 1.05rem; color: var(--text); line-height: 1.6;">
+              Our team knows the hidden paths, quiet courtyards, and best sunset spots along the 30A corridor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           09 — Your 30A Story Begins Here (Closing CTA)
+           ================================================================== -->
+    <section class="section closing" style="padding: 4rem 0; background: #333333;">
+      <div class="container">
+        <div style="position: relative; overflow: hidden; min-height: 420px; display: flex; align-items: center; background: #000000;">
+          
+          <!-- Image Container (Right Side) -->
+          <div style="position: absolute; right: 0; top: 0; height: 100%; width: 55%; z-index: 0;">
+            <!-- Subtle Overlay -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, #000000 0%, rgba(0,0,0,0) 30%); z-index: 1;"></div>
+            <img src="assets/img/cta-new-bg.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
+          </div>
+
+          <!-- Text Content (Left Side) -->
+          <div style="position: relative; z-index: 2; padding: 4rem 5rem; width: 100%; max-width: 700px;">
+            <h2 style="font-size: 52px; font-weight: 400; color: #e2d1bc; margin-bottom: 2.5rem; line-height: 1.2;">Your 30A Story Begins Here</h2>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <a href="rentals.html" style="background: #f4f4f4; color: var(--s2); font-weight: 500; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 1rem 2.5rem; border: none; text-decoration: none;">RESERVE ONLINE</a>
+              <a href="contact.html" style="background: transparent; border: 1px solid rgba(255,255,255,0.4); color: #ffffff; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 1rem 2.5rem; text-decoration: none;">CONTACT OUR TEAM</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           10 — Near By Beaches Worth To Ride
+           ================================================================== -->
+    <section class="section beaches" style="background: #ffffff; padding: 5rem 0;">
+      <div class="container text-center">
+        <p class="eyebrow">COASTAL COMMUNITIES</p>
+        <h2 class="why__title" style="margin-bottom: 1rem;">Near By Beaches Worth To Ride</h2>
+        <p class="lead-copy" style="max-width: 52rem; margin: 0 auto 3.5rem; color: var(--text);">
+          Some beaches are lively and full of activity. Others are peaceful escapes surrounded by nature. Discover the
+          distinct character of each stop along the Timpoochee Trail.
+        </p>
+
+        <div
+          style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: left; margin-bottom: 3.5rem;">
+          <!-- Rosemary Beach -->
+          <article
+            style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
+            <div style="position: relative; height: 16rem; overflow: hidden;">
+              <span
+                style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">5
+                MIN RIDE</span>
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-rosemary.jpg"
+                alt="Rosemary Beach" />
+            </div>
+            <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--p1); margin-bottom: 0.5rem;">Rosemary Beach
+              </h3>
+              <p
+                style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">
+                ELEGANT. WALKABLE. TIMELESS.</p>
+              <p style="font-size: 0.95rem; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;">
+                A European-inspired paradise where boardwalks lead to pristine sands and gas lanterns glow at dusk.
+              </p>
+              <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="location.html">BOOK
+                NOW</a>
+            </div>
+          </article>
+
+          <!-- Alys Beach -->
+          <article
+            style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
+            <div style="position: relative; height: 16rem; overflow: hidden;">
+              <span
+                style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">8
+                MIN RIDE</span>
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-alys.jpg"
+                alt="Alys Beach" />
+            </div>
+            <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--p1); margin-bottom: 0.5rem;">Alys Beach</h3>
+              <p
+                style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">
+                MODERN COASTAL LUXURY.</p>
+              <p style="font-size: 0.95rem; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;">
+                Defined by striking white architecture and lush courtyards, offering a serene and visually stunning
+                escape.
+              </p>
+              <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="location.html">BOOK
+                NOW</a>
+            </div>
+          </article>
+
+          <!-- Seacrest Beach -->
+          <article
+            style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
+            <div style="position: relative; height: 16rem; overflow: hidden;">
+              <span
+                style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">3
+                MIN RIDE</span>
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-seacrest.jpg"
+                alt="Seacrest Beach" />
+            </div>
+            <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--p1); margin-bottom: 0.5rem;">Seacrest Beach
+              </h3>
+              <p
+                style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">
+                STEPS FROM ADVENTURE.</p>
+              <p style="font-size: 0.95rem; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;">
+                A high-energy hub with a massive community pool and direct access to some of 30A's best dining and live
+                events.
+              </p>
+              <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="location.html">BOOK
+                NOW</a>
+            </div>
+          </article>
+
+          <!-- Inlet Beach -->
+          <article
+            style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
+            <div style="position: relative; height: 16rem; overflow: hidden;">
+              <span
+                style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">10
+                MIN RIDE</span>
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-inlet.jpg"
+                alt="Inlet Beach" />
+            </div>
+            <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--p1); margin-bottom: 0.5rem;">Inlet Beach
+              </h3>
+              <p
+                style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">
+                SPACE TO SLOW DOWN.</p>
+              <p style="font-size: 0.95rem; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;">
+                One of 30A's last 'wild' feeling beaches, featuring huge dunes and plenty of room to spread out and
+                relax.
+              </p>
+              <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="location.html">BOOK
+                NOW</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           17 — Guest Testimonials / Refined Experiences
+           ================================================================== -->
+    <section class="section testimonials location-testimonials">
+      <div class="container">
+        <p class="eyebrow text-center">Guest Testimonials</p>
+        <h2 class="testimonials__title text-center">Refined Experiences</h2>
+
+        <ul class="testimonials__grid">
+          <li class="quote">
+            <p class="quote__text">
+              "The best place to rent bikes on 30a!!! The service and employees make the rental process even better.
+              Easy &amp; centrally located bike rental but also a great place to hangout!! Live music, pub, fire pits
+              and tvs for any game watching! Fun for all ages."
+            </p>
+            <p class="quote__who">Catherine S, Dallas, Texas</p>
+          </li>
+          <li class="quote">
+            <p class="quote__text">
+              "The staff is fantastic, bikes are great and beer is cold! Peddlers made our vacation even better. It was
+              fast &amp; easy to rent/return our bikes. It's also in a great location to hang out in the evening with
+              the live music and plenty of comfortable seating. Make sure you stop by Peddlers during your stay in 30A!"
+            </p>
+            <p class="quote__who">Carrie C, Chicago, Illinois</p>
+          </li>
+          <li class="quote">
+            <p class="quote__text">
+              "Great place to get your bikes on vacation. Full selection of adult and mid cruisers, trikes, baby seats,
+              trailers &amp; everything! Plus 8 beers on tap. Oh, and great folks. HIGHLY RECOMMEND. (Live music on the
+              stage nightly in the summer!)"
+            </p>
+            <p class="quote__who">Gregory M., Franklin, Tennessee</p>
+          </li>
+        </ul>
+
+        <div class="testimonials__nav">
+          <button class="carousel-nav__btn" type="button" aria-label="Previous testimonial">
+            <svg viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24"
+              height="20">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.401095 11.5212C0.144261 11.7809 5.30349e-07 12.133 5.46392e-07 12.5C5.62436e-07 12.867 0.144261 13.2191 0.401095 13.4788L11.3729 24.5592C11.4985 24.6953 11.6499 24.8044 11.8181 24.8801C11.9864 24.9558 12.168 24.9965 12.3521 24.9998C12.5363 25.0031 12.7192 24.9689 12.89 24.8992C13.0607 24.8295 13.2159 24.7259 13.3461 24.5943C13.4763 24.4628 13.579 24.3061 13.648 24.1337C13.717 23.9612 13.7508 23.7765 13.7476 23.5905C13.7443 23.4045 13.704 23.2211 13.6291 23.0512C13.5541 22.8813 13.446 22.7284 13.3113 22.6016L4.68011 13.8851L30.6285 13.8851C30.9923 13.8851 31.3411 13.7391 31.5983 13.4794C31.8555 13.2196 32 12.8673 32 12.5C32 12.1327 31.8555 11.7804 31.5983 11.5206C31.3411 11.2609 30.9923 11.115 30.6285 11.115L4.68011 11.115L13.3113 2.39837C13.446 2.27157 13.5541 2.11866 13.6291 1.94876C13.704 1.77886 13.7443 1.59546 13.7476 1.40948C13.7508 1.22351 13.717 1.03879 13.648 0.866323C13.579 0.69386 13.4763 0.537194 13.3461 0.405672C13.2159 0.27415 13.0607 0.170466 12.89 0.100805C12.7192 0.0311448 12.5363 -0.00306484 12.3521 0.000216414C12.168 0.00349767 11.9864 0.0442025 11.8181 0.119904C11.6499 0.195605 11.4985 0.304751 11.3729 0.440831L0.401095 11.5212Z"
+                fill="currentColor" />
+            </svg>
+          </button>
+          <button class="carousel-nav__btn" type="button" aria-label="Next testimonial">
+            <svg viewBox="92 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24"
+              height="20">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M123.599 11.5212C123.856 11.7809 124 12.133 124 12.5C124 12.867 123.856 13.2191 123.599 13.4788L112.627 24.5592C112.502 24.6953 112.35 24.8044 112.182 24.8801C112.014 24.9558 111.832 24.9965 111.648 24.9998C111.464 25.0031 111.281 24.9689 111.11 24.8992C110.939 24.8295 110.784 24.7259 110.654 24.5943C110.524 24.4628 110.421 24.3061 110.352 24.1337C110.283 23.9612 110.249 23.7765 110.252 23.5905C110.256 23.4045 110.296 23.2211 110.371 23.0512C110.446 22.8813 110.554 22.7284 110.689 22.6016L119.32 13.8851L93.3715 13.8851C93.0077 13.8851 92.6589 13.7391 92.4017 13.4794C92.1445 13.2196 92 12.8673 92 12.5C92 12.1327 92.1445 11.7804 92.4017 11.5206C92.6589 11.2609 93.0077 11.115 93.3715 11.115L119.32 11.115L110.689 2.39837C110.554 2.27157 110.446 2.11866 110.371 1.94876C110.296 1.77886 110.256 1.59546 110.252 1.40948C110.249 1.22351 110.283 1.03879 110.352 0.866323C110.421 0.69386 110.524 0.537194 110.654 0.405672C110.784 0.27415 110.939 0.170466 111.11 0.100805C111.281 0.0311448 111.464 -0.00306484 111.648 0.000216414C111.832 0.00349767 112.014 0.0442025 112.182 0.119904C112.35 0.195605 112.502 0.304751 112.627 0.440831L123.599 11.5212Z"
+                fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           18 — Assistance / Common Inquiries (FAQ)
+           ================================================================== -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <p class="eyebrow text-center">Assistance</p>
+        <h2 class="faq__title text-center">Common Inquiries</h2>
+
+        <div class="accordion faq__list">
+          <div class="accordion__item is-open">
+            <button class="accordion__trigger" type="button">
+              <span>How do I book a bike rental?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Select your bike category, choose your rental dates, and reserve directly online. We offer free local
+                  delivery or on-site pickup at our Seacrest Beach pavilion.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Where can I pick up my bike?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Collect from our Seacrest Pavilion hub on Scenic Highway 30A, or choose free local delivery straight
+                  to your villa.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Are helmets and locks included?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Yes — every rental includes a lock, and helmets are available for riders of all ages at no extra
+                  charge.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>What is your cancellation policy?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Plans change. Cancel or amend your reservation up to 24 hours before collection for a full refund.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Do you offer multi-day discounts?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  We do. Weekly rates are the best value, and longer stays are discounted automatically at checkout.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         14 — Site Footer
+         ==================================================================== -->
+    <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__cols">
+        <div>
+          <h2 class="site-footer__heading">CONTACT US</h2>
+          <ul>
+            <li><a href="tel:+12144147504">Room Reservations: +1 214 414 7504</a></li>
+            <li><a href="contact.html">Global Reservation Information</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__heading">WORLD OF PEDDLERS</h2>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="location.html">Peddlers Impacts</a></li>
+            <li><a href="about.html#fleet">Developers</a></li>
+            <li><a href="about.html">Careers</a></li>
+            <li><a href="contact.html">Media</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__heading">FOLLOW US</h2>
+          <ul>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook ↗</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram ↗</a></li>
+            <li><a href="#" target="_blank" rel="noopener">WeChat</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__heading">TERMS</h2>
+          <ul>
+            <li><a href="#">Accessibility Statement</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Gift Cards Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__base">
+        <div class="site-footer__legal">
+          <p>ICP LICENSE <a href="#">17035714</a></p>
+          <p>GONGAN BEIAN: 31010102004896</p>
+        </div>
+        <a class="site-footer__logo" href="index.html" aria-label="Peddlers 30A">
+          <img src="assets/img/logo-peddlers-30a.png" alt="Peddlers 30A" />
+        </a>
+        <p class="site-footer__copy">ROSEWOOD HOTEL GROUP © 2026</p>
+      </div>
+    </div>
+    <div class="site-footer__rule"></div>
+  </footer>
+
+    <script src="assets/js/main.js?v=80"></script>
+</body>
+
+</html>

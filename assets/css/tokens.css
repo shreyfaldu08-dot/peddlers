@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Peddlers 30A — Design Tokens
+   Source: Figma "Press start" › page "home" › frame 289:494
+   Colour values are taken verbatim from the Figma variable collection.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand palette (Figma variables) ------------------------------- */
+  --p1: #3959ba; /* primary blue   — headings, links, primary buttons     */
+  --p2: #62b1ea; /* light blue     — script headings on dark backgrounds  */
+  --p3: #01009a; /* deep blue      — LIVE MUSIC tag, footer rule          */
+  --s1: #efefef; /* light grey     — section backgrounds, inverse text    */
+  --s2: #4eadaa; /* teal           — secondary labels, ghost buttons      */
+  --s3: #d6c6b2; /* sand / tan     — header, trust bar, footer, cards     */
+  --text: #888888; /* body grey                                          */
+
+  /* ---- Derived neutrals ---------------------------------------------- */
+  --white: #ffffff;
+  --black: #000000;
+  --cream: #f7f4f0; /* soft off-white used behind the merch row          */
+  --ink: #1a1a1a;
+  --overlay: rgba(0, 0, 0, 0.35);
+  --overlay-strong: rgba(0, 0, 0, 0.55);
+  --hairline: rgba(0, 0, 0, 0.12);
+
+  /* ---- Type families -------------------------------------------------
+     The three display/body faces are commercial licences. The real family
+     is listed first so the design renders correctly on machines that have
+     it installed (or once the licensed files are dropped into
+     assets/fonts/ and declared in fonts.css). The Google Fonts fallback
+     that follows is the closest free match.
+     -------------------------------------------------------------------- */
+  --font-script: "Palm Canyon Drive", "Yellowtail", "Sacramento", cursive;
+  --font-label: "Pitch Sans", "Space Mono", ui-monospace, "Courier New", monospace;
+  --font-body: "GT Walsheim Trial", "Hanken Grotesk", "DM Sans", system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+
+  /* ---- Type scale (px values as authored in Figma) -------------------- */
+  --fs-script-xxl: 8rem; /* hero wordmark                                */
+  --fs-script-xl: 6rem;
+  --fs-script-lg: 4.5rem; /* section headings                              */
+  --fs-script-md: 3.75rem;
+  --fs-script-sm: 3rem;
+  --fs-script-xs: 2.1875rem;
+
+  --fs-label-lg: 1.9375rem; /* Pitch Sans Semibold Italic — card titles        */
+  --fs-label-md: 1.5625rem;
+  --fs-label-sm: 1.25rem;
+  --fs-label-xs: 1rem;
+
+  --fs-body-lg: 1.25rem;
+  --fs-body-md: 1rem;
+  --fs-body-sm: 0.75rem;
+  --fs-body-xs: 0.6875rem;
+
+  --tracking-wide: 0.075rem; /* nav links, buttons                           */
+  --tracking-wider: 0.15rem; /* eyebrow / kicker labels                     */
+  --tracking-widest: 0.2rem;
+
+  /* ---- Layout --------------------------------------------------------- */
+  --canvas: 120rem; /* Figma frame width                                  */
+  --content: 112.5rem; /* inner content width                               */
+  --gutter: 3.75rem; /* left/right page margin                              */
+  --col-gap: 1.5rem;
+
+  /* ---- Spacing ramp ---------------------------------------------------- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 3.75rem;
+  --sp-9: 5rem;
+  --sp-10: 6.25rem;
+  --sp-11: 7.5rem;
+
+  /* ---- Misc ------------------------------------------------------------ */
+  --radius: 0px; /* the design is entirely square-cornered                */
+  --nav-h: 6.5rem;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur: 320ms;
+}
+
+/* Narrower gutters once the viewport drops below the design canvas. */
+@media (max-width: 1200px) {
+  :root {
+    --gutter: 2.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 1.25rem;
+    --fs-script-xxl: 3.5rem;
+    --fs-script-xl: 3rem;
+    --fs-script-lg: 2.5rem;
+    --fs-script-md: 2.125rem;
+    --fs-script-sm: 1.875rem;
+    --fs-script-xs: 1.5rem;
+    --fs-label-lg: 1.375rem;
+    --fs-label-md: 1.1875rem;
+    --fs-label-sm: 1.0625rem;
+  }
+}

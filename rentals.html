@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bike Rentals Hub — Peddlers 30A</title>
+    <meta
+      name="description"
+      content="Whether you're planning a sunrise ride through Seacrest or a sunset journey to Alys Beach, our team is here to curate your perfect coastal transit."
+    />
+
+    <link rel="stylesheet" href="assets/css/tokens.css?v=80" />
+    <link rel="stylesheet" href="assets/css/fonts.css?v=80" />
+    <link rel="stylesheet" href="assets/css/base.css?v=80" />
+    <link rel="stylesheet" href="assets/css/components.css?v=80" />
+    <link rel="stylesheet" href="assets/css/sections.css?v=80" />
+  </head>
+
+  <body class="page-rentals">
+    <!-- ====================================================================
+         01 — Top navigation (Header)
+         ==================================================================== -->
+    <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html" aria-label="Peddlers 30A — home">
+        <img src="assets/img/logo-peddlers-30a.png" alt="Peddlers 30A" />
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a class="site-nav__link" href="index.html">HOME</a>
+        <a class="site-nav__link" href="location.html">LOCATION</a>
+        <a class="site-nav__link" href="about.html">ABOUT</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--primary" href="tel:+18502130040">
+          <img class="btn__icon" src="assets/icons/phone.svg" alt="" />
+          (850) 213-0040
+        </a>
+        <a class="btn btn--sand" href="rentals.html">RESERVE NOW</a>
+      </div>
+
+      <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+        aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+    <main>
+      <!-- ==================================================================
+           02 — Hero
+           ================================================================== -->
+      <section class="hero hero--rentals" style="background-image: url('assets/img/hero-bg.jpg');">
+        <div class="container hero__inner">
+          <h1 class="hero__title">Contact Peddlers 30A</h1>
+          <p class="hero__lead">
+            Whether you're planning a sunrise ride through Seacrest or a sunset journey to Alys Beach, our team is here to curate your perfect coastal transit.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#catalog">RESERVE YOUR BIKE</a>
+            <a class="btn btn--outline-white" href="tel:+18502130040">CALL US</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           03 — Largest Bike Rental Catalog (8 Cards)
+           ================================================================== -->
+      <section class="section rental" id="catalog">
+        <div class="container">
+          <div class="rental__head" style="margin-bottom: 2rem;">
+            <div>
+              <p class="eyebrow">Rent a Bike</p>
+              <h2 class="rental__title">Largest bike rental</h2>
+              <p class="rental__subtitle">
+                Peddlers is known for super friendly service and a HUGE selection of bikes for all ages and styles.
+              </p>
+            </div>
+          </div>
+
+          <div class="catalog-filters" style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem;">
+            <button class="btn btn--primary" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;" type="button">BIKE RENTALS</button>
+            <button class="btn btn--outline" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;" type="button">KIDS BIKES</button>
+            <button class="btn btn--outline" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;" type="button">PEDDLER'S PRODUCTS</button>
+            <button class="btn btn--outline" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;" type="button">TAKE YOUR KIDS ALONG</button>
+            <button class="btn btn--outline" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;" type="button">ADULT BIKES</button>
+          </div>
+
+          <div class="rental__grid">
+            <!-- Row 1 -->
+            <article class="bike-card">
+              <figure class="bike-card__media">
+                <img class="media-cover" src="assets/img/s05-1.jpg" alt="Adult Female Cruiser" />
+              </figure>
+              <div class="bike-card__body">
+                <h3 class="bike-card__title">Adult Female Cruiser</h3>
+                <p class="bike-card__price">From: <span>$40.00</span></p>
+                <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              </div>
+            </article>
+
+            <article class="bike-card">
+              <figure class="bike-card__media">
+                <img class="media-cover" src="assets/img/s05-4.jpg" alt="20 inch Kids Cruiser-Coral" />
+              </figure>
+              <div class="bike-card__body">
+                <h3 class="bike-card__title">20&Prime; Kids Cruiser-Coral</h3>
+                <p class="bike-card__price">From: <span>$40.00</span></p>
+                <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              </div>
+            </article>
+
+            <article class="bike-card">
+              <figure class="bike-card__media">
+                <img class="media-cover" src="assets/img/s05-3.jpg" alt="Bike and Burley Combo" />
+              </figure>
+              <div class="bike-card__body">
+                <h3 class="bike-card__title">Bike and Burley Combo</h3>
+                <p class="bike-card__price">From: <span>$70.00</span></p>
+                <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              </div>
+            </article>
+
+            <article class="bike-card">
+              <figure class="bike-card__media">
+                <img class="media-cover" src="assets/img/s05-2.jpg" alt="Bike Basket" />
+              </figure>
+              <div class="bike-card__body">
+                <h3 class="bike-card__title">Bike Basket</h3>
+                <p class="bike-card__price">From: <span>$5.00</span></p>
+                <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              </div>
+            </article>
+
+            <!-- Row 2 -->
+            <article class="bike-card">
+              <figure class="bike-card__media">
+                <img class="media-cover" src="assets/img/s05-1.jpg" alt="Adult Female Cruiser" />
+              </figure>
+              <div class="bike-card__body">
+                <h3 class="bike-card__title">Adult Female Cruiser</h3>
+                <p class="bike-card__price">From: <span>$40.00</span></p>
+                <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              </div>
+            </article>
+
+            <article class="bike-card">
+              <figure class="bike-card__media">
+                <img class="media-cover" src="assets/img/s05-4.jpg" alt="20 inch Kids Cruiser-Coral" />
+              </figure>
+              <div class="bike-card__body">
+                <h3 class="bike-card__title">20&Prime; Kids Cruiser-Coral</h3>
+                <p class="bike-card__price">From: <span>$40.00</span></p>
+                <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              </div>
+            </article>
+
+            <article class="bike-card">
+              <figure class="bike-card__media">
+                <img class="media-cover" src="assets/img/s05-3.jpg" alt="Bike and Burley Combo" />
+              </figure>
+              <div class="bike-card__body">
+                <h3 class="bike-card__title">Bike and Burley Combo</h3>
+                <p class="bike-card__price">From: <span>$70.00</span></p>
+                <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              </div>
+            </article>
+
+            <article class="bike-card">
+              <figure class="bike-card__media">
+                <img class="media-cover" src="assets/img/s05-2.jpg" alt="Bike Basket" />
+              </figure>
+              <div class="bike-card__body">
+                <h3 class="bike-card__title">Bike Basket</h3>
+                <p class="bike-card__price">From: <span>$5.00</span></p>
+                <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           04 — The 30A Way / Local Introduction
+           ================================================================== -->
+      <section class="section local-intro" style="background: #ffffff; padding: 5rem 0; text-align: center;">
+        <div class="container" style="max-width: 58rem;">
+          <p class="eyebrow">The 30A Way</p>
+          <h2 class="why__title" style="margin-bottom: 2rem;">Local Introduction</h2>
+          <p style="color: var(--text); font-size: 1.15rem; line-height: 1.7; margin-bottom: 1.5rem;">
+            From family cruiser setups to high-performance electric rides, we equip you with everything needed to ride 30A with ease.
+          </p>
+          <p style="color: var(--text); font-size: 1.15rem; line-height: 1.7;">
+            Each piece of equipment in our fleet is tested and tuned every single day. When you rent with Peddlers 30A, you receive complimentary helmet fitting, quality locks, and insider route maps to make your trip effortless.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           05 — Simple & Transparent Pricing
+           ================================================================== -->
+      <section class="section pricing" style="background: #f4f4f4; padding: 5rem 0;">
+        <div class="container text-center">
+          <p class="eyebrow">RENTAL OPTIONS</p>
+          <h2 class="why__title" style="margin-bottom: 1rem;">Simple &amp; Transparent Pricing</h2>
+          <p class="lead-copy" style="max-width: 48rem; margin: 0 auto 3rem; color: var(--text);">
+            Easily compare our rental tiers and find the perfect duration for your coastal exploration.
+          </p>
+
+          <div style="display: inline-flex; gap: 0.5rem; background: #e5e5e5; padding: 0.35rem; border-radius: 9999px; margin-bottom: 3.5rem;">
+            <button style="padding: 0.5rem 1.5rem; border-radius: 9999px; background: transparent; border: none; font-weight: 600; font-size: 0.9rem; color: var(--text);" type="button">Hourly</button>
+            <button style="padding: 0.5rem 1.5rem; border-radius: 9999px; background: transparent; border: none; font-weight: 600; font-size: 0.9rem; color: var(--text);" type="button">Half Day</button>
+            <button style="padding: 0.5rem 1.5rem; border-radius: 9999px; background: var(--p1); border: none; font-weight: 600; font-size: 0.9rem; color: #ffffff;" type="button">Full Day</button>
+            <button style="padding: 0.5rem 1.5rem; border-radius: 9999px; background: transparent; border: none; font-weight: 600; font-size: 0.9rem; color: var(--text);" type="button">3-Day</button>
+            <button style="padding: 0.5rem 1.5rem; border-radius: 9999px; background: transparent; border: none; font-weight: 600; font-size: 0.9rem; color: var(--text);" type="button">Weekly</button>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 72rem; margin: 0 auto; text-align: left;">
+            <!-- Tier 1 -->
+            <div style="background: #ffffff; padding: 3rem 2.5rem; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
+              <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--p1); margin-bottom: 1rem;">Electric Explorer</h3>
+              <p style="font-size: 2.5rem; font-weight: 700; color: var(--p1); margin-bottom: 2rem;">$85 <span style="font-size: 1rem; font-weight: 500; color: var(--text);">/ DAY</span></p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 2.5rem 0; line-height: 2; color: var(--text); font-size: 0.95rem;">
+                <li>&check; High performance e-motion for conquering hills.</li>
+                <li>&check; High performance e-motion for conquering hills.</li>
+                <li>&check; High performance e-motion for conquering hills.</li>
+              </ul>
+              <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="product-detail.html">Reserve</a>
+            </div>
+
+            <!-- Tier 2 (Featured) -->
+            <div style="background: #d6c6b1; padding: 3rem 2.5rem; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); display: flex; flex-direction: column; position: relative;">
+              <span style="position: absolute; top: -0.75rem; left: 50%; transform: translateX(-50%); background: var(--p1); color: #fff; padding: 0.25rem 1rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">MOST POPULAR</span>
+              <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--p1); margin-bottom: 1rem;">Electric Explorer</h3>
+              <p style="font-size: 2.5rem; font-weight: 700; color: var(--p1); margin-bottom: 2rem;">$85 <span style="font-size: 1rem; font-weight: 500; color: var(--p1);">/ DAY</span></p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 2.5rem 0; line-height: 2; color: var(--p1); font-size: 0.95rem;">
+                <li>&check; High performance e-motion for conquering hills.</li>
+                <li>&check; High performance e-motion for conquering hills.</li>
+                <li>&check; High performance e-motion for conquering hills.</li>
+              </ul>
+              <a class="btn btn--primary" style="margin-top: auto; text-align: center;" href="product-detail.html">Reserve</a>
+            </div>
+
+            <!-- Tier 3 -->
+            <div style="background: #ffffff; padding: 3rem 2.5rem; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
+              <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--p1); margin-bottom: 1rem;">Electric Explorer</h3>
+              <p style="font-size: 2.5rem; font-weight: 700; color: var(--p1); margin-bottom: 2rem;">$85 <span style="font-size: 1rem; font-weight: 500; color: var(--text);">/ DAY</span></p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 2.5rem 0; line-height: 2; color: var(--text); font-size: 0.95rem;">
+                <li>&check; High performance e-motion for conquering hills.</li>
+                <li>&check; High performance e-motion for conquering hills.</li>
+                <li>&check; High performance e-motion for conquering hills.</li>
+              </ul>
+              <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="product-detail.html">Reserve</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           06 — Our Simple Rental Process
+           ================================================================== -->
+      <section class="section process-banner" style="background: #3859ba; color: #ffffff; padding: 5rem 0;">
+        <div class="container text-center">
+          <p class="eyebrow" style="color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;">PICK UP YOUR RIDE</p>
+          <h2 class="why__title" style="color: #ffffff; margin-bottom: 4rem;">Our Simple Rental Process</h2>
+
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 4.5rem; height: 4.5rem; border-radius: 50%; background: rgba(255,255,255,0.15); display: grid; place-items: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">1</div>
+              <h3 style="font-family: var(--font-label); font-style: italic; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem;">RESERVE ONLINE</h3>
+              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">Pick your bike, date &amp; location.</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 4.5rem; height: 4.5rem; border-radius: 50%; background: rgba(255,255,255,0.15); display: grid; place-items: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">2</div>
+              <h3 style="font-family: var(--font-label); font-style: italic; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem;">WE DELIVER TO YOU</h3>
+              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">Free delivery to your spot on 30A.</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 4.5rem; height: 4.5rem; border-radius: 50%; background: rgba(255,255,255,0.15); display: grid; place-items: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">3</div>
+              <h3 style="font-family: var(--font-label); font-style: italic; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem;">PICK UP &amp; RIDE</h3>
+              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">We set it up. You hop on and enjoy!</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; align-items: center;">
+              <div style="width: 4.5rem; height: 4.5rem; border-radius: 50%; background: rgba(255,255,255,0.15); display: grid; place-items: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">4</div>
+              <h3 style="font-family: var(--font-label); font-style: italic; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem;">ADVENTURE 30A</h3>
+              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">Explore beaches, trails &amp; hidden gems.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           07 — Near By Beaches Worth To Ride
+           ================================================================== -->
+      <section class="section beaches" style="background: #ffffff; padding: 5rem 0;">
+        <div class="container text-center">
+          <p class="eyebrow">COASTAL COMMUNITIES</p>
+          <h2 class="why__title" style="margin-bottom: 1rem;">Near By Beaches Worth To Ride</h2>
+          <p class="lead-copy" style="max-width: 52rem; margin: 0 auto 3.5rem; color: var(--text);">
+            Some beaches are lively and full of activity. Others are peaceful escapes surrounded by nature. Discover the distinct character of each stop along the Timpoochee Trail.
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: left; margin-bottom: 3.5rem;">
+            <!-- Rosemary Beach -->
+            <article style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
+              <div style="position: relative; height: 16rem; overflow: hidden;">
+                <span style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">5 MIN RIDE</span>
+                <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-rosemary.jpg" alt="Rosemary Beach" />
+              </div>
+              <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+                <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--p1); margin-bottom: 0.5rem;">Rosemary Beach</h3>
+                <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">ELEGANT. WALKABLE. TIMELESS.</p>
+                <p style="font-size: 0.95rem; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;">
+                  A European-inspired paradise where boardwalks lead to pristine sands and gas lanterns glow at dusk.
+                </p>
+                <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="location.html">BOOK NOW</a>
+              </div>
+            </article>
+
+            <!-- Alys Beach -->
+            <article style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
+              <div style="position: relative; height: 16rem; overflow: hidden;">
+                <span style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">8 MIN RIDE</span>
+                <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-alys.jpg" alt="Alys Beach" />
+              </div>
+              <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+                <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--p1); margin-bottom: 0.5rem;">Alys Beach</h3>
+                <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">MODERN COASTAL LUXURY.</p>
+                <p style="font-size: 0.95rem; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;">
+                  Defined by striking white architecture and lush courtyards, offering a serene and visually stunning escape.
+                </p>
+                <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="location.html">BOOK NOW</a>
+              </div>
+            </article>
+
+            <!-- Seacrest Beach -->
+            <article style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
+              <div style="position: relative; height: 16rem; overflow: hidden;">
+                <span style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">3 MIN RIDE</span>
+                <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-seacrest.jpg" alt="Seacrest Beach" />
+              </div>
+              <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+                <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--p1); margin-bottom: 0.5rem;">Seacrest Beach</h3>
+                <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">STEPS FROM ADVENTURE.</p>
+                <p style="font-size: 0.95rem; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;">
+                  A high-energy hub with a massive community pool and direct access to some of 30A's best dining and live events.
+                </p>
+                <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="location.html">BOOK NOW</a>
+              </div>
+            </article>
+
+            <!-- Inlet Beach -->
+            <article style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
+              <div style="position: relative; height: 16rem; overflow: hidden;">
+                <span style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">10 MIN RIDE</span>
+                <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-inlet.jpg" alt="Inlet Beach" />
+              </div>
+              <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+                <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--p1); margin-bottom: 0.5rem;">Inlet Beach</h3>
+                <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">SPACE TO SLOW DOWN.</p>
+                <p style="font-size: 0.95rem; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;">
+                  One of 30A's last 'wild' feeling beaches, featuring huge dunes and plenty of room to spread out and relax.
+                </p>
+                <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="location.html">BOOK NOW</a>
+              </div>
+            </article>
+          </div>
+
+          <a class="btn btn--primary" style="min-width: 14rem;" href="location.html">EXPLORE ALL &rarr;</a>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           08 — Guest Testimonials / Refined Experiences
+           ================================================================== -->
+      <section class="section testimonials">
+        <div class="container">
+          <p class="eyebrow text-center">Guest Testimonials</p>
+          <h2 class="testimonials__title text-center">Refined Experiences</h2>
+
+          <div class="testimonials__grid">
+            <article class="testimonial-card">
+              <p class="testimonial-card__quote">
+                &ldquo;The best place to rent bikes on 30a!!! The service and employees make the rental process even better. Easy &amp; centrally located bike rental but also a great place to hangout!! Live music, pub, fire pits and tvs for any game watching! Fun for all ages.&rdquo;
+              </p>
+              <p class="testimonial-card__author">&mdash; CATHERINE S., DALLAS, TEXAS</p>
+            </article>
+
+            <article class="testimonial-card">
+              <p class="testimonial-card__quote">
+                &ldquo;The staff is fantastic, bikes are great and beer is cold! Peddlers made our vacation even better. It was fast &amp; easy to rent/return our bikes. It's also in a great location to hang out in the evening with the live music and plenty of comfortable seating. Make sure you stop by Peddlers during your stay in 30A!&rdquo;
+              </p>
+              <p class="testimonial-card__author">&mdash; CARRIE C., CHICAGO, ILLINOIS</p>
+            </article>
+
+            <article class="testimonial-card">
+              <p class="testimonial-card__quote">
+                &ldquo;Great place to get your bikes on vacation. Full selection of adult and mid cruisers, trikes, baby seats, trailers &amp; everything! Plus 8 beers on tap. Oh, and great folks. HIGHLY RECOMMEND. (Live music on the stage nightly in the summer!)&rdquo;
+              </p>
+              <p class="testimonial-card__author">&mdash; GREGORY M., FRANKLIN, TENNESSEE</p>
+            </article>
+          </div>
+
+          <div class="testimonials__nav">
+            <button class="arrow-btn" aria-label="Previous testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="arrow-btn" aria-label="Next testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           09 — Assistance / Common Inquiries (FAQ)
+           ================================================================== -->
+      <section class="section faq">
+        <div class="container">
+          <p class="eyebrow text-center">Assistance</p>
+          <h2 class="faq__title text-center">Common Inquiries</h2>
+
+          <div class="faq__list">
+            <div class="accordion__item is-open">
+              <button class="accordion__trigger" type="button" aria-expanded="true">
+                <span>How do I book a bike rental?</span>
+                <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="accordion__panel">
+                <p>
+                  You can reserve online right here through our website, call us directly at (850) 213-0040, or visit our pavilion in Seacrest Beach. We offer free delivery and pickup for all multi-day rentals along 30A!
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <button class="accordion__trigger" type="button" aria-expanded="false">
+                <span>Where can I pick up my bike?</span>
+                <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="accordion__panel">
+                <p>
+                  You can pick up your bikes at Peddlers Pavilion (10343 E County Hwy 30A, Seacrest Beach) or have them delivered directly to your vacation rental home.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <button class="accordion__trigger" type="button" aria-expanded="false">
+                <span>Are helmets and locks included?</span>
+                <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="accordion__panel">
+                <p>
+                  Yes! All rentals include complimentary heavy-duty combination locks and standard helmets upon request.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <button class="accordion__trigger" type="button" aria-expanded="false">
+                <span>What is your cancellation policy?</span>
+                <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="accordion__panel">
+                <p>
+                  Cancellations made 24 hours prior to your rental start time receive a 100% full refund.
+                </p>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <button class="accordion__trigger" type="button" aria-expanded="false">
+                <span>Do you offer multi-day discounts?</span>
+                <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="accordion__panel">
+                <p>
+                  Yes! We offer discounted rates for 3-day and weekly rentals, including free delivery to your rental property.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           10 — Visit the Pavilion
+           ================================================================== -->
+      <section class="section contact" id="pavilion">
+        <div class="container contact__inner">
+          <div class="contact__details">
+            <h2 class="contact__title">Visit the Pavilion</h2>
+
+            <div class="contact__block">
+              <p class="contact__label">LOCATION</p>
+              <p class="contact__value">10343 E County Hwy 30A, Inlet Beach, FL 32461</p>
+            </div>
+
+            <div class="contact__block">
+              <p class="contact__label">CONNECT</p>
+              <p class="contact__value">
+                <a href="tel:+18502130040">850-213-0040</a> <span class="contact__bullet">&bull;</span> <a href="mailto:hello@peddlers30a.com">hello@peddlers30a.com</a>
+              </p>
+            </div>
+
+            <a class="btn btn--teal contact__cta" href="https://maps.google.com/?q=10343+E+County+Hwy+30A,+Inlet+Beach,+FL+32461" target="_blank" rel="noopener">GET DIRECTION</a>
+          </div>
+
+          <figure class="contact__map">
+            <img src="assets/img/contact-map.png" alt="Aerial map of Peddlers Pavilion" />
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         11 — Site Footer
+         ==================================================================== -->
+    <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__cols">
+        <div>
+          <h2 class="site-footer__heading">CONTACT US</h2>
+          <ul>
+            <li><a href="tel:+12144147504">Room Reservations: +1 214 414 7504</a></li>
+            <li><a href="contact.html">Global Reservation Information</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__heading">WORLD OF PEDDLERS</h2>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="location.html">Peddlers Impacts</a></li>
+            <li><a href="about.html#fleet">Developers</a></li>
+            <li><a href="about.html">Careers</a></li>
+            <li><a href="contact.html">Media</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__heading">FOLLOW US</h2>
+          <ul>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook ↗</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram ↗</a></li>
+            <li><a href="#" target="_blank" rel="noopener">WeChat</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__heading">TERMS</h2>
+          <ul>
+            <li><a href="#">Accessibility Statement</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Gift Cards Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__base">
+        <div class="site-footer__legal">
+          <p>ICP LICENSE <a href="#">17035714</a></p>
+          <p>GONGAN BEIAN: 31010102004896</p>
+        </div>
+        <a class="site-footer__logo" href="index.html" aria-label="Peddlers 30A">
+          <img src="assets/img/logo-peddlers-30a.png" alt="Peddlers 30A" />
+        </a>
+        <p class="site-footer__copy">ROSEWOOD HOTEL GROUP © 2026</p>
+      </div>
+    </div>
+    <div class="site-footer__rule"></div>
+  </footer>
+
+    <script src="assets/js/main.js?v=80"></script>
+  </body>
+</html>

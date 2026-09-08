@@ -1,0 +1,371 @@
+/* ==========================================================================
+   Peddlers 30A — Reusable components
+   Buttons, tags, cards, carousel controls, accordion
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Buttons — all square-cornered, 2rem horizontal / 0.75rem vertical padding,
+   0.75rem uppercase label with 0.075rem tracking (per Figma node 289:623).
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-6);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+/* Solid blue — the primary reservation action. */
+.btn--primary {
+  background: var(--p1);
+  border-color: var(--p1);
+  color: var(--s1);
+}
+
+.btn--primary:hover {
+  background: var(--p3);
+  border-color: var(--p3);
+}
+
+/* Solid light — sits on the sand header and on photography. */
+.btn--light {
+  background: var(--s1);
+  border-color: var(--s1);
+  color: var(--p1);
+}
+
+.btn--light:hover {
+  background: var(--white);
+}
+
+/* Solid sand button */
+.btn--sand {
+  background: var(--s3);
+  border-color: var(--s3);
+  color: var(--p1);
+}
+
+.btn--sand:hover {
+  background: #e8dccb;
+}
+
+/* Solid teal button */
+.btn--teal {
+  background: var(--s2);
+  border-color: var(--s2);
+  color: var(--white);
+}
+
+.btn--teal:hover {
+  background: #3fa09e;
+}
+
+/* Outline on photography. */
+.btn--ghost {
+  background: transparent;
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.btn--ghost:hover {
+  background: var(--white);
+  color: var(--p1);
+}
+
+/* Outline on light backgrounds — "ABOUT US", "BOOK NOW", "VIEW MORE BIKE". */
+.btn--outline {
+  background: transparent;
+  border-color: var(--p1);
+  color: var(--p1);
+}
+
+.btn--outline:hover {
+  background: var(--p1);
+  color: var(--s1);
+}
+
+/* Teal outline — Pavilion CTAs. */
+.btn--outline-teal {
+  background: transparent;
+  border-color: var(--s2);
+  color: var(--s2);
+}
+
+.btn--outline-teal:hover {
+  background: var(--s2);
+  color: var(--white);
+}
+
+.btn--lg {
+  padding: var(--sp-4) var(--sp-7);
+  font-size: var(--fs-body-md);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn__icon {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+
+/* Text link with an animated underline. */
+.link-underline {
+  position: relative;
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--p1);
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--dur) var(--ease);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* --------------------------------------------------------------------------
+   Tag — the pale plate that overlaps the category / merch tiles
+   -------------------------------------------------------------------------- */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-4) var(--sp-6);
+  background: var(--s3);
+  color: var(--p1);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-lg);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.tag--blue {
+  background: var(--p3);
+  color: var(--white);
+}
+
+.tag--cream {
+  background: var(--cream);
+  color: var(--s2);
+}
+
+.tag--light {
+  background: var(--s1);
+  color: var(--s2);
+}
+
+/* Merch plates are the sand token at 72% — fitting the exported render
+   against the source photos gives alpha 0.721 and colour #d2c0ac. */
+.tag--sheer {
+  background: rgba(214, 198, 178, 0.72);
+  color: var(--p1);
+}
+
+/* --------------------------------------------------------------------------
+   Media card — image with an overlapping label, used by the category grid,
+   the merch row and the featured-experience cards.
+   -------------------------------------------------------------------------- */
+
+.media-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.media-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+
+.media-card:hover .media-card__img {
+  transform: scale(1.04);
+}
+
+.media-card__tag {
+  position: absolute;
+  left: var(--sp-6);
+  right: var(--sp-6);
+  top: var(--sp-6);
+}
+
+.media-card__tag--bottom {
+  top: auto;
+  bottom: var(--sp-6);
+}
+
+.media-card__tag .tag {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Carousel controls — the arrow pair under the bike rail and testimonials
+   -------------------------------------------------------------------------- */
+
+.carousel-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-7);
+}
+
+.carousel-nav__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--p1);
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.carousel-nav__btn:hover {
+  transform: translateX(2px);
+}
+
+.carousel-nav__btn:first-child:hover {
+  transform: translateX(-2px);
+}
+
+.carousel-nav__btn[disabled] {
+  opacity: 0.3;
+  cursor: default;
+  transform: none;
+}
+
+.carousel-nav__btn svg {
+  width: 1.75rem;
+  height: 1.25rem;
+}
+
+/* Horizontal scroll rail with a sand-coloured progress track. */
+/* `proximity` rather than `mandatory`: a mandatory snap container re-snaps
+   itself whenever layout shifts (images or fonts finishing, a window resize),
+   which left the rail parked mid-card on load. `overscroll-behavior-x: contain`
+   stops a stray horizontal wheel gesture from dragging the rail. */
+.rail {
+  display: flex;
+  gap: var(--col-gap);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.rail > * {
+  scroll-snap-align: start;
+  flex: none;
+}
+
+.rail-track {
+  position: relative;
+  height: 2px;
+  margin-top: var(--sp-6);
+  background: var(--s1);
+}
+
+.rail-track__thumb {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 25%;
+  background: var(--s3);
+  transition: transform 200ms linear;
+}
+
+/* --------------------------------------------------------------------------
+   Accordion — "Common Inquiries"
+   -------------------------------------------------------------------------- */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.accordion__item {
+  background: var(--s1);
+}
+
+.accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  width: 100%;
+  padding: var(--sp-5) var(--sp-6);
+  text-align: left;
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-sm);
+  letter-spacing: var(--tracking-wide);
+  color: var(--s2);
+}
+
+.accordion__chevron {
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+  transition: transform var(--dur) var(--ease);
+}
+
+.accordion__item.is-open .accordion__chevron {
+  transform: rotate(180deg);
+}
+
+.accordion__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur) var(--ease);
+}
+
+.accordion__item.is-open .accordion__panel {
+  grid-template-rows: 1fr;
+}
+
+.accordion__panel > div {
+  overflow: hidden;
+}
+
+.accordion__panel p {
+  padding: 0 var(--sp-6) var(--sp-5);
+  font-weight: 300;
+  color: var(--text);
+}

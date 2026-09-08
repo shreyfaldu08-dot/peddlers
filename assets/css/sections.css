@@ -1,0 +1,1788 @@
+/* ==========================================================================
+   Peddlers 30A — Section Layouts (Strict PDF Page 1 Authority)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01 — Top navigation (Header)
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--white);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-7);
+  min-height: var(--nav-h);
+  max-width: 100%;
+  margin-inline: auto;
+  padding: 0 var(--gutter);
+}
+
+main>section+section {
+  margin-top: 0;
+}
+
+.site-header__logo img {
+  width: 12.5625rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-7);
+}
+
+.site-nav__link {
+  position: relative;
+  padding-bottom: 4px;
+  font-size: var(--fs-body-md);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: color var(--dur) var(--ease);
+}
+
+.site-nav__link:hover {
+  color: var(--p1);
+}
+
+.site-nav__link.is-active {
+  color: var(--p1);
+  border-bottom: 2px solid var(--p1);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.site-header__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 0.3125rem;
+  width: 1.75rem;
+  padding: 0.25rem 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.site-header__toggle span {
+  display: block;
+  height: 2px;
+  background: var(--p1);
+  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
+
+.site-header.is-open .site-header__toggle span:nth-child(1) {
+  transform: translateY(0.4375rem) rotate(45deg);
+}
+
+.site-header.is-open .site-header__toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header.is-open .site-header__toggle span:nth-child(3) {
+  transform: translateY(-0.4375rem) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   02 — Hero
+   -------------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 65.375rem;
+  /* 1046px matching PDF Page 1 */
+  min-height: 45rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero--about::after,
+.hero--location::after {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero__title {
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 6rem;
+  /* 96px */
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.hero__lead {
+  max-width: 48rem;
+  margin-top: var(--sp-5);
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--white);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: var(--sp-7);
+}
+
+.hero__actions .btn {
+  min-height: 3.75rem;
+  padding-inline: 2.5rem;
+  font-size: var(--fs-body-md);
+}
+
+/* --------------------------------------------------------------------------
+   03 — Trust bar
+   -------------------------------------------------------------------------- */
+
+.trust {
+  background: var(--s3);
+  padding: 2.5rem 0;
+}
+
+.trust__bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  gap: var(--sp-4);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.trust__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  text-align: center;
+}
+
+.trust__icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+}
+
+.trust__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.5625rem;
+  letter-spacing: 0;
+  color: var(--p3);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.trust__meta {
+  font-size: 1.5625rem;
+  letter-spacing: var(--tracking-wider);
+  text-transform: capitalize;
+  color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   04 — About split / The 30A Way
+   -------------------------------------------------------------------------- */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 52rem;
+  background: var(--s1);
+}
+
+.about__panel {
+  display: grid;
+  place-items: center;
+  padding: var(--sp-9) var(--sp-8);
+  background: var(--s1);
+}
+
+.about__content {
+  max-width: 38rem;
+  text-align: center;
+}
+
+.about__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.25rem;
+  line-height: 1.15;
+  color: var(--p1);
+  margin-top: var(--sp-3);
+}
+
+.about__body {
+  margin-top: var(--sp-5);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.about__stats {
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+  margin: 2.25rem 0 2.5rem;
+}
+
+.about__stat-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about__stat-num {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.875rem;
+  color: var(--p1);
+}
+
+.about__stat-lbl {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-top: 0.25rem;
+}
+
+.about__content .btn {
+  margin-top: var(--sp-2);
+  min-width: 10rem;
+}
+
+.about__media {
+  position: relative;
+  min-height: 30rem;
+  margin: 0;
+}
+
+.about__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   05 — Category tiles
+   -------------------------------------------------------------------------- */
+
+.categories {
+  padding: 4rem 0;
+  background: var(--white);
+}
+
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--col-gap);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categories .media-card {
+  aspect-ratio: 584 / 850;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.categories .media-card__tag--top {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  text-align: center;
+}
+
+.categories .media-card__tag--bottom {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   06 — Rent a Bike (8 Cards Grid)
+   -------------------------------------------------------------------------- */
+
+.rental {
+  padding: 5rem 0 4rem;
+  background: var(--white);
+}
+
+.rental__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+
+.rental .eyebrow {
+  font-size: 1.5625rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.rental__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  color: var(--p3);
+  margin-top: var(--sp-2);
+}
+
+.rental__subtitle {
+  color: #666666;
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin-top: var(--sp-3);
+  line-height: 1;
+}
+
+.rental__view-more {
+  min-height: 3.25rem;
+  padding-inline: 2.5rem;
+  white-space: nowrap;
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.rental__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.bike-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.bike-card__media {
+  aspect-ratio: 432 / 480;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  background: #f7f7f7;
+}
+
+.bike-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms var(--ease);
+}
+
+.bike-card:hover .bike-card__media img {
+  transform: scale(1.04);
+}
+
+.bike-card__name {
+  color: var(--p3);
+  margin-top: 1.25rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.9375rem;
+}
+
+.bike-card__price {
+  color: var(--p1);
+  margin: 0.25rem 0 1.25rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.5625rem;
+}
+
+.bike-card .btn {
+  border-color: var(--p2);
+  color: var(--p2);
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.bike-card .btn:hover {
+  background: var(--p2);
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   07 — Make It A Day To Remember Banner
+   -------------------------------------------------------------------------- */
+
+.day-banner {
+  background-color: var(--p1);
+  background-image: url('../img/background.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  padding: 4.5rem 0;
+}
+
+.day-banner__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.day-banner__content {
+  max-width: 36.6875rem;
+}
+
+.day-banner__eyebrow {
+  font-size: 1.5625rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #d9f0f4;
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.day-banner__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--white);
+  font-size: 3.25rem;
+  line-height: 1;
+  margin: 0.5rem 0 1.75rem;
+}
+
+.day-banner__btn {
+  border-color: var(--p2);
+  color: var(--p2);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.day-banner__btn:hover {
+  background: var(--p2);
+  color: var(--white);
+}
+
+.day-banner__badges {
+  display: flex;
+  gap: 2.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.day-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.day-badge__circle {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.day-badge__circle--sand {
+  background: #dfd2bc;
+}
+
+.day-badge__circle--teal {
+  background: #4aa08a;
+}
+
+.day-badge__circle--light {
+  background: #e3e4f3;
+}
+
+.day-badge__circle--sky {
+  background: #5bb4e5;
+}
+
+.day-badge__circle--navy {
+  background: #001270;
+}
+
+.day-badge__circle img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+}
+
+.day-badge__label {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   08 — The Peddlers Difference / Why Choose Peddlers 30A
+   -------------------------------------------------------------------------- */
+
+.why {
+  background: #f4f4f4;
+  padding: 5rem 0;
+}
+
+.why__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.25rem;
+  color: var(--p1);
+  margin-top: var(--sp-2);
+}
+
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.why__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.why__item+.why__item::before {
+  content: "";
+  position: absolute;
+  left: -1.25rem;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background: #d4c8b8;
+}
+
+.why__icon-wrap {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.why__icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
+}
+
+.why__name {
+  color: var(--p1);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #38bdf8;
+}
+
+.why__item .body-copy {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   09 — Curated Outing / Featured Experiences
+   -------------------------------------------------------------------------- */
+
+.experiences {
+  padding: 5rem 0 3rem;
+  background: var(--white);
+}
+
+.experiences__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+}
+
+.experiences__head .eyebrow {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #8c8c8c;
+  margin-bottom: 0.25rem;
+}
+
+.experiences__head .btn {
+  font-size: 1.25rem;
+}
+
+.experiences__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.25rem;
+  color: var(--p1);
+  margin-top: var(--sp-2);
+}
+
+.experiences__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--col-gap);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: start;
+}
+
+.exp-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 432 / 660;
+  isolation: isolate;
+}
+
+.exp-card:nth-child(odd) {
+  margin-top: 3.5rem;
+}
+
+.exp-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+
+.exp-card:hover .exp-card__img {
+  transform: scale(1.05);
+}
+
+.exp-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0.85) 100%);
+}
+
+.exp-card__body {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.exp-card__name {
+  color: var(--white);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.exp-card__meta {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  letter-spacing: 0;
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   10 — Our Home Base / Peddlers Pavilion
+   -------------------------------------------------------------------------- */
+
+.pavilion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 52rem;
+  background: #f4f4f4;
+}
+
+.pavilion__media {
+  position: relative;
+  min-height: 30rem;
+  margin: 0;
+}
+
+.pavilion__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pavilion__panel {
+  display: grid;
+  place-items: center;
+  padding: var(--sp-9) var(--sp-8);
+  background: #f4f4f4;
+}
+
+.pavilion__content {
+  max-width: 36rem;
+  text-align: center;
+}
+
+.pavilion__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.25rem;
+  color: var(--p1);
+  margin-top: var(--sp-3);
+}
+
+.pavilion__body {
+  margin-top: var(--sp-5);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.pavilion__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pavilion__list li {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.875rem;
+  letter-spacing: 0;
+  line-height: 1;
+  color: var(--p1);
+}
+
+.pavilion__list img {
+  width: 1.875rem;
+  height: 1.875rem;
+  object-fit: contain;
+}
+
+.pavilion__content .btn {
+  margin-top: var(--sp-4);
+  min-width: 16rem;
+  font-size: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   11 — The Pavilion Collection / A Curated Gathering (3x3 Grid)
+   -------------------------------------------------------------------------- */
+
+.gathering {
+  padding: 5rem 0;
+  background: var(--white);
+}
+
+.gathering__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.25rem;
+  color: var(--p1);
+  margin-top: var(--sp-2);
+}
+
+.gathering__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 3.5rem;
+}
+
+.venue-card {
+  display: flex;
+  flex-direction: column;
+  background: #f0f4f8;
+  overflow: hidden;
+}
+
+.venue-card__media {
+  aspect-ratio: 584 / 430;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+}
+
+.venue-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms var(--ease);
+}
+
+.venue-card:hover .venue-card__media img {
+  transform: scale(1.04);
+}
+
+.venue-card__body {
+  padding: 1.75rem;
+}
+
+.venue-card__name {
+  color: var(--p1);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.9375rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.venue-card__copy {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--p1);
+}
+
+/* --------------------------------------------------------------------------
+   12 — Shop the Look / Coastal Essentials
+   -------------------------------------------------------------------------- */
+
+.merch {
+  background: #f4f4f4;
+  padding: 5rem 0;
+}
+
+.merch__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.25rem;
+  color: var(--p1);
+  margin-top: var(--sp-2);
+}
+
+.merch__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--col-gap);
+  margin-top: 3.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.merch-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 584 / 620;
+  overflow: hidden;
+}
+
+.merch-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+
+.merch-card:hover img {
+  transform: scale(1.04);
+}
+
+.merch-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.merch-card__label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  line-height: 1;
+  color: var(--white);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.merch-card__plus {
+  width: 1.75rem;
+  height: 1.75rem;
+  background: var(--white);
+  color: var(--p1);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* --------------------------------------------------------------------------
+   13 — The Process / The Simple Path to the Trail
+   -------------------------------------------------------------------------- */
+
+.path {
+  padding: 5rem 0 4rem;
+  background: var(--white);
+}
+
+.path__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.25rem;
+  color: var(--p1);
+  margin-top: var(--sp-2);
+}
+
+.path__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.path-card {
+  position: relative;
+  aspect-ratio: 600 / 864;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 0.25rem;
+}
+
+.path-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+
+.path-card:hover .path-card__img {
+  transform: scale(1.04);
+}
+
+.path-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0.85) 100%);
+}
+
+.path-card__body {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 1;
+  padding: 2.5rem;
+}
+
+.path-card__num {
+  font-family: var(--font-script);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+}
+
+.path-card__name {
+  margin-top: 0.75rem;
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #38bdf8;
+  letter-spacing: 0.05rem;
+}
+
+.path-card__copy {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --------------------------------------------------------------------------
+   14 — The Coastal Rhythms (Timeline Flow)
+   -------------------------------------------------------------------------- */
+
+.rhythms {
+  background: #3d9e8c;
+  padding: 5rem 0 6rem;
+}
+
+.rhythms__title {
+  color: #0b1e36;
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: 0;
+  margin-bottom: 8rem;
+}
+
+.rhythms__timeline {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  position: relative;
+  gap: 1rem;
+  align-items: start;
+}
+
+.rhythms__timeline::before {
+  content: "";
+  position: absolute;
+  top: 48px;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  border-top: 2px dashed rgba(255, 255, 255, 0.6);
+  z-index: 0;
+}
+
+.rhythm-node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.rhythm-node__circle {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--white);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  margin-bottom: 1.25rem;
+}
+
+.rhythm-node__num {
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: transparent;
+}
+
+.rhythm-node__num::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.rhythm-node__circle img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.rhythm-node__label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #0b1e36;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+/* --------------------------------------------------------------------------
+   15 — Live Music & Local Events / Coastal Rhythms
+   -------------------------------------------------------------------------- */
+
+.live {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+.live__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.live__media {
+  position: relative;
+}
+
+.live__photo--back {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.live__photo--front {
+  position: absolute;
+  right: 0;
+  bottom: -2.5rem;
+  width: 30%;
+  border: 8px solid var(--white);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.15);
+}
+
+.live__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.25rem;
+  color: var(--p1);
+  margin-top: var(--sp-2);
+}
+
+.live__lead {
+  color: var(--text);
+  margin-top: var(--sp-3);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.live__list {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.live__list li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.live__list li:first-child {
+  border-top: none;
+}
+
+.live__num {
+  font-family: var(--font-script);
+  font-size: 2.5rem;
+  color: #38bdf8;
+  font-style: italic;
+  line-height: 1;
+}
+
+.live__name {
+  color: var(--p1);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.live__copy {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.live__cta {
+  margin-top: 1rem;
+  min-width: 16rem;
+}
+
+/* --------------------------------------------------------------------------
+   16 — The Coastal Sanctuary / Featured Gallery
+   -------------------------------------------------------------------------- */
+
+.gallery {
+  background: #f4f4f4;
+  padding: 5rem 0;
+}
+
+.gallery__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+
+.gallery__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.25rem;
+  color: var(--p1);
+  margin-top: var(--sp-2);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.gallery__col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gallery__col figure {
+  background: var(--white);
+  padding: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin: 0;
+}
+
+.gallery__col img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 600ms var(--ease);
+}
+
+.gallery__col figure:last-child {
+  flex-grow: 1;
+  display: flex;
+}
+
+.gallery__col figure:last-child img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__col figure:hover img {
+  transform: scale(1.03);
+}
+
+/* --------------------------------------------------------------------------
+   17 — Guest Testimonials / Refined Experiences
+   -------------------------------------------------------------------------- */
+
+.testimonials {
+  background: var(--white);
+  padding: 5rem 0 4rem;
+}
+
+.testimonials__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.25rem;
+  color: var(--p1);
+  margin-top: var(--sp-2);
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+  margin-top: 3.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.quote {
+  text-align: center;
+}
+
+.location-testimonials {
+  background: #EFEFEF !important;
+}
+
+.quote__text {
+  font-size: 2.2rem;
+  line-height: 1.6;
+  color: var(--p1);
+}
+
+.quote__who {
+  margin-top: 1.75rem;
+  font-size: 20px;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--p1);
+  font-weight: 700;
+}
+
+.testimonials__nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 3.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   18 — Assistance / Common Inquiries (FAQ)
+   -------------------------------------------------------------------------- */
+
+.faq {
+  background: var(--white);
+  padding: 5rem 0;
+}
+
+.faq__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.25rem;
+  color: var(--p1);
+  margin-top: var(--sp-2);
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 3.5rem;
+  width: 100%;
+}
+
+.faq .accordion__item {
+  background: #f8f8f8;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.faq .accordion__item.is-open {
+  background: #f8f8f8;
+}
+
+.faq .accordion__trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  font-family: var(--font-body);
+  font-size: 31px;
+  font-weight: 500;
+  color: var(--p1);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq .accordion__chevron {
+  width: 1rem;
+  height: 1rem;
+  color: #a0a0a0;
+  transition: transform var(--dur) var(--ease);
+  flex-shrink: 0;
+}
+
+.faq .accordion__item.is-open .accordion__chevron {
+  transform: rotate(180deg);
+}
+
+.faq .accordion__panel {
+  display: none;
+}
+
+.faq .accordion__item.is-open .accordion__panel {
+  display: block;
+}
+
+.faq .accordion__panel>div {
+  padding: 0 2rem 1.5rem;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 0.5rem;
+  padding-top: 1.5rem;
+}
+
+.faq .accordion__panel p {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--p2);
+}
+
+
+/* --------------------------------------------------------------------------
+   19 — Closing CTA Banner
+   -------------------------------------------------------------------------- */
+
+.closing {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 32rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.closing__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.closing::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--white);
+}
+
+.closing__inner {
+  text-align: center;
+}
+
+.closing__title {
+  color: var(--s3);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 1.1;
+}
+
+.closing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: var(--sp-7);
+}
+
+.closing__actions .btn {
+  min-height: 3.75rem;
+  padding-inline: 2.5rem;
+  font-size: var(--fs-body-md);
+}
+
+/* --------------------------------------------------------------------------
+   20 — Visit the Pavilion (Contact)
+   -------------------------------------------------------------------------- */
+
+.contact {
+  background: #d6c6b1;
+  padding: 5rem 0;
+}
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.contact__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 3.25rem;
+  color: var(--p1);
+  margin-bottom: 2.5rem;
+}
+
+.contact__block {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.contact__label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.contact__value {
+  color: var(--p1);
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.contact__value a {
+  color: var(--p1);
+}
+
+.contact__bullet {
+  margin: 0 0.5rem;
+  color: var(--text);
+}
+
+.contact__cta {
+  margin-top: 2rem;
+  min-width: 14rem;
+}
+
+.contact__map img {
+  width: 100%;
+  height: 63.3125rem;
+  object-fit: cover;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.12);
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   21 — Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  position: relative;
+  background: #ffffff;
+  padding: 5rem 0 0;
+}
+
+.site-footer__cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-7);
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.site-footer__heading {
+  margin-bottom: var(--sp-4);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: var(--p1);
+}
+
+.site-footer__cols ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer__cols li+li {
+  margin-top: 0.75rem;
+}
+
+.site-footer__cols a {
+  font-size: var(--fs-body-sm);
+  color: var(--text);
+  transition: color var(--dur) var(--ease);
+}
+
+.site-footer__cols a:hover {
+  color: var(--p1);
+  text-decoration: underline;
+}
+
+.site-footer__base {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 0;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.site-footer__legal p {
+  font-size: var(--fs-body-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.site-footer__legal a {
+  text-decoration: underline;
+  color: var(--text);
+}
+
+.site-footer__logo img {
+  width: 14rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.site-footer__copy {
+  font-size: var(--fs-body-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.site-footer__rule {
+  height: 10px;
+  background: #001bb5;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 1440px) {
+  .hero__title {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .about,
+  .pavilion,
+  .contact__inner,
+  .live__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .rental__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gathering__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rhythms__timeline {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .rhythms__timeline::before {
+    display: none;
+  }
+
+  .site-footer__cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header__toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .site-header.is-open .site-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  }
+
+  .trust__bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .categories__grid,
+  .why__grid,
+  .experiences__grid,
+  .gathering__grid,
+  .merch__grid,
+  .path__grid,
+  .gallery__grid,
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rhythms__timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .day-banner__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .day-banner__badges {
+    justify-content: center;
+  }
+
+  .site-footer__cols {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__base {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,692 @@
+/* ==========================================================================
+   Peddlers 30A — Bike Rentals Hub
+   Source: Figma "Untitled" › frame 31:727 "Bike Rentals Hub" (1920 × 9305)
+   Loads after sections.css, which supplies the shared header, footer, the
+   testimonial rail, the FAQ accordion and the "Visit the Pavilion" block.
+   The blue header/footer pair comes from about.css via the .page-about body
+   class, so the rule is repeated here to keep this page standalone.
+   ========================================================================== */
+
+main > section + section {
+  margin-top: 0;
+}
+
+.page-about .site-header,
+.page-about .site-footer {
+  background: var(--p2);
+}
+
+/* --------------------------------------------------------------------------
+   01 — Hero                                                     y104 – y825
+   -------------------------------------------------------------------------- */
+
+.rh-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: calc(100vh - var(--nav-h));
+  height: calc(100dvh - var(--nav-h));
+  min-height: 35rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.rh-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The aerial plate is bright enough that the cream script loses contrast at
+   the roofline; the export sits around a 0.3 scrim. */
+.rh-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.rh-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.rh-hero__title {
+  color: var(--s3);
+}
+
+.rh-hero__lead {
+  max-width: 62rem;
+  margin-top: var(--sp-5);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-size: var(--fs-body-lg);
+  line-height: 1.5;
+  color: var(--white);
+}
+
+.rh-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-4);
+  margin-top: var(--sp-7);
+}
+
+.rh-hero__actions .btn {
+  min-width: 12.8125rem; /* 205px */
+  min-height: 3.4375rem; /* 55px */
+}
+
+/* The primary hero button is the sand plate, not the blue one. */
+.rh-hero__actions .btn--sand {
+  background: var(--s3);
+  border-color: var(--s3);
+  color: var(--p1);
+}
+
+.rh-hero__actions .btn--sand:hover {
+  background: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   02 — Rent a bike                                             y825 – y2140
+   Left rail of category filters, right a two-row grid of bike cards that
+   scrolls horizontally under the shared .rail behaviour.
+   -------------------------------------------------------------------------- */
+
+.rh-rent {
+  background: var(--s1);
+  padding-block: var(--sp-9);
+}
+
+.rh-rent__inner {
+  display: grid;
+  grid-template-columns: 34rem 1fr;
+  gap: var(--sp-6);
+  align-items: start;
+  padding-left: var(--gutter);
+}
+
+.rh-rent__intro {
+  padding-top: var(--sp-6);
+  padding-right: var(--sp-6);
+}
+
+.rh-rent__title {
+  margin-top: var(--sp-4);
+}
+
+.rh-rent__body {
+  margin-top: var(--sp-4);
+  max-width: 30rem;
+}
+
+/* Vertical filter stack. The active chip is the solid brand blue; the rest
+   are hairline outlines on the grey field. */
+.rh-filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-top: var(--sp-7);
+  max-width: 21rem;
+}
+
+.rh-filters__btn {
+  display: block;
+  width: 100%;
+  padding: var(--sp-4) var(--sp-5);
+  border: 1px solid var(--p1);
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--p1);
+  transition: background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.rh-filters__btn:hover {
+  background: rgba(57, 89, 186, 0.08);
+}
+
+.rh-filters__btn.is-active {
+  background: var(--p1);
+  border-color: var(--p1);
+  color: var(--p2);
+}
+
+.rh-rent__intro .carousel-nav {
+  margin-top: var(--sp-7);
+  color: var(--s3);
+}
+
+.rh-rent__intro .carousel-nav__btn {
+  color: var(--s3);
+}
+
+/* Two rows of cards flowing left to right, then scrolling. Overrides the
+   single-row flex layout .rail ships with. */
+.rh-rent__rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 26.75rem; /* 428px */
+  grid-template-rows: repeat(2, auto);
+  gap: var(--sp-7) var(--col-gap);
+}
+
+.rh-rent .rail-track {
+  margin-top: var(--sp-6);
+  margin-right: var(--gutter);
+  background: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   03 — Local Introduction                                     y2140 – y2840
+   -------------------------------------------------------------------------- */
+
+.rh-intro {
+  padding-block: var(--sp-10);
+  text-align: center;
+}
+
+.rh-intro__title {
+  margin-top: var(--sp-4);
+}
+
+.rh-intro__body {
+  max-width: 105rem;
+  margin: var(--sp-7) auto 0;
+}
+
+.rh-intro__body + .rh-intro__body {
+  margin-top: var(--sp-6);
+}
+
+/* --------------------------------------------------------------------------
+   04 — Simple & Transparent Pricing                           y2840 – y3980
+   -------------------------------------------------------------------------- */
+
+.rh-pricing {
+  background: var(--s1);
+  padding-block: var(--sp-10);
+  text-align: center;
+}
+
+/* "Simple &" and "Transparent Pricing" sit as two runs with a wide gap in the
+   export rather than a single centred line. */
+.rh-pricing__title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-9);
+  margin-top: var(--sp-4);
+}
+
+.rh-pricing__lead {
+  margin-top: var(--sp-4);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-size: var(--fs-body-lg);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text);
+}
+
+/* Duration segmented control. */
+.rh-durations {
+  display: inline-flex;
+  margin-top: var(--sp-7);
+  border: 1px solid var(--s3);
+  background: var(--white);
+}
+
+.rh-durations__btn {
+  min-width: 10.125rem; /* 162px */
+  padding: var(--sp-3) var(--sp-5);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-md);
+  color: var(--text);
+  transition: background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.rh-durations__btn:hover {
+  color: var(--p1);
+}
+
+.rh-durations__btn.is-active {
+  background: var(--p3);
+  color: var(--white);
+}
+
+.rh-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  align-items: center;
+  margin-top: var(--sp-8);
+  text-align: left;
+}
+
+.rh-tier {
+  background: var(--white);
+  padding: var(--sp-6);
+}
+
+/* The middle tier is the recommended one — light blue, and taller than the
+   pair either side. */
+.rh-tier--featured {
+  background: var(--p2);
+  padding-block: var(--sp-8);
+}
+
+.rh-tier__name {
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-md);
+  letter-spacing: var(--tracking-wide);
+  color: var(--p1);
+}
+
+.rh-tier__copy {
+  margin-top: var(--sp-5);
+  font-size: var(--fs-body-md);
+  color: var(--text);
+}
+
+.rh-tier--featured .rh-tier__copy {
+  color: var(--white);
+}
+
+.rh-tier__price {
+  margin-top: var(--sp-5);
+  font-family: var(--font-body);
+  font-size: 2.375rem; /* 38px */
+  line-height: 1;
+  color: var(--p1);
+}
+
+.rh-tier__per {
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.rh-tier__cta {
+  width: 100%;
+  margin-top: var(--sp-6);
+  padding-block: var(--sp-4);
+  font-size: var(--fs-body-lg);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* --------------------------------------------------------------------------
+   05 — Pick Up Your Ride                                      y3980 – y5060
+   -------------------------------------------------------------------------- */
+
+.rh-pickup {
+  background: var(--s3);
+  padding-block: var(--sp-9);
+}
+
+.rh-pickup__eyebrow {
+  color: var(--p1);
+}
+
+.rh-pickup__title {
+  margin-top: var(--sp-4);
+}
+
+.rh-pickup__lead {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-body-lg);
+  color: var(--text);
+}
+
+/* Hairline grid. Each cell carries its own top/left rule so the outer frame
+   closes without doubled borders. */
+.rh-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: var(--sp-8);
+  border: 1px solid rgba(57, 89, 186, 0.25);
+}
+
+.rh-step {
+  padding: var(--sp-6) var(--sp-6) var(--sp-8);
+}
+
+.rh-step:not(:nth-child(3n + 1)) {
+  border-left: 1px solid rgba(57, 89, 186, 0.25);
+}
+
+.rh-step:nth-child(n + 4) {
+  border-top: 1px solid rgba(57, 89, 186, 0.25);
+}
+
+/* The number and the rule that runs off to the right of it. */
+.rh-step__num {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  font-family: var(--font-script);
+  font-size: var(--fs-script-xs);
+  line-height: 1;
+  color: rgba(57, 89, 186, 0.35);
+}
+
+.rh-step__num::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(57, 89, 186, 0.25);
+}
+
+.rh-step__name {
+  margin-top: var(--sp-6);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-md);
+  letter-spacing: var(--tracking-wide);
+  color: var(--p1);
+}
+
+.rh-step__copy {
+  margin-top: var(--sp-3);
+  max-width: 22rem;
+  color: var(--text);
+}
+
+/* The sixth cell is the map hand-off rather than a step. */
+.rh-step--cta {
+  display: grid;
+  place-items: center;
+  background: var(--s1);
+  padding: var(--sp-6);
+}
+
+.rh-step--cta .btn {
+  width: 100%;
+  min-height: 3.4375rem;
+  background: var(--p2);
+  border-color: var(--p2);
+  color: var(--p3);
+}
+
+.rh-step--cta .btn:hover {
+  background: var(--p1);
+  border-color: var(--p1);
+  color: var(--s1);
+}
+
+/* Deep blue facts bar under the grid. */
+.rh-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+  margin-top: var(--sp-7);
+  padding: var(--sp-6);
+  background: var(--p3);
+}
+
+.rh-facts dt {
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--s1);
+}
+
+.rh-facts dd {
+  margin: var(--sp-2) 0 0;
+  font-size: 1.625rem; /* 26px */
+  line-height: 1.2;
+  color: var(--p2);
+}
+
+.rh-facts__note {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-body-md);
+  color: var(--s1);
+}
+
+/* --------------------------------------------------------------------------
+   06 — Near By Beaches Worth To Ride                          y5060 – y5960
+   -------------------------------------------------------------------------- */
+
+.rh-beaches {
+  padding-block: var(--sp-10);
+}
+
+.rh-beaches__title {
+  margin-top: var(--sp-4);
+}
+
+.rh-beaches__lead {
+  max-width: 56rem;
+  margin: var(--sp-4) auto 0;
+  text-align: center;
+}
+
+.rh-beaches__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8125rem; /* 29px */
+  margin-top: var(--sp-8);
+}
+
+/* Copy and tag rows wrap to different depths across the four cards; the
+   column layout drops every button onto a shared baseline, as the export
+   has them. */
+.rh-beach {
+  display: flex;
+  flex-direction: column;
+}
+
+.rh-beach__cta {
+  margin-top: auto;
+}
+
+.rh-beach__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 428 / 436;
+}
+
+.rh-beach__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+
+.rh-beach:hover .rh-beach__media img {
+  transform: scale(1.04);
+}
+
+/* Ride-time chip pinned to the top-left of each plate. */
+.rh-beach__time {
+  position: absolute;
+  top: var(--sp-4);
+  left: var(--sp-4);
+  padding: 0.375rem var(--sp-3);
+  background: var(--p3);
+  font-size: var(--fs-body-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.rh-beach__name {
+  margin-top: var(--sp-5);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-lg);
+  letter-spacing: var(--tracking-wide);
+  color: var(--s2);
+}
+
+.rh-beach__kicker {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.rh-beach__copy {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-body-lg);
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.rh-beach__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: var(--sp-5) 0;
+}
+
+.rh-beach__tags li {
+  padding: 0.25rem var(--sp-3);
+  border: 1px solid var(--hairline);
+  font-size: var(--fs-body-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.rh-beach__cta {
+  width: 100%;
+  min-height: 3.4375rem;
+  flex: none;
+  border-color: var(--s3);
+  color: var(--s3);
+}
+
+.rh-beach__cta:hover {
+  background: var(--s3);
+  color: var(--p1);
+}
+
+.rh-beaches__all {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--sp-8);
+}
+
+.rh-beaches__all .btn {
+  min-width: 26.625rem; /* 426px */
+  min-height: 3.4375rem;
+  background: var(--p3);
+  border-color: var(--p3);
+  color: var(--p2);
+}
+
+.rh-beaches__all .btn:hover {
+  background: var(--p1);
+  border-color: var(--p1);
+  color: var(--s1);
+}
+
+/* --------------------------------------------------------------------------
+   07 — Guest testimonials
+   .testimonials carries the layout; this page runs it on the off-white field
+   the export uses rather than plain white.
+   -------------------------------------------------------------------------- */
+
+.rh-quotes {
+  background: #f7f7f7;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .rh-rent__inner {
+    grid-template-columns: 1fr;
+    padding-inline: var(--gutter);
+  }
+
+  .rh-rent__intro {
+    padding-right: 0;
+  }
+
+  .rh-rent__rail {
+    grid-auto-columns: 20rem;
+  }
+
+  .rh-rent .rail-track {
+    margin-right: 0;
+  }
+
+  .rh-tiers,
+  .rh-beaches__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rh-steps,
+  .rh-facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rh-step:not(:nth-child(3n + 1)) {
+    border-left: 0;
+  }
+
+  .rh-step:nth-child(even) {
+    border-left: 1px solid rgba(57, 89, 186, 0.25);
+  }
+
+  .rh-step:nth-child(n + 3) {
+    border-top: 1px solid rgba(57, 89, 186, 0.25);
+  }
+}
+
+@media (max-width: 720px) {
+  .rh-pricing__title {
+    gap: var(--sp-3);
+  }
+
+  .rh-durations {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+  .rh-durations__btn {
+    min-width: 0;
+  }
+
+  .rh-tiers,
+  .rh-beaches__grid,
+  .rh-steps,
+  .rh-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .rh-step:nth-child(even) {
+    border-left: 0;
+  }
+
+  .rh-step:nth-child(n + 2) {
+    border-top: 1px solid rgba(57, 89, 186, 0.25);
+  }
+
+  .rh-beaches__all .btn {
+    min-width: 0;
+    width: 100%;
+  }
+}

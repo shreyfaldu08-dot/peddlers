@@ -1,0 +1,552 @@
+<!-- ==========================================================================
+     LEGACY / DEPRECATED EXPLORATION PAGE
+     NOTE: This file (services.html) was created during early project exploration
+     and is NOT part of the approved 7-Page Figma Specification (Untitled.pdf / Untitled.fig):
+     1. Home (index.html)
+     2. About (about.html)
+     3. Bike Rentals Hub (rentals.html)
+     4. Destinations (location.html)
+     5. Contact (contact.html)
+     6. Product Category (category.html)
+     7. Product Detail (product-detail.html)
+     ========================================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services (Legacy) — Peddlers 30A</title>
+    <meta
+      name="description"
+      content="From cruising scenic beach roads to grabbing a bite, discovering local finds, and settling in for live music, Peddlers brings the best parts of a 30A day together in one easygoing destination."
+    />
+
+    <link rel="stylesheet" href="assets/css/fonts.css?v=62" />
+    <link rel="stylesheet" href="assets/css/tokens.css?v=62" />
+    <link rel="stylesheet" href="assets/css/base.css?v=62" />
+    <link rel="stylesheet" href="assets/css/components.css?v=62" />
+    <link rel="stylesheet" href="assets/css/sections.css?v=62" />
+    <link rel="stylesheet" href="assets/css/services.css?v=62" />
+  </head>
+
+  <body>
+    <!-- ====================================================================
+         Top navigation — shared with the home page
+         ==================================================================== -->
+    <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html" aria-label="Peddlers 30A — home">
+        <img src="assets/img/logo-peddlers-30a.png" alt="Peddlers 30A" />
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a class="site-nav__link" href="index.html">HOME</a>
+        <a class="site-nav__link" href="location.html">LOCATION</a>
+        <a class="site-nav__link" href="about.html">ABOUT</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--primary" href="tel:+18502130040">
+          <img class="btn__icon" src="assets/icons/phone.svg" alt="" />
+          (850) 213-0040
+        </a>
+        <a class="btn btn--sand" href="rentals.html">RESERVE NOW</a>
+      </div>
+
+      <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+        aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+    <main>
+      <!-- ==================================================================
+           01 — Hero
+           ================================================================== -->
+      <section class="sv-hero">
+        <img class="sv-hero__bg" src="assets/img/sv-option-2.jpg" alt="" />
+        <div class="sv-hero__inner container">
+          <h1 class="script script--xxl sv-hero__title">
+            Everything You Need for a Better Day on 30A
+          </h1>
+          <p class="sv-hero__lead">
+            From cruising scenic beach roads to grabbing a bite, discovering
+            local finds, and settling in for live music, Peddlers brings the best
+            parts of a 30A day together in one easygoing destination.
+          </p>
+          <div class="sv-hero__actions">
+            <a class="btn btn--primary btn--lg" href="rentals.html">Explore our services</a>
+            <a class="btn btn--ghost btn--lg" href="rentals.html">Rent bikes</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           02 — More Than a Stop
+           ================================================================== -->
+      <section class="section sv-intro">
+        <div class="container">
+          <p class="eyebrow text-center">Make a Day of It</p>
+          <h2 class="script script--lg sv-intro__title">
+            More Than a Stop. Part of Your 30A Experience.
+          </h2>
+          <p class="body-copy sv-intro__body">
+            However you like to spend your days on 30A, there's something waiting
+            for you at Peddlers. Grab a bike and explore the coast, discover
+            something delicious at the Pavilion, or stay awhile and enjoy the
+            laid-back atmosphere.
+          </p>
+
+          <ul class="sv-pillars">
+            <li>
+              <p class="sv-pillars__kicker">01 &mdash; Ride</p>
+              <h3 class="script script--sm script--light sv-pillars__name">Bike Rentals</h3>
+              <p class="sv-pillars__copy">
+                See 30A from the best seat in town. Choose a bike that fits your
+                crew and set out for beach roads, neighborhood paths, coffee
+                stops, and wherever the day takes you.
+              </p>
+              <a class="sv-arrow-link" href="rentals.html">Explore bike rentals</a>
+            </li>
+            <li>
+              <p class="sv-pillars__kicker">02 &mdash; Eat + Shop</p>
+              <h3 class="script script--sm script--light sv-pillars__name">Peddlers Pavilion</h3>
+              <p class="sv-pillars__copy">
+                Come hungry, browse a little, and discover a collection of local
+                food, drinks, treats, and shops&mdash;all gathered in one
+                easygoing coastal setting.
+              </p>
+              <a class="sv-arrow-link" href="index.html#pavilion">Explore the pavilion</a>
+            </li>
+            <li>
+              <p class="sv-pillars__kicker">03 &mdash; Stay + Gather</p>
+              <h3 class="script script--sm script--light sv-pillars__name">Music &amp; Good Times</h3>
+              <p class="sv-pillars__copy">
+                Slow down after the ride. Find a seat, grab something good, catch
+                live music, and enjoy an evening together under the 30A sky.
+              </p>
+              <a class="sv-arrow-link" href="#evening">See what's happening</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           03 — Find the Ride banner + 04 bike categories
+           ================================================================== -->
+      <section class="section sv-rentals" id="rentals">
+        <div class="container">
+          <div class="sv-banner">
+            <img class="sv-banner__bg" src="assets/img/sv-ride-banner.jpg" alt="" />
+            <div class="sv-banner__content">
+              <p class="sv-banner__kicker">Two Wheels. Endless Possibilities.</p>
+              <h2 class="script script--md sv-banner__title">
+                Find the Ride That Fits Your Day.
+              </h2>
+              <p class="sv-banner__lead">
+                Easy beach cruises, family adventures, and everything in between.
+                With options for riders of different ages and riding styles,
+                getting around 30A starts with finding the right set of wheels.
+              </p>
+            </div>
+          </div>
+
+          <ul class="sv-bikes">
+            <li class="sv-bike">
+              <figure class="sv-bike__media">
+                <img src="assets/img/sv-bike-1.jpg" alt="Cruisers parked outside the Pavilion coffee window" />
+              </figure>
+              <p class="sv-bike__kicker">01 &mdash; Classic Cruisers</p>
+              <h3 class="script script--xs sv-bike__name">Take It Easy.</h3>
+              <p class="sv-bike__copy">
+                Comfortable, relaxed, and made for the coast. Perfect for morning
+                coffee runs, neighborhood exploring, beach stops, and sunset
+                rides.
+              </p>
+              <a class="btn btn--outline sv-bike__cta" href="rentals.html">Book now</a>
+            </li>
+
+            <li class="sv-bike">
+              <figure class="sv-bike__media">
+                <img src="assets/img/sv-bike-2.jpg" alt="A rider on a multi-speed bike along a shaded street" />
+              </figure>
+              <p class="sv-bike__kicker">02 &mdash; Multi-speed Bikes</p>
+              <h3 class="script script--xs sv-bike__name">Go a Little Farther.</h3>
+              <p class="sv-bike__copy">
+                More gears mean more freedom to explore. A versatile choice when
+                your plans take you beyond a casual cruise around the
+                neighborhood.
+              </p>
+              <a class="btn btn--outline sv-bike__cta" href="rentals.html">Book now</a>
+            </li>
+
+            <li class="sv-bike">
+              <figure class="sv-bike__media">
+                <img src="assets/img/sv-bike-3.jpg" alt="A parent riding with a child trailer attached" />
+              </figure>
+              <p class="sv-bike__kicker">03 &mdash; Kids &amp; Family</p>
+              <h3 class="script script--xs sv-bike__name">Bring the Whole Crew.</h3>
+              <p class="sv-bike__copy">
+                Make exploring part of the family vacation with bike options
+                designed to help younger riders and families enjoy 30A together.
+              </p>
+              <a class="btn btn--outline sv-bike__cta" href="rentals.html">Book now</a>
+            </li>
+
+            <li class="sv-bike">
+              <figure class="sv-bike__media">
+                <img src="assets/img/sv-bike-4.jpg" alt="A coral cruiser resting beside a palm tree" />
+              </figure>
+              <p class="sv-bike__kicker">04 &mdash; Specialty</p>
+              <h3 class="script script--xs sv-bike__name">A Ride for Every Adventure.</h3>
+              <p class="sv-bike__copy">
+                From tandems and tricycles to tow-along options, find flexible
+                ways to make the ride work for your group.
+              </p>
+              <a class="btn btn--outline sv-bike__cta" href="rentals.html">Book now</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           04 — Come for the Ride (Pavilion)
+           ================================================================== -->
+      <section class="section sv-pavilion" id="pavilion">
+        <div class="container">
+          <p class="eyebrow text-center">More Than Bikes</p>
+          <h2 class="script script--lg sv-pavilion__title">
+            Come for the Ride. Stay for Everything Else.
+          </h2>
+          <p class="body-copy sv-pavilion__body">
+            Peddlers Pavilion brings food, drinks, shopping, and laid-back
+            coastal energy together in one place. Stop in before your ride, come
+            back afterward, or make the Pavilion part of the day itself.
+          </p>
+
+          <ul class="sv-pav-grid">
+            <li class="sv-pav">
+              <img class="sv-pav__img" src="assets/img/sv-pav-1.jpg" alt="Scooping gelato at the Pavilion counter" />
+              <div class="sv-pav__body">
+                <p class="sv-pav__num">01</p>
+                <h3 class="script script--sm sv-pav__name">Something for Every Craving.</h3>
+                <p class="sv-pav__copy">
+                  From quick bites and savory favorites to something sweet after
+                  a day in the sun.
+                </p>
+                <p class="sv-pav__tags">Bites &bull; Pizza &bull; Burgers &bull; Seafood &bull; Sweets</p>
+              </div>
+            </li>
+
+            <li class="sv-pav">
+              <img class="sv-pav__img" src="assets/img/sv-pav-2.jpg" alt="A guest with an iced drink in the sun" />
+              <div class="sv-pav__body">
+                <p class="sv-pav__num">02</p>
+                <h3 class="script script--sm sv-pav__name">Sip. Sit. Stay Awhile.</h3>
+                <p class="sv-pav__copy">
+                  Start the morning with something refreshing or wind down after
+                  the ride with a drink.
+                </p>
+                <p class="sv-pav__tags">Coffee &bull; Cocktails &bull; Coastal Refreshments</p>
+              </div>
+            </li>
+
+            <li class="sv-pav">
+              <img class="sv-pav__img" src="assets/img/sv-pav-3.jpg" alt="A boutique display of coastal gifts" />
+              <div class="sv-pav__body">
+                <p class="sv-pav__num">03</p>
+                <h3 class="script script--sm sv-pav__name">Find Something to Take Home.</h3>
+                <p class="sv-pav__copy">
+                  Browse local shops and discover clothing, accessories, and
+                  finds that bring the 30A experience home.
+                </p>
+                <p class="sv-pav__tags">Style &bull; Accessories &bull; Gifts &bull; Local Finds</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           05 — Your Ride. Your Way.
+           ================================================================== -->
+      <section class="section sv-options">
+        <div class="container">
+          <p class="eyebrow">We Make It Easy</p>
+          <h2 class="script script--md script--teal sv-options__title">
+            Your Ride. Your Way.
+          </h2>
+          <p class="sv-options__lead">
+            Vacation time is too valuable to spend making things complicated.
+            Choose the rental option that works best for your stay and spend more
+            time enjoying the beauty of 30A.
+          </p>
+
+          <article class="sv-option">
+            <div class="sv-option__panel">
+              <p class="sv-option__kicker">Option 01</p>
+              <h3 class="script script--sm sv-option__name">Pick Up &amp; Ride</h3>
+              <p class="sv-option__copy">
+                Stop by Peddlers, grab your bikes, and start exploring right from
+                the heart of the 30A experience.
+              </p>
+              <a class="sv-arrow-link sv-arrow-link--cream" href="rentals.html">Reserve for pickup</a>
+            </div>
+            <figure class="sv-option__media">
+              <img src="assets/img/sv-option-1.jpg" alt="A rack of coral cruisers ready for collection" />
+            </figure>
+          </article>
+
+          <article class="sv-option sv-option--reverse">
+            <div class="sv-option__panel">
+              <p class="sv-option__kicker">Option 02</p>
+              <h3 class="script script--sm sv-option__name">Let the Ride Come to You</h3>
+              <p class="sv-option__copy">
+                Staying nearby? Eligible rentals can be delivered so your bikes
+                are ready closer to where your vacation begins.
+              </p>
+              <a class="sv-arrow-link sv-arrow-link--cream" href="rentals.html">Explore delivery</a>
+            </div>
+            <figure class="sv-option__media">
+              <img src="assets/img/sv-option-2.jpg" alt="Three riders setting off down a tree-lined lane" />
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           06 — The Ride Might End
+           ================================================================== -->
+      <section class="section sv-evening" id="evening">
+        <div class="container sv-evening__inner">
+          <div class="sv-evening__content">
+            <p class="eyebrow">Vacation Made Easy</p>
+            <h2 class="script script--lg sv-evening__title">
+              The Ride Might End. The Day Doesn't Have To.
+            </h2>
+
+            <ul class="sv-evening__list">
+              <li>
+                <h3 class="sv-evening__name">Live Music</h3>
+                <p class="sv-evening__copy">
+                  Good music sounds even better after a day by the coast. Catch
+                  live performances and settle into the rhythm of a 30A evening.
+                </p>
+              </li>
+              <li>
+                <h3 class="sv-evening__name">Come Together</h3>
+                <p class="sv-evening__copy">
+                  Meet up with family and friends, find a comfortable spot, and
+                  enjoy the kind of evening that doesn't need much of a plan.
+                </p>
+              </li>
+              <li>
+                <h3 class="sv-evening__name">Make an Evening of It</h3>
+                <p class="sv-evening__copy">
+                  Food, drinks, music, and good company&mdash;all you have to
+                  decide is how long you want to stay.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <figure class="sv-evening__media">
+            <img src="assets/img/sv-evening.jpg" alt="Bistro tables set out under flowering planters" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           07 — One Place. A Whole Day of 30A.
+           ================================================================== -->
+      <section class="section sv-day" id="day">
+        <div class="container">
+          <p class="eyebrow text-center">A Day at Peddlers</p>
+          <h2 class="script script--lg script--cream sv-day__title">
+            One Place. A Whole Day of 30A.
+          </h2>
+          <p class="sv-day__lead">
+            No complicated itinerary required. Start when you're ready, follow
+            the coast, and let the day unfold naturally.
+          </p>
+
+          <!-- Alternating timeline with a rule running down the centre. -->
+          <ol class="sv-timeline">
+            <li class="sv-step">
+              <figure class="sv-step__media">
+                <img src="assets/img/sv-day-1.jpg" alt="Sunrise over the pier" />
+              </figure>
+              <div class="sv-step__body">
+                <p class="sv-step__time">8:00 AM | Start Slow</p>
+                <h3 class="script script--sm script--teal sv-step__name">Wake Up Slow</h3>
+                <p class="sv-step__copy">
+                  Grab something good, enjoy an easy morning, and settle into
+                  vacation mode before the day gets moving.
+                </p>
+                <p class="sv-step__tags">Eat &bull; Sip &bull; Wake Up Slow</p>
+              </div>
+            </li>
+
+            <li class="sv-step sv-step--reverse">
+              <figure class="sv-step__media">
+                <img src="assets/img/sv-day-2.jpg" alt="A guest walking past a bike outside a boutique" />
+              </figure>
+              <div class="sv-step__body">
+                <p class="sv-step__time">9:30 AM | Grab Your Bikes</p>
+                <h3 class="script script--sm script--teal sv-step__name">Explore &amp; Discover</h3>
+                <p class="sv-step__copy">
+                  Pick your ride, gather the crew, and head out to discover beach
+                  roads, coastal communities, and whatever catches your eye along
+                  the way.
+                </p>
+                <p class="sv-step__tags">Ride &bull; Explore &bull; Discover</p>
+              </div>
+            </li>
+
+            <li class="sv-step">
+              <figure class="sv-step__media">
+                <img src="assets/img/sv-day-3.jpg" alt="Racks of coastal clothing inside a local shop" />
+              </figure>
+              <div class="sv-step__body">
+                <p class="sv-step__time">8:00 AM | Start Slow</p>
+                <h3 class="script script--sm script--teal sv-step__name">Shop &amp; Relax</h3>
+                <p class="sv-step__copy">
+                  Grab something good, enjoy an easy morning, and settle into
+                  vacation mode before the day gets moving.
+                </p>
+                <p class="sv-step__tags">Eat &bull; Sip &bull; Wake Up Slow</p>
+              </div>
+            </li>
+
+            <li class="sv-step sv-step--reverse">
+              <figure class="sv-step__media">
+                <img src="assets/img/sv-day-4.jpg" alt="Friends with ice creams beside their bikes" />
+              </figure>
+              <div class="sv-step__body">
+                <p class="sv-step__time">9:30 AM | Grab Your Bikes</p>
+                <h3 class="script script--sm script--teal sv-step__name">Good Company</h3>
+                <p class="sv-step__copy">
+                  Pick your ride, gather the crew, and head out to discover beach
+                  roads, coastal communities, and whatever catches your eye along
+                  the way.
+                </p>
+                <p class="sv-step__tags">Ride &bull; Explore &bull; Discover</p>
+              </div>
+            </li>
+          </ol>
+
+          <p class="sv-day__outro">
+            That's the beauty of 30A. The best days don't always need a plan.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           08 — So, What Are You Doing First?
+           ================================================================== -->
+      <section class="section sv-first">
+        <div class="container">
+          <p class="eyebrow text-center">Your Day. Your Way.</p>
+          <h2 class="script script--lg sv-first__title">
+            So, What Are You Doing First?
+          </h2>
+          <p class="body-copy sv-first__body">
+            Pick your ride, discover something delicious, or see what's happening
+            at the Pavilion. Your next 30A memory might be closer than you think.
+          </p>
+
+          <ul class="sv-first__grid">
+            <li class="sv-choice">
+              <p class="sv-choice__kicker">01 &mdash; Ride</p>
+              <h3 class="script script--sm script--light sv-choice__name">Ready to Explore?</h3>
+              <p class="sv-choice__copy">
+                Find the right bike for your crew and start seeing 30A on two
+                wheels.
+              </p>
+              <a class="btn btn--outline sv-choice__cta" href="rentals.html">Rent bikes</a>
+            </li>
+            <li class="sv-choice">
+              <p class="sv-choice__kicker">02 &mdash; Eat + Shop</p>
+              <h3 class="script script--sm script--light sv-choice__name">Staying Awhile?</h3>
+              <p class="sv-choice__copy">
+                Discover the food, drinks, shops, and local favorites waiting
+                around Peddlers Pavilion.
+              </p>
+              <a class="btn btn--outline sv-choice__cta" href="index.html#pavilion">Explore the pavilion</a>
+            </li>
+            <li class="sv-choice">
+              <p class="sv-choice__kicker">03 &mdash; Gather</p>
+              <h3 class="script script--sm script--light sv-choice__name">What's Happening?</h3>
+              <p class="sv-choice__copy">
+                See upcoming music and events and find another reason to stay a
+                little longer.
+              </p>
+              <a class="btn btn--outline sv-choice__cta" href="#evening">View events</a>
+            </li>
+          </ul>
+
+          <p class="sv-first__outro">Ride &bull; Eat &bull; Shop &bull; Gather</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         Footer — shared with the home page
+         ==================================================================== -->
+    <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__cols">
+        <div>
+          <h2 class="site-footer__heading">CONTACT US</h2>
+          <ul>
+            <li><a href="tel:+12144147504">Room Reservations: +1 214 414 7504</a></li>
+            <li><a href="contact.html">Global Reservation Information</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__heading">WORLD OF PEDDLERS</h2>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="location.html">Peddlers Impacts</a></li>
+            <li><a href="about.html#fleet">Developers</a></li>
+            <li><a href="about.html">Careers</a></li>
+            <li><a href="contact.html">Media</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__heading">FOLLOW US</h2>
+          <ul>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook ↗</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram ↗</a></li>
+            <li><a href="#" target="_blank" rel="noopener">WeChat</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__heading">TERMS</h2>
+          <ul>
+            <li><a href="#">Accessibility Statement</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Gift Cards Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__base">
+        <div class="site-footer__legal">
+          <p>ICP LICENSE <a href="#">17035714</a></p>
+          <p>GONGAN BEIAN: 31010102004896</p>
+        </div>
+        <a class="site-footer__logo" href="index.html" aria-label="Peddlers 30A">
+          <img src="assets/img/logo-peddlers-30a.png" alt="Peddlers 30A" />
+        </a>
+        <p class="site-footer__copy">ROSEWOOD HOTEL GROUP © 2026</p>
+      </div>
+    </div>
+    <div class="site-footer__rule"></div>
+  </footer>
+
+    <script src="assets/js/main.js?v=62"></script>
+  </body>
+</html>

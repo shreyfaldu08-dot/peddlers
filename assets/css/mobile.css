@@ -1,0 +1,553 @@
+﻿/* ==========================================================================
+   Peddlers 30A - Mobile Responsive Overrides
+   Covers index.html (home), location.html, and about.html
+   Breakpoints: 768px (tablet/phone), 480px (small phone)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Shared / Header
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .site-header__inner {
+    gap: var(--sp-3);
+    min-height: 4rem;
+    padding: 0 1.25rem;
+  }
+
+  .site-header__logo img {
+    width: 9rem;
+    height: 1.75rem;
+  }
+
+  .site-header__toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem 1.25rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+    z-index: 100;
+    gap: 0;
+  }
+
+  .site-header.is-open .site-nav {
+    display: flex;
+  }
+
+  .site-nav__link {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    font-size: 1rem;
+  }
+
+  .site-nav__link.is-active {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    border-left: 3px solid var(--p1);
+    padding-left: 0.75rem;
+  }
+
+  /* Compact phone button */
+  .site-header__actions .btn--primary {
+    font-size: 0;
+    padding: 0.6rem 0.75rem;
+    gap: 0;
+  }
+
+  .site-header__actions .btn--primary .btn__icon {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .site-header__actions .btn--sand {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.7rem;
+  }
+
+  /* ---- Footer ---- */
+  .site-footer__cols {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5);
+  }
+
+  .site-footer__base {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* ---- Hero (home) ---- */
+  .hero {
+    height: auto;
+    min-height: 28rem;
+    padding-block: 5rem 3rem;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__lead {
+    font-size: 1rem;
+    margin-top: var(--sp-4);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: var(--sp-5);
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 18rem;
+  }
+
+  /* ---- Trust bar ---- */
+  .trust__bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4) var(--sp-3);
+  }
+
+  .trust__title {
+    font-size: 0.85rem;
+  }
+
+  .trust__meta {
+    font-size: 0.85rem;
+  }
+
+  /* ---- About split (home) ---- */
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about__panel {
+    padding: var(--sp-7) var(--gutter);
+  }
+
+  .about__title {
+    font-size: 2rem;
+  }
+
+  .about__stats {
+    gap: 2rem;
+  }
+
+  .about__media {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* ---- Category tiles ---- */
+  .categories__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .categories .media-card {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* ---- Rental header ---- */
+  .rental {
+    padding: 3rem 0;
+  }
+
+  .rental__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .rental__title {
+    font-size: 2rem;
+  }
+
+  .rental__subtitle {
+    font-size: 1rem;
+  }
+
+  .rental__view-more {
+    font-size: 0.85rem;
+    padding-inline: 1.25rem;
+  }
+
+  .rental__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  /* ---- Day banner ---- */
+  .day-banner__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .day-banner__title {
+    font-size: 2rem;
+  }
+
+  .day-banner__badges {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  /* ---- Why grid ---- */
+  .why__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .why__item + .why__item::before {
+    display: none;
+  }
+
+  .why__title {
+    font-size: 2rem;
+  }
+
+  /* ---- Experiences ---- */
+  .experiences__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .experiences__title {
+    font-size: 2rem;
+  }
+
+  .experiences__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .exp-card:nth-child(odd) {
+    margin-top: 0;
+  }
+
+  /* ---- Pavilion split ---- */
+  .pavilion {
+    grid-template-columns: 1fr;
+  }
+
+  .pavilion__media {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .pavilion__panel {
+    padding: var(--sp-7) var(--gutter);
+  }
+
+  .pavilion__title {
+    font-size: 2rem;
+  }
+
+  .pavilion__content .btn {
+    min-width: unset;
+    width: 100%;
+  }
+
+  /* ---- Gathering grid ---- */
+  .gathering__grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .gathering__title {
+    font-size: 2rem;
+  }
+
+  /* ---- Merch grid ---- */
+  .merch__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .merch__title {
+    font-size: 2rem;
+  }
+
+  /* ---- Path grid ---- */
+  .path__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .path__title {
+    font-size: 2rem;
+  }
+
+  .path-card {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* ---- Rhythms timeline ---- */
+  .rhythms__timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .rhythms__timeline::before {
+    display: none;
+  }
+
+  /* ---- Live music ---- */
+  .live__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .live__title {
+    font-size: 2rem;
+  }
+
+  /* ---- Gallery ---- */
+  .gallery__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .gallery__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gallery__title {
+    font-size: 2rem;
+  }
+
+  /* ---- Testimonials ---- */
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .testimonials__title {
+    font-size: 2rem;
+  }
+
+  .quote__text {
+    font-size: 1.35rem;
+  }
+
+  /* ---- FAQ ---- */
+  .faq__title {
+    font-size: 2rem;
+  }
+
+  .faq .accordion__trigger {
+    font-size: 1.1rem;
+    padding: 1rem 1.25rem;
+  }
+
+  /* ---- Closing CTA ---- */
+  .closing__title {
+    font-size: 2.5rem;
+  }
+
+  .closing__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .closing__actions .btn {
+    width: 100%;
+    max-width: 18rem;
+  }
+
+  /* ---- Contact ---- */
+  .contact__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact__map img {
+    height: 20rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   About Page — mobile
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .ab-hero {
+    height: auto;
+    min-height: 22rem;
+    padding-block: 4rem;
+  }
+
+  .ab-story {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-story__panel {
+    padding: var(--sp-7) var(--gutter);
+  }
+
+  .ab-story__media {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  .ab-paradise {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-paradise__media {
+    order: -1;
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  .ab-paradise__content {
+    padding: var(--sp-7) var(--gutter);
+  }
+
+  .ab-routes li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .ab-fleet__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-fleet__col--offset {
+    margin-top: 0;
+  }
+
+  .ab-fleet {
+    padding-block: 4rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Location Page — mobile
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .loc-hero {
+    min-height: 22rem;
+    padding-block: 4rem var(--sp-7);
+  }
+
+  .loc-hero__title {
+    font-size: var(--fs-script-md);
+  }
+
+  .loc-hero__lead {
+    font-size: var(--fs-body-md);
+  }
+
+  .loc-badges {
+    gap: var(--sp-2);
+  }
+
+  .loc-bikes__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .loc-cat-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .loc-dining__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .loc-standard__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .loc-standard {
+    padding-block: var(--sp-7);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Extra small phones (480px)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+  .hero__title {
+    font-size: 1.9rem;
+  }
+
+  .hero__lead {
+    font-size: 0.9rem;
+  }
+
+  .rental__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .day-badge__circle {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .loc-dining__grid,
+  .loc-bikes__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rhythms__timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .rhythm-node__num {
+    display: none;
+  }
+
+  .site-header__actions .btn--sand {
+    display: none;
+  }
+
+  .site-footer__cols {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-hero {
+    min-height: 18rem;
+  }
+
+  .loc-hero {
+    min-height: 18rem;
+  }
+
+  .closing__title {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,318 @@
+/* ==========================================================================
+   Peddlers 30A — About page
+   Loads after sections.css, which supplies the shared header, footer,
+   testimonials and contact blocks. Geometry is measured from the
+   1920 × 6306 Figma export.
+   ========================================================================== */
+
+/* Sections butt against each other on this page, as on Services. */
+main > section + section {
+  margin-top: 0;
+}
+
+/* This page runs the blue header/footer pair instead of the sand one. */
+.page-about .site-header,
+.page-about .site-footer {
+  background: var(--p2);
+}
+
+/* --------------------------------------------------------------------------
+   01 — Hero                                                   y104 – y1024
+   -------------------------------------------------------------------------- */
+
+.ab-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: calc(100vh - var(--nav-h));
+  height: calc(100dvh - var(--nav-h));
+  min-height: 35rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ab-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ab-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.ab-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ab-hero__title {
+  color: var(--s3);
+}
+
+.ab-hero__lead {
+  max-width: 39rem;
+  margin-top: 1.875rem;
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-xs);
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--s1);
+}
+
+/* --------------------------------------------------------------------------
+   02 — Crafting Memories                                     y1024 – y1913
+   Copy panel on the left, photograph filling the right half.
+   -------------------------------------------------------------------------- */
+
+.ab-story {
+  display: grid;
+  grid-template-columns: minmax(0, 956fr) minmax(0, 964fr);
+  min-height: 55.5625rem; /* 889px */
+}
+
+.ab-story__panel {
+  display: grid;
+  place-items: center;
+  padding: var(--sp-9) var(--sp-8);
+  background: var(--s1);
+}
+
+.ab-story__content {
+  max-width: 51.875rem; /* 830px */
+  text-align: center;
+}
+
+.ab-story__title {
+  margin-top: 1.5rem;
+}
+
+.ab-story__copy {
+  margin-top: 1.5rem;
+  font-weight: 300;
+  font-size: var(--fs-body-md);
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.ab-story__media {
+  position: relative;
+  min-height: 23.75rem;
+}
+
+.ab-story__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   03 — Navigate Your Paradise                                y1913 – y2704
+   -------------------------------------------------------------------------- */
+
+.ab-paradise {
+  display: grid;
+  grid-template-columns: minmax(0, 960fr) minmax(0, 960fr);
+  min-height: 49.4375rem; /* 791px */
+}
+
+.ab-paradise__media {
+  position: relative;
+  min-height: 23.75rem;
+}
+
+.ab-paradise__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ab-paradise__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--sp-8) 3.875rem;
+}
+
+.ab-paradise__title {
+  margin-bottom: 1.9375rem;
+}
+
+.ab-routes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.0625rem;
+}
+
+.ab-routes li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  padding: 1.75rem 2.125rem;
+  background: var(--s1);
+}
+
+.ab-routes__name {
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-sm);
+  letter-spacing: var(--tracking-wide);
+  color: var(--s2);
+}
+
+.ab-routes__copy {
+  max-width: 20rem;
+  margin-top: 0.5rem;
+  font-weight: 300;
+  font-size: var(--fs-body-sm);
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.ab-routes__icon {
+  flex: none;
+  width: 2.5rem;
+  height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   04 — A Curated Collection                                  y2704 – y4089
+   -------------------------------------------------------------------------- */
+
+.ab-fleet {
+  background: var(--s2);
+  padding-block: 7rem 8.25rem;
+}
+
+.ab-fleet__title {
+  color: var(--p3);
+  text-align: center;
+}
+
+.ab-fleet__lead {
+  max-width: 35rem;
+  margin: 1.5rem auto 0;
+  font-weight: 300;
+  font-size: var(--fs-body-md);
+  line-height: 1.5;
+  text-align: center;
+  color: var(--white);
+}
+
+/* Two staggered columns, 820px each, inset 120px from the canvas edges. */
+.ab-fleet__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+  max-width: 105rem; /* 1680px */
+  margin: 3.5rem auto 0;
+}
+
+.ab-fleet__col {
+  display: flex;
+  flex-direction: column;
+  gap: 4.25rem;
+}
+
+.ab-fleet__col--offset {
+  margin-top: 5.875rem; /* 94px, per the export */
+}
+
+.ab-fleet__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.18);
+}
+
+.ab-spec__name {
+  padding-bottom: 1.125rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-md);
+  letter-spacing: var(--tracking-wide);
+  color: var(--p3);
+}
+
+.ab-spec__copy {
+  margin-top: 1.125rem;
+  font-weight: 300;
+  font-size: var(--fs-body-md);
+  line-height: 1.5;
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   05 — Testimonials                                          y4090 – y4622
+   The shared block from sections.css, on white rather than #f9f9f9.
+   -------------------------------------------------------------------------- */
+
+.ab-testimonials {
+  background: var(--white);
+  padding-block: 4.75rem 4.5rem;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .ab-story,
+  .ab-paradise,
+  .ab-fleet__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-story__media,
+  .ab-paradise__media {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  /* Photograph above the copy once the columns stack. */
+  .ab-paradise__media {
+    order: -1;
+  }
+
+  .ab-fleet__col--offset {
+    margin-top: 0;
+  }
+
+  .ab-paradise__content {
+    padding-inline: var(--gutter);
+  }
+}
+
+@media (max-width: 720px) {
+  .ab-routes li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-4);
+  }
+
+  .ab-hero {
+    height: auto;
+    min-height: 30rem;
+    padding-block: var(--sp-11);
+  }
+}

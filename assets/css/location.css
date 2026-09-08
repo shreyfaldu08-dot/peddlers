@@ -1,0 +1,337 @@
+/* ==========================================================================
+   Peddlers 30A — Location Page
+   Source: Figma Reference Page 4 "Location" (1920 × 10174)
+   ========================================================================== */
+
+main>section+section {
+  margin-top: 0;
+}
+
+.page-about .site-header,
+.page-about .site-footer {
+  background: var(--p2);
+}
+
+/* --------------------------------------------------------------------------   
+   01 — Hero with Feature Badges
+   -------------------------------------------------------------------------- */
+
+.loc-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 42rem;
+  padding-block: var(--sp-10) var(--sp-8);
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+}
+
+.loc-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loc-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.loc-hero__title {
+  color: var(--s3);
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.loc-hero__lead {
+  max-width: 50rem;
+  margin: var(--sp-5) auto 0;
+  font-family: var(--font-label);
+  font-style: italic;
+  font-size: var(--fs-body-lg);
+  line-height: 1.5;
+  color: var(--white);
+}
+
+.loc-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-7);
+}
+
+.loc-badge {
+  padding: 0.625rem 1.25rem;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   02 — Bike Preview Grid
+   -------------------------------------------------------------------------- */
+
+.loc-bikes {
+  background: var(--s1);
+  padding-block: var(--sp-9);
+}
+
+.loc-bikes__head {
+  text-align: center;
+  max-width: 48rem;
+  margin-inline: auto;
+  margin-bottom: var(--sp-8);
+}
+
+.loc-bikes__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--col-gap);
+}
+
+.loc-bike-card {
+  background: var(--white);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.loc-bike-card__media {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  margin-bottom: var(--sp-4);
+}
+
+.loc-bike-card__media img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.loc-bike-card__name {
+  font-size: var(--fs-label-sm);
+  margin-bottom: var(--sp-2);
+}
+
+.loc-bike-card__price {
+  font-size: var(--fs-body-sm);
+  color: var(--text);
+  margin-bottom: var(--sp-4);
+}
+
+/* --------------------------------------------------------------------------
+   03 — Pavilion Categories & Dining Cards
+   -------------------------------------------------------------------------- */
+
+.loc-pav-cats {
+  background: var(--white);
+  padding-block: var(--sp-10);
+}
+
+.loc-pav-cats__head {
+  text-align: center;
+  max-width: 55rem;
+  margin-inline: auto;
+  margin-bottom: var(--sp-8);
+}
+
+.loc-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--col-gap);
+}
+
+.loc-cat-card {
+  background: var(--s1);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid var(--p1);
+}
+
+.loc-cat-card__num {
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 700;
+  font-size: var(--fs-label-sm);
+  color: var(--p1);
+  margin-bottom: var(--sp-3);
+}
+
+.loc-cat-card__name {
+  font-size: var(--fs-label-sm);
+  color: var(--p1);
+  margin-bottom: var(--sp-3);
+}
+
+.loc-cat-card__title {
+  font-family: var(--font-script);
+  font-size: var(--fs-script-sm);
+  color: var(--p1);
+  line-height: 1.1;
+  margin-bottom: var(--sp-4);
+}
+
+.loc-cat-card__copy {
+  font-size: var(--fs-body-sm);
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: var(--sp-5);
+  flex-grow: 1;
+}
+
+.loc-cat-card__link {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--s2);
+  font-weight: 600;
+}
+
+/* Dining Strip */
+.loc-dining {
+  background: var(--s3);
+  padding-block: var(--sp-9);
+}
+
+.loc-dining__head {
+  text-align: center;
+  max-width: 52rem;
+  margin-inline: auto;
+  margin-bottom: var(--sp-7);
+}
+
+.loc-dining__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-4);
+  margin-top: var(--sp-4);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  color: var(--p3);
+}
+
+.loc-dining__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--col-gap);
+  margin-top: var(--sp-7);
+}
+
+.loc-dining-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.loc-dining-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms var(--ease);
+}
+
+.loc-dining-card:hover img {
+  transform: scale(1.05);
+}
+
+.loc-dining-card__body {
+  position: absolute;
+  inset-inline: var(--sp-4);
+  bottom: var(--sp-4);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  padding: var(--sp-4);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   04 — Service Standard (Why Rent Our Bike)
+   -------------------------------------------------------------------------- */
+
+.loc-standard {
+  background: var(--s1);
+  padding-block: var(--sp-10);
+}
+
+.loc-standard__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--col-gap);
+  margin-top: var(--sp-8);
+}
+
+.loc-standard-card {
+  border-top: 1px solid var(--p1);
+  padding-top: var(--sp-5);
+}
+
+.loc-standard-card__num {
+  font-family: var(--font-script);
+  font-size: var(--fs-script-sm);
+  color: var(--s2);
+}
+
+.loc-standard-card__name {
+  font-family: var(--font-label);
+  font-style: italic;
+  font-size: var(--fs-label-md);
+  color: var(--p1);
+  margin-top: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+
+.loc-standard-card__copy {
+  font-size: var(--fs-body-sm);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+
+  .loc-bikes__grid,
+  .loc-cat-grid,
+  .loc-dining__grid,
+  .loc-standard__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-6);
+  }
+}
+
+@media (max-width: 720px) {
+
+  .loc-bikes__grid,
+  .loc-cat-grid,
+  .loc-dining__grid,
+  .loc-standard__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .loc-hero {
+    min-height: 30rem;
+  }
+}

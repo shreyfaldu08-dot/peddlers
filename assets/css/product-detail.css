@@ -1,0 +1,270 @@
+/* ==========================================================================
+   Peddlers 30A — Product Detail Page
+   Source: Figma Reference Page 7 "Product Detail Page" (1920 × 3625)
+   ========================================================================== */
+
+main > section + section {
+  margin-top: 0;
+}
+
+.page-product-detail .site-header,
+.page-product-detail .site-footer {
+  background: var(--p2);
+}
+
+/* --------------------------------------------------------------------------
+   01 — Product Hero & Date Selector
+   -------------------------------------------------------------------------- */
+
+.pd-hero {
+  background: var(--p1);
+  padding: 2.5rem 0 2rem;
+}
+
+.pd-selector-bar {
+  background: var(--white);
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pd-selector-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pd-selector-group label {
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--p1);
+}
+
+.pd-selector-group input {
+  border: 1px solid var(--s3);
+  border-radius: 4px;
+  padding: 0.35rem 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--p1);
+}
+
+/* --------------------------------------------------------------------------
+   02 — Split Detail Layout
+   -------------------------------------------------------------------------- */
+
+.pd-split {
+  background: var(--white);
+  padding: 4rem 0;
+}
+
+.pd-split__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.pd-gallery {
+  display: flex;
+  flex-direction: column;
+}
+
+.pd-gallery__main {
+  background: var(--s1);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 440px;
+}
+
+.pd-gallery__main img {
+  max-width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+}
+
+.pd-gallery__thumbs {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.pd-gallery__thumb {
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--s3);
+  border-radius: 8px;
+  background: var(--s1);
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-gallery__thumb.is-active {
+  border: 2px solid var(--p1);
+}
+
+.pd-gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Details Info Column */
+.pd-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pd-title {
+  color: var(--p1);
+  font-size: 3.5rem;
+  line-height: 1.1;
+}
+
+.pd-specs-row {
+  display: flex;
+  gap: 3rem;
+  border-top: 1px solid var(--s3);
+  border-bottom: 1px solid var(--s3);
+  padding: 1.25rem 0;
+}
+
+.pd-spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.pd-spec-label {
+  font-size: 0.75rem;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+.pd-spec-value {
+  font-family: var(--font-body);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--p1);
+}
+
+.pd-inclusions {
+  margin-top: 0.5rem;
+}
+
+.pd-inclusions__list {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.pd-inclusion-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--p1);
+  font-weight: 500;
+}
+
+.check-icon {
+  color: var(--s2);
+  font-weight: bold;
+}
+
+.pd-price-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  background: var(--s1);
+  padding: 1.25rem 2rem;
+  border-radius: 8px;
+}
+
+.pd-price-label {
+  font-size: 0.75rem;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+.pd-price-value {
+  font-family: var(--font-body);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--p1);
+}
+
+/* --------------------------------------------------------------------------
+   03 — Related Fleet
+   -------------------------------------------------------------------------- */
+
+.pd-related {
+  background: var(--white);
+  padding-block: var(--sp-9);
+}
+
+.pd-related__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .pd-split__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pd-related__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .pd-selector-bar {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 16px;
+    gap: 1rem;
+  }
+
+  .pd-selector-group {
+    justify-content: space-between;
+  }
+
+  .pd-specs-row {
+    gap: 1.5rem;
+  }
+
+  .pd-inclusions__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .pd-related__grid {
+    grid-template-columns: 1fr;
+  }
+}
