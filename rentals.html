@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bike Rentals Hub — Peddlers 30A</title>
+    <title>30A Bike Rentals at Peddlers Pavilion, Seacrest Beach</title>
     <meta
       name="description"
-      content="Whether you're planning a sunrise ride through Seacrest or a sunset journey to Alys Beach, our team is here to curate your perfect coastal transit."
+      content="Largest bike rental fleet on 30A. Helmet and lock included. Delivery to every community. Walk-ins welcome in Seacrest Beach, FL. Call 850-213-0040."
     />
 
     <link rel="stylesheet" href="assets/css/tokens.css?v=71" />
@@ -15,6 +15,45 @@
     <link rel="stylesheet" href="assets/css/components.css?v=80" />
     <link rel="stylesheet" href="assets/css/sections.css?v=85" />
     <link rel="stylesheet" href="assets/css/mobile.css?v=5" />
+
+    <style>
+      /* Rentals page — responsive fixes for grids that use inline layout */
+      .rt-trust {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+      }
+
+      .rt-grid-3,
+      .rt-grid-4 {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .rt-grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .rt-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+      @media (max-width: 1024px) {
+        .rt-grid-3,
+        .rt-grid-4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .rt-trust {
+          gap: 1.25rem;
+        }
+
+        .rt-grid-3,
+        .rt-grid-4 {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
 
   <body class="page-rentals">
@@ -29,6 +68,7 @@
 
       <nav class="site-nav" id="site-nav" aria-label="Primary">
         <a class="site-nav__link" href="index.html">HOME</a>
+        <a class="site-nav__link is-active" href="rentals.html">RENTALS</a>
         <a class="site-nav__link" href="location.html">LOCATION</a>
         <a class="site-nav__link" href="about.html">ABOUT</a>
         <a class="site-nav__link" href="faq.html">FAQ</a>
@@ -56,13 +96,52 @@
            ================================================================== -->
       <section class="hero hero--rentals" style="background-image: url('assets/img/hero-bg.jpg');">
         <div class="container hero__inner">
-          <h1 class="hero__title">Contact Peddlers 30A</h1>
+          <p class="eyebrow" style="color: var(--s3);">Seacrest Beach, FL</p>
+          <h1 class="hero__title">30A Bike Rentals, Right on the Trail</h1>
           <p class="hero__lead">
-            Whether you're planning a sunrise ride through Seacrest or a sunset journey to Alys Beach, our team is here to curate your perfect coastal transit.
+            The largest bike rental fleet on Scenic Highway 30A. Helmet and lock included with every rental. Delivery to your vacation rental or walk in. We're here when you are.
           </p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#catalog">RESERVE YOUR BIKE</a>
-            <a class="btn btn--outline-white" href="tel:+18502130040">CALL US</a>
+            <a class="btn btn--primary" href="#catalog">RESERVE YOUR BIKES</a>
+            <a class="btn btn--ghost" href="#catalog">SEE THE FULL FLEET</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           02.5 — Direct Answer Block + Trust Bar
+           ================================================================== -->
+      <section class="section" style="background: #ffffff; padding: 3.5rem 0 0;">
+        <div class="container" style="max-width: 60rem; text-align: center;">
+          <p style="color: var(--text); font-size: 1.05rem; line-height: 1.7;">
+            Peddlers 30A is the largest bike rental shop on Scenic Highway 30A, located at 10343 E County Hwy 30A in Seacrest Beach, FL 32461. Rated 4.9 stars, every rental includes a helmet and lock. The fleet covers beach cruisers, kids bikes, 7-speeds, tricycles, and exclusive family options including the Wee HOO and Tug A Bug, only available here on 30A. Delivery reaches every 30A community.
+          </p>
+        </div>
+      </section>
+
+      <section class="trust-bar" style="background: #ffffff; padding: 3rem 0;">
+        <div class="container">
+          <div class="rt-trust" style="background: #e2d1bc; padding: 2rem;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.35rem;">
+              <span style="font-family: var(--font-body); font-weight: 700; font-size: 1.1rem; color: var(--p3);">Largest 30A Fleet</span>
+              <span style="font-size: 0.8rem; color: var(--p3); opacity: 0.85;">50+ bikes in stock</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.35rem;">
+              <span style="font-family: var(--font-body); font-weight: 700; font-size: 1.1rem; color: var(--p3);">4.9 Stars</span>
+              <span style="font-size: 0.8rem; color: var(--p3); opacity: 0.85;">500+ Google reviews</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.35rem;">
+              <span style="font-family: var(--font-body); font-weight: 700; font-size: 1.1rem; color: var(--p3);">Helmet + Lock</span>
+              <span style="font-size: 0.8rem; color: var(--p3); opacity: 0.85;">Every rental</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.35rem;">
+              <span style="font-family: var(--font-body); font-weight: 700; font-size: 1.1rem; color: var(--p3);">Delivery</span>
+              <span style="font-size: 0.8rem; color: var(--p3); opacity: 0.85;">All communities</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0.35rem;">
+              <span style="font-family: var(--font-body); font-weight: 700; font-size: 1.1rem; color: var(--p3);">Walk-Ins Welcome</span>
+              <span style="font-size: 0.8rem; color: var(--p3); opacity: 0.85;">No booking needed</span>
+            </div>
           </div>
         </div>
       </section>
@@ -74,10 +153,10 @@
         <div class="container">
           <div class="rental__head" style="margin-bottom: 2rem;">
             <div>
-              <p class="eyebrow">Rent a Bike</p>
-              <h2 class="rental__title">Largest bike rental</h2>
+              <p class="eyebrow">Bike Rentals on 30A</p>
+              <h2 class="rental__title">The Largest Bike Rental Fleet on 30A</h2>
               <p class="rental__subtitle">
-                Peddlers is known for super friendly service and a HUGE selection of bikes for all ages and styles.
+                Peddlers is known for friendly service and a fleet built for every rider: kids, families, beginners, and those ready to cover all 19 miles.
               </p>
             </div>
           </div>
@@ -189,13 +268,13 @@
            ================================================================== -->
       <section class="section local-intro" style="background: #ffffff; padding: 5rem 0; text-align: center;">
         <div class="container" style="max-width: 58rem;">
-          <p class="eyebrow">The 30A Way</p>
-          <h2 class="why__title" style="margin-bottom: 2rem;">Local Introduction</h2>
+          <p class="eyebrow">Local Introduction</p>
+          <h2 class="why__title" style="margin-bottom: 2rem;">30A Bike Rentals, Delivered the Right Way</h2>
           <p style="color: var(--text); font-size: 1.15rem; line-height: 1.7; margin-bottom: 1.5rem;">
-            From family cruiser setups to high-performance electric rides, we equip you with everything needed to ride 30A with ease.
+            Peddlers 30A has run the largest bike rental fleet on Scenic Highway 30A for 15+ years. The shop sits directly on the 30A coastal path in Seacrest Beach, Florida; walk out the door and you're riding. Beach cruisers, 7-speeds, kids bikes, adult tricycles, and the only Wee HOO and Tug A Bug rentals on the gulf coast are all here, inspected every morning before they go out.
           </p>
           <p style="color: var(--text); font-size: 1.15rem; line-height: 1.7;">
-            Each piece of equipment in our fleet is tested and tuned every single day. When you rent with Peddlers 30A, you receive complimentary helmet fitting, quality locks, and insider route maps to make your trip effortless.
+            Every rental includes a helmet and lock at no extra charge. Add a basket for $5/day. Walk into the Peddlers Pavilion, book online, or call 850-213-0040 and we'll deliver to your vacation rental anywhere along 30A, from Inlet Beach to Miramar Beach. You're on the trail in minutes either way.
           </p>
         </div>
       </section>
@@ -204,55 +283,86 @@
            05 — Simple & Transparent Pricing
            ================================================================== -->
       <section class="section pricing" style="background: #f4f4f4; padding: 5rem 0;">
+        <style>
+          .pricing-tab {
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            background: transparent;
+            border: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text);
+            cursor: pointer;
+          }
+          .pricing-tab.is-active {
+            background: var(--p1);
+            color: #ffffff;
+          }
+          .pricing-panel[hidden] {
+            display: none !important;
+          }
+        </style>
         <div class="container text-center">
           <p class="eyebrow">RENTAL OPTIONS</p>
-          <h2 class="why__title" style="margin-bottom: 1rem;">Simple &amp; Transparent Pricing</h2>
+          <h2 class="why__title" style="margin-bottom: 1rem;">Simple &amp; Transparent 30A Bike Rental Pricing</h2>
           <p class="lead-copy" style="max-width: 48rem; margin: 0 auto 3rem; color: var(--text);">
-            Easily compare our rental tiers and find the perfect duration for your coastal exploration.
+            Every bundle our fleet has to offer the perfect duration for your coastal exploration.
           </p>
 
-          <div style="display: inline-flex; gap: 0.5rem; background: #e5e5e5; padding: 0.35rem; border-radius: 9999px; margin-bottom: 3.5rem;">
-            <button style="padding: 0.5rem 1.5rem; border-radius: 9999px; background: transparent; border: none; font-weight: 600; font-size: 0.9rem; color: var(--text);" type="button">Hourly</button>
-            <button style="padding: 0.5rem 1.5rem; border-radius: 9999px; background: transparent; border: none; font-weight: 600; font-size: 0.9rem; color: var(--text);" type="button">Half Day</button>
-            <button style="padding: 0.5rem 1.5rem; border-radius: 9999px; background: var(--p1); border: none; font-weight: 600; font-size: 0.9rem; color: #ffffff;" type="button">Full Day</button>
-            <button style="padding: 0.5rem 1.5rem; border-radius: 9999px; background: transparent; border: none; font-weight: 600; font-size: 0.9rem; color: var(--text);" type="button">3-Day</button>
-            <button style="padding: 0.5rem 1.5rem; border-radius: 9999px; background: transparent; border: none; font-weight: 600; font-size: 0.9rem; color: var(--text);" type="button">Weekly</button>
+          <div data-segmented style="display: inline-flex; gap: 0.5rem; background: #e5e5e5; padding: 0.35rem; border-radius: 9999px; margin-bottom: 3.5rem;">
+            <button class="pricing-tab is-active" data-pricing-tab="full-day" type="button" aria-selected="true">Full Day</button>
+            <button class="pricing-tab" data-pricing-tab="weekly" type="button" aria-selected="false">Weekly</button>
           </div>
 
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 72rem; margin: 0 auto; text-align: left;">
-            <!-- Tier 1 -->
+          <!-- Full Day (default active) -->
+          <div class="pricing-panel rt-grid-3" data-pricing-panel="full-day" style="max-width: 72rem; margin: 0 auto; text-align: left;">
+            <!-- Cruiser -->
             <div style="background: #ffffff; padding: 3rem 2.5rem; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
-              <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--p1); margin-bottom: 1rem;">Electric Explorer</h3>
-              <p style="font-size: 2.5rem; font-weight: 700; color: var(--p1); margin-bottom: 2rem;">$85 <span style="font-size: 1rem; font-weight: 500; color: var(--text);">/ DAY</span></p>
+              <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--p1); margin-bottom: 1rem;">Cruiser</h3>
+              <p style="font-size: 2.5rem; font-weight: 700; color: var(--p1); margin-bottom: 2rem;">$40 <span style="font-size: 1rem; font-weight: 500; color: var(--text);">/ DAY</span></p>
               <ul style="list-style: none; padding: 0; margin: 0 0 2.5rem 0; line-height: 2; color: var(--text); font-size: 0.95rem;">
-                <li>&check; High performance e-motion for conquering hills.</li>
-                <li>&check; High performance e-motion for conquering hills.</li>
-                <li>&check; High performance e-motion for conquering hills.</li>
+                <li>&check; Women's, Men's, and Unisex beach cruisers</li>
+                <li>&check; Perfect for the flat, paved 30A coastal path</li>
+                <li>&check; Helmet and lock included</li>
               </ul>
               <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="product-detail.html">Reserve</a>
             </div>
 
-            <!-- Tier 2 (Featured) -->
+            <!-- Explorer (Featured) -->
             <div style="background: #d6c6b1; padding: 3rem 2.5rem; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); display: flex; flex-direction: column; position: relative;">
               <span style="position: absolute; top: -0.75rem; left: 50%; transform: translateX(-50%); background: var(--p1); color: #fff; padding: 0.25rem 1rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">MOST POPULAR</span>
-              <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--p1); margin-bottom: 1rem;">Electric Explorer</h3>
-              <p style="font-size: 2.5rem; font-weight: 700; color: var(--p1); margin-bottom: 2rem;">$85 <span style="font-size: 1rem; font-weight: 500; color: var(--p1);">/ DAY</span></p>
+              <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--p1); margin-bottom: 1rem;">Explorer</h3>
+              <p style="font-size: 2.5rem; font-weight: 700; color: var(--p1); margin-bottom: 2rem;">$50 <span style="font-size: 1rem; font-weight: 500; color: var(--p1);">/ DAY</span></p>
               <ul style="list-style: none; padding: 0; margin: 0 0 2.5rem 0; line-height: 2; color: var(--p1); font-size: 0.95rem;">
-                <li>&check; High performance e-motion for conquering hills.</li>
-                <li>&check; High performance e-motion for conquering hills.</li>
-                <li>&check; High performance e-motion for conquering hills.</li>
+                <li>&check; 7-Speed bike built for the full 19-mile 30A trail</li>
+                <li>&check; Men's and Unisex options available</li>
+                <li>&check; Helmet and lock included</li>
               </ul>
               <a class="btn btn--primary" style="margin-top: auto; text-align: center;" href="product-detail.html">Reserve</a>
             </div>
 
-            <!-- Tier 3 -->
+            <!-- Family -->
             <div style="background: #ffffff; padding: 3rem 2.5rem; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
-              <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--p1); margin-bottom: 1rem;">Electric Explorer</h3>
-              <p style="font-size: 2.5rem; font-weight: 700; color: var(--p1); margin-bottom: 2rem;">$85 <span style="font-size: 1rem; font-weight: 500; color: var(--text);">/ DAY</span></p>
+              <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--p1); margin-bottom: 1rem;">Family</h3>
+              <p style="font-size: 2.5rem; font-weight: 700; color: var(--p1); margin-bottom: 2rem;">from $50 <span style="font-size: 1rem; font-weight: 500; color: var(--text);">/ DAY</span></p>
               <ul style="list-style: none; padding: 0; margin: 0 0 2.5rem 0; line-height: 2; color: var(--text); font-size: 0.95rem;">
-                <li>&check; High performance e-motion for conquering hills.</li>
-                <li>&check; High performance e-motion for conquering hills.</li>
-                <li>&check; High performance e-motion for conquering hills.</li>
+                <li>&check; Kids bikes (16&Prime;, 20&Prime;, 24&Prime;) &middot; Baby Seat &middot; Tricycle</li>
+                <li>&check; Kazoo Tandem $60 &middot; Bike + Burley Combo $70</li>
+                <li>&check; Helmet and lock included with every bike</li>
+              </ul>
+              <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="product-detail.html">Reserve</a>
+            </div>
+          </div>
+
+          <!-- Weekly (only Cruiser rate is confirmed — Explorer/Family weekly rates pending client confirmation) -->
+          <div class="pricing-panel" data-pricing-panel="weekly" hidden style="display: grid; justify-content: center; max-width: 72rem; margin: 0 auto; text-align: left;">
+            <div style="background: #ffffff; padding: 3rem 2.5rem; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column; max-width: 22rem;">
+              <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--p1); margin-bottom: 1rem;">Cruiser</h3>
+              <p style="font-size: 2.5rem; font-weight: 700; color: var(--p1); margin-bottom: 2rem;">$70 <span style="font-size: 1rem; font-weight: 500; color: var(--text);">/ WEEK</span></p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 2.5rem 0; line-height: 2; color: var(--text); font-size: 0.95rem;">
+                <li>&check; Best value for a full-week 30A vacation</li>
+                <li>&check; Women's, Men's, and Unisex options available</li>
+                <li>&check; Helmet and lock included</li>
               </ul>
               <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="product-detail.html">Reserve</a>
             </div>
@@ -260,37 +370,51 @@
         </div>
       </section>
 
+      <script>
+        (function () {
+          var tabs = document.querySelectorAll("[data-pricing-tab]");
+          var panels = document.querySelectorAll("[data-pricing-panel]");
+          Array.prototype.forEach.call(tabs, function (tab) {
+            tab.addEventListener("click", function () {
+              Array.prototype.forEach.call(panels, function (panel) {
+                panel.hidden = panel.getAttribute("data-pricing-panel") !== tab.getAttribute("data-pricing-tab");
+              });
+            });
+          });
+        })();
+      </script>
+
       <!-- ==================================================================
            06 — Our Simple Rental Process
            ================================================================== -->
       <section class="section process-banner" style="background: #3859ba; color: #ffffff; padding: 5rem 0;">
         <div class="container text-center">
           <p class="eyebrow" style="color: rgba(255,255,255,0.7); margin-bottom: 0.5rem;">PICK UP YOUR RIDE</p>
-          <h2 class="why__title" style="color: #ffffff; margin-bottom: 4rem;">Our Simple Rental Process</h2>
+          <h2 class="why__title" style="color: #ffffff; margin-bottom: 4rem;">Our Simple 30A Bike Rental Process</h2>
 
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+          <div class="rt-grid-4">
             <div style="display: flex; flex-direction: column; align-items: center;">
               <div style="width: 4.5rem; height: 4.5rem; border-radius: 50%; background: rgba(255,255,255,0.15); display: grid; place-items: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">1</div>
               <h3 style="font-family: var(--font-label); font-style: italic; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem;">RESERVE ONLINE</h3>
-              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">Pick your bike, date &amp; location.</p>
+              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">Choose your bike, date, and delivery location on 30A in minutes.</p>
             </div>
 
             <div style="display: flex; flex-direction: column; align-items: center;">
               <div style="width: 4.5rem; height: 4.5rem; border-radius: 50%; background: rgba(255,255,255,0.15); display: grid; place-items: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">2</div>
               <h3 style="font-family: var(--font-label); font-style: italic; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem;">WE DELIVER TO YOU</h3>
-              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">Free delivery to your spot on 30A.</p>
+              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">We bring your rental bikes directly to your 30A vacation rental.</p>
             </div>
 
             <div style="display: flex; flex-direction: column; align-items: center;">
               <div style="width: 4.5rem; height: 4.5rem; border-radius: 50%; background: rgba(255,255,255,0.15); display: grid; place-items: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">3</div>
               <h3 style="font-family: var(--font-label); font-style: italic; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem;">PICK UP &amp; RIDE</h3>
-              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">We set it up. You hop on and enjoy!</p>
+              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">Helmet and lock ready. Hop on and step onto the 30A coastal trail.</p>
             </div>
 
             <div style="display: flex; flex-direction: column; align-items: center;">
               <div style="width: 4.5rem; height: 4.5rem; border-radius: 50%; background: rgba(255,255,255,0.15); display: grid; place-items: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">4</div>
               <h3 style="font-family: var(--font-label); font-style: italic; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem;">ADVENTURE 30A</h3>
-              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">Explore beaches, trails &amp; hidden gems.</p>
+              <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.5;">Explore 19 miles of beaches, trails, and hidden gems on Scenic Highway 30A.</p>
             </div>
           </div>
         </div>
@@ -302,23 +426,23 @@
       <section class="section beaches" style="background: #ffffff; padding: 5rem 0;">
         <div class="container text-center">
           <p class="eyebrow">COASTAL COMMUNITIES</p>
-          <h2 class="why__title" style="margin-bottom: 1rem;">Near By Beaches Worth To Ride</h2>
+          <h2 class="why__title" style="margin-bottom: 1rem;">Bike Rentals Across All of 30A</h2>
           <p class="lead-copy" style="max-width: 52rem; margin: 0 auto 3.5rem; color: var(--text);">
-            Some beaches are lively and full of activity. Others are peaceful escapes surrounded by nature. Discover the distinct character of each stop along the Timpoochee Trail.
+            If you're looking for bike rentals near your 30A vacation rental, you're in the right place. Peddlers delivers from Inlet Beach west to Miramar Beach. Or visit the Peddlers Pavilion in Seacrest Beach in person, right on the coastal path with no detour.
           </p>
 
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: left; margin-bottom: 3.5rem;">
+          <div class="rt-grid-4" style="text-align: left; margin-bottom: 2.5rem;">
             <!-- Rosemary Beach -->
             <article style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
               <div style="position: relative; height: 16rem; overflow: hidden;">
-                <span style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">5 MIN RIDE</span>
+                <span style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">1 MIN RIDE</span>
                 <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-rosemary.jpg" alt="Rosemary Beach" />
               </div>
               <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
                 <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--p1); margin-bottom: 0.5rem;">Rosemary Beach</h3>
-                <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">ELEGANT. WALKABLE. TIMELESS.</p>
+                <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">COBBLESTONE LANES, GULF VIEWS</p>
                 <p style="font-size: 0.95rem; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;">
-                  A European-inspired paradise where boardwalks lead to pristine sands and gas lanterns glow at dusk.
+                  Rosemary Beach is 1 minute east of Peddlers on Scenic Highway 30A. Cobblestone lanes, Barrett Square, and West Indies architecture make it a natural first ride from Seacrest Beach.
                 </p>
                 <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="location.html">BOOK NOW</a>
               </div>
@@ -327,14 +451,14 @@
             <!-- Alys Beach -->
             <article style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
               <div style="position: relative; height: 16rem; overflow: hidden;">
-                <span style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">8 MIN RIDE</span>
+                <span style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">4 MIN RIDE</span>
                 <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-alys.jpg" alt="Alys Beach" />
               </div>
               <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
                 <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--p1); margin-bottom: 0.5rem;">Alys Beach</h3>
-                <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">MODERN COASTAL LUXURY.</p>
+                <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">WHITE WALLS, QUIET COURTYARDS</p>
                 <p style="font-size: 0.95rem; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;">
-                  Defined by striking white architecture and lush courtyards, offering a serene and visually stunning escape.
+                  Alys Beach is 4 minutes west of Peddlers on the 30A coastal path. Stark white Bermudan architecture, quiet pedestrian lanes, and a stop at Fonville Press mid-ride.
                 </p>
                 <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="location.html">BOOK NOW</a>
               </div>
@@ -343,14 +467,14 @@
             <!-- Seacrest Beach -->
             <article style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
               <div style="position: relative; height: 16rem; overflow: hidden;">
-                <span style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">3 MIN RIDE</span>
+                <span style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">HOME BASE</span>
                 <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-seacrest.jpg" alt="Seacrest Beach" />
               </div>
               <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
                 <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--p1); margin-bottom: 0.5rem;">Seacrest Beach</h3>
-                <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">STEPS FROM ADVENTURE.</p>
+                <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">WHERE PEDDLERS CALLS HOME</p>
                 <p style="font-size: 0.95rem; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;">
-                  A high-energy hub with a massive community pool and direct access to some of 30A's best dining and live events.
+                  Peddlers Pavilion sits directly on the 30A coastal path in Seacrest Beach. Walk out the door and you're already riding, no detour needed.
                 </p>
                 <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="location.html">BOOK NOW</a>
               </div>
@@ -359,18 +483,30 @@
             <!-- Inlet Beach -->
             <article style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
               <div style="position: relative; height: 16rem; overflow: hidden;">
-                <span style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">10 MIN RIDE</span>
+                <span style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">5 MIN RIDE</span>
                 <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-inlet.jpg" alt="Inlet Beach" />
               </div>
               <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
                 <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--p1); margin-bottom: 0.5rem;">Inlet Beach</h3>
-                <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">SPACE TO SLOW DOWN.</p>
+                <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 0.75rem;">EASTERN END OF 30A</p>
                 <p style="font-size: 0.95rem; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem;">
-                  One of 30A's last 'wild' feeling beaches, featuring huge dunes and plenty of room to spread out and relax.
+                  Inlet Beach is 5 minutes east of Peddlers. Walton County's largest public beach access with boardwalk ramps, restrooms, and seasonal lifeguards on the Gulf.
                 </p>
                 <a class="btn btn--outline" style="margin-top: auto; text-align: center;" href="location.html">BOOK NOW</a>
               </div>
             </article>
+          </div>
+
+          <p style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; color: #888; text-transform: uppercase; margin-bottom: 1rem;">Delivery also reaches:</p>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-bottom: 2.5rem;">
+            <a class="btn btn--outline" href="location.html" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Seaside</a>
+            <a class="btn btn--outline" href="location.html" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">WaterColor</a>
+            <a class="btn btn--outline" href="location.html" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Seagrove Beach</a>
+            <a class="btn btn--outline" href="location.html" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Grayton Beach</a>
+            <a class="btn btn--outline" href="location.html" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Blue Mountain Beach</a>
+            <a class="btn btn--outline" href="location.html" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Gulf Place</a>
+            <a class="btn btn--outline" href="location.html" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Prominence</a>
+            <a class="btn btn--outline" href="location.html" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">Dune Allen Beach</a>
           </div>
 
           <a class="btn btn--primary" style="min-width: 14rem;" href="location.html">EXPLORE ALL &rarr;</a>
@@ -425,68 +561,84 @@
       <section class="section faq">
         <div class="container">
           <p class="eyebrow text-center">Assistance</p>
-          <h2 class="faq__title text-center">Common Inquiries</h2>
+          <h2 class="faq__title text-center">30A Bike Rental Questions, Answered</h2>
 
           <div class="faq__list">
             <div class="accordion__item is-open">
               <button class="accordion__trigger" type="button" aria-expanded="true">
-                <span>How do I book a bike rental?</span>
+                <span>How much does it cost to rent a bike on 30A?</span>
                 <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </button>
               <div class="accordion__panel">
                 <p>
-                  You can reserve online right here through our website, call us directly at (850) 213-0040, or visit our pavilion in Seacrest Beach. We offer free delivery and pickup for all multi-day rentals along 30A!
+                  Beach cruisers start at $30/day (Monkey Faction) and $40/day for standard cruisers. Kids bikes are $40/day. 7-speed bikes are $50/day. Family options like the Kazoo Kids Tandem are $60/day and the Bike + Burley Combo is $70/day. Every rental includes a helmet and lock.
                 </p>
               </div>
             </div>
 
             <div class="accordion__item">
               <button class="accordion__trigger" type="button" aria-expanded="false">
-                <span>Where can I pick up my bike?</span>
+                <span>Does Peddlers 30A deliver bikes to vacation rentals?</span>
                 <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </button>
               <div class="accordion__panel">
                 <p>
-                  You can pick up your bikes at Peddlers Pavilion (10343 E County Hwy 30A, Seacrest Beach) or have them delivered directly to your vacation rental home.
+                  Yes. Peddlers delivers to vacation rentals across all 30A communities, from Inlet Beach to Miramar Beach. Call 850-213-0040 or book online to arrange delivery. We coordinate timing directly with you.
                 </p>
               </div>
             </div>
 
             <div class="accordion__item">
               <button class="accordion__trigger" type="button" aria-expanded="false">
-                <span>Are helmets and locks included?</span>
+                <span>What's included with a Peddlers 30A bike rental?</span>
                 <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </button>
               <div class="accordion__panel">
                 <p>
-                  Yes! All rentals include complimentary heavy-duty combination locks and standard helmets upon request.
+                  Every full rental includes a helmet and a lock at no extra charge. A bike basket is available as a $5/day add-on. No other fees or deposits are required beyond the rental rate.
                 </p>
               </div>
             </div>
 
             <div class="accordion__item">
               <button class="accordion__trigger" type="button" aria-expanded="false">
-                <span>What is your cancellation policy?</span>
+                <span>Do you rent kids bikes on 30A?</span>
                 <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </button>
               <div class="accordion__panel">
                 <p>
-                  Cancellations made 24 hours prior to your rental start time receive a 100% full refund.
+                  Yes. Peddlers carries kids bikes in 16&Prime;, 20&Prime;, and 24&Prime; sizes, plus kids tricycles, the Kazoo Kids Tandem, Baby Seat Bicycle, Burley trailer combo, Wee HOO trail-a-bike, and Tug A Bug tag-along. Peddlers is the only shop on 30A carrying Wee HOO and Tug A Bug rentals.
                 </p>
               </div>
             </div>
 
             <div class="accordion__item">
               <button class="accordion__trigger" type="button" aria-expanded="false">
-                <span>Do you offer multi-day discounts?</span>
+                <span>Can I walk in without a reservation?</span>
                 <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </button>
               <div class="accordion__panel">
                 <p>
-                  Yes! We offer discounted rates for 3-day and weekly rentals, including free delivery to your rental property.
+                  Yes. Walk-ins are welcome during business hours at the Peddlers Pavilion, 10343 E County Hwy 30A, Seacrest Beach, FL 32461. Online reservations are also available at peddlers30a.com if you'd like to book ahead.
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================================
+           09.5 — Booking CTA
+           ================================================================== -->
+      <section class="section" style="background: var(--p1); padding: 4rem 0; text-align: center;">
+        <div class="container">
+          <h2 style="font-family: var(--font-body); font-weight: 700; font-size: 2.25rem; color: #ffffff; margin-bottom: 1rem;">Ready to Ride?</h2>
+          <p style="color: #ffffff; opacity: 0.9; max-width: 40rem; margin: 0 auto 2rem;">
+            Reserve online or call 850-213-0040. Walk-ins are always welcome at the Peddlers Pavilion on Scenic Highway 30A in Seacrest Beach.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+            <a class="btn btn--sand" href="#catalog">RESERVE A BIKE</a>
+            <a class="btn" style="background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.4); padding: 0.8rem 2.5rem; font-size: 0.85rem;" href="tel:+18502130040">CALL 850-213-0040</a>
           </div>
         </div>
       </section>
@@ -530,18 +682,9 @@
         <div>
           <h2 class="site-footer__heading">CONTACT US</h2>
           <ul>
-            <li><a href="tel:+12144147504">Room Reservations: +1 214 414 7504</a></li>
-            <li><a href="contact.html">Global Reservation Information</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="site-footer__heading">WORLD OF PEDDLERS</h2>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="location.html">Peddlers Impacts</a></li>
-            <li><a href="about.html#fleet">Developers</a></li>
-            <li><a href="about.html">Careers</a></li>
-            <li><a href="contact.html">Media</a></li>
+            <li><a href="tel:+18502130040">(850) 213-0040</a></li>
+            <li><a href="mailto:hello@peddlers30a.com">hello@peddlers30a.com</a></li>
+            <li><a href="contact.html">Contact Page</a></li>
           </ul>
         </div>
         <div>
@@ -565,13 +708,12 @@
 
       <div class="site-footer__base">
         <div class="site-footer__legal">
-          <p>ICP LICENSE <a href="#">17035714</a></p>
-          <p>GONGAN BEIAN: 31010102004896</p>
+          <p><a href="tel:+18502130040">(850) 213-0040</a></p>
         </div>
         <a class="site-footer__logo" href="index.html" aria-label="Peddlers 30A">
           <img src="assets/img/logo-peddlers-30a.png" alt="Peddlers 30A" />
         </a>
-        <p class="site-footer__copy">ROSEWOOD HOTEL GROUP © 2026</p>
+        <p class="site-footer__copy">Peddlers 30A &copy; 2026</p>
       </div>
     </div>
     <div class="site-footer__rule"></div>
