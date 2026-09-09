@@ -17,8 +17,8 @@
   }
 
   .site-header__logo img {
-    width: 9rem;
-    height: 1.75rem;
+    width: 11rem;
+    height: 2.1rem;
   }
 
   .site-header__toggle {
@@ -164,6 +164,18 @@
     min-height: 50rem;
   }
 
+  .curated-grid-1 {
+    display: flex !important;
+    flex-direction: column-reverse;
+
+    gap: 2.5rem !important;
+  }
+
+  .curated-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
   /* ---- Category tiles ---- */
   .categories__grid {
     gap: var(--sp-4);
@@ -212,7 +224,7 @@
   .day-banner__badges {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 6rem;
     justify-items: center;
   }
 
@@ -515,7 +527,7 @@
 @media (max-width: 480px) {
 
   .hero__title {
-    font-size: 1.9rem;
+    font-size: 3.9rem;
   }
 
   .hero__lead {
@@ -553,5 +565,107 @@
 
   .closing__title {
     font-size: 2rem;
+  }
+
+  /* ---- Location Page Responsive ---- */
+  .page-location .hero__title {
+    font-size: 3.5rem !important;
+  }
+  .page-location .hero__lead {
+    font-size: 1.15rem !important;
+  }
+  .page-location .rental-filters {
+    justify-content: flex-start !important;
+    padding-bottom: 0.5rem;
+  }
+  .page-location .pillars__grid,
+  .page-location .cravings__grid,
+  .page-location .beaches__grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+
+  .page-location .pillars__grid::-webkit-scrollbar,
+  .page-location .cravings__grid::-webkit-scrollbar,
+  .page-location .beaches__grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .page-location .pillars__grid > *,
+  .page-location .cravings__grid > *,
+  .page-location .beaches__grid > * {
+    flex: 0 0 85% !important;
+    max-width: 85% !important;
+    scroll-snap-align: start !important;
+  }
+
+  .page-location .service__grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .page-location .local-intro h2,
+  .page-location .pillars h2,
+  .page-location .cravings h2 {
+    font-size: 2.5rem !important;
+  }
+  .page-location .local-intro p {
+    font-size: 1.15rem !important;
+  }
+  .page-location .closing > .container > div {
+    flex-direction: column !important;
+    min-height: auto !important;
+  }
+  .page-location .closing-image-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    height: 300px !important;
+  }
+  .page-location .closing-text-wrapper {
+    padding: 3rem 1.5rem !important;
+    max-width: 100% !important;
+  }
+  .page-location .closing-text-wrapper h2 {
+    font-size: 2.5rem !important;
+  }
+  .page-location .closing-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .page-location .closing-buttons a {
+    text-align: center;
+  }
+
+  /* ---- Contact Page Responsive ---- */
+  .page-contact .hero__title {
+    font-size: 2.5rem !important;
+  }
+  .page-contact .hero__actions {
+    flex-direction: column !important;
+  }
+  .page-contact .hero__actions .btn {
+    width: 100% !important;
+    text-align: center;
+  }
+  .page-contact .inquiry__grid,
+  .page-contact .inquiry-form__row,
+  .page-contact .direct-connection__grid,
+  .page-contact .seasonal-hours__grid {
+    grid-template-columns: 1fr !important;
+  }
+  .page-contact .inquiry__grid > div {
+    padding: 3rem 1.5rem !important;
+  }
+  .page-contact .seasonal-hours__grid > div {
+    padding: 3rem 1.5rem !important;
+  }
+  .page-contact .inquiry__image {
+    display: none !important;
   }
 }

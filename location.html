@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="assets/css/fonts.css?v=80" />
   <link rel="stylesheet" href="assets/css/base.css?v=80" />
   <link rel="stylesheet" href="assets/css/components.css?v=80" />
-  <link rel="stylesheet" href="assets/css/sections.css?v=83" />
-  <link rel="stylesheet" href="assets/css/mobile.css?v=4" />
+  <link rel="stylesheet" href="assets/css/sections.css?v=84" />
+  <link rel="stylesheet" href="assets/css/mobile.css?v=5" />
 </head>
 
 <body class="page-location">
@@ -30,6 +30,7 @@
         <a class="site-nav__link" href="index.html">HOME</a>
         <a class="site-nav__link is-active" href="location.html">LOCATION</a>
         <a class="site-nav__link" href="about.html">ABOUT</a>
+        <a class="site-nav__link" href="contact.html">CONTACT</a>
       </nav>
 
       <div class="site-header__actions">
@@ -129,7 +130,7 @@
           <button class="btn btn--outline" style="border-radius: 0; font-size: 1rem; padding: 1rem 0.5rem; flex: 1; max-width: 336px; white-space: nowrap; color: var(--p1); border-color: rgba(57, 89, 186, 0.3);">ADULT BIKES</button>
         </div>
 
-        <div class="rental__grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: left;">
+        <div class="rental__grid">
           <article class="bike-card" style="display: flex; flex-direction: column;">
             <figure class="bike-card__media" style="margin-bottom: 1rem; aspect-ratio: 1/1; overflow: hidden;">
               <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/s05-1.jpg" alt="Adult Female Cruiser" />
@@ -204,7 +205,7 @@
           Peddlers Pavilion brings food, drinks, shopping, and laid-back coastal energy together in one place.<br>Stop in before your ride, come back afterward, or make the Pavilion part of the day itself.
         </p>
 
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: left;">
+        <div class="pillars__grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: left;">
           <!-- Pillar 1 -->
           <article style="display: flex; flex-direction: column;">
             <div style="aspect-ratio: 3/4; overflow: hidden; margin-bottom: 1rem;">
@@ -279,7 +280,7 @@
           Peddlers Pavilion brings food, drinks, shopping, and laid-back coastal energy together in one place.<br>Stop in before your ride, come back afterward, or make the Pavilion part of the day itself.
         </p>
 
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; text-align: left;">
+        <div class="cravings__grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; text-align: left;">
           <!-- Card 1 -->
           <div style="background: var(--p1); padding: 4rem 2.5rem; display: flex; flex-direction: column;">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 3rem;">
@@ -480,7 +481,7 @@
         <p class="eyebrow text-center">THE SERVICE STANDARD</p>
         <h2 class="why__title text-center" style="margin-bottom: 3.5rem;">Why Rent Our Bike</h2>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+        <div class="service__grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
           <div style="background: #ffffff; padding: 3rem; border-radius: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
             <span class="script"
               style="font-size: 3.5rem; color: var(--p1); line-height: 1; display: block; margin-bottom: 1rem;">01</span>
@@ -531,16 +532,16 @@
         <div style="position: relative; overflow: hidden; min-height: 420px; display: flex; align-items: center; background: #000000;">
           
           <!-- Image Container (Right Side) -->
-          <div style="position: absolute; right: 0; top: 0; height: 100%; width: 55%; z-index: 0;">
+          <div class="closing-image-wrapper" style="position: absolute; right: 0; top: 0; height: 100%; width: 55%; z-index: 0;">
             <!-- Subtle Overlay -->
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, #000000 0%, rgba(0,0,0,0) 30%); z-index: 1;"></div>
             <img src="assets/img/cta-new-bg.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" />
           </div>
 
           <!-- Text Content (Left Side) -->
-          <div style="position: relative; z-index: 2; padding: 4rem 5rem; width: 100%; max-width: 700px;">
+          <div class="closing-text-wrapper" style="position: relative; z-index: 2; padding: 4rem 5rem; width: 100%; max-width: 700px;">
             <h2 style="font-size: 3.25rem; font-weight: 400; color: #e2d1bc; margin-bottom: 2.5rem; line-height: 1.2;">Your 30A Story Begins Here</h2>
-            <div style="display: flex; gap: 1rem; align-items: center;">
+            <div class="closing-buttons" style="display: flex; gap: 1rem; align-items: center;">
               <a href="rentals.html" style="background: #f4f4f4; color: var(--s2); font-weight: 500; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 1rem 2.5rem; border: none; text-decoration: none;">RESERVE ONLINE</a>
               <a href="contact.html" style="background: transparent; border: 1px solid rgba(255,255,255,0.4); color: #ffffff; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 1rem 2.5rem; text-decoration: none;">CONTACT OUR TEAM</a>
             </div>
@@ -562,8 +563,7 @@
           distinct character of each stop along the Timpoochee Trail.
         </p>
 
-        <div
-          style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: left; margin-bottom: 3.5rem;">
+        <div class="beaches__grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: left; margin-bottom: 3.5rem;">
           <!-- Rosemary Beach -->
           <article
             style="background: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">
@@ -571,7 +571,7 @@
               <span
                 style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">5
                 MIN RIDE</span>
-              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-rosemary.jpg"
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/beach-1.png"
                 alt="Rosemary Beach" />
             </div>
             <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
@@ -595,7 +595,7 @@
               <span
                 style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">8
                 MIN RIDE</span>
-              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-alys.jpg"
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/beach-2.png"
                 alt="Alys Beach" />
             </div>
             <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
@@ -619,7 +619,7 @@
               <span
                 style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">3
                 MIN RIDE</span>
-              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-seacrest.jpg"
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/beach-3.png"
                 alt="Seacrest Beach" />
             </div>
             <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
@@ -644,7 +644,7 @@
               <span
                 style="position: absolute; top: 1rem; left: 1rem; background: var(--p1); color: #fff; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; z-index: 1;">10
                 MIN RIDE</span>
-              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/dest-inlet.jpg"
+              <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/img/beach-4.png"
                 alt="Inlet Beach" />
             </div>
             <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">

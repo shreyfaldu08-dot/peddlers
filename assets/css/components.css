@@ -17,7 +17,7 @@
   border: 1px solid transparent;
   border-radius: var(--radius);
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: 400;
   line-height: normal;
   letter-spacing: var(--tracking-wide);
@@ -93,7 +93,7 @@
 
 .btn--outline:hover {
   background: var(--p1);
-  color: var(--s1);
+  color: #ffffff !important;
 }
 
 /* Teal outline — Pavilion CTAs. */
@@ -290,7 +290,7 @@
   display: none;
 }
 
-.rail > * {
+.rail>* {
   scroll-snap-align: start;
   flex: none;
 }
@@ -362,7 +362,7 @@
   grid-template-rows: 1fr;
 }
 
-.accordion__panel > div {
+.accordion__panel>div {
   overflow: hidden;
 }
 
