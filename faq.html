@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peddlers 30A FAQ | Bike Rentals, Pricing & Trail Info</title>
+  <meta name="description"
+    content="Everything you need to know before renting a bike on 30A. Booking, pricing, kids options, delivery, trail distances, and hours. Answered by Peddlers Pavilion." />
+
+  <link rel="stylesheet" href="assets/css/tokens.css?v=71" />
+  <link rel="stylesheet" href="assets/css/fonts.css?v=80" />
+  <link rel="stylesheet" href="assets/css/base.css?v=80" />
+  <link rel="stylesheet" href="assets/css/components.css?v=80" />
+  <link rel="stylesheet" href="assets/css/sections.css?v=85" />
+  <link rel="stylesheet" href="assets/css/mobile.css?v=5" />
+</head>
+
+<body class="page-faq">
+  <!-- ====================================================================
+         01 — Top navigation (Header)
+         ==================================================================== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html" aria-label="Peddlers 30A — home">
+        <img src="assets/img/logo-peddlers-30a.png" alt="Peddlers 30A" />
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a class="site-nav__link" href="index.html">HOME</a>
+        <a class="site-nav__link" href="location.html">LOCATION</a>
+        <a class="site-nav__link" href="about.html">ABOUT</a>
+        <a class="site-nav__link is-active" href="faq.html">FAQ</a>
+        <a class="site-nav__link" href="contact.html">CONTACT</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn btn--primary" href="tel:+18502130040">
+          <img class="btn__icon" src="assets/icons/phone.svg" alt="" />
+          (850) 213-0040
+        </a>
+        <a class="btn btn--sand" href="rentals.html">RESERVE NOW</a>
+      </div>
+
+      <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+        aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================================================================
+           02 — Hero (Your Questions, Answered)
+           ================================================================== -->
+    <style>
+      .faq-hero {
+        position: relative;
+        background: var(--p1);
+        padding: 4rem 1.5rem 3rem;
+        text-align: center;
+      }
+
+      .faq-hero__title {
+        color: #ffffff;
+        margin-bottom: 1rem;
+        font-family: var(--font-body);
+        font-weight: 700;
+        font-size: clamp(1.75rem, 1rem + 3vw, 3.25rem);
+        line-height: 1.15;
+      }
+
+      .faq-hero__lead {
+        color: #ffffff;
+        opacity: 0.9;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        font-size: clamp(0.9rem, 0.8rem + 0.4vw, 1.05rem);
+        line-height: 1.6;
+      }
+
+      .faq-hero__topics {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .faq-hero__topics a {
+        padding: 0.55rem 1.1rem;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        border-radius: 2px;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 768px) {
+        .faq-hero {
+          padding: 2.75rem 1.25rem 2.25rem;
+        }
+
+        .faq-hero__lead {
+          margin-bottom: 1.5rem;
+        }
+
+        .faq-hero__topics {
+          gap: 0.5rem;
+        }
+
+        .faq-hero__topics a {
+          padding: 0.5rem 0.85rem;
+          font-size: 0.7rem;
+        }
+      }
+    </style>
+    <section class="faq-hero">
+      <div class="container" style="position: relative; z-index: 1; max-width: 900px; margin: 0 auto;">
+        <span
+          style="display: block; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.1em; color: var(--s3); margin-bottom: 1rem; text-transform: uppercase;">FAQ</span>
+        <h1 class="faq-hero__title">Your Questions, Answered</h1>
+        <p class="faq-hero__lead">
+          Everything you need before you ride. Browse by topic below, or call us directly at 850-213-0040 if you'd
+          rather just talk it through.
+        </p>
+
+        <div class="faq-hero__topics">
+          <a href="#booking">Booking &amp; Reservations</a>
+          <a href="#pricing">Pricing &amp; Inclusions</a>
+          <a href="#fleet">The Bike Fleet</a>
+          <a href="#kids-families">Kids &amp; Families</a>
+          <a href="#delivery">Delivery &amp; Pickup</a>
+          <a href="#riding">Riding on 30A</a>
+          <a href="#hours-location">Hours &amp; Location</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           03 — Section 1: Booking and Reservations
+           ================================================================== -->
+    <section class="section faq" id="booking">
+      <div class="container">
+        <p class="eyebrow text-center">Section 1</p>
+        <h2 class="faq__title text-center">Booking and Reservations</h2>
+
+        <div class="accordion faq__list">
+          <div class="accordion__item is-open">
+            <button class="accordion__trigger" type="button">
+              <span>Do I need to book in advance or can I walk in?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Walk-ins are always welcome. If you're visiting during peak summer weeks or over a holiday
+                  weekend, booking ahead guarantees the specific bike you want. We fill up fast in July and
+                  August, especially for family combos and specialty bikes. If you're flexible on type, you can
+                  usually walk in and ride within 10 minutes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>How do I make a reservation?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  You can reserve online at peddlers30a.com, call us at 850-213-0040, or email
+                  hello@peddlers30a.com. Online is the fastest option. If you have questions about which bike is
+                  right for your group, call us and we'll sort it out together.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Can I cancel or change my booking?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Yes. Call or email us as soon as you know your plans have changed. We ask for as much notice as
+                  possible so we can free up the bike for another rider. Our team will walk you through the
+                  specific cancellation terms when you book.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>How far in advance should I book during summer?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  For peak season (Memorial Day through Labor Day), we recommend booking 2 to 4 days ahead for
+                  standard bikes and 5 to 7 days ahead for specialty items like the Kazoo Tandem, Bike + Burley
+                  Combo, or Wee HOO. These are one-of-a-kind in Seacrest Beach and go fast.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Do you rent bikes by the hour?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  We rent by the day. This gives you the freedom to ride whenever you want without watching the
+                  clock. Pick up in the morning, drop off before we close, and your whole day is yours.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           04 — Section 2: Pricing and What's Included
+           ================================================================== -->
+    <section class="section faq" id="pricing" style="background: #f8f8f8;">
+      <div class="container">
+        <p class="eyebrow text-center">Section 2</p>
+        <h2 class="faq__title text-center">Pricing and What's Included</h2>
+
+        <div class="accordion faq__list">
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>How much does a bike rental cost?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Rentals start at $30/day for the Monkey Faction Cruiser and go up to $70/day for the Bike +
+                  Burley Combo package. Most standard adult beach cruisers are $40/day. Kids bikes are $40/day.
+                  Specialty bikes like the 7-speed, adult tricycle, and baby seat bicycle are $50/day. The Kazoo
+                  Kids Tandem is $60/day. See the full fleet and pricing on our bike rentals page.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>What's included with every rental?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Every full bike rental comes with a helmet and a lock. That's standard; you don't pay extra for
+                  either. If you want a basket, that's a $5/day add-on. Some bikes like the Baby Seat Bicycle come
+                  with a child seat already included; the product page will always list exactly what comes with
+                  that specific bike.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Do you offer weekly rates?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Yes. Our standard beach cruisers (men's, women's, and unisex) are available at $70/week; that's
+                  a better rate than buying 7 individual days. If you're staying on 30A for a week and want bikes
+                  the whole time, ask us when you book.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Do you charge a deposit?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Contact us directly for deposit details. Policies can vary based on rental type and duration.
+                  Call us at 850-213-0040 or email hello@peddlers30a.com before your trip and we'll give you the
+                  full picture.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>What payment methods do you accept?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  We accept all major credit and debit cards. Please confirm with us directly if you have a
+                  specific payment preference before booking.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           05 — Section 3: The Bike Fleet
+           ================================================================== -->
+    <section class="section faq" id="fleet">
+      <div class="container">
+        <p class="eyebrow text-center">Section 3</p>
+        <h2 class="faq__title text-center">The Bike Fleet</h2>
+
+        <div class="accordion faq__list">
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>What types of bikes do you offer?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  We carry a full range: standard beach cruisers for adults (men's, women's, and unisex), 7-speed
+                  geared bikes for longer rides, a Monkey Faction Cruiser, an adult tricycle, kids bikes from
+                  16-inch through 24-inch, a kids tricycle, and a full family lineup including the Kazoo Kids
+                  Tandem and Bike + Burley Combo. We also carry the Wee HOO and Tug A Bug tag-along attachments
+                  for young co-riders; the only rental shop on 30A that carries either.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Do you have electric bikes?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  We do not currently offer e-bikes. Our 7-speed cruisers are the best option for covering more
+                  ground. The trail along 30A is flat and paved the whole way, so even a standard beach cruiser
+                  handles the distance comfortably for most riders.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Which bike is right for me?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  For a casual beach day or short coastal ride, a standard beach cruiser does the job. If you want
+                  to cover more distance, say heading east toward Rosemary Beach and beyond, a 7-speed bike gives
+                  you better range. If balance is a concern, the adult tricycle is the right call. Not sure? Call
+                  us at 850-213-0040 and we'll ask a few quick questions and point you in the right direction.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Do you have bikes for taller or larger adults?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Yes. Our fleet includes bikes in different frame sizes. When you book, let us know your height
+                  and we'll make sure the right fit is waiting for you. If you have specific sizing questions,
+                  call ahead.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>How big is your fleet?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  We carry the largest bike fleet on 30A. Exact availability changes daily based on rentals and
+                  maintenance. Walk-ins are welcome, and reservations guarantee your specific selection. Booking
+                  ahead is the best way to lock in your first choice.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           06 — Section 4: Kids and Families
+           ================================================================== -->
+    <section class="section faq" id="kids-families" style="background: #f8f8f8;">
+      <div class="container">
+        <p class="eyebrow text-center">Section 4</p>
+        <h2 class="faq__title text-center">Kids and Families</h2>
+
+        <div class="accordion faq__list">
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>What age can a child ride their own bike?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Our 16-inch kids bikes are suited for children roughly 3 to 6 years old (around 35 to 48 inches
+                  tall). The 20-inch bikes suit ages 5 to 8, and the 24-inch bikes are right for ages 7 to 11. If
+                  your child is not quite ready to ride solo, we have tag-along options and a kids tricycle.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>What options do you have for toddlers and very young kids?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Two great options. The Burley Trailer attaches to your bike and seats up to two small children;
+                  they ride along while you pedal. The Baby Seat Bicycle has a built-in child seat on the frame,
+                  ideal for one younger child (adults must be at least 5'2" to ride comfortably). Both are
+                  included or available as part of a rental package.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>What is the difference between the Tug A Bug and the Wee HOO?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Both are tag-along attachments that hitch to the rear of your adult bike. The Wee HOO puts your
+                  child in a lower, recumbent-style seat and is best for ages 3 to 8. The Tug A Bug is more
+                  upright, with its own seat and handlebars, and suits ages 3 to 9 who are a little more
+                  confident. Both are available exclusively at Peddlers on 30A. Not sure which fits your child?
+                  Call us and we'll help you decide.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Do you have a bike the whole family can ride together?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Yes. The Kazoo Kids Tandem is a two-person bike with a parent in front and a child co-pilot
+                  behind in a stoker seat. The Bike + Burley Combo pairs a full adult bike with a Burley trailer
+                  for small kids. And for families where everyone rides their own bike, we have matching sets in
+                  multiple sizes. We can put together a full family fleet, just let us know your group at
+                  booking.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Are helmets provided for kids too?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Yes. Helmets are included with every full bike rental, including kids bikes. Florida law
+                  requires helmets for cyclists under 16. We make it easy; yours is ready when you pick up.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           07 — Section 5: Delivery and Pickup
+           ================================================================== -->
+    <section class="section faq" id="delivery">
+      <div class="container">
+        <p class="eyebrow text-center">Section 5</p>
+        <h2 class="faq__title text-center">Delivery and Pickup</h2>
+
+        <div class="accordion faq__list">
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Do you deliver bikes to vacation rentals on 30A?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Yes. We deliver to all 30A communities. If your vacation rental is in Rosemary Beach, Alys
+                  Beach, Seaside, WaterColor, Grayton Beach, Blue Mountain Beach, or anywhere else along the 30A
+                  corridor, we'll bring the bikes to you. Contact us to arrange delivery and confirm timing.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Is there a delivery fee?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Delivery fees and logistics depend on your location and order size. Call us at 850-213-0040 or
+                  email hello@peddlers30a.com when booking and we'll give you the full details for your specific
+                  address.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>What time can bikes be delivered?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Delivery times depend on our schedule and your location. Contact us in advance and we'll
+                  coordinate a window that works around your plans. We recommend booking delivery at least a day
+                  ahead during peak season.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           08 — Section 6: Riding on 30A
+           ================================================================== -->
+    <section class="section faq" id="riding" style="background: #f8f8f8;">
+      <div class="container">
+        <p class="eyebrow text-center">Section 6</p>
+        <h2 class="faq__title text-center">Riding on 30A</h2>
+
+        <div class="accordion faq__list">
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Is the bike trail on 30A easy to ride?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Yes. The paved path along Scenic Highway 30A is flat the entire way, no hills, no gravel. It
+                  runs 19 miles total from Camp Helen State Park in the east to Miramar Beach in the west. Most
+                  fitness levels handle it without any trouble. Kids, seniors, and casual riders all enjoy it. The
+                  biggest variable is heat; plan your ride early in the morning or after 4pm in summer.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>How far is it from Peddlers to the main 30A communities?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  We are located right on Scenic Highway 30A in Seacrest Beach. Alys Beach is about a mile east.
+                  Rosemary Beach is roughly 1.2 miles east. Heading west, Seagrove Beach, WaterColor, and Seaside
+                  are all reachable along the paved path. For covering the western half of 30A, a 7-speed bike
+                  gives you more range. Ask us when you pick up and we'll map out the best route for your group.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>What is the best time of day to ride on 30A?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Early morning, before 9am, is the best window in summer. The trail is quiet, the air is cool,
+                  and the light is something else. The stretch from Seacrest Beach east to Rosemary Beach before
+                  breakfast is one of the best rides on the Florida Panhandle. If you're riding later in the day,
+                  plan for shade stops and bring water. After 4pm is the second-best window once the heat breaks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Do I need to wear a helmet on 30A?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Florida law requires helmets for riders under 16. We strongly recommend helmets for riders of
+                  all ages. Helmets are included with every full bike rental at Peddlers, so there's nothing extra
+                  to bring or buy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           09 — Section 7: Hours, Location, and Parking
+           ================================================================== -->
+    <section class="section faq" id="hours-location">
+      <div class="container">
+        <p class="eyebrow text-center">Section 7</p>
+        <h2 class="faq__title text-center">Hours, Location, and Parking</h2>
+
+        <div class="accordion faq__list">
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Where is Peddlers located?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  We're at 10343 E County Hwy 30A, Inlet Beach, FL 32461; right on Scenic Highway 30A in Seacrest
+                  Beach. You're on the trail the moment you walk out the door. Google Maps and the address above
+                  will take you straight to us.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>What are your hours?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Monday through Friday, 8 AM to 6 PM. Saturday, 7 AM to 7 PM. Sunday, 9 AM to 5 PM. Hours may
+                  extend during peak summer season. Check our Google listing for the most current times, or call
+                  us at 850-213-0040.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Is there parking at the pavilion?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Yes. Free parking is available on site. Pull in, pick up your bikes, and you're riding in
+                  minutes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           10 — Closing CTA
+           ================================================================== -->
+    <section class="section" style="background: var(--p1); padding: 4rem 1rem; text-align: center;">
+      <div class="container">
+        <h2 style="font-family: var(--font-body); font-weight: 700; font-size: 2.25rem; color: #ffffff; margin-bottom: 1.5rem;">
+          Still Have a Question?</h2>
+        <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+          <a class="btn btn--sand" href="rentals.html">RESERVE ONLINE</a>
+          <a class="btn" style="background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.4); padding: 0.8rem 2.5rem; font-size: 0.85rem;" href="contact.html">CONTACT OUR TEAM</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+         11 — Site Footer
+         ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__cols">
+        <div>
+          <h2 class="site-footer__heading">CONTACT US</h2>
+          <ul>
+            <li><a href="tel:+12144147504">Room Reservations: +1 214 414 7504</a></li>
+            <li><a href="contact.html">Global Reservation Information</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__heading">WORLD OF PEDDLERS</h2>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="location.html">Peddlers Impacts</a></li>
+            <li><a href="about.html#fleet">Developers</a></li>
+            <li><a href="about.html">Careers</a></li>
+            <li><a href="contact.html">Media</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__heading">FOLLOW US</h2>
+          <ul>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook ↗</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram ↗</a></li>
+            <li><a href="#" target="_blank" rel="noopener">WeChat</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="site-footer__heading">TERMS</h2>
+          <ul>
+            <li><a href="#">Accessibility Statement</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__base">
+        <div class="site-footer__legal">
+          <p>ICP LICENSE <a href="#">17035714</a></p>
+          <p>GONGAN BEIAN: 31010102004896</p>
+        </div>
+        <a class="site-footer__logo" href="index.html" aria-label="Peddlers 30A">
+          <img src="assets/img/logo-peddlers-30a.png" alt="Peddlers 30A" />
+        </a>
+        <p class="site-footer__copy">ROSEWOOD HOTEL GROUP © 2026</p>
+      </div>
+    </div>
+    <div class="site-footer__rule"></div>
+  </footer>
+
+  <script src="assets/js/main.js?v=80"></script>
+</body>
+
+</html>
