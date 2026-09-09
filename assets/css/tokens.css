@@ -90,17 +90,70 @@
   }
 }
 
-@media (max-width: 720px) {
+/* ---- Tablet (768px) ---- */
+@media (max-width: 768px) {
   :root {
     --gutter: 1.25rem;
+    --nav-h: 3.75rem;
+
+    /* Script / display headings */
     --fs-script-xxl: 3.5rem;
-    --fs-script-xl: 3rem;
-    --fs-script-lg: 2.5rem;
-    --fs-script-md: 2.125rem;
-    --fs-script-sm: 1.875rem;
-    --fs-script-xs: 1.5rem;
-    --fs-label-lg: 1.375rem;
-    --fs-label-md: 1.1875rem;
-    --fs-label-sm: 1.0625rem;
+    --fs-script-xl:  3rem;
+    --fs-script-lg:  2.5rem;
+    --fs-script-md:  2rem;
+    --fs-script-sm:  1.75rem;
+    --fs-script-xs:  1.375rem;
+
+    /* Label / card titles */
+    --fs-label-lg: 1.25rem;
+    --fs-label-md: 1.0625rem;
+    --fs-label-sm: 0.9375rem;
+    --fs-label-xs: 0.875rem;
+
+    /* Body copy */
+    --fs-body-lg: 1rem;
+    --fs-body-md: 0.9375rem;
+    --fs-body-sm: 0.8125rem;
+    --fs-body-xs: 0.6875rem;
+
+    /* Spacing — tighten large steps */
+    --sp-9:  3.5rem;
+    --sp-10: 4rem;
+    --sp-11: 5rem;
+  }
+}
+
+/* ---- Small phones (480px) ---- */
+@media (max-width: 480px) {
+  :root {
+    --gutter: 1rem;
+    --nav-h: 3.5rem;
+
+    /* Script / display headings */
+    --fs-script-xxl: 2.5rem;
+    --fs-script-xl:  2.25rem;
+    --fs-script-lg:  2rem;
+    --fs-script-md:  1.75rem;
+    --fs-script-sm:  1.5rem;
+    --fs-script-xs:  1.25rem;
+
+    /* Label / card titles */
+    --fs-label-lg: 1.125rem;
+    --fs-label-md: 1rem;
+    --fs-label-sm: 0.875rem;
+    --fs-label-xs: 0.8125rem;
+
+    /* Body copy */
+    --fs-body-lg: 0.9375rem;
+    --fs-body-md: 0.875rem;
+    --fs-body-sm: 0.75rem;
+    --fs-body-xs: 0.6875rem;
+
+    /* Spacing */
+    --sp-7:  2rem;
+    --sp-8:  2.5rem;
+    --sp-9:  3rem;
+    --sp-10: 3.5rem;
+    --sp-11: 4rem;
   }
 }

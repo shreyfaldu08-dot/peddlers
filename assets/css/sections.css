@@ -154,7 +154,7 @@ main>section+section {
   max-width: 48rem;
   margin-top: var(--sp-5);
   font-family: var(--font-body);
-  font-size: 1.25rem;
+  font-size: var(--fs-body-lg);
   line-height: 1.6;
   color: var(--white);
 }
@@ -209,7 +209,7 @@ main>section+section {
 .trust__title {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 1.5625rem;
+  font-size: var(--fs-label-md);
   letter-spacing: 0;
   color: var(--p3);
   text-transform: uppercase;
@@ -217,7 +217,7 @@ main>section+section {
 }
 
 .trust__meta {
-  font-size: 1.5625rem;
+  font-size: var(--fs-label-md);
   letter-spacing: var(--tracking-wider);
   text-transform: capitalize;
   color: var(--text);
@@ -249,7 +249,7 @@ main>section+section {
 .about__title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   line-height: 1.15;
   color: var(--p1);
   margin-top: var(--sp-3);
@@ -277,13 +277,13 @@ main>section+section {
 .about__stat-num {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.875rem;
+  font-size: var(--fs-label-lg);
   color: var(--p1);
 }
 
 .about__stat-lbl {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: var(--fs-body-sm);
   color: var(--text);
   margin-top: 0.25rem;
 }
@@ -330,6 +330,7 @@ main>section+section {
   position: relative;
   overflow: hidden;
   display: block;
+  width: 100%;
 }
 
 .categories .media-card__tag--top {
@@ -365,7 +366,7 @@ main>section+section {
 }
 
 .rental .eyebrow {
-  font-size: 1.5625rem;
+  font-size: var(--fs-label-md);
   font-weight: 400;
   text-transform: none;
   letter-spacing: 0;
@@ -374,7 +375,7 @@ main>section+section {
 .rental__title {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   color: var(--p3);
   margin-top: var(--sp-2);
 }
@@ -391,7 +392,7 @@ main>section+section {
   min-height: 3.25rem;
   padding-inline: 2.5rem;
   white-space: nowrap;
-  font-size: 1.25rem;
+  font-size: var(--fs-body-lg);
   letter-spacing: 0;
   line-height: 1;
 }
@@ -426,12 +427,20 @@ main>section+section {
   transform: scale(1.04);
 }
 
-.bike-card__name {
+/* Body grows to fill card height so button always sits at the bottom */
+.bike-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.bike-card__name,
+.bike-card__title {
   color: var(--p3);
   margin-top: 1.25rem;
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.9375rem;
+  font-size: var(--fs-label-lg);
 }
 
 .bike-card__price {
@@ -439,19 +448,23 @@ main>section+section {
   margin: 0.25rem 0 1.25rem;
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.5625rem;
+  font-size: var(--fs-label-md);
 }
 
-.bike-card .btn {
+/* Push button to bottom of card regardless of title length */
+.bike-card .btn,
+.bike-card__cta {
+  margin-top: auto;
   border-color: var(--p2);
   color: var(--p2);
-  font-size: 1.25rem;
+  font-size: var(--fs-body-md);
   letter-spacing: 0;
   line-height: 1;
   font-weight: 400;
 }
 
-.bike-card .btn:hover {
+.bike-card .btn:hover,
+.bike-card__cta:hover {
   background: var(--p2);
   color: var(--white);
 }
@@ -482,7 +495,7 @@ main>section+section {
 }
 
 .day-banner__eyebrow {
-  font-size: 1.5625rem;
+  font-size: var(--fs-label-md);
   letter-spacing: 0;
   text-transform: uppercase;
   color: #d9f0f4;
@@ -495,7 +508,7 @@ main>section+section {
   font-family: var(--font-body);
   font-weight: 700;
   color: var(--white);
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   line-height: 1;
   margin: 0.5rem 0 1.75rem;
 }
@@ -503,7 +516,7 @@ main>section+section {
 .day-banner__btn {
   border-color: var(--p2);
   color: var(--p2);
-  font-size: 1.25rem;
+  font-size: var(--fs-body-lg);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0;
@@ -585,7 +598,7 @@ main>section+section {
 .why__title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   color: var(--p1);
   margin-top: var(--sp-2);
 }
@@ -634,7 +647,7 @@ main>section+section {
   color: var(--p1);
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: var(--fs-label-sm);
   position: relative;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -643,7 +656,7 @@ main>section+section {
 
 .why__item .body-copy {
   color: var(--text);
-  font-size: 0.95rem;
+  font-size: var(--fs-body-sm);
   line-height: 1.6;
 }
 
@@ -665,7 +678,7 @@ main>section+section {
 
 .experiences__head .eyebrow {
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: var(--fs-body-md);
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
@@ -674,13 +687,13 @@ main>section+section {
 }
 
 .experiences__head .btn {
-  font-size: 1.25rem;
+  font-size: var(--fs-body-lg);
 }
 
 .experiences__title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   color: var(--p1);
   margin-top: var(--sp-2);
 }
@@ -740,7 +753,7 @@ main>section+section {
   font-family: var(--font-label);
   font-style: italic;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: var(--fs-label-sm);
 }
 
 .exp-card__meta {
@@ -790,7 +803,7 @@ main>section+section {
 .pavilion__title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   color: var(--p1);
   margin-top: var(--sp-3);
 }
@@ -818,7 +831,7 @@ main>section+section {
   font-family: var(--font-label);
   font-style: italic;
   font-weight: 600;
-  font-size: 1.875rem;
+  font-size: var(--fs-label-lg);
   letter-spacing: 0;
   line-height: 1;
   color: var(--p1);
@@ -833,7 +846,7 @@ main>section+section {
 .pavilion__content .btn {
   margin-top: var(--sp-4);
   min-width: 16rem;
-  font-size: 1.25rem;
+  font-size: var(--fs-body-lg);
 }
 
 /* --------------------------------------------------------------------------
@@ -848,7 +861,7 @@ main>section+section {
 .gathering__title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   color: var(--p1);
   margin-top: var(--sp-2);
 }
@@ -894,14 +907,14 @@ main>section+section {
   font-family: var(--font-label);
   font-style: italic;
   font-weight: 700;
-  font-size: 1.9375rem;
+  font-size: var(--fs-label-lg);
   line-height: 1;
   letter-spacing: 0;
 }
 
 .venue-card__copy {
   margin-top: 0.5rem;
-  font-size: 1.25rem;
+  font-size: var(--fs-body-lg);
   line-height: 1;
   letter-spacing: 0;
   color: var(--p1);
@@ -919,7 +932,7 @@ main>section+section {
 .merch__title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   color: var(--p1);
   margin-top: var(--sp-2);
 }
@@ -966,7 +979,7 @@ main>section+section {
 .merch-card__label {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   line-height: 1;
   color: var(--white);
   letter-spacing: 0;
@@ -981,7 +994,7 @@ main>section+section {
   display: grid;
   place-items: center;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: var(--fs-body-md);
 }
 
 /* --------------------------------------------------------------------------
@@ -996,7 +1009,7 @@ main>section+section {
 .path__title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   color: var(--p1);
   margin-top: var(--sp-2);
 }
@@ -1047,7 +1060,7 @@ main>section+section {
 
 .path-card__num {
   font-family: var(--font-script);
-  font-size: 3.5rem;
+  font-size: var(--fs-script-sm);
   line-height: 1;
   color: rgba(255, 255, 255, 0.7);
   display: block;
@@ -1058,14 +1071,14 @@ main>section+section {
   font-family: var(--font-label);
   font-style: italic;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: var(--fs-label-sm);
   color: #38bdf8;
   letter-spacing: 0.05rem;
 }
 
 .path-card__copy {
   margin-top: 0.75rem;
-  font-size: 0.95rem;
+  font-size: var(--fs-body-sm);
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.85);
 }
@@ -1081,7 +1094,7 @@ main>section+section {
 
 .rhythms__title {
   color: #0b1e36;
-  font-size: 52px;
+  font-size: var(--fs-script-sm);
   line-height: 1;
   letter-spacing: 0;
   margin-bottom: 8rem;
@@ -1132,7 +1145,7 @@ main>section+section {
   top: -48px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   color: #000;
   width: 24px;
@@ -1164,7 +1177,7 @@ main>section+section {
 .rhythm-node__label {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 30px;
+  font-size: var(--fs-label-lg);
   text-transform: uppercase;
   color: #0b1e36;
   line-height: 1;
@@ -1209,7 +1222,7 @@ main>section+section {
 .live__title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   color: var(--p1);
   margin-top: var(--sp-2);
 }
@@ -1217,7 +1230,7 @@ main>section+section {
 .live__lead {
   color: var(--text);
   margin-top: var(--sp-3);
-  font-size: 1.1rem;
+  font-size: var(--fs-body-md);
   line-height: 1.5;
 }
 
@@ -1241,7 +1254,7 @@ main>section+section {
 
 .live__num {
   font-family: var(--font-script);
-  font-size: 2.5rem;
+  font-size: var(--fs-script-xs);
   color: #38bdf8;
   font-style: italic;
   line-height: 1;
@@ -1252,13 +1265,13 @@ main>section+section {
   font-family: var(--font-label);
   font-style: italic;
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: var(--fs-body-lg);
   margin-bottom: 0.5rem;
 }
 
 .live__copy {
   color: var(--text);
-  font-size: 0.95rem;
+  font-size: var(--fs-body-sm);
   line-height: 1.5;
 }
 
@@ -1286,7 +1299,7 @@ main>section+section {
 .gallery__title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   color: var(--p1);
   margin-top: var(--sp-2);
 }
@@ -1343,7 +1356,7 @@ main>section+section {
 .testimonials__title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   color: var(--p1);
   margin-top: var(--sp-2);
 }
@@ -1366,14 +1379,14 @@ main>section+section {
 }
 
 .quote__text {
-  font-size: 2.2rem;
+  font-size: var(--fs-script-xs);
   line-height: 1.6;
   color: var(--p1);
 }
 
 .quote__who {
   margin-top: 1.75rem;
-  font-size: 20px;
+  font-size: var(--fs-body-lg);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
   color: var(--p1);
@@ -1400,7 +1413,7 @@ main>section+section {
 .faq__title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   color: var(--p1);
   margin-top: var(--sp-2);
 }
@@ -1431,7 +1444,7 @@ main>section+section {
   align-items: center;
   padding: 1.5rem 2rem;
   font-family: var(--font-body);
-  font-size: 31px;
+  font-size: var(--fs-label-lg);
   font-weight: 500;
   color: var(--p1);
   background: transparent;
@@ -1468,7 +1481,7 @@ main>section+section {
 }
 
 .faq .accordion__panel p {
-  font-size: 20px;
+  font-size: var(--fs-body-lg);
   line-height: 1.5;
   color: var(--p2);
 }
@@ -1501,7 +1514,7 @@ main>section+section {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: var(--white);
+  background: #000000bf;
 }
 
 .closing__inner {
@@ -1512,7 +1525,7 @@ main>section+section {
   color: var(--s3);
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 96px;
+  font-size: 6rem;
   line-height: 1.1;
 }
 
@@ -1549,7 +1562,7 @@ main>section+section {
 .contact__title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: var(--fs-script-sm);
   color: var(--p1);
   margin-bottom: 2.5rem;
 }
@@ -1570,7 +1583,7 @@ main>section+section {
 
 .contact__value {
   color: var(--p1);
-  font-size: 1.35rem;
+  font-size: var(--fs-body-lg);
   font-weight: 500;
 }
 
@@ -1619,7 +1632,7 @@ main>section+section {
   font-family: var(--font-label);
   font-style: italic;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: var(--fs-body-lg);
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   color: var(--p1);
@@ -1753,15 +1766,52 @@ main>section+section {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .categories__grid,
   .why__grid,
+  .path__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .merch__grid,
+  .rental__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Horizontal Scroll Carousels for Mobile */
+  .categories__grid,
   .experiences__grid,
   .gathering__grid,
-  .merch__grid,
-  .path__grid,
-  .gallery__grid,
-  .testimonials__grid {
-    grid-template-columns: 1fr;
+  .testimonials__grid,
+  .gallery__grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .categories__grid::-webkit-scrollbar,
+  .experiences__grid::-webkit-scrollbar,
+  .gathering__grid::-webkit-scrollbar,
+  .testimonials__grid::-webkit-scrollbar,
+  .gallery__grid::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .about__media {
+    min-height: 50rem;
+  }
+
+  .categories__grid > *,
+  .experiences__grid > *,
+  .gathering__grid > *,
+  .testimonials__grid > *,
+  .gallery__grid > * {
+    flex: 0 0 85%;
+    max-width: 85%;
+    scroll-snap-align: center;
   }
 
   .rhythms__timeline {
