@@ -4108,6 +4108,14 @@ main>section+section {
     /* Firefox */
   }
 
+  /* Unlike the other carousels, categories__grid sits inside a .container,
+     so its own 7.5% padding-inline stacks on top of the container's gutter,
+     doubling the inset before the first card. Zero the container's own
+     padding here so the carousel controls the edge spacing by itself. */
+  .categories .container {
+    padding-inline: 0;
+  }
+
   .categories__grid::-webkit-scrollbar,
   .experiences__grid::-webkit-scrollbar,
   .gathering__grid::-webkit-scrollbar,

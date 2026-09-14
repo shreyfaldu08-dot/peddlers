@@ -14,6 +14,14 @@
     display: none;
   }
 
+  /* The desktop pill's 144px side padding is sized for the wide category
+     cards on a 1920px canvas; on a phone card (~85vw in the horizontal
+     scroller) it swallows the whole card, so it's cut down to a normal
+     compact badge here. */
+  .tag {
+    padding: 0.75rem 1.5rem;
+  }
+
   .date-selector__inner {
     flex-direction: row;
     flex-wrap: wrap;
@@ -788,7 +796,7 @@
   }
   .page-location .pillars__grid,
   .page-location .cravings__grid,
-  .page-location .beaches__grid {
+  .beaches__grid {
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
@@ -801,13 +809,13 @@
 
   .page-location .pillars__grid::-webkit-scrollbar,
   .page-location .cravings__grid::-webkit-scrollbar,
-  .page-location .beaches__grid::-webkit-scrollbar {
+  .beaches__grid::-webkit-scrollbar {
     display: none !important;
   }
 
   .page-location .pillars__grid > *,
   .page-location .cravings__grid > *,
-  .page-location .beaches__grid > * {
+  .beaches__grid > * {
     flex: 0 0 85% !important;
     max-width: 85% !important;
     scroll-snap-align: start !important;
