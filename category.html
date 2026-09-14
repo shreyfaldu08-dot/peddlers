@@ -9,11 +9,12 @@
       content="Whether you're planning a sunrise ride through Seacrest or a sunset journey to Alys Beach, our team is here to curate your perfect coastal transit."
     />
 
-    <link rel="stylesheet" href="assets/css/tokens.css?v=71" />
+    <link rel="stylesheet" href="assets/css/tokens.css?v=72" />
     <link rel="stylesheet" href="assets/css/fonts.css?v=80" />
     <link rel="stylesheet" href="assets/css/base.css?v=80" />
-    <link rel="stylesheet" href="assets/css/components.css?v=80" />
-    <link rel="stylesheet" href="assets/css/sections.css?v=85" />
+    <link rel="stylesheet" href="assets/css/components.css?v=81" />
+    <link rel="stylesheet" href="assets/css/sections.css?v=158" />
+    <link rel="stylesheet" href="assets/css/mobile.css?v=33" />
   </head>
 
   <body class="page-category">
@@ -28,6 +29,8 @@
 
       <nav class="site-nav" id="site-nav" aria-label="Primary">
         <a class="site-nav__link" href="index.html">HOME</a>
+        <a class="site-nav__link" href="rentals.html">RENTALS</a>
+        <a class="site-nav__link is-active" href="category.html">PRODUCTS</a>
         <a class="site-nav__link" href="location.html">LOCATION</a>
         <a class="site-nav__link" href="about.html">ABOUT</a>
         <a class="site-nav__link" href="faq.html">FAQ</a>
@@ -53,7 +56,7 @@
       <!-- ==================================================================
            02 — Hero (Discover Our Products)
            ================================================================== -->
-      <section class="hero hero--category" style="background-image: url('assets/img/s05-1.jpg');">
+      <section class="hero hero--category" style="background-image: url('assets/img/hero-category.jpg');">
         <div class="container hero__inner">
           <h1 class="hero__title">Discover Our Products</h1>
           <p class="hero__lead">
@@ -65,9 +68,9 @@
       <!-- ==================================================================
            03 — Largest Bike Rental Catalog (12 Cards)
            ================================================================== -->
-      <section class="section rental" id="catalog" style="background: #ffffff; padding: 5rem 0;">
+      <section class="section rental rental--category" id="catalog">
         <div class="container">
-          <div class="rental__head" style="margin-bottom: 2rem;">
+          <div class="rental__head">
             <div>
               <p class="eyebrow">Rent a Bike</p>
               <h2 class="rental__title">Largest Bike Rental</h2>
@@ -75,15 +78,15 @@
                 Peddlers is known for super friendly service and a HUGE selection of bikes for all ages and styles.
               </p>
             </div>
-            <a class="btn btn--outline" href="rentals.html">VIEW MORE BIKE</a>
+            <a class="btn btn--outline rental__view-more" href="rentals.html">View More Bike</a>
           </div>
 
-          <div class="catalog-filters" style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem;">
-            <button class="btn btn--outline" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;" type="button">BIKE RENTALS</button>
-            <button class="btn btn--outline" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;" type="button">KIDS BIKES</button>
-            <button class="btn btn--outline" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;" type="button">TAKE YOUR KIDS ALONG</button>
-            <button class="btn btn--outline" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;" type="button">ADULT BIKES</button>
-            <button class="btn btn--primary" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;" type="button">PEDDLER'S PRODUCTS</button>
+          <div class="rental-filters">
+            <button class="rental-filters__btn" type="button">BIKE RENTALS</button>
+            <button class="rental-filters__btn" type="button">KIDS BIKES</button>
+            <button class="rental-filters__btn" type="button">TAKE YOUR KIDS ALONG</button>
+            <button class="rental-filters__btn" type="button">ADULT BIKES</button>
+            <button class="rental-filters__btn is-active" type="button">PEDDLER'S PRODUCTS</button>
           </div>
 
           <div class="rental__grid">
@@ -228,14 +231,14 @@
       <!-- ==================================================================
            04 — The 30A Way / Local Introduction
            ================================================================== -->
-      <section class="section local-intro" style="background: #ffffff; padding: 5rem 0; text-align: center;">
-        <div class="container" style="max-width: 58rem;">
+      <section class="section local-intro">
+        <div class="container local-intro__inner">
           <p class="eyebrow">The 30A Way</p>
-          <h2 class="why__title" style="margin-bottom: 2rem;">Local Introduction</h2>
-          <p style="color: var(--text); font-size: 1.15rem; line-height: 1.7; margin-bottom: 1.5rem;">
+          <h2 class="local-intro__title">Local Introduction</h2>
+          <p class="local-intro__copy">
             From family cruiser setups to high-performance electric rides, we equip you with everything needed to ride 30A with ease.
           </p>
-          <p style="color: var(--text); font-size: 1.15rem; line-height: 1.7;">
+          <p class="local-intro__copy">
             Each piece of equipment in our fleet is tested and tuned every single day. When you rent with Peddlers 30A, you receive complimentary helmet fitting, quality locks, and insider route maps to make your trip effortless.
           </p>
         </div>
@@ -244,36 +247,39 @@
       <!-- ==================================================================
            05 — Navigate Your Paradise
            ================================================================== -->
-      <section class="section why" style="background: #ffffff; padding: 5rem 0;">
+      <section class="section why why--paradise">
         <div class="container">
-          <h2 class="why__title text-center" style="margin-bottom: 3.5rem;">Navigate Your Paradise</h2>
+          <h2 class="why__title text-center">Navigate Your Paradise</h2>
 
-          <div class="why__grid">
-            <article class="why-card" style="background: #f4f4f4; padding: 2.5rem 2rem; border-radius: 4px;">
-              <div class="why-card__head">
+          <div class="why-cards">
+            <article class="why-card">
+              <div>
                 <h3 class="why-card__title">Scenic Highway 30A</h3>
+                <p class="why-card__copy">
+                  19 miles of breathtaking paved paths connecting all<br class="why-card__copy-break" /> coastal villages.
+                </p>
               </div>
-              <p class="why-card__copy">
-                19 miles of breathtaking paved paths connecting all coastal villages.
-              </p>
+              <img src="assets/img/Icon.png" alt="arrow icon" />
             </article>
 
-            <article class="why-card" style="background: #f4f4f4; padding: 2.5rem 2rem; border-radius: 4px;">
-              <div class="why-card__head">
+            <article class="why-card">
+              <div>
                 <h3 class="why-card__title">Coastal Dune Lakes</h3>
+                <p class="why-card__copy">
+                  Rare geological wonders just a short ride from our<br class="why-card__copy-break" /> pavilion.
+                </p>
               </div>
-              <p class="why-card__copy">
-                Rare geological wonders just a short ride from our pavilion.
-              </p>
+              <img src="assets/img/Icon-1.png" alt="waves icon" />
             </article>
 
-            <article class="why-card" style="background: #f4f4f4; padding: 2.5rem 2rem; border-radius: 4px;">
-              <div class="why-card__head">
+            <article class="why-card">
+              <div>
                 <h3 class="why-card__title">Beach Access Points</h3>
+                <p class="why-card__copy">
+                  Curated routes to the most secluded sand spots in the<br class="why-card__copy-break" /> area.
+                </p>
               </div>
-              <p class="why-card__copy">
-                Curated routes to the most secluded sand spots in the area.
-              </p>
+              <img src="assets/img/Icon-2.png" alt="umbrella icon" />
             </article>
           </div>
         </div>
@@ -288,7 +294,7 @@
           <h2 class="closing__title">Your 30A Story Begins Here</h2>
           <div class="closing__actions">
             <a class="btn btn--light" href="rentals.html">RESERVE ONLINE</a>
-            <a class="btn btn--outline-white" href="contact.html">CONTACT OUR TEAM</a>
+            <a class="btn btn--ghost" href="contact.html">CONTACT OUR TEAM</a>
           </div>
         </div>
       </section>
@@ -375,18 +381,9 @@
         <div>
           <h2 class="site-footer__heading">CONTACT US</h2>
           <ul>
-            <li><a href="tel:+12144147504">Room Reservations: +1 214 414 7504</a></li>
-            <li><a href="contact.html">Global Reservation Information</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="site-footer__heading">WORLD OF PEDDLERS</h2>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="location.html">Peddlers Impacts</a></li>
-            <li><a href="about.html#fleet">Developers</a></li>
-            <li><a href="about.html">Careers</a></li>
-            <li><a href="contact.html">Media</a></li>
+            <li><a href="tel:+18502130040">(850) 213-0040</a></li>
+            <li><a href="mailto:hello@peddlers30a.com">hello@peddlers30a.com</a></li>
+            <li><a href="contact.html">Contact Page</a></li>
           </ul>
         </div>
         <div>
@@ -410,13 +407,12 @@
 
       <div class="site-footer__base">
         <div class="site-footer__legal">
-          <p>ICP LICENSE <a href="#">17035714</a></p>
-          <p>GONGAN BEIAN: 31010102004896</p>
+          <p><a href="tel:+18502130040">(850) 213-0040</a></p>
         </div>
         <a class="site-footer__logo" href="index.html" aria-label="Peddlers 30A">
           <img src="assets/img/logo-peddlers-30a.png" alt="Peddlers 30A" />
         </a>
-        <p class="site-footer__copy">ROSEWOOD HOTEL GROUP © 2026</p>
+        <p class="site-footer__copy">Peddlers 30A &copy; 2026</p>
       </div>
     </div>
     <div class="site-footer__rule"></div>

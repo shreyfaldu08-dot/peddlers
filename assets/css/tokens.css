@@ -20,6 +20,8 @@
   /* sand / tan     — header, trust bar, footer, cards     */
   --text: #888888;
   /* body grey                                          */
+  --text-1: #666666;
+  /* darker body grey — trust bar meta, Figma "TEXT 1"   */
 
   /* ---- Derived neutrals ---------------------------------------------- */
   --white: #ffffff;

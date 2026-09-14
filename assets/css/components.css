@@ -158,24 +158,28 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--sp-4) var(--sp-6);
+  padding: 1.6875rem 9rem;
+  /* 27px / 144px */
   background: var(--s3);
-  color: var(--p1);
+  color: var(--p3);
   font-family: var(--font-label);
   font-style: italic;
   font-weight: 600;
   font-size: var(--fs-label-lg);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  white-space: nowrap;
 }
 
 .tag--blue {
   background: var(--p3);
-  color: var(--white);
+  color: var(--p2);
 }
 
 .tag--cream {
-  background: var(--cream);
+  background: var(--s1);
   color: var(--s2);
 }
 

@@ -8,12 +8,12 @@
   <meta name="description"
     content="Learn the story behind Peddlers 30A, a bike rental and pavilion in Seacrest Beach built around the Timpoochee Trail and the 30A lifestyle." />
 
-  <link rel="stylesheet" href="assets/css/tokens.css?v=71" />
+  <link rel="stylesheet" href="assets/css/tokens.css?v=72" />
   <link rel="stylesheet" href="assets/css/fonts.css?v=80" />
   <link rel="stylesheet" href="assets/css/base.css?v=80" />
-  <link rel="stylesheet" href="assets/css/components.css?v=80" />
-  <link rel="stylesheet" href="assets/css/sections.css?v=85" />
-  <link rel="stylesheet" href="assets/css/mobile.css?v=5" />
+  <link rel="stylesheet" href="assets/css/components.css?v=81" />
+  <link rel="stylesheet" href="assets/css/sections.css?v=129" />
+  <link rel="stylesheet" href="assets/css/mobile.css?v=19" />
 </head>
 
 <body class="page-about">
@@ -28,6 +28,8 @@
 
       <nav class="site-nav" id="site-nav" aria-label="Primary">
         <a class="site-nav__link" href="index.html">HOME</a>
+        <a class="site-nav__link" href="rentals.html">RENTALS</a>
+        <a class="site-nav__link" href="category.html">PRODUCTS</a>
         <a class="site-nav__link" href="location.html">LOCATION</a>
         <a class="site-nav__link is-active" href="about.html">ABOUT</a>
         <a class="site-nav__link" href="faq.html">FAQ</a>
@@ -53,10 +55,10 @@
     <!-- ==================================================================
            02 — Hero (About Peddlers 30A)
            ================================================================== -->
-    <section class="hero hero--about" style="background-image: url('assets/img/about-hero.jpg');">
+    <section class="hero hero--about" style="background-image: url('assets/img/about-hero.jpg?v=2');">
       <div class="container hero__inner">
-        <h1 class="hero__title" style="color: var(--s3); font-weight: 400; font-size: 6rem;">Seacrest Beach's Favorite Pavilion</h1>
-        <p class="hero__lead" style="max-width: 800px; margin: 0 auto; font-size: 1.5rem;">
+        <h1 class="hero__title">Seacrest Beach's Favorite Pavilion</h1>
+        <p class="hero__lead">
           Part bike shop, part gathering place, Peddlers brings together rides, food, music, and the everyday rhythm of life along Scenic 30A.
         </p>
       </div>
@@ -69,15 +71,15 @@
       <div class="about__panel">
         <div class="about__content" style="max-width: 840px;">
           <p class="eyebrow">OUR STORY</p>
-          <h2 class="about__title" style="color: var(--p3); margin-bottom: 2.5rem;">
+          <h2 class="about__title">
             Built Around the Way 30A Moves
           </h2>
-          <p class="about__copy" style="font-size: 1.75rem; color: var(--text); line-height: 1.5; margin-bottom: 2rem;">
+          <p class="about__copy">
             Peddlers began in 2011 with a simple idea: help people slow down and see 30A the way locals do. From
             Seacrest Beach, riders could leave the parking lot behind and explore the coast at a pace that made every
             stop worth taking.
           </p>
-          <p class="about__copy" style="font-size: 1.75rem; color: var(--text); line-height: 1.5;">
+          <p class="about__copy">
             Over the years, Peddlers has grown from a bike rental shop into a gathering place for visitors and locals
             alike. Right on Scenic Highway 30A in Seacrest Beach, it has become a familiar starting point for beach
             rides, morning coffee runs, and evenings spent together after a day on the coast.
@@ -93,51 +95,39 @@
     <!-- ==================================================================
            04 — Navigate Your Paradise
            ================================================================== -->
-    <section class="section why" style="background: #ffffff; padding: 5rem 0;">
+    <section class="section why why--paradise">
       <div class="container">
-        <h2 class="why__title text-center" style="margin-bottom: 3.5rem; color: var(--p3);">Know the Coast Like a Local</h2>
+        <h2 class="why__title text-center">Know the Coast Like a Local</h2>
 
-        <div class="why__grid">
-          <article class="why-card"
-            style="background: #f2f2f2; padding: 2.5rem 2rem; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+        <div class="why-cards">
+          <article class="why-card">
             <div>
-              <h3 class="why-card__title"
-                style="font-family: var(--font-body); font-size: 1.9375rem; font-weight: 500; color: var(--p1); margin: 0 0 0.5rem 0; line-height: 1;">
-                Scenic Highway 30A</h3>
-              <p class="why-card__copy"
-                style="font-family: var(--font-body); font-size: 1.75rem; font-weight: 400; color: var(--text); line-height: 1.2; margin: 0;">
+              <h3 class="why-card__title">Scenic Highway 30A</h3>
+              <p class="why-card__copy">
                 19 miles of paved coastal path connecting beach communities, dune lakes, and quiet neighborhoods.
               </p>
             </div>
-            <img src="assets/img/Icon.png" alt="arrow icon" style="width: 24px; height: auto; flex-shrink: 0;" />
+            <img src="assets/img/Icon.png" alt="arrow icon" />
           </article>
 
-          <article class="why-card"
-            style="background: #f2f2f2; padding: 2.5rem 2rem; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+          <article class="why-card">
             <div>
-              <h3 class="why-card__title"
-                style="font-family: var(--font-body); font-size: 1.9375rem; font-weight: 500; color: var(--p1); margin: 0 0 0.5rem 0; line-height: 1;">
-                Rare Coastal Dune Lakes</h3>
-              <p class="why-card__copy"
-                style="font-family: var(--font-body); font-size: 1.75rem; font-weight: 400; color: var(--text); line-height: 1.2; margin: 0;">
+              <h3 class="why-card__title">Rare Coastal Dune Lakes</h3>
+              <p class="why-card__copy">
                 One of the few places on earth where freshwater lakes meet the Gulf naturally.
               </p>
             </div>
-            <img src="assets/img/Icon-1.png" alt="waves icon" style="width: 24px; height: auto; flex-shrink: 0;" />
+            <img src="assets/img/Icon-1.png" alt="waves icon" />
           </article>
 
-          <article class="why-card"
-            style="background: #f2f2f2; padding: 2.5rem 2rem; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+          <article class="why-card">
             <div>
-              <h3 class="why-card__title"
-                style="font-family: var(--font-body); font-size: 1.9375rem; font-weight: 500; color: var(--p1); margin: 0 0 0.5rem 0; line-height: 1;">
-                Beach Access by Bike</h3>
-              <p class="why-card__copy"
-                style="font-family: var(--font-body); font-size: 1.75rem; font-weight: 400; color: var(--text); line-height: 1.2; margin: 0;">
+              <h3 class="why-card__title">Beach Access by Bike</h3>
+              <p class="why-card__copy">
                 Reach shaded access points and quiet stretches of sand most drivers never find.
               </p>
             </div>
-            <img src="assets/img/Icon-2.png" alt="umbrella icon" style="width: 24px; height: auto; flex-shrink: 0;" />
+            <img src="assets/img/Icon-2.png" alt="umbrella icon" />
           </article>
         </div>
       </div>
@@ -196,69 +186,59 @@
     <!-- ==================================================================
            06 — A Curated Collection
            ================================================================== -->
-    <section class="section ab-fleet" style="background: var(--s1); padding: 5rem 0;">
-      <div class="container">
-        <div class="text-center" style="margin-bottom: 4rem;">
-          <h2 class="why__title" style="color: var(--p3); font-weight: 600; margin-bottom: 1rem;">A Curated Collection
-          </h2>
-          <p class="lead-copy"
-            style="max-width: 42rem; margin: 0 auto; color: var(--p1); font-weight: 500; font-size: 1.15rem; line-height: 1.5; opacity: 0.8;">
-            From beach cruisers to family bikes, every ride is inspected, adjusted, and ready for
-            another day on 30A.
+    <section class="section fleet">
+      <div class="container fleet__inner">
+        <div class="fleet__head">
+          <h2 class="fleet__title">A Curated Collection</h2>
+          <p class="fleet__lead">
+            From beach cruisers to family bikes, every ride is inspected, adjusted, and ready for another day on 30A.
           </p>
         </div>
 
-        <div class="curated-grid curated-grid-1" style="margin-bottom: 4rem;">
-          <div>
-            <div
-              style="border-bottom: 1px solid rgba(57, 89, 186, 0.2); padding-bottom: 1.25rem; margin-bottom: 1.25rem;">
-              <h3
-                style="font-family: var(--font-body); font-weight: 600; font-size: 2.5rem; color: var(--p3); margin-bottom: 0.5rem;">
-                Beach Cruisers</h3>
-              <p style="color: var(--p1); font-size: 2.2rem; line-height: 1.5; margin: 0; opacity: 0.85;">
+        <div class="fleet__grid">
+          <div class="fleet__col">
+            <div class="fleet__item">
+              <div class="fleet__item-head">
+                <h3 class="fleet__item-title">Beach Cruisers</h3>
+              </div>
+              <p class="fleet__item-copy">
                 Comfortable, upright, and built for easy miles along the Timpoochee Trail and Scenic 30A.
               </p>
             </div>
-            <div style="border-bottom: 1px solid rgba(57, 89, 186, 0.2); padding-bottom: 1.25rem;">
-              <h3
-                style="font-family: var(--font-body); font-weight: 600; font-size: 2.5rem; color: var(--p3); margin-bottom: 0.5rem;">
-                Precision Maintenance</h3>
-              <p style="color: var(--p1); font-size: 2.2rem; line-height: 1.5; margin: 0; opacity: 0.85;">
+            <div class="fleet__item">
+              <div class="fleet__item-head">
+                <h3 class="fleet__item-title">Precision Maintenance</h3>
+              </div>
+              <p class="fleet__item-copy">
                 Every bike is checked, tuned, and inspected regularly to perform reliably in the coastal environment.
               </p>
             </div>
+            <figure class="fleet__photo">
+              <img src="assets/img/curated-2.jpg?v=2" alt="Child in Burley bike trailer" />
+            </figure>
           </div>
-          <figure style="overflow: hidden; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin: 0;">
-            <img style="width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block;"
-              src="assets/img/curated-2.jpg" alt="Peddlers 30A beach cruiser bike" />
-          </figure>
-        </div>
 
-        <div class="curated-grid">
-          <figure style="overflow: hidden; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin: 0;">
-            <img style="width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block;"
-              src="assets/img/curated-1.jpg" alt="Child in Burley bike trailer" />
-          </figure>
-          <div>
-            <div
-              style="border-bottom: 1px solid rgba(57, 89, 186, 0.2); padding-bottom: 1.25rem; margin-bottom: 1.25rem;">
-              <h3
-                style="font-family: var(--font-body); font-weight: 600; font-size: 2.5rem; color: var(--p3); margin-bottom: 0.5rem;">
-                Families &amp; Tandems</h3>
-              <p style="color: var(--p1); font-size: 2.2rem; line-height: 1.5; margin: 0; opacity: 0.85;">
+          <div class="fleet__col">
+            <figure class="fleet__photo">
+              <img src="assets/img/curated-1.jpg?v=2" alt="Peddlers 30A beach cruiser bike" />
+            </figure>
+            <div class="fleet__item">
+              <div class="fleet__item-head">
+                <h3 class="fleet__item-title">Families &amp; Tandems</h3>
+              </div>
+              <p class="fleet__item-copy">
                 Kids' bikes, Burley trailers for little ones, and tandem options make it easy for every group to ride
                 out together.
               </p>
             </div>
-            <div style="border-bottom: 1px solid rgba(57, 89, 186, 0.2); padding-bottom: 1.25rem;">
-              <h3
-                style="font-family: var(--font-body); font-weight: 600; font-size: 2.5rem; color: var(--p3); margin-bottom: 0.5rem;">
-                Burley Trailer Information</h3>
-              <ul
-                style="list-style: none; padding: 0; margin: 0; color: var(--p1); font-size: 2.2rem; line-height: 1.5; opacity: 0.85;">
-                <li>&bull; Minimum age: 12 months</li>
-                <li>&bull; Maximum weight per child: 40 lbs</li>
-                <li>&bull; Total weight capacity: 100 lbs</li>
+            <div class="fleet__item">
+              <div class="fleet__item-head">
+                <h3 class="fleet__item-title">Burley Trailer Information</h3>
+              </div>
+              <ul class="fleet__item-list">
+                <li>Minimum age: 12 months</li>
+                <li>Maximum weight per child: 40 lbs</li>
+                <li>Total weight capacity: 100 lbs</li>
               </ul>
             </div>
           </div>
@@ -351,7 +331,7 @@
         <figure class="contact__map" style="display: flex;">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.4440399091454!2d-86.02173242443716!3d30.281418174805022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8893f1fdbc7ec827%3A0x5a6ed556c4dfa18b!2sPeddlers%2030A!5e0!3m2!1sen!2sin!4v1788890912456!5m2!1sen!2sin"
-            width="100%" height="100%" style="border:0; min-height: 600px;" allowfullscreen="" loading="lazy"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </figure>
       </div>
@@ -367,18 +347,9 @@
         <div>
           <h2 class="site-footer__heading">CONTACT US</h2>
           <ul>
-            <li><a href="tel:+12144147504">Room Reservations: +1 214 414 7504</a></li>
-            <li><a href="contact.html">Global Reservation Information</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="site-footer__heading">WORLD OF PEDDLERS</h2>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="location.html">Peddlers Impacts</a></li>
-            <li><a href="about.html#fleet">Developers</a></li>
-            <li><a href="about.html">Careers</a></li>
-            <li><a href="contact.html">Media</a></li>
+            <li><a href="tel:+18502130040">(850) 213-0040</a></li>
+            <li><a href="mailto:hello@peddlers30a.com">hello@peddlers30a.com</a></li>
+            <li><a href="contact.html">Contact Page</a></li>
           </ul>
         </div>
         <div>
@@ -402,13 +373,12 @@
 
       <div class="site-footer__base">
         <div class="site-footer__legal">
-          <p>ICP LICENSE <a href="#">17035714</a></p>
-          <p>GONGAN BEIAN: 31010102004896</p>
+          <p><a href="tel:+18502130040">(850) 213-0040</a></p>
         </div>
         <a class="site-footer__logo" href="index.html" aria-label="Peddlers 30A">
           <img src="assets/img/logo-peddlers-30a.png" alt="Peddlers 30A" />
         </a>
-        <p class="site-footer__copy">ROSEWOOD HOTEL GROUP © 2026</p>
+        <p class="site-footer__copy">Peddlers 30A &copy; 2026</p>
       </div>
     </div>
     <div class="site-footer__rule"></div>

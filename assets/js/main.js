@@ -102,6 +102,42 @@
   }
 
   /* ------------------------------------------------------------------------
+     Testimonials carousel arrows
+     ------------------------------------------------------------------------ */
+  function initTestimonialsNav() {
+    var navs = document.querySelectorAll(".testimonials__nav");
+
+    Array.prototype.forEach.call(navs, function (nav) {
+      var section = nav.closest("section") || document;
+      var grid = section.querySelector(".testimonials__grid");
+      if (!grid) return;
+
+      var buttons = nav.querySelectorAll(".carousel-nav__btn");
+      var prevBtn = buttons[0];
+      var nextBtn = buttons[1];
+
+      function step() {
+        var first = grid.firstElementChild;
+        if (!first) return grid.clientWidth;
+        var styles = window.getComputedStyle(grid);
+        var gap = parseFloat(styles.columnGap || styles.gap) || 0;
+        return first.getBoundingClientRect().width + gap;
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", function () {
+          grid.scrollBy({ left: -step(), behavior: "smooth" });
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener("click", function () {
+          grid.scrollBy({ left: step(), behavior: "smooth" });
+        });
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------------
      Accordion (used by the FAQ section)
      ------------------------------------------------------------------------ */
   function initAccordions() {
@@ -275,12 +311,174 @@
     });
   }
 
+  /* ------------------------------------------------------------------------
+     Date range selector (product-detail page)
+     A calendar dropdown built and styled to match the site, rather than the
+     browser/OS's own native date-picker chrome. Picking a start date raises
+     the end field's floor so an end date before it can't be chosen.
+     ------------------------------------------------------------------------ */
+  function initDateSelector() {
+    var fields = document.querySelectorAll(".date-selector__field");
+    if (!fields.length) return;
+
+    var MONTH_NAMES = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December",
+    ];
+
+    var pickers = {};
+    var panels = [];
+
+    function formatDate(date) {
+      return date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      });
+    }
+
+    function closeAll() {
+      panels.forEach(function (entry) {
+        entry.panel.hidden = true;
+        entry.btn.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    Array.prototype.forEach.call(fields, function (field) {
+      var key = field.getAttribute("data-date-field");
+      var btn = field.querySelector(".date-selector__btn");
+      var label = btn.querySelector("span");
+      var defaultLabel = label.textContent;
+      var panel = field.querySelector(".date-picker");
+      var monthLabel = panel.querySelector(".date-picker__month");
+      var daysEl = panel.querySelector(".date-picker__days");
+      var prevBtn = panel.querySelector("[data-cal-prev]");
+      var nextBtn = panel.querySelector("[data-cal-next]");
+
+      panels.push({ panel: panel, btn: btn });
+
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      var state = {
+        selected: null,
+        minDate: null,
+        viewYear: today.getFullYear(),
+        viewMonth: today.getMonth(),
+      };
+
+      function render() {
+        monthLabel.textContent = MONTH_NAMES[state.viewMonth] + " " + state.viewYear;
+        daysEl.innerHTML = "";
+
+        var floor = state.minDate && state.minDate > today ? state.minDate : today;
+        var firstOfMonth = new Date(state.viewYear, state.viewMonth, 1);
+        var daysInMonth = new Date(state.viewYear, state.viewMonth + 1, 0).getDate();
+
+        for (var i = 0; i < firstOfMonth.getDay(); i++) {
+          daysEl.appendChild(document.createElement("span"));
+        }
+
+        for (var d = 1; d <= daysInMonth; d++) {
+          var date = new Date(state.viewYear, state.viewMonth, d);
+          var dayBtn = document.createElement("button");
+          dayBtn.type = "button";
+          dayBtn.className = "date-picker__day";
+          dayBtn.textContent = String(d);
+
+          if (date < floor) {
+            dayBtn.disabled = true;
+          }
+
+          if (state.selected && date.getTime() === state.selected.getTime()) {
+            dayBtn.classList.add("is-selected");
+          }
+
+          dayBtn.addEventListener("click", (function (chosenDate) {
+            return function () {
+              state.selected = chosenDate;
+              label.textContent = formatDate(chosenDate);
+              btn.classList.add("has-value");
+              panel.hidden = true;
+              btn.setAttribute("aria-expanded", "false");
+              render();
+
+              if (key === "start" && pickers.end) {
+                pickers.end.setMin(chosenDate);
+              }
+            };
+          })(date));
+
+          daysEl.appendChild(dayBtn);
+        }
+
+        var floorMonth = new Date(floor.getFullYear(), floor.getMonth(), 1);
+        prevBtn.disabled =
+          state.viewYear === floorMonth.getFullYear() &&
+          state.viewMonth === floorMonth.getMonth();
+      }
+
+      prevBtn.addEventListener("click", function () {
+        state.viewMonth -= 1;
+        if (state.viewMonth < 0) {
+          state.viewMonth = 11;
+          state.viewYear -= 1;
+        }
+        render();
+      });
+
+      nextBtn.addEventListener("click", function () {
+        state.viewMonth += 1;
+        if (state.viewMonth > 11) {
+          state.viewMonth = 0;
+          state.viewYear += 1;
+        }
+        render();
+      });
+
+      btn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        var isOpen = !panel.hidden;
+        closeAll();
+        panel.hidden = isOpen;
+        btn.setAttribute("aria-expanded", String(!isOpen));
+      });
+
+      panel.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
+
+      pickers[key] = {
+        setMin: function (date) {
+          state.minDate = date;
+          if (state.selected && state.selected < date) {
+            state.selected = null;
+            label.textContent = defaultLabel;
+            btn.classList.remove("has-value");
+          }
+          state.viewYear = date.getFullYear();
+          state.viewMonth = date.getMonth();
+          render();
+        },
+      };
+
+      render();
+    });
+
+    document.addEventListener("click", closeAll);
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeAll();
+    });
+  }
+
   function init() {
     initHeader();
     initRails();
+    initTestimonialsNav();
     initAccordions();
     initSegmented();
     initMarquees();
+    initDateSelector();
     initLenis();
   }
 
