@@ -1834,7 +1834,11 @@ main>section+section {
 /* Rentals page — "Our Simple Rental Process", matched to Figma
    node 53:1944. */
 .rental-process {
-  background: var(--p2);
+  background-color: var(--p2);
+  background-image: url('../img/day-banner-pattern-2.png');
+  background-repeat: repeat;
+  background-size: 30rem 30rem;
+  background-position: center;
   padding: 2.5rem 0;
   /* 40px */
 }
