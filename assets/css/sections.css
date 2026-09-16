@@ -3249,8 +3249,10 @@ main>section+section {
 
 .rhythms {
   background-color: var(--s2);
-  background-image: url('../img/day-banner-pattern.svg');
-  background-size: 22.5rem 22.5rem;
+  background-image: url('../img/day-banner-pattern-2.png');
+  background-repeat: repeat;
+  background-size: 30rem 30rem;
+  background-position: center;
   padding: 3.75rem 0;
   /* 60px */
 }
