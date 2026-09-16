@@ -66,12 +66,22 @@ main>section+section {
   gap: var(--sp-3);
 }
 
+.site-header__actions .btn {
+  height: 3.5rem;
+  /* 56px — the phone button's icon was pushing it a few px taller than the plain
+     text "Reserve Now" button; pin both to the same height explicitly. */
+}
+
 .site-header__toggle {
   display: none;
   flex-direction: column;
   gap: 0.3125rem;
   width: 1.75rem;
   padding: 0.25rem 0;
+  margin-top: 0.1875rem;
+  /* The 3-line icon is flex-centered like everything else in the header,
+     but its thin lines read as sitting high next to the taller buttons —
+     nudge it down a touch for a better optical balance. */
   background: transparent;
   border: none;
   cursor: pointer;
