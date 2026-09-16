@@ -2332,10 +2332,10 @@ main>section+section {
 
 .day-banner {
   background-color: var(--p1);
-  background-image: url('../img/day-banner-pattern.svg');
+  background-image: url('../img/day-banner-pattern-2.png');
   background-repeat: repeat;
-  background-size: 13.75rem 13.75rem;
-  /* 220px tile — faint bicycle motif, matches Figma */
+  background-size: 30rem 30rem;
+  /* 480px tile, zoomed in and faint — bicycle line-art motif supplied for this section */
   background-position: center;
   color: var(--white);
   padding: 2.5rem 0;
