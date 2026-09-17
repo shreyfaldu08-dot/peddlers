@@ -434,6 +434,22 @@
     margin-top: 0;
   }
 
+  .exp-card__body {
+    padding: 1.25rem;
+  }
+
+  .exp-card__name {
+    font-size: 1.375rem;
+    /* 22px — the 31px desktop size was wrapping to 3 tight lines on a
+       narrow carousel card */
+    line-height: 1.25;
+  }
+
+  .exp-card__meta {
+    font-size: 0.9375rem;
+    /* 15px */
+  }
+
   /* ---- Pavilion split ---- */
   .pavilion {
     grid-template-columns: 1fr;

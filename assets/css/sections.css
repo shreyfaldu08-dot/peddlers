@@ -2005,7 +2005,7 @@ main>section+section {
   /* 30px */
 }
 
-.local-intro__copy + .local-intro__copy {
+.local-intro__copy+.local-intro__copy {
   margin-top: 1.875rem;
   /* 30px */
 }
@@ -2106,8 +2106,8 @@ main>section+section {
 
 .pillar__title-sm {
   font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 1.9375rem;
+  /* font-weight: 500; */
+  font-size: 2.3rem;
   /* 31px */
   color: var(--p3);
   margin-top: 1.5rem;
