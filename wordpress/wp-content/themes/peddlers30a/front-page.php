@@ -1,0 +1,902 @@
+<?php get_header(); ?>
+
+    <!-- ==================================================================
+           02 — Hero
+           ================================================================== -->
+    <section class="hero">
+      <img class="hero__bg" src="<?php echo get_template_directory_uri(); ?>/assets/img/hero-aerial.jpg"
+        alt="Aerial view of the Peddlers 30A rental yard and shops at Seacrest Beach" />
+      <div class="hero__inner container">
+        <h1 class="hero__title">The Best of 30A, All in One Place</h1>
+        <p class="hero__lead">
+          Peddlers Pavilion is Seacrest Beach's favorite gathering place on Scenic Highway 30A, top-rated bike rentals, live music, food, drinks, and the Timpoochee Trail right at your door.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Reserve Now</a>
+          <a class="btn btn--ghost btn--lg" href="#pavilion">Explore Pavilion</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           03 — Trust bar
+           ================================================================== -->
+    <section class="section trust">
+      <div class="container">
+        <ul class="trust__bar">
+          <li class="trust__item">
+            <img class="trust__icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/s02-1.svg" alt="" />
+            <p class="trust__title">4.9 GOOGLE RATING</p>
+            <p class="trust__meta" aria-label="Rated 4.9 out of 5">★★★★★</p>
+          </li>
+          <li class="trust__item">
+            <img class="trust__icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/s02-2.svg" alt="" />
+            <p class="trust__title">15+ YEARS ON 30A</p>
+            <p class="trust__meta">Locally Loved</p>
+          </li>
+          <li class="trust__item">
+            <img class="trust__icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/s02-3.svg" alt="" />
+            <p class="trust__title">50+ BIKES</p>
+            <p class="trust__meta">Beach-Tested Bikes</p>
+          </li>
+          <li class="trust__item">
+            <img class="trust__icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/s02-4.svg" alt="" />
+            <p class="trust__title">SEACREST BEACH</p>
+            <p class="trust__meta">Scenic Hwy 30A</p>
+          </li>
+          <li class="trust__item">
+            <img class="trust__icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/s02-5.svg" alt="" />
+            <p class="trust__title">FAMILY FRIENDLY</p>
+            <p class="trust__meta">Walk-Ins Welcome</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           04 — About split / The 30A Way
+           ================================================================== -->
+    <section class="section about" id="about">
+      <div class="about__panel">
+        <div class="about__content">
+          <p class="eyebrow">Since 2011</p>
+          <h2 class="about__title">
+            Seacrest Beach's Best Bike Rental and Coastal Pavilion
+          </h2>
+          <p class="body-copy about__body">
+            We've been renting bikes at the Timpoochee Trail trailhead for 15+ years.
+          </p>
+          <p class="body-copy about__body" style="margin-top: 1rem;">
+            Peddlers Pavilion is where your ride starts and where your evening ends: bikes, food, drinks, and live music, all steps from Seacrest Beach, Florida.
+          </p>
+          <div class="about__stats">
+            <div class="about__stat-col">
+              <span class="about__stat-num">Delivery</span>
+              <span class="about__stat-lbl">To Your Door on 30A</span>
+            </div>
+          </div>
+          <a class="btn btn--teal about__btn" href="<?php echo esc_url( peddlers30a_nav_url( 'about' ) ); ?>">About Us</a>
+        </div>
+      </div>
+      <figure class="about__media">
+        <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/s03-1.jpg"
+          alt="A cyclist rides past a white coastal building framed by palm trees" />
+      </figure>
+    </section>
+
+    <!-- ==================================================================
+           05 — Category tiles
+           ================================================================== -->
+    <section class="section categories">
+      <div class="container">
+        <ul class="categories__grid">
+          <li>
+            <a class="media-card" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">
+              <img class="media-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/img/s04-2.jpg" alt="Two riders cruising a shaded 30A trail" />
+              <span class="media-card__tag media-card__tag--top">
+                <span class="tag tag--sand">Rent Bikes</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="media-card" href="#gathering">
+              <img class="media-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/img/s04-4.jpg" alt="Cups of ice cream on a pink surface" />
+              <span class="media-card__tag media-card__tag--bottom">
+                <span class="tag tag--cream">Shop &amp; Eat</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="media-card" href="#live">
+              <img class="media-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/img/s04-3.jpg"
+                alt="A-frame sign reading Live Music Tonight, starting at 6pm" />
+              <span class="media-card__tag media-card__tag--top">
+                <span class="tag tag--blue">Live Music</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           06 — Rent a Bike (8 Card Grid)
+           ================================================================== -->
+    <section class="section rental" id="rent">
+      <div class="container">
+        <div class="rental__header">
+          <div class="rental__header-left">
+            <p class="eyebrow">Our Fleet</p>
+            <h2 class="rental__title">Largest Bike Rental on Scenic Highway 30A</h2>
+            <p class="body-copy rental__subtitle">
+              The largest bike rental fleet on Scenic Highway 30A. Walk-ins rarely wait, groups ride out together, and every bike is inspected before it goes out.
+            </p>
+          </div>
+          <a class="btn btn--outline rental__view-more" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">See Full Fleet</a>
+        </div>
+
+        <div class="rental__grid">
+          <article class="bike-card">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/s05-1.jpg" alt="Adult Female Cruiser" />
+            </figure>
+            <h3 class="bike-card__name">Adult Female Cruiser</h3>
+            <p class="bike-card__price">From: $40.00</p>
+            <a class="btn btn--outline btn--block" href="<?php echo esc_url( peddlers30a_nav_url( 'product-detail' ) ); ?>">BOOK NOW</a>
+          </article>
+
+          <article class="bike-card">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/s05-4.jpg" alt="20&quot; Kids Cruiser-Coral" />
+            </figure>
+            <h3 class="bike-card__name">20" Kids Cruiser-Coral</h3>
+            <p class="bike-card__price">From: $40.00</p>
+            <a class="btn btn--outline btn--block" href="<?php echo esc_url( peddlers30a_nav_url( 'product-detail' ) ); ?>">BOOK NOW</a>
+          </article>
+
+          <article class="bike-card">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/s05-3.jpg" alt="Bike and Burley Combo" />
+            </figure>
+            <h3 class="bike-card__name">Bike and Burley Combo</h3>
+            <p class="bike-card__price">From: $70.00</p>
+            <a class="btn btn--outline btn--block" href="<?php echo esc_url( peddlers30a_nav_url( 'product-detail' ) ); ?>">BOOK NOW</a>
+          </article>
+
+          <article class="bike-card">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/s05-2.jpg" alt="Bike Basket" />
+            </figure>
+            <h3 class="bike-card__name">Bike Basket</h3>
+            <p class="bike-card__price">From: $5.00</p>
+            <a class="btn btn--outline btn--block" href="<?php echo esc_url( peddlers30a_nav_url( 'product-detail' ) ); ?>">BOOK NOW</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           07 — Make It A Day To Remember Banner
+           ================================================================== -->
+    <section class="section day-banner">
+      <div class="container day-banner__inner">
+        <div class="day-banner__content">
+          <p class="day-banner__eyebrow">AT THE PAVILION</p>
+          <h2 class="day-banner__title">Bikes, Bites, and a Place to Stay Awhile.</h2>
+          <a class="btn btn--ghost day-banner__btn" href="#experiences">EXPLORE EXPERIENCES</a>
+        </div>
+
+        <div class="day-banner__badges">
+          <div class="day-badge">
+            <div class="day-badge__circle day-badge__circle--sand">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Vector.png" alt="" />
+            </div>
+            <span class="day-badge__label">SHOP LOCAL</span>
+          </div>
+
+          <div class="day-badge">
+            <div class="day-badge__circle day-badge__circle--teal">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Vector-1.png?v=2" alt="" />
+            </div>
+            <span class="day-badge__label">GRAB A BITE</span>
+          </div>
+
+          <div class="day-badge">
+            <div class="day-badge__circle day-badge__circle--light">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Vector-2.png?v=2" alt="" />
+            </div>
+            <span class="day-badge__label">DRINKS</span>
+          </div>
+
+          <div class="day-badge">
+            <div class="day-badge__circle day-badge__circle--navy">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Group-147.png" alt="" />
+            </div>
+            <span class="day-badge__label">BEACH TIME</span>
+          </div>
+
+          <div class="day-badge">
+            <div class="day-badge__circle day-badge__circle--sky">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Vector-4.png?v=1" alt="" />
+            </div>
+            <span class="day-badge__label">LIVE MUSIC</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           08 — The Peddlers Difference / Why Choose Peddlers 30A
+           ================================================================== -->
+    <section class="section why" id="difference">
+      <div class="container">
+        <p class="eyebrow text-center">The Peddlers Difference</p>
+        <h2 class="why__title text-center">Built for Every Kind of Rider</h2>
+
+        <div class="why__grid">
+          <div class="why__item">
+            <div class="why__icon-wrap">
+              <img class="why__icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/why-local-expertise.svg" alt="" />
+            </div>
+            <h3 class="why__name">Bikes for the Whole Family</h3>
+            <p class="body-copy">
+              From a toddler seat to a teen-sized cruiser, we'll match every rider in your group to the right bike before you leave the counter. Located in Seacrest Beach on Scenic Highway 30A, the coast is right out front.
+            </p>
+          </div>
+
+          <div class="why__item">
+            <div class="why__icon-wrap">
+              <img class="why__icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/why-bike-selection.svg" alt="" />
+            </div>
+            <h3 class="why__name">The Largest Fleet on Scenic 30A</h3>
+            <p class="body-copy">
+              We keep more bikes on hand than anywhere else on Scenic Highway 30A, which means walk-ins rarely wait and groups of ten or more can ride out together. Every bike is inspected between rentals.
+            </p>
+          </div>
+
+          <div class="why__item">
+            <div class="why__icon-wrap">
+              <img class="why__icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/why-heart-of-30a.svg" alt="" />
+            </div>
+            <h3 class="why__name">A Pavilion, Not a Parking Lot</h3>
+            <p class="body-copy">
+              Return your bike and stay a while. Peddlers Pavilion has donuts, pizza, a pub, a fire pit, and live music most nights, so your ride ends somewhere worth sticking around for.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           09 — Curated Outing / Featured Experiences
+           ================================================================== -->
+    <section class="section experiences" id="experiences">
+      <div class="container">
+        <div class="experiences__head">
+          <div>
+            <p class="eyebrow">Your 30A Rides</p>
+            <h2 class="experiences__title">Four Ways to Ride 30A</h2>
+          </div>
+          <a class="btn btn--outline" href="<?php echo esc_url( peddlers30a_nav_url( 'location' ) ); ?>">Explore All</a>
+        </div>
+
+        <ul class="experiences__grid">
+          <li class="exp-card">
+            <img class="exp-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/img/exp-sunrise-coffee.jpg?v=2" alt="Latte with heart art next to a croissant and coffee beans" />
+            <div class="exp-card__body">
+              <h3 class="label label--sm exp-card__name">Morning Coffee Ride</h3>
+              <p class="exp-card__meta">EASY 20-MINUTE ROUTE</p>
+            </div>
+          </li>
+          <li class="exp-card">
+            <img class="exp-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/img/exp-ride-rosemary.jpg?v=2"
+              alt="Three riders cycling past palm trees on a coastal street" />
+            <div class="exp-card__body">
+              <h3 class="label label--sm exp-card__name">Ride to Rosemary</h3>
+              <p class="exp-card__meta">Rosemary Beach Run</p>
+            </div>
+          </li>
+          <li class="exp-card">
+            <img class="exp-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/img/exp-golden-hour.jpg?v=3" alt="Mom riding a bike with two kids in a trailer on the family trail" />
+            <div class="exp-card__body">
+              <h3 class="label label--sm exp-card__name">Family Trail Loop</h3>
+              <p class="exp-card__meta">BEST FAMILY RIDE ON 30A</p>
+            </div>
+          </li>
+          <li class="exp-card">
+            <img class="exp-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/img/exp-beach-picnic.jpg?v=2" alt="Three riders cycling past palm trees on a coastal path" />
+            <div class="exp-card__body">
+              <h3 class="label label--sm exp-card__name">Sunset Pub Ride</h3>
+              <p class="exp-card__meta">END AT THE PAVILION</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           10 — Our Home Base / Peddlers Pavilion
+           ================================================================== -->
+    <section class="section pavilion" id="pavilion">
+      <figure class="pavilion__media">
+        <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/s09-1.jpg"
+          alt="The Peddlers Pavilion sign above a rack of rental bikes" />
+      </figure>
+      <div class="pavilion__panel">
+        <div class="pavilion__content">
+          <p class="eyebrow">The Pavilion</p>
+          <h2 class="pavilion__title">More Than a Bike Shop</h2>
+          <p class="body-copy pavilion__body">
+            Peddlers Pavilion is Seacrest Beach's gathering place on Scenic Highway 30A, where the best 30A bike rentals share a home with live music, local food, and cold drinks steps from the trail.
+          </p>
+          <ul class="pavilion__list">
+            <li><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/s09-1.svg" alt="" /><span>Donuts, Pizza &amp; Ice Cream</span></li>
+            <li><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/s09-3.svg" alt="" /><span>Live Music Most Nights</span></li>
+            <li><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/s09-2.svg" alt="" /><span>Fire Pit &amp; Cold Beer</span></li>
+          </ul>
+          <a class="btn btn--teal" href="#gathering">Visit the Pavilion</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           11 — The Pavilion Collection / A Curated Gathering (3x3 Grid)
+           ================================================================== -->
+    <section class="section gathering" id="gathering">
+      <div class="container">
+        <header class="gathering__head text-center">
+          <p class="eyebrow">The Pavilion Collection</p>
+          <h2 class="gathering__title">A Curated Gathering</h2>
+        </header>
+
+        <div class="gathering__grid">
+          <!-- 01 Peddler's Pub (Peddlers-owned) -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/Rectangle-19-6.png?v=2" alt="Peddler's Pub" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Peddler's Pub</h3>
+              <p class="venue-card__copy">
+                Ice cold drafts and cocktails on tap, steps from the beach. The easiest way to end a hot afternoon on 30A is right here.
+              </p>
+            </div>
+          </article>
+
+          <!-- 02 Sweet Peddler (Peddlers-owned) -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/Rectangle-19-3.png" alt="Sweet Peddler Ice Cream" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Sweet Peddler</h3>
+              <p class="venue-card__copy">
+                An ice cream and candy shop with nostalgic, feel-good vibes. The kids will ask to come back before you've left.
+              </p>
+            </div>
+          </article>
+
+          <!-- 03 Kickstand Bar (Peddlers-owned) -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/Rectangle-19-2.png?v=2" alt="Kickstand Cocktails & Coffee" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Kickstand Bar</h3>
+              <p class="venue-card__copy">
+                Margaritas, martinis, and a full walk-up bar. Park your bike, order a cocktail, and watch the evening slow down.
+              </p>
+            </div>
+          </article>
+
+          <!-- 04 Little Pedal Boutique (Peddlers-owned) -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/Rectangle-19-1.png?v=2" alt="Little Pedal Boutique" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Little Pedal Boutique</h3>
+              <p class="venue-card__copy">
+                Peddlers' own boutique for beach-ready fashion and accessories. The right stop before you head out on the coast.
+              </p>
+            </div>
+          </article>
+
+          <!-- 05 Beachside Burger Co. -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/Rectangle-19-7.png?v=2" alt="Beachside Burger Co." />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Beachside Burger Co.</h3>
+              <p class="venue-card__copy">
+                Handcrafted burgers with a laid-back coastal edge, steps from the shore. Fuel up before your next ride out.
+              </p>
+            </div>
+          </article>
+
+          <!-- 06 LMN Boutique -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/Rectangle-19-8.png?v=2" alt="LMN Boutique" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">LMN Boutique</h3>
+              <p class="venue-card__copy">
+                Beachy fashion, jewelry, and the latest brands since 2013. A quick stop for something new to wear tonight.
+              </p>
+            </div>
+          </article>
+
+          <!-- 07 Reel 'Em In -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/Rectangle-19-5.png?v=2" alt="Reel 'Em In Fresh Seafood" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Reel 'Em In</h3>
+              <p class="venue-card__copy">
+                You'll be hooked! Fresh seafood and homemade recipes that capture the essence of the Emerald Coast.
+              </p>
+            </div>
+          </article>
+
+          <!-- 08 Ticheli's Pizza -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/Rectangle-19-4.png?v=2" alt="Ticheli's Wood Oven Pizza" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Ticheli's Pizza</h3>
+              <p class="venue-card__copy">
+                Wood-fired pizza made with imported Italian flour, fresh daily. Grab a slice between bike stops or after the beach.
+              </p>
+            </div>
+          </article>
+
+          <!-- 09 Charlie's Donuts -->
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/Rectangle-19.png?v=2" alt="Charlie's Donuts" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name">Charlie's Donuts</h3>
+              <p class="venue-card__copy">
+                Famous maple bacon donuts and the kind of breakfast that gets you on 30A before 9am. The line forms early for a reason.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           12 — Shop the Look / Coastal Essentials
+           ================================================================== -->
+    <section class="section merch" id="shop">
+      <div class="container">
+        <p class="eyebrow text-center">Shop the Look</p>
+        <h2 class="merch__title text-center">
+          Take Peddlers Home With You
+        </h2>
+
+        <ul class="merch__grid">
+          <li>
+            <a class="merch-card" href="<?php echo esc_url( peddlers30a_nav_url( 'category' ) ); ?>">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/merch-tshirts.jpg" alt="T-shirts" />
+              <div class="merch-card__overlay">
+                <span class="merch-card__label">T-SHIRTS</span>
+                <span class="merch-card__plus">+</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="merch-card" href="<?php echo esc_url( peddlers30a_nav_url( 'category' ) ); ?>">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/merch-hats.jpg" alt="Hats" />
+              <div class="merch-card__overlay">
+                <span class="merch-card__label">HATS</span>
+                <span class="merch-card__plus">+</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="merch-card" href="<?php echo esc_url( peddlers30a_nav_url( 'category' ) ); ?>">
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/merch-accessories.jpg" alt="Accessories" />
+              <div class="merch-card__overlay">
+                <span class="merch-card__label">ACCESSORIES</span>
+                <span class="merch-card__plus">+</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           13 — The Process / The Simple Path to the Trail
+           ================================================================== -->
+    <section class="section path" id="process">
+      <div class="container">
+        <p class="eyebrow text-center">From Door to Trail</p>
+        <h2 class="path__title text-center">Three Steps. Then You're Riding.</h2>
+
+        <div class="path__grid">
+          <article class="path-card">
+            <img class="path-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/img/path-1-select-your-ride.jpg" alt="Select Your Ride" />
+            <div class="path-card__body">
+              <span class="path-card__num">01</span>
+              <h3 class="label label--lg path-card__name">Walk In, Pick a Bike</h3>
+              <p class="body-copy path-card__copy">
+                No forms, no waiting in line. Tell us your group, ages, and how far you want to ride, and we'll match you to the right bikes in minutes.
+              </p>
+            </div>
+          </article>
+
+          <article class="path-card">
+            <img class="path-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/img/path-2-effortless-delivery.jpg" alt="Effortless Delivery" />
+            <div class="path-card__body">
+              <span class="path-card__num">02</span>
+              <h3 class="label label--lg path-card__name">Gear Up and Go</h3>
+              <p class="body-copy path-card__copy">
+                Every rental includes a helmet and a lock, no upcharges. We'll adjust seats and check brakes before you roll out the door.
+              </p>
+            </div>
+          </article>
+
+          <article class="path-card">
+            <img class="path-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/img/path-3-your-journey-begins.jpg" alt="Your Journey Begins" />
+            <div class="path-card__body">
+              <span class="path-card__num">03</span>
+              <h3 class="label label--lg path-card__name">Hit the Coast</h3>
+              <p class="body-copy path-card__copy">
+                You're on Scenic Highway 30A before you've finished your coffee, with the coast stretching in both directions toward Rosemary Beach and beyond.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           14 — The Coastal Rhythms (Timeline Flow)
+           ================================================================== -->
+    <section class="section rhythms" id="rhythms">
+      <div class="container">
+        <p class="eyebrow text-center">A Day on 30A</p>
+        <h2 class="script script--lg rhythms__title text-center">What a Perfect Day on 30A Looks Like</h2>
+
+        <div class="rhythms__timeline">
+          <div class="rhythm-node">
+            <div class="rhythm-node__circle">
+              <span class="rhythm-node__num">01</span>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/SVG (1).png" alt="" />
+            </div>
+            <p class="rhythm-node__label">Pick Up<br />at Peddlers</p>
+          </div>
+
+          <div class="rhythm-node">
+            <div class="rhythm-node__circle">
+              <span class="rhythm-node__num">02</span>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/SVG (2).png" alt="" />
+            </div>
+            <p class="rhythm-node__label">Coffee &amp;<br />Donuts First</p>
+          </div>
+
+          <div class="rhythm-node">
+            <div class="rhythm-node__circle">
+              <span class="rhythm-node__num">03</span>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/SVG (3).png" alt="" />
+            </div>
+            <p class="rhythm-node__label">West to<br />Alys Beach</p>
+          </div>
+
+          <div class="rhythm-node">
+            <div class="rhythm-node__circle">
+              <span class="rhythm-node__num">04</span>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/SVG (4).png" alt="" />
+            </div>
+            <p class="rhythm-node__label">East to<br />Rosemary Beach</p>
+          </div>
+
+          <div class="rhythm-node">
+            <div class="rhythm-node__circle">
+              <span class="rhythm-node__num">05</span>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/SVG (5).png" alt="" />
+            </div>
+            <p class="rhythm-node__label">Lunch &amp;<br />a Break</p>
+          </div>
+
+          <div class="rhythm-node">
+            <div class="rhythm-node__circle">
+              <span class="rhythm-node__num">06</span>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/SVG (6).png" alt="" />
+            </div>
+            <p class="rhythm-node__label">Back to<br />the Pavilion</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           15 — Live Music & Local Events / Coastal Rhythms
+           ================================================================== -->
+    <section class="section live" id="live">
+      <div class="container live__inner">
+        <div class="live__media">
+          <img class="live__photo--back" src="<?php echo get_template_directory_uri(); ?>/assets/img/live-storefront.jpg"
+            alt="Sweet Peddler storefront at the Pavilion" />
+          <img class="live__photo--front" src="<?php echo get_template_directory_uri(); ?>/assets/img/live-drinks.jpg" alt="Chilled cocktail drink" />
+        </div>
+
+        <div class="live__content">
+          <p class="eyebrow">30A COMMUNITY NIGHTS</p>
+          <h2 class="live__title">Live at Peddlers</h2>
+          <p class="body-copy live__lead">
+            Most nights in spring and summer, the Pavilion turns into 30A's best backyard concert.
+          </p>
+
+          <ul class="live__list">
+            <li>
+              <span class="live__num">01</span>
+              <div>
+                <h3 class="live__name">Local Musicians</h3>
+                <p class="body-copy live__copy">
+                  We book local acts most nights in season, the kind of live music you won't find on a festival poster but will remember from your trip.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="live__num">02</span>
+              <div>
+                <h3 class="live__name">Fire Pit &amp; Seating</h3>
+                <p class="body-copy live__copy">
+                  Comfy beach chairs, a jumbo fire pit, and plenty of shade during the day. Show up early to grab a spot before the music starts.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="live__num">03</span>
+              <div>
+                <h3 class="live__name">Everyone's Welcome</h3>
+                <p class="body-copy live__copy">
+                  No cover, no dress code, no reservation. Walk over from the trail, order a drink, and let the kids run around while you relax.
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <a class="btn btn--teal live__cta" href="#pavilion">SEE LIVE MUSIC</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           16 — The Coastal Sanctuary / Featured Gallery
+           ================================================================== -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="gallery__head">
+          <div>
+            <p class="eyebrow">30A in Photos</p>
+            <h2 class="gallery__title">See a Day at Peddlers</h2>
+          </div>
+        </div>
+
+        <div class="gallery__grid">
+          <div class="gallery__col">
+            <figure><img src="<?php echo get_template_directory_uri(); ?>/assets/img/lmn-boutique.jpg" alt="LMN Boutique" /></figure>
+            <figure><img src="<?php echo get_template_directory_uri(); ?>/assets/img/Woven-bag-and-hat.png" alt="Woven bag and hat" /></figure>
+          </div>
+          <div class="gallery__col">
+            <figure><img src="<?php echo get_template_directory_uri(); ?>/assets/img/Cycling-in-Seaside.png" alt="Cycling in Seaside" /></figure>
+            <figure><img src="<?php echo get_template_directory_uri(); ?>/assets/img/Bikes-at-sunset.png" alt="Bikes at sunset" /></figure>
+            <figure><img src="<?php echo get_template_directory_uri(); ?>/assets/img/Coastal-essentials-flat-lay.png" alt="Coastal essentials flat lay" /></figure>
+          </div>
+          <div class="gallery__col">
+            <figure><img src="<?php echo get_template_directory_uri(); ?>/assets/img/Coastal-essentials-flat-lay-1.png" alt="Coastal essentials flat lay 1" />
+            </figure>
+            <figure><img src="<?php echo get_template_directory_uri(); ?>/assets/img/Artisanal-iced-coffee.png" alt="Artisanal iced coffee" /></figure>
+            <figure><img src="<?php echo get_template_directory_uri(); ?>/assets/img/Woven-bag-and-hat-1.png" alt="Woven bag and hat 1" /></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           17 — Guest Testimonials / Refined Experiences
+           ================================================================== -->
+    <section class="section testimonials">
+      <div class="container">
+        <p class="eyebrow text-center">Hear It From Them</p>
+        <h2 class="testimonials__title text-center">What Riders Are Saying</h2>
+
+        <ul class="testimonials__grid">
+          <li class="quote">
+            <p class="quote__text">
+              "The best place to rent bikes on 30a!!! The service and employees make the rental process even better.
+              Easy &amp; centrally located bike rental but also a great place to hangout!! Live music, pub, fire pits
+              and tvs for any game watching! Fun for all ages."
+            </p>
+            <p class="quote__who">Catherine S, Dallas, Texas</p>
+          </li>
+          <li class="quote">
+            <p class="quote__text">
+              "The staff is fantastic, bikes are great and beer is cold! Peddlers made our vacation even better. It was
+              fast &amp; easy to rent/return our bikes. It's also in a great location to hang out in the evening with
+              the live music and plenty of comfortable seating. Make sure you stop by Peddlers during your stay in 30A!"
+            </p>
+            <p class="quote__who">Carrie C, Chicago, Illinois</p>
+          </li>
+          <li class="quote">
+            <p class="quote__text">
+              "Great place to get your bikes on vacation. Full selection of adult and mid cruisers, trikes, baby seats,
+              trailers &amp; everything! Plus 8 beers on tap. Oh, and great folks. HIGHLY RECOMMEND. (Live music on the
+              stage nightly in the summer!)"
+            </p>
+            <p class="quote__who">Gregory M., Franklin, Tennessee</p>
+          </li>
+        </ul>
+
+        <div class="testimonials__nav">
+          <button class="carousel-nav__btn" type="button" aria-label="Previous testimonial">
+            <svg viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24"
+              height="20">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.401095 11.5212C0.144261 11.7809 5.30349e-07 12.133 5.46392e-07 12.5C5.62436e-07 12.867 0.144261 13.2191 0.401095 13.4788L11.3729 24.5592C11.4985 24.6953 11.6499 24.8044 11.8181 24.8801C11.9864 24.9558 12.168 24.9965 12.3521 24.9998C12.5363 25.0031 12.7192 24.9689 12.89 24.8992C13.0607 24.8295 13.2159 24.7259 13.3461 24.5943C13.4763 24.4628 13.579 24.3061 13.648 24.1337C13.717 23.9612 13.7508 23.7765 13.7476 23.5905C13.7443 23.4045 13.704 23.2211 13.6291 23.0512C13.5541 22.8813 13.446 22.7284 13.3113 22.6016L4.68011 13.8851L30.6285 13.8851C30.9923 13.8851 31.3411 13.7391 31.5983 13.4794C31.8555 13.2196 32 12.8673 32 12.5C32 12.1327 31.8555 11.7804 31.5983 11.5206C31.3411 11.2609 30.9923 11.115 30.6285 11.115L4.68011 11.115L13.3113 2.39837C13.446 2.27157 13.5541 2.11866 13.6291 1.94876C13.704 1.77886 13.7443 1.59546 13.7476 1.40948C13.7508 1.22351 13.717 1.03879 13.648 0.866323C13.579 0.69386 13.4763 0.537194 13.3461 0.405672C13.2159 0.27415 13.0607 0.170466 12.89 0.100805C12.7192 0.0311448 12.5363 -0.00306484 12.3521 0.000216414C12.168 0.00349767 11.9864 0.0442025 11.8181 0.119904C11.6499 0.195605 11.4985 0.304751 11.3729 0.440831L0.401095 11.5212Z"
+                fill="currentColor" />
+            </svg>
+          </button>
+          <button class="carousel-nav__btn" type="button" aria-label="Next testimonial">
+            <svg viewBox="92 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24"
+              height="20">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M123.599 11.5212C123.856 11.7809 124 12.133 124 12.5C124 12.867 123.856 13.2191 123.599 13.4788L112.627 24.5592C112.502 24.6953 112.35 24.8044 112.182 24.8801C112.014 24.9558 111.832 24.9965 111.648 24.9998C111.464 25.0031 111.281 24.9689 111.11 24.8992C110.939 24.8295 110.784 24.7259 110.654 24.5943C110.524 24.4628 110.421 24.3061 110.352 24.1337C110.283 23.9612 110.249 23.7765 110.252 23.5905C110.256 23.4045 110.296 23.2211 110.371 23.0512C110.446 22.8813 110.554 22.7284 110.689 22.6016L119.32 13.8851L93.3715 13.8851C93.0077 13.8851 92.6589 13.7391 92.4017 13.4794C92.1445 13.2196 92 12.8673 92 12.5C92 12.1327 92.1445 11.7804 92.4017 11.5206C92.6589 11.2609 93.0077 11.115 93.3715 11.115L119.32 11.115L110.689 2.39837C110.554 2.27157 110.446 2.11866 110.371 1.94876C110.296 1.77886 110.256 1.59546 110.252 1.40948C110.249 1.22351 110.283 1.03879 110.352 0.866323C110.421 0.69386 110.524 0.537194 110.654 0.405672C110.784 0.27415 110.939 0.170466 111.11 0.100805C111.281 0.0311448 111.464 -0.00306484 111.648 0.000216414C111.832 0.00349767 112.014 0.0442025 112.182 0.119904C112.35 0.195605 112.502 0.304751 112.627 0.440831L123.599 11.5212Z"
+                fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           18 — Assistance / Common Inquiries (FAQ)
+           ================================================================== -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <p class="eyebrow text-center">Quick Answers</p>
+        <h2 class="faq__title text-center">Before You Book</h2>
+
+        <div class="accordion faq__list">
+          <div class="accordion__item is-open">
+            <button class="accordion__trigger" type="button">
+              <span>How do I book a bike rental?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Booking is easy. Visit Peddlers Pavilion in Seacrest Beach, FL to rent in person, or reserve your 30A bike rental online before your visit. During peak season, morning slots fill quickly, booking ahead secures your preferred time on the Timpoochee Trail.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Where can I pick up my bike?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Pick up at Peddlers Pavilion, 10343 E County Hwy 30A, Seacrest Beach, FL 32461; directly beside the Timpoochee Trail. The top-rated bike rental on 30A is steps from the path, so you're riding within minutes of arrival. Delivery to your vacation rental is also available.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Are helmets and locks included?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Yes. Every bike rental includes a helmet and a lock at no additional charge. There are no hidden equipment fees at checkout. You do not need to bring your own safety gear to enjoy a comfortable ride along 30A.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>What is your cancellation policy?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Plans can change, especially during a beach vacation. If your schedule shifts, contact Peddlers as soon as possible and the team will work with you to adjust or reschedule your reservation whenever available. Please confirm the latest cancellation policy directly before booking.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" type="button">
+              <span>Do you offer multi-day discounts?</span>
+              <svg class="accordion__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="accordion__panel">
+              <div>
+                <p>
+                  Yes. Beach cruisers are available at $70 for a full week, better value than the $40/day rate. Ask about multi-day rates for other bikes when booking at Peddlers Pavilion or calling 850-213-0040. The best way to explore all of 30A is with more than one day on the trail.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           19 — Closing CTA Banner
+           ================================================================== -->
+    <section class="section closing">
+      <img class="closing__bg" src="<?php echo get_template_directory_uri(); ?>/assets/img/cta-new-bg.jpg" alt="" />
+      <div class="container closing__inner">
+        <h2 class="closing__title">
+          Your 30A Ride Starts Here
+        </h2>
+        <div class="closing__actions">
+          <a class="btn btn--primary btn--lg" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Reserve Online</a>
+          <a class="btn btn--ghost btn--lg" href="<?php echo esc_url( peddlers30a_nav_url( 'contact' ) ); ?>">Contact Our Team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+           20 — Visit the Pavilion (Contact)
+           ================================================================== -->
+    <section class="section contact" id="contact">
+      <div class="container contact__inner">
+        <div class="contact__details">
+          <h2 class="contact__title">Visit the Pavilion</h2>
+
+          <div class="contact__block">
+            <p class="contact__label">LOCATION</p>
+            <p class="contact__value">10343 E County Hwy 30A, Inlet Beach, FL 32461</p>
+          </div>
+
+          <div class="contact__block">
+            <p class="contact__label">CONNECT</p>
+            <p class="contact__value">
+              <a href="tel:+18502130040">(850) 213-0040</a>
+              <span class="contact__bullet">•</span>
+              <a href="mailto:hello@peddlers30a.com">hello@peddlers30a.com</a>
+            </p>
+          </div>
+
+          <a class="btn btn--teal contact__cta"
+            href="https://maps.google.com/?q=10343+E+County+Hwy+30A,+Inlet+Beach,+FL+32461" target="_blank"
+            rel="noopener">Get Directions</a>
+        </div>
+
+        <figure class="contact__map" style="display: flex;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.4440399091454!2d-86.02173242443716!3d30.281418174805022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8893f1fdbc7ec827%3A0x5a6ed556c4dfa18b!2sPeddlers%2030A!5e0!3m2!1sen!2sin!4v1788890912456!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </figure>
+      </div>
+    </section>
+  
+<?php get_footer(); ?>

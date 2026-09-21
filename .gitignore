@@ -1,1 +1,17 @@
 ﻿Refrence-For-Figma/
+
+# Local WordPress environment — core files, DB and default plugins are
+# generated/downloaded, not source. The actual deliverable is the theme:
+# wordpress/wp-content/themes/peddlers30a/
+wp-cli.phar
+wordpress/wp-admin/
+wordpress/wp-includes/
+wordpress/wp-content/database/
+wordpress/wp-content/uploads/
+wordpress/wp-content/plugins/
+wordpress/*.php
+!wordpress/router.php
+wordpress/.htaccess
+wordpress/license.txt
+wordpress/readme.html
+wordpress/wp-config.php

@@ -1,0 +1,1058 @@
+/* ==========================================================================
+   Peddlers 30A - Mobile Responsive Overrides
+   Covers index.html (home), location.html, and about.html
+   Breakpoints: 768px (tablet/phone), 480px (small phone)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Shared / Header
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .why-card__copy-break {
+    display: none;
+  }
+
+  /* The desktop pill's 144px side padding is sized for the wide category
+     cards on a 1920px canvas; on a phone card (~85vw in the horizontal
+     scroller) it swallows the whole card, so it's cut down to a normal
+     compact badge here. */
+  .tag {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .date-selector__inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .date-selector__field {
+    width: calc(50% - 0.5rem);
+    max-width: none;
+  }
+
+  .date-selector__btn {
+    width: 100%;
+    max-width: none;
+    padding: 0.75rem;
+    font-size: 0.8125rem;
+    gap: 0.5rem;
+  }
+
+  .date-selector__btn svg {
+    width: 0.625rem;
+    height: 0.375rem;
+  }
+
+  .date-picker {
+    width: 17.5rem;
+    min-width: 0;
+  }
+
+  /* Each field is only half the row wide, but the calendar itself needs
+     its full size — anchor it to the outer edge of its own button
+     (left edge for start, right edge for end) so it stays on-screen
+     instead of overflowing past the viewport. */
+  [data-date-field="start"] .date-picker {
+    left: 0;
+  }
+
+  [data-date-field="end"] .date-picker {
+    left: auto;
+    right: 0;
+  }
+
+  .product-hero__grid {
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .product-hero__media {
+    flex: none;
+    height: 20rem;
+  }
+
+  .product-hero__panel {
+    flex: none;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .product-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .product-hero__desc {
+    font-size: 1.15rem;
+  }
+
+  .product-hero__specs {
+    grid-template-columns: 1fr;
+  }
+
+  .product-hero__spec+.product-hero__spec {
+    border-left: none;
+    border-top: 1px solid rgba(136, 136, 136, 0.5);
+  }
+
+  .product-hero__spec-value {
+    font-size: 1.5rem;
+  }
+
+  .product-hero__pills {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product-hero__pill {
+    font-size: 1.25rem;
+  }
+
+  .product-hero__footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .product-hero__price-label,
+  .product-hero__price {
+    text-align: center;
+  }
+
+  .product-hero__book-btn {
+    text-align: center;
+  }
+
+  .site-header__inner {
+    gap: 0.75rem;
+    min-height: 3.75rem;
+    padding: 0 1rem;
+  }
+
+  .site-header__logo img {
+    width: 11rem;
+    height: 2.1rem;
+  }
+
+  .site-header__toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.25rem 1rem;
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.12);
+    z-index: 100;
+    gap: 0;
+  }
+
+  .site-header.is-open .site-nav {
+    display: flex;
+  }
+
+  .site-nav__link {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    font-size: 0.9rem;
+  }
+
+  .site-nav__link.is-active {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    border-left: 3px solid var(--p1);
+    padding-left: 0.75rem;
+  }
+
+  /* Phone button — icon only on tablet/mobile */
+  .merch-card__label {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: var(--fs-script-sm);
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .site-header__actions .btn--primary {
+    font-size: 0;
+    padding: 0;
+    width: 3.5rem;
+    height: 2.5rem;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .site-header__actions .btn--primary .btn__icon {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .site-header__actions .btn--sand {
+    height: 2.5rem;
+    padding-inline: 0.85rem;
+    font-size: 0.68rem;
+  }
+
+  /* ---- Footer ---- */
+  .site-footer__cols {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5);
+  }
+
+  .site-footer__base {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* ---- Hero (home) ---- */
+  .hero {
+    height: auto;
+    min-height: 28rem;
+    padding-block: 5rem 3rem;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__lead {
+    font-size: 1rem;
+    margin-top: var(--sp-4);
+  }
+
+  .hero__actions {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: var(--sp-5);
+  }
+
+  .hero__actions .btn {
+    padding-inline: 1.25rem;
+    font-size: 0.8rem;
+    min-height: 2.75rem;
+  }
+
+  /* ---- Trust bar ---- */
+  .trust__bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4) var(--sp-3);
+  }
+
+  .trust-bar__inner {
+    gap: 1.75rem 2.5rem;
+  }
+
+  .trust-bar__label {
+    font-size: 1.125rem;
+  }
+
+  .trust__title {
+    font-size: 0.85rem;
+  }
+
+  .trust__meta {
+    font-size: 0.85rem;
+  }
+
+  /* ---- About split (home) ---- */
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about__panel {
+    padding: var(--sp-7) var(--gutter);
+  }
+
+  .about__title {
+    font-size: 2rem;
+  }
+
+  .about__stats {
+    gap: 2rem;
+  }
+
+  .about__media {
+    min-height: 30rem;
+  }
+
+  .curated-grid-1 {
+    display: flex !important;
+    flex-direction: column-reverse;
+
+    gap: 2.5rem !important;
+  }
+
+  .curated-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .fleet__inner {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    gap: 2.5rem;
+  }
+
+  .fleet__title {
+    font-size: 2rem;
+  }
+
+  .fleet__lead {
+    font-size: 1.125rem;
+  }
+
+  .fleet__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .fleet__col {
+    gap: 2rem;
+  }
+
+  .fleet__photo {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  /* Stacking the two columns puts the left column's photo (its last item)
+     directly against the right column's photo (its first item), with no
+     text between them. Move it to the top of its own column instead, so
+     the two photos end up separated by the left column's two text blocks. */
+  .fleet__col:first-child .fleet__photo {
+    order: -1;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ---- Category tiles ---- */
+  .categories__grid {
+    gap: var(--sp-4);
+  }
+
+  /* ---- Rental header ---- */
+  .rental {
+    padding: 3rem 0;
+  }
+
+  .rental__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .rental__title {
+    font-size: 2rem;
+  }
+
+  .rental__subtitle {
+    font-size: 1rem;
+  }
+
+  .rental__view-more {
+    font-size: 0.85rem;
+    padding-inline: 1.25rem;
+  }
+
+  .rental__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  /* ---- Day banner ---- */
+  .day-banner__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .day-banner__title {
+    font-size: 2rem;
+  }
+
+  .day-banner__badges {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem;
+    justify-items: center;
+  }
+
+  /* ---- Why grid ---- */
+  .why__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .why-cards {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .why-card {
+    padding: 1.5rem;
+  }
+
+  .why__item+.why__item::before {
+    display: none;
+  }
+
+  .why__title {
+    font-size: 2rem;
+  }
+
+  /* ---- Experiences ---- */
+  .experiences__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .experiences__title {
+    font-size: 2rem;
+  }
+
+  .experiences__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .exp-card:nth-child(odd) {
+    margin-top: 0;
+  }
+
+  .exp-card__body {
+    padding: 1.25rem;
+  }
+
+  .exp-card__name {
+    font-size: 1.375rem;
+    /* 22px — the 31px desktop size was wrapping to 3 tight lines on a
+       narrow carousel card */
+    line-height: 1.25;
+  }
+
+  .exp-card__meta {
+    font-size: 0.9375rem;
+    /* 15px */
+  }
+
+  /* ---- Pavilion split ---- */
+  .pavilion {
+    grid-template-columns: 1fr;
+  }
+
+  .pavilion__media {
+    /* min-height: 0;
+    aspect-ratio: 16 / 9; */
+  }
+
+  .pavilion__panel {
+    padding: var(--sp-7) var(--gutter);
+  }
+
+  .pavilion__title {
+    font-size: 2rem;
+  }
+
+  .beaches__title,
+  .inquiry__title,
+  .direct-connection__title,
+  .seasonal-hours__title {
+    font-size: 2rem;
+  }
+
+  .pavilion__content .btn {
+    min-width: unset;
+    width: 100%;
+  }
+
+  /* ---- Gathering grid ---- */
+  .gathering__grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .gathering__title {
+    font-size: 2rem;
+  }
+
+  /* ---- Merch grid ---- */
+  .merch__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .merch__title {
+    font-size: 2rem;
+  }
+
+  /* ---- Path grid ---- */
+  .path__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
+
+  .path__title {
+    font-size: 2rem;
+  }
+
+  .path-card {
+    aspect-ratio: 4 / 3;
+  }
+
+  .path-card__body {
+    padding: 1.25rem;
+  }
+
+  .path-card__num {
+    font-size: 1.75rem;
+  }
+
+  .path-card__name {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .path-card__copy {
+    margin-top: 0.5rem;
+    font-size: 0.9375rem;
+  }
+
+  /* ---- Rhythms timeline ---- */
+  .rhythms__title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .rhythms__timeline {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    row-gap: 8rem;
+  }
+
+  .rhythm-node {
+    flex: 0 0 40%;
+  }
+
+  .rhythm-node__num {
+    font-size: 0.75rem;
+  }
+
+  .rhythms__timeline::before {
+    display: none;
+  }
+
+  /* ---- Live music ---- */
+  .live__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .live__title {
+    font-size: 2rem;
+  }
+
+  /* ---- Gallery ---- */
+  .gallery__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+
+
+  .gallery__title {
+    font-size: 2rem;
+  }
+
+  /* ---- Testimonials ---- */
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .testimonials__title {
+    font-size: 2rem;
+  }
+
+  .quote__text {
+    font-size: 1.35rem;
+  }
+
+  /* ---- FAQ ---- */
+  .faq__title {
+    font-size: 2rem;
+  }
+
+  .faq .accordion__trigger {
+    font-size: 1.1rem;
+    padding: 1rem 1.25rem;
+  }
+
+  /* ---- Closing CTA ---- */
+  .closing__title {
+    font-size: 2.5rem;
+  }
+
+  .closing__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .closing__actions .btn {
+    width: 100%;
+    max-width: 18rem;
+  }
+
+  /* ---- Contact ---- */
+  .contact__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact__map img,
+  .contact__map iframe {
+    height: 20rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   About Page — mobile
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .ab-hero {
+    height: auto;
+    min-height: 22rem;
+    padding-block: 4rem;
+  }
+
+  .ab-story {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-story__panel {
+    padding: var(--sp-7) var(--gutter);
+  }
+
+  .ab-story__media {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  .ab-paradise {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-paradise__media {
+    order: -1;
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  .ab-paradise__content {
+    padding: var(--sp-7) var(--gutter);
+  }
+
+  .ab-routes li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .ab-fleet__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-fleet__col--offset {
+    margin-top: 0;
+  }
+
+  .ab-fleet {
+    padding-block: 4rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Location Page — mobile
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .loc-hero {
+    min-height: 22rem;
+    padding-block: 4rem var(--sp-7);
+  }
+
+  .loc-hero__title {
+    font-size: var(--fs-script-md);
+  }
+
+  .loc-hero__lead {
+    font-size: var(--fs-body-md);
+  }
+
+  .loc-badges {
+    gap: var(--sp-2);
+  }
+
+  .loc-bikes__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .loc-cat-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .loc-dining__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .loc-standard__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .loc-standard {
+    padding-block: var(--sp-7);
+  }
+
+  .closing-split {
+    padding: 1.5rem;
+  }
+  .closing-split__card {
+    height: 26rem;
+  }
+  .closing-split__content {
+    padding: 2.5rem 1.5rem;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+  .closing-split__title {
+    font-size: 2.5rem;
+    white-space: normal;
+  }
+  .closing-split__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .closing-split__btn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Extra small phones (480px)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+  .hero__title {
+    font-size: 2.25rem;
+  }
+
+  .hero__lead {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    min-height: 24rem;
+    padding-block: 3.5rem 2.5rem;
+  }
+
+  .day-badge__circle {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .loc-dining__grid,
+  .loc-bikes__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header__actions .btn--sand {
+    display: inline-flex;
+    padding: 0.5rem 0.65rem;
+    font-size: 0.6rem;
+    white-space: nowrap;
+  }
+
+  .site-footer__cols {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-hero {
+    min-height: 18rem;
+  }
+
+  .loc-hero {
+    min-height: 18rem;
+  }
+
+  .closing__title {
+    font-size: 2rem;
+  }
+
+  .about__body {
+    margin-top: 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  .about__stat-lbl {
+    font-size: 1.125rem;
+  }
+
+  .pavilion__body {
+    margin-top: 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  .pavilion__list {
+    gap: 1rem;
+  }
+
+  .pavilion__list li {
+    font-size: 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .pavilion__list img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .rhythm-node__label,
+  .craving-card__step {
+    font-size: 1.25rem;
+  }
+
+  .direct-connection__lead,
+  .seasonal-hours__lead,
+  .about__copy,
+  .local-intro__copy,
+  .pillars__lead,
+  .pillar__copy,
+  .cravings__lead,
+  .why-card__copy,
+  .fleet__item-copy,
+  .fleet__item-list,
+  .live__lead,
+  .service-card__copy,
+  .beaches__lead,
+  .beach-card__copy {
+    font-size: 1.125rem;
+  }
+
+  .product-hero__price {
+    font-size: 2rem;
+  }
+
+  .live__num {
+    font-size: 1.75rem;
+  }
+
+  .journey__stop-value {
+    font-size: 1.5rem;
+  }
+
+  .service-card__num {
+    font-size: 1.75rem;
+  }
+
+  .pillar__title-sm {
+    font-size: 1.375rem;
+  }
+
+  /* ---- Location Page Responsive ---- */
+  .page-location .hero__title {
+    font-size: 3.5rem !important;
+  }
+  .page-location .hero__lead {
+    font-size: 1.15rem !important;
+  }
+  .page-location .rental-filters,
+  .page-rentals .rental-filters,
+  .page-category .rental-filters {
+    flex-direction: column;
+    align-items: center;
+    margin: 2.5rem 0;
+  }
+  .page-location .rental-filters__btn,
+  .page-rentals .rental-filters__btn,
+  .page-category .rental-filters__btn {
+    width: 100%;
+    max-width: none;
+    padding: 1rem 1.25rem;
+  }
+  .rental--category .rental__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .page-location .pillars__grid,
+  .page-location .cravings__grid,
+  .beaches__grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+
+  .page-location .pillars__grid::-webkit-scrollbar,
+  .page-location .cravings__grid::-webkit-scrollbar,
+  .beaches__grid::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .page-location .pillars__grid > *,
+  .page-location .cravings__grid > *,
+  .beaches__grid > * {
+    flex: 0 0 85% !important;
+    max-width: 85% !important;
+    scroll-snap-align: start !important;
+  }
+
+  .page-location .pillar__media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .beach-card__media {
+    height: 16rem;
+  }
+
+  .page-location .beaches__more {
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .page-location .service__grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .local-intro h2 {
+    font-size: 2.5rem !important;
+  }
+  .page-location .pillars h2,
+  .page-location .cravings h2 {
+    font-size: 2.5rem !important;
+  }
+  .local-intro p {
+    font-size: 1.15rem !important;
+  }
+  /* ---- Rentals Page Responsive ---- */
+  .page-rentals .hero__title {
+    font-size: 2.5rem;
+  }
+  .page-rentals .hero__actions {
+    flex-direction: column !important;
+  }
+  .page-rentals .hero__actions .btn {
+    width: 100% !important;
+    text-align: center;
+  }
+  .pricing__title {
+    font-size: 2.5rem;
+  }
+  .pricing__lead {
+    font-size: 1.15rem;
+  }
+  .pricing-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pricing-card {
+    flex: 1 0 100%;
+    max-width: 26rem;
+  }
+  .pricing-card__badge {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+  .rental-process__inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .rental-process__head {
+    max-width: none;
+  }
+  .rental-process__title {
+    font-size: 2rem;
+  }
+  .rental-process__steps {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .rental-process__line {
+    display: none;
+  }
+  .rental-process__step {
+    min-width: 0;
+  }
+
+  /* ---- Contact Page Responsive ---- */
+  .page-contact .hero__title {
+    font-size: 2.5rem !important;
+  }
+  .page-contact .hero__actions {
+    flex-direction: column !important;
+  }
+  .page-contact .hero__actions .btn {
+    width: 100% !important;
+    text-align: center;
+  }
+  .page-contact .direct-connection__inner {
+    padding-inline: var(--gutter);
+  }
+
+  .page-contact .inquiry__grid,
+  .page-contact .inquiry-form__row,
+  .page-contact .direct-connection__grid,
+  .page-contact .seasonal-hours__card {
+    grid-template-columns: 1fr !important;
+  }
+  .page-contact .inquiry__grid > div {
+    padding: 3rem 1.5rem !important;
+  }
+  .page-contact .seasonal-hours__intro,
+  .page-contact .seasonal-hours__list {
+    padding: 3rem 1.5rem !important;
+  }
+  .page-contact .inquiry__image {
+    display: none !important;
+  }
+}

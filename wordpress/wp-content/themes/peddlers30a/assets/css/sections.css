@@ -1,0 +1,4852 @@
+/* ==========================================================================
+   Peddlers 30A — Section Layouts (Strict PDF Page 1 Authority)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01 — Top navigation (Header)
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--white);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-7);
+  min-height: var(--nav-h);
+  max-width: 100%;
+  margin-inline: auto;
+  padding: 0 var(--gutter);
+}
+
+main>section+section {
+  margin-top: 0;
+}
+
+.site-header__logo img {
+  width: 15rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-7);
+}
+
+.site-nav__link {
+  position: relative;
+  padding-bottom: 4px;
+  font-size: var(--fs-body-md);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: color var(--dur) var(--ease);
+}
+
+.site-nav__link:hover {
+  color: var(--p1);
+}
+
+.site-nav__link.is-active {
+  color: var(--p1);
+  border-bottom: 2px solid var(--p1);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.site-header__actions .btn {
+  height: 3.5rem;
+  /* 56px — the phone button's icon was pushing it a few px taller than the plain
+     text "Reserve Now" button; pin both to the same height explicitly. */
+}
+
+.site-header__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 0.3125rem;
+  width: 1.75rem;
+  padding: 0.25rem 0;
+  margin-top: 0.1875rem;
+  /* The 3-line icon is flex-centered like everything else in the header,
+     but its thin lines read as sitting high next to the taller buttons —
+     nudge it down a touch for a better optical balance. */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.site-header__toggle span {
+  display: block;
+  height: 2px;
+  background: var(--p1);
+  transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
+
+.site-header.is-open .site-header__toggle span:nth-child(1) {
+  transform: translateY(0.4375rem) rotate(45deg);
+}
+
+.site-header.is-open .site-header__toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header.is-open .site-header__toggle span:nth-child(3) {
+  transform: translateY(-0.4375rem) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   02 — Hero
+   -------------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 65.375rem;
+  /* 1046px matching PDF Page 1 */
+  min-height: 45rem;
+  overflow: hidden;
+  isolation: isolate;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero--about::after,
+.hero--location::after,
+.hero--contact::after {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero__title {
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 6rem;
+  /* 96px */
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.hero__lead {
+  max-width: 48rem;
+  margin-top: var(--sp-5);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  line-height: 1.6;
+  color: var(--white);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: var(--sp-7);
+}
+
+.hero__actions .btn {
+  min-height: 3.75rem;
+  padding-inline: 2.5rem;
+  font-size: var(--fs-body-md);
+}
+
+/* Home hero — matched to Figma node 53:363.
+   Colors/weight apply at every breakpoint (design intent, not a size).
+   Sizing/spacing overrides are desktop-only (min-width: 769px) so the
+   existing mobile.css hero breakpoint rules keep controlling phone sizing. */
+.page-home .hero::after {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.page-home .hero__title {
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--s3);
+}
+
+.page-home .hero__lead {
+  color: var(--s1);
+}
+
+/* About hero — matched to Figma node 53:1261.
+   Colors/weight apply at every breakpoint (design intent, not a size).
+   Sizing/spacing overrides are desktop-only so mobile.css's own
+   .hero__title/.hero__lead breakpoint rules keep controlling phone sizing. */
+.page-about .hero::after {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.page-about .hero__title {
+  color: var(--s3);
+  font-weight: 400;
+}
+
+.page-about .hero__lead {
+  color: var(--s1);
+}
+
+@media (min-width: 769px) {
+  .page-about .hero__title {
+    font-size: 6rem;
+    /* 96px */
+    letter-spacing: -0.08rem;
+    /* -1.28px */
+    line-height: normal;
+  }
+
+  .page-about .hero__lead {
+    max-width: 58.4375rem;
+    /* 935px */
+    margin: 1.875rem auto 0;
+    /* 30px */
+    font-size: 2.1875rem;
+    /* 35px */
+    line-height: normal;
+  }
+}
+
+/* Location hero — matched to Figma node 53:2223.
+   Colors/weight apply at every breakpoint; sizing/spacing overrides are
+   desktop-only so mobile.css's own .page-location breakpoint rules keep
+   controlling phone sizing. */
+.page-location .hero__title {
+  color: var(--s3);
+  font-weight: 400;
+}
+
+.page-location .hero__lead {
+  color: var(--s1);
+}
+
+@media (min-width: 769px) {
+  .page-location .hero__title {
+    font-size: 6rem;
+    /* 96px */
+    letter-spacing: -0.08rem;
+    /* -1.28px */
+    line-height: normal;
+  }
+
+  .page-location .hero__lead {
+    max-width: 90.8125rem;
+    /* 1453px */
+    margin: 1.875rem auto 0;
+    /* 30px */
+    font-size: 2.1875rem;
+    /* 35px */
+    line-height: normal;
+  }
+}
+
+/* Rentals hero — matched to Figma node 53:2211.
+   Colors/weight apply at every breakpoint; sizing/spacing overrides are
+   desktop-only so mobile.css's own breakpoint rules keep controlling
+   phone sizing. */
+.page-rentals .hero::after {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.page-rentals .hero__title {
+  color: var(--s3);
+  font-weight: 500;
+}
+
+.page-rentals .hero__lead {
+  color: var(--s1);
+}
+
+.page-rentals .hero__actions .btn--primary {
+  background: var(--s3);
+  border-color: var(--s3);
+  color: var(--p3);
+}
+
+.page-rentals .hero__actions .btn--primary:hover {
+  background: var(--white);
+  border-color: var(--white);
+}
+
+.page-rentals .hero__actions .btn--ghost {
+  border-color: var(--s3);
+  color: var(--s3);
+  backdrop-filter: blur(2px);
+}
+
+@media (min-width: 769px) {
+  .page-rentals .hero__title {
+    font-size: 6rem;
+    /* 96px */
+    line-height: normal;
+  }
+
+  .page-rentals .hero__lead {
+    max-width: 58.4375rem;
+    /* 935px */
+    margin: 1.5625rem auto 0;
+    /* 25px */
+    font-size: 2.1875rem;
+    /* 35px */
+    line-height: normal;
+  }
+
+  .page-rentals .hero__actions {
+    gap: 1rem;
+    /* 16px */
+    margin-top: 1.5625rem;
+    /* 25px */
+  }
+
+  .page-rentals .hero__actions .btn {
+    min-height: 0;
+    padding: 1.0625rem 2rem;
+    /* 17px 32px */
+    font-size: 1rem;
+    /* 16px */
+  }
+}
+
+/* Contact hero — matched to Figma node 53:2849.
+   Colors/weight apply at every breakpoint; sizing/spacing overrides are
+   desktop-only so mobile.css's own breakpoint rules keep controlling
+   phone sizing. */
+.page-contact .hero__title {
+  color: var(--s3);
+  font-weight: 500;
+}
+
+.page-contact .hero__lead {
+  color: var(--s1);
+}
+
+.page-contact .hero__actions .btn--ghost {
+  backdrop-filter: blur(2px);
+}
+
+@media (min-width: 769px) {
+  .page-contact .hero__title {
+    font-size: 6rem;
+    /* 96px */
+    line-height: normal;
+  }
+
+  .page-contact .hero__lead {
+    max-width: 83.0625rem;
+    /* 1329px */
+    margin: 1.5625rem auto 0;
+    /* 25px */
+    font-size: 2.1875rem;
+    /* 35px */
+    line-height: normal;
+  }
+
+  .page-contact .hero__actions {
+    gap: 1rem;
+    /* 16px */
+    margin-top: 1.875rem;
+    /* 30px */
+  }
+
+  .page-contact .hero__actions .btn {
+    min-height: 0;
+    padding: 1.0625rem 2rem;
+    /* 17px 32px */
+    font-size: 1.25rem;
+    /* 20px */
+  }
+}
+
+/* Contact page — "Send an Inquiry", matched to Figma node 53:2878. */
+.inquiry__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.inquiry__image {
+  margin: 0;
+  overflow: hidden;
+}
+
+.inquiry__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.inquiry__panel {
+  background: var(--s1);
+  padding: 3.75rem;
+  /* 60px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  /* 32px */
+}
+
+.inquiry__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  line-height: normal;
+}
+
+.inquiry__lead {
+  font-size: 1.25rem;
+  color: var(--p1);
+}
+
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* 32px */
+}
+
+.inquiry-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  /* 32px */
+}
+
+.inquiry-form__field input,
+.inquiry-form__field textarea {
+  width: 100%;
+  padding: 1.125rem 1rem;
+  /* ~18px / 16px */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  /* 16px */
+  color: var(--p1);
+  text-transform: uppercase;
+}
+
+.inquiry-form__field textarea {
+  height: 7rem;
+  /* 112px */
+  resize: none;
+}
+
+.inquiry-form__field input::placeholder,
+.inquiry-form__field textarea::placeholder {
+  color: var(--p1);
+  text-transform: uppercase;
+}
+
+.inquiry-form__submit {
+  background: transparent;
+  border: 1px solid var(--s2);
+  color: var(--s2);
+  padding: 1.25rem 2rem;
+  /* 20px */
+  font-family: var(--font-body);
+  font-size: 1rem;
+  /* 16px */
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Contact page — "Direct Connection", matched to Figma node 53:2904. */
+.direct-connection {
+  background: var(--white);
+  padding: 3.75rem 0;
+}
+
+.direct-connection__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-inline: calc(var(--gutter) + 5rem);
+  /* Figma's own 80px inset, added on top of the base container gutter */
+}
+
+.direct-connection__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p1);
+  line-height: normal;
+}
+
+.direct-connection__lead {
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--text);
+  max-width: 36rem;
+  margin-top: 0.9375rem;
+  line-height: normal;
+}
+
+.direct-connection__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  margin-top: 1.875rem;
+}
+
+.direct-card {
+  background: var(--s1);
+  padding: 2.5rem;
+  /* 40px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.direct-card__icon {
+  width: 4rem;
+  height: 4rem;
+  /* 64px */
+  border-radius: 9999px;
+  background: var(--p3);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.direct-card__label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.375rem;
+  /* 22px */
+  color: var(--p2);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.direct-card__value {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-label-lg);
+  color: var(--p1);
+}
+
+.direct-connection__quote {
+  margin-top: 1.875rem;
+  font-size: 1rem;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+/* Contact page — "Seasonal Hours", matched to Figma node 53:2941. */
+.seasonal-hours {
+  position: relative;
+  padding: 3.75rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  min-height: 44rem;
+  overflow: hidden;
+}
+
+.seasonal-hours__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.67);
+}
+
+.seasonal-hours__card {
+  position: relative;
+  z-index: 1;
+  width: 58.625rem;
+  /* 938px */
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--white);
+}
+
+.seasonal-hours__intro {
+  background: var(--p2);
+  color: var(--white);
+  padding: 2.925rem 3rem 3rem;
+  /* ~46.8px / 48px */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.seasonal-hours__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  line-height: normal;
+}
+
+.seasonal-hours__lead {
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--s1);
+  opacity: 0.8;
+  margin-top: 1.425rem;
+  /* ~22.8px */
+  line-height: normal;
+}
+
+.seasonal-hours__notice {
+  margin-top: 2.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  padding: 1.5625rem;
+  /* 25px */
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.seasonal-hours__notice svg {
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.seasonal-hours__notice p {
+  font-size: 0.875rem;
+  /* 14px */
+  color: var(--s1);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.seasonal-hours__list {
+  background: var(--s1);
+  padding: 4.9075rem 3rem;
+  /* ~78.5px / 48px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.seasonal-hours__row {
+  padding-bottom: 1.5625rem;
+  /* 25px */
+  margin-bottom: 2.5rem;
+  /* 40px */
+  border-bottom: 1px solid rgba(214, 198, 178, 0.5);
+}
+
+.seasonal-hours__row--last {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.seasonal-hours__label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.375rem;
+  /* 22px */
+  color: var(--p2);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.seasonal-hours__value {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-label-lg);
+  color: var(--p1);
+}
+
+/* Category hero — matched to Figma node 53:3115.
+   Colors/weight apply at every breakpoint; sizing/spacing overrides are
+   desktop-only so mobile.css's own breakpoint rules keep controlling
+   phone sizing. */
+.hero--category::after {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.page-category .hero__title {
+  color: var(--s3);
+  font-weight: 500;
+}
+
+.page-category .hero__lead {
+  color: var(--s1);
+}
+
+@media (min-width: 769px) {
+  .page-category .hero__title {
+    font-size: 6rem;
+    /* 96px */
+    line-height: normal;
+  }
+
+  .page-category .hero__lead {
+    max-width: 61.0625rem;
+    /* 977px */
+    margin: 1.875rem auto 0;
+    /* 30px */
+    font-size: 1.75rem;
+    /* 28px */
+    line-height: normal;
+  }
+}
+
+/* Product detail page — Date Range Selector + Product Hero Split,
+   matched to Figma node 53:3510. */
+.date-selector {
+  background: var(--white);
+  padding: 2.5rem 0;
+}
+
+.date-selector__inner {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3.75rem;
+  /* 60px */
+}
+
+.date-selector__btn {
+  width: 21rem;
+  /* 336px */
+  background: transparent;
+  border: 1px solid var(--s2);
+  color: var(--s2);
+  padding: 1.3125rem 3.0625rem;
+  /* 21px / 49px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.875rem;
+  /* 30px */
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  /* 20px */
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.date-selector__btn svg {
+  width: 0.8125rem;
+  height: 0.5rem;
+  flex: none;
+}
+
+.date-selector__btn.has-value {
+  color: var(--p1);
+  border-color: var(--p1);
+}
+
+.date-selector__field {
+  position: relative;
+  width: 21rem;
+  /* 336px */
+}
+
+.date-selector__field .date-selector__btn {
+  width: 100%;
+}
+
+/* Custom calendar dropdown, styled to match the site instead of the
+   browser/OS's native date-picker chrome. */
+.date-picker {
+  position: absolute;
+  top: calc(100% + 0.625rem);
+  left: 0;
+  width: 100%;
+  min-width: 17.5rem;
+  background: var(--white);
+  border: 1px solid var(--s2);
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.15);
+  padding: 1.25rem;
+  z-index: 20;
+  font-family: var(--font-body);
+  text-align: left;
+  text-transform: none;
+}
+
+.date-picker__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.date-picker__month {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--p1);
+}
+
+.date-picker__nav {
+  width: 1.875rem;
+  height: 1.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--s2);
+  color: var(--s2);
+  cursor: pointer;
+}
+
+.date-picker__nav svg {
+  width: 0.5rem;
+  height: 0.8125rem;
+}
+
+.date-picker__nav:hover:not(:disabled) {
+  background: var(--s2);
+  color: var(--white);
+}
+
+.date-picker__nav:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.date-picker__weekdays,
+.date-picker__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.date-picker__weekdays {
+  margin-bottom: 0.5rem;
+}
+
+.date-picker__weekdays span {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text);
+}
+
+.date-picker__day {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--p1);
+  cursor: pointer;
+}
+
+.date-picker__day:hover:not(:disabled) {
+  background: var(--s1);
+}
+
+.date-picker__day.is-selected {
+  background: var(--p1);
+  color: var(--white);
+}
+
+.date-picker__day:disabled {
+  color: var(--s1);
+  cursor: default;
+}
+
+.product-hero {
+  background: var(--white);
+}
+
+.product-hero__grid {
+  display: flex;
+  align-items: stretch;
+  min-height: 55.5rem;
+  /* ~889px */
+}
+
+.product-hero__media {
+  flex: 1 0 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.product-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-hero__panel {
+  flex: 1 0 0;
+  background: var(--s1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.75rem;
+  /* 60px */
+}
+
+.product-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.875rem;
+  /* 30px */
+  width: 52.5rem;
+  /* 840px */
+  max-width: 100%;
+}
+
+.product-hero__eyebrow {
+  font-size: 1.25rem;
+  /* 20px */
+}
+
+.product-hero__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p1);
+  line-height: normal;
+}
+
+.product-hero__desc {
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--text);
+  opacity: 0.9;
+  line-height: normal;
+}
+
+.product-hero__specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  border-top: 1px solid rgba(136, 136, 136, 0.5);
+  border-bottom: 1px solid rgba(136, 136, 136, 0.5);
+}
+
+.product-hero__spec {
+  padding: 1.875rem 1rem;
+  /* 30px */
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  /* 10px */
+}
+
+.product-hero__spec+.product-hero__spec {
+  border-left: 1px solid rgba(136, 136, 136, 0.5);
+}
+
+.product-hero__spec-label {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.375rem;
+  /* 22px */
+  color: var(--text);
+}
+
+.product-hero__spec-value {
+  font-family: var(--font-body);
+  font-size: 1.9375rem;
+  /* 31px */
+  color: var(--p2);
+}
+
+.product-hero__pills-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  /* 16px */
+}
+
+.product-hero__inclusions-label {
+  font-size: var(--fs-label-md);
+  color: var(--p1);
+  text-transform: uppercase;
+}
+
+.product-hero__pills {
+  display: flex;
+  align-items: center;
+  gap: 1.5625rem;
+  /* 25px */
+}
+
+.product-hero__pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* 8px */
+  padding: 0.5rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1.9375rem;
+  /* 31px */
+  color: var(--s2);
+  border-right: 1px solid rgba(78, 173, 170, 0.3);
+}
+
+.product-hero__pill:last-child {
+  border-right: none;
+}
+
+.product-hero__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.product-hero__price-label {
+  font-size: 1rem;
+  /* 16px */
+  color: var(--text);
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.product-hero__price {
+  font-family: var(--font-body);
+  font-size: 3.0625rem;
+  /* 49px */
+  color: var(--p3);
+  text-align: left;
+}
+
+.product-hero__price span {
+  font-size: var(--fs-label-md);
+}
+
+.product-hero__book-btn {
+  background: var(--p1);
+  border: 1px solid var(--p2);
+  color: var(--p2);
+  padding: 1.3125rem 3.0625rem;
+  /* 21px / 49px */
+  font-family: var(--font-body);
+  font-size: 1rem;
+  /* 16px */
+  letter-spacing: 0.20625rem;
+  /* 3.3px */
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Location page — Trust Feature Bar, matched to Figma node 53:2246. */
+.trust-bar {
+  background: var(--s3);
+  padding: 1.75rem 0;
+  /* 28px */
+}
+
+.trust-bar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8.625rem;
+  /* 138px */
+}
+
+.trust-bar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9375rem;
+  /* 15px */
+}
+
+.trust-bar__icon {
+  height: 1.5rem;
+  /* 24px */
+  width: auto;
+}
+
+.trust-bar__label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.5625rem;
+  /* 25px */
+  color: var(--p3);
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: normal;
+}
+
+@media (min-width: 769px) {
+  .page-home .hero__inner {
+    max-width: 74.9375rem;
+    /* 1199px */
+    gap: 1.875rem;
+    /* 30px */
+  }
+
+  .page-home .hero__lead {
+    max-width: none;
+    margin-top: 0;
+    font-size: var(--fs-script-xs);
+    /* 35px */
+    line-height: normal;
+  }
+
+  .page-home .hero__actions {
+    margin-top: 0;
+  }
+
+  .page-home .hero__actions .btn {
+    font-size: 1.25rem;
+    /* 20px */
+    padding-block: 1.3125rem;
+    /* 21px */
+  }
+}
+
+/* --------------------------------------------------------------------------
+   03 — Trust bar
+   -------------------------------------------------------------------------- */
+
+.trust {
+  background: var(--s3);
+  padding: 3.125rem 0;
+  /* 50px — horizontal 60px comes from .container's gutter */
+}
+
+.trust__bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  gap: var(--sp-4);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.trust__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9375rem;
+  /* 15px */
+  text-align: center;
+}
+
+.trust__icon {
+  width: 1.5rem;
+  /* 24px */
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.trust__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-label-md);
+  letter-spacing: 0;
+  color: var(--p3);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.trust__meta {
+  font-size: var(--fs-label-md);
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--text-1);
+}
+
+/* --------------------------------------------------------------------------
+   04 — About split / The 30A Way
+   -------------------------------------------------------------------------- */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 52rem;
+  background: var(--s1);
+}
+
+.about__panel {
+  display: grid;
+  place-items: center;
+  padding: 3.75rem;
+  /* 60px */
+  background: var(--s1);
+}
+
+.about__content {
+  max-width: 840px;
+  text-align: center;
+}
+
+.about__content .eyebrow {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.curated-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  line-height: normal;
+  color: var(--p3);
+  margin-top: 0.625rem;
+  /* 10px */
+}
+
+.about__body {
+  margin-top: 2.5rem;
+  /* 40px */
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--text-1);
+  line-height: normal;
+}
+
+.about__copy {
+  margin-top: 1.5625rem;
+  /* 25px */
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--text);
+  line-height: normal;
+}
+
+/* About page's "Crafting Memories" instance of this shared section uses a
+   flat 25px flex gap in Figma (node 53:1267), not the grid-stack mt-39
+   trick the home page instance used — so it needs its own eyebrow/title
+   spacing rather than the shared 0.625rem correction. */
+.page-about .about__content .eyebrow {
+  font-size: 1.25rem;
+  /* 20px */
+}
+
+.page-about .about__title {
+  margin-top: 1.5625rem;
+  /* 25px */
+}
+
+.about__stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  /* 48px */
+  margin: 2.5rem 0 0;
+}
+
+.about__stat-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  /* 8px */
+}
+
+.about__stat-num {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-label-lg);
+  /* 31px */
+  color: var(--p3);
+}
+
+.about__stat-lbl {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--text-1);
+  margin-top: 0;
+}
+
+.about__content .btn {
+  margin-top: 2.5rem;
+  /* 40px */
+  min-width: 10rem;
+  font-size: 1.25rem;
+  /* 20px */
+  padding: 1.3125rem 3.0625rem;
+  /* 21px / 49px */
+  color: var(--s1);
+}
+
+.about__media {
+  position: relative;
+  min-height: 30rem;
+  margin: 0;
+}
+
+.about__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   05 — Category tiles
+   -------------------------------------------------------------------------- */
+
+.categories {
+  padding: 4rem 0;
+  background: var(--white);
+}
+
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--col-gap);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categories .media-card {
+  aspect-ratio: 584 / 850;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+
+.categories .media-card__tag--top {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  text-align: center;
+}
+
+.categories .media-card__tag--bottom {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   06 — Rent a Bike (8 Cards Grid)
+   -------------------------------------------------------------------------- */
+
+.rental {
+  padding: 3.75rem 0;
+  /* 60px */
+  background: var(--white);
+}
+
+.rental__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.75rem;
+  /* 60px */
+}
+
+.rental .eyebrow {
+  font-size: var(--fs-label-md);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.rental__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.625rem;
+  /* 10px */
+}
+
+.rental__subtitle {
+  color: var(--text-1);
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin-top: 1.875rem;
+  /* 30px */
+  line-height: normal;
+}
+
+.rental__view-more {
+  min-height: 3.25rem;
+  padding: 1.3125rem 3.0625rem;
+  /* 21px / 49px */
+  white-space: nowrap;
+  font-size: 1.25rem;
+  /* 20px */
+  letter-spacing: 0;
+  line-height: 1;
+  border-color: var(--p3);
+  color: var(--p3);
+}
+
+.rental__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.bike-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.bike-card__media {
+  aspect-ratio: 432 / 480;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  background: #f7f7f7;
+}
+
+.bike-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms var(--ease);
+}
+
+.bike-card:hover .bike-card__media img {
+  transform: scale(1.04);
+}
+
+/* Body grows to fill card height so button always sits at the bottom */
+.bike-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.bike-card__name,
+.bike-card__title {
+  color: var(--p3);
+  margin-top: 1.25rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-label-lg);
+}
+
+.bike-card__price {
+  color: var(--p1);
+  margin: 0.25rem 0 1.25rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-label-md);
+}
+
+/* Push button to bottom of card regardless of title length */
+.bike-card .btn,
+.bike-card__cta {
+  margin-top: auto;
+  border-color: var(--p2);
+  color: var(--p2);
+  font-size: 1.25rem;
+  /* 20px */
+  padding: 0.8125rem 1.25rem;
+  /* 13px / 20px */
+  min-height: 2.875rem;
+  /* 46px */
+  letter-spacing: 0;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.bike-card .btn:hover,
+.bike-card__cta:hover {
+  background: var(--p2);
+  color: var(--white);
+}
+
+/* Location page's "Largest Bike Rental" instance of this shared section —
+   matched to Figma node 53:2418. Its eyebrow size, grid gap and title
+   tracking differ from the home page instance's own Figma node. */
+.rental--location .eyebrow {
+  font-size: 1.25rem;
+  /* 20px */
+}
+
+.rental--location .rental__title {
+  letter-spacing: 0.0625rem;
+  /* 1px */
+}
+
+.rental--location .rental__grid {
+  gap: 1.875rem;
+  /* 30px */
+}
+
+/* Rentals page's "Largest Bike Rental" instance of this shared section —
+   matched to Figma node 53:1823. Centered header stack (no view-more
+   button), square product photos, and its own eyebrow/tracking/gap values. */
+.rental--catalog .rental__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.rental--catalog .eyebrow {
+  font-size: 1.25rem;
+  /* 20px */
+}
+
+.rental--catalog .rental__title {
+  letter-spacing: 0.0625rem;
+  /* 1px */
+}
+
+.rental--catalog .rental__subtitle {
+  color: var(--text);
+  margin-top: 1.2rem;
+  /* ~19px */
+}
+
+.rental--catalog .rental__grid {
+  gap: 1.875rem;
+  /* 30px */
+}
+
+.rental--catalog .bike-card__media {
+  aspect-ratio: 1 / 1;
+}
+
+/* Category page's "Largest Bike Rental" instance of this shared section —
+   matched to Figma node 53:3139. Left-aligned header with a view-more
+   button on the right (like the home page's own instance), square
+   product photos, and its own subtitle color. */
+.rental--category .rental__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.rental--category .bike-card__media {
+  aspect-ratio: 1 / 1;
+}
+
+/* Product-detail page's "Relate Products" section — Figma node 53:3580.
+   Same card-grid pattern as the rental catalogs, but with a nav-arrow
+   pair on the right of the header instead of a view-more link. */
+.relate-products {
+  background: var(--white);
+  padding: 3.75rem 0;
+}
+
+.relate-products__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+}
+
+.relate-products .eyebrow {
+  font-size: var(--fs-label-md);
+}
+
+.relate-products__nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.relate-products__grid {
+  gap: 1.875rem;
+  /* 30px */
+}
+
+.relate-products .bike-card__media {
+  aspect-ratio: 1 / 1;
+}
+
+.rental-filters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 3.75rem 0;
+  /* 60px */
+}
+
+.rental-filters__btn {
+  width: 21rem;
+  /* 336px */
+  padding: 1.3125rem 3.0625rem;
+  /* 21px / 49px */
+  background: transparent;
+  border: 1px solid var(--p1);
+  color: var(--p1);
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  /* 20px */
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.rental-filters__btn.is-active {
+  background: var(--p1);
+  border-color: var(--p2);
+  color: var(--p2);
+}
+
+/* Rentals page — "Simple & Transparent Pricing", matched to Figma
+   node 53:1635. */
+.pricing {
+  background: var(--white);
+  padding: 3.75rem 0;
+}
+
+.pricing__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pricing .eyebrow {
+  font-size: 1.25rem;
+  /* 20px */
+}
+
+.pricing__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 4.5rem;
+  /* 72px */
+  color: var(--p3);
+  margin-top: 0.5rem;
+  line-height: normal;
+}
+
+.pricing__lead {
+  font-weight: 300;
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--text);
+  margin-top: 1.25rem;
+  line-height: normal;
+}
+
+.pricing-tabs {
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+  /* 30px */
+  border: 1px solid var(--text);
+  padding: 0.6875rem;
+  /* 11px */
+  margin-top: 2.5rem;
+  /* 40px */
+}
+
+.pricing-tabs__btn {
+  background: transparent;
+  border: none;
+  padding: 0.625rem 1.5rem;
+  /* 10px / 24px */
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  /* 20px */
+  color: var(--text);
+  cursor: pointer;
+}
+
+.pricing-tabs__btn.is-active {
+  background: var(--p3);
+  color: var(--p2);
+}
+
+.pricing__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.875rem;
+  /* 30px */
+  margin-top: 3.75rem;
+  /* 60px */
+  width: 100%;
+}
+
+.pricing__grid[hidden] {
+  display: none;
+}
+
+.pricing-card {
+  background: var(--s1);
+  flex: 1 0 0;
+  max-width: 36.25rem;
+  /* 580px: 516px content + 32px padding each side */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+  /* 25px */
+  position: relative;
+  text-align: center;
+}
+
+.pricing-card--featured {
+  background: var(--s3);
+}
+
+.pricing-card__badge {
+  position: absolute;
+  top: -1.375rem;
+  /* -22px */
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--p3);
+  border: 1px solid var(--p2);
+  color: var(--p2);
+  padding: 0.6875rem 3.0625rem;
+  /* 11px / 49px */
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  /* 20px */
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pricing-card__name {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.125rem;
+  /* 18px */
+  color: var(--p1);
+}
+
+.pricing-card__price {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-label-lg);
+  color: var(--p3);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.pricing-card__price span {
+  font-weight: 400;
+  font-size: 1.25rem;
+  /* 20px */
+}
+
+.pricing-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  /* 30px */
+  text-align: left;
+}
+
+.pricing-card__features li {
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+  /* 15px */
+  font-family: var(--font-body);
+  font-size: 1rem;
+  /* 16px */
+  color: var(--p2);
+  line-height: normal;
+}
+
+.pricing-card--featured .pricing-card__features li {
+  color: var(--p1);
+}
+
+.pricing-card__features li svg {
+  width: 0.766rem;
+  height: 0.547rem;
+  flex: none;
+  color: inherit;
+}
+
+.pricing-card__cta {
+  margin-top: auto;
+  border: 1px solid var(--p1);
+  color: var(--p1);
+  text-align: center;
+  padding: 0.875rem 0;
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  text-decoration: none;
+  display: block;
+}
+
+/* Rentals page — "Our Simple Rental Process", matched to Figma
+   node 53:1944. */
+.rental-process {
+  background-color: var(--p2);
+  background-image: url('../img/day-banner-pattern-2.png');
+  background-repeat: repeat;
+  background-size: 30rem 30rem;
+  background-position: center;
+  padding: 2.5rem 0;
+  /* 40px */
+}
+
+.rental-process__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.rental-process__head {
+  flex: 0 0 auto;
+  max-width: 22rem;
+  /* ~351px, matches Figma's narrow title column so it wraps to 2 lines
+     and leaves room for the steps row beside it */
+}
+
+.rental-process__eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.25rem;
+  /* 20px */
+  color: var(--p1);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.rental-process__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.5rem;
+  line-height: normal;
+}
+
+.rental-process__steps {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  justify-content: space-between;
+}
+
+.rental-process__line {
+  position: absolute;
+  top: 1rem;
+  /* 16px */
+  left: 9.1875rem;
+  /* 147px */
+  right: 9.1875rem;
+  border-top: 2px dashed #e5e7eb;
+}
+
+.rental-process__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  /* 10px */
+  flex: 1 0 0;
+  min-width: 10rem;
+  padding-inline: 1.3125rem;
+  /* 21px */
+  text-align: center;
+  position: relative;
+}
+
+.rental-process__num {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background: var(--s3);
+  color: var(--p3);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  /* 16px, on top of the step's own 10px gap */
+}
+
+.rental-process__icon {
+  height: 4.5rem;
+  /* 72px box, icon centered inside like Figma's margin box */
+  width: 100%;
+  max-width: 2.8125rem;
+  /* 45px */
+  object-fit: contain;
+}
+
+.rental-process__step-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.25rem;
+  /* 20px */
+  color: var(--p1);
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+  /* 8px, on top of the step's own 10px gap */
+}
+
+.rental-process__step-copy {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  /* 16px */
+  color: var(--p1);
+  margin-top: 0.5rem;
+  line-height: 1.25;
+}
+
+/* Location page — "The 30A Way / Local Introduction", matched to Figma
+   node 53:2490. */
+.local-intro {
+  background: var(--s1);
+  padding: 3.75rem 0;
+  /* 60px */
+}
+
+.local-intro__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.local-intro .eyebrow {
+  font-size: 1.25rem;
+  /* 20px */
+}
+
+.local-intro__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.5rem;
+  /* ~8px */
+  line-height: normal;
+}
+
+.local-intro__copy {
+  font-weight: 300;
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--p1);
+  line-height: normal;
+  margin-top: 1.875rem;
+  /* 30px */
+}
+
+.local-intro__copy+.local-intro__copy {
+  margin-top: 1.875rem;
+  /* 30px */
+}
+
+/* Product-detail page's own instance of this shared section (Figma node
+   53:3580) sits on a plain white background, unlike the other pages'
+   grey (--s1) instance. */
+.page-product-detail .local-intro {
+  background: var(--white);
+}
+
+/* Location page — "Come for the Ride, Stay for Everything Else" (4 Pillars),
+   matched to Figma node 53:2273. */
+.pillars {
+  background: var(--white);
+  padding: 3.75rem 0;
+  /* 60px */
+}
+
+.pillars__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pillars .eyebrow {
+  font-size: 1.25rem;
+  /* 20px */
+}
+
+.pillars__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.5rem;
+  line-height: normal;
+}
+
+.pillars__lead {
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--text);
+  margin-top: 1.25rem;
+  /* 20px */
+  line-height: normal;
+  max-width: 80.375rem;
+  /* 1286px */
+}
+
+.pillars__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
+  gap: 1.875rem;
+  /* 30px */
+  margin-top: 3.75rem;
+  /* 60px */
+  text-align: left;
+  width: 100%;
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar__media {
+  aspect-ratio: 427.5 / 658;
+  overflow: hidden;
+  margin-bottom: 1.5625rem;
+  /* 25px */
+}
+
+.pillar__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pillar__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar__num {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  /* 16px */
+  color: var(--p2);
+  margin: 0;
+}
+
+.pillar__title-sm {
+  font-family: var(--font-body);
+  /* font-weight: 500; */
+  font-size: 2.3rem;
+  /* 31px */
+  color: var(--p3);
+  margin-top: 1.5rem;
+  /* 24px */
+  line-height: normal;
+}
+
+.pillar__copy {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--p1);
+  line-height: normal;
+  margin-top: 1.5rem;
+  /* 24px */
+}
+
+.pillar__btn {
+  margin-top: 1.5625rem;
+  /* 25px */
+  height: 3.25rem;
+  /* 52px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--s3);
+  color: var(--s3);
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  /* 20px */
+  text-transform: uppercase;
+}
+
+/* Location page — "Peddlers Pavilion Showcase" craving cards, matched to
+   Figma node 53:2339. Header styling matches .pillars__head exactly
+   (Figma reuses the same header spec for both sections). */
+.cravings {
+  background: var(--white);
+  padding: 3.75rem 0;
+  /* 60px */
+}
+
+.cravings__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cravings .eyebrow {
+  font-size: 1.25rem;
+  /* 20px */
+}
+
+.cravings__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.5rem;
+  line-height: normal;
+}
+
+.cravings__lead {
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--text);
+  margin-top: 1.25rem;
+  line-height: normal;
+  max-width: 80.5rem;
+  /* 1288px */
+}
+
+.cravings__grid {
+  display: flex;
+  align-items: stretch;
+  gap: 1.875rem;
+  /* 30px */
+  margin-top: 3.75rem;
+  /* 60px */
+  text-align: left;
+  width: 100%;
+}
+
+.craving-card {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.45625rem;
+  /* 23.3px */
+  padding: 1.875rem;
+  /* 30px */
+}
+
+.craving-card__top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.craving-card__icon {
+  height: 3.125rem;
+  /* 50px */
+  width: auto;
+}
+
+.craving-card__divider {
+  flex: 1;
+  height: 1px;
+}
+
+.craving-card__step {
+  font-family: var(--font-script);
+  font-size: 1.875rem;
+  /* 30px */
+  opacity: 0.5;
+  line-height: normal;
+}
+
+.craving-card__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-label-lg);
+  line-height: normal;
+  color: var(--p3);
+  margin: 0;
+}
+
+.craving-card__copy {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  /* 20px */
+  line-height: normal;
+  margin: 0;
+}
+
+.craving-card__tags {
+  border-top: 1px solid;
+  padding-top: 1.10625rem;
+  /* 17.7px */
+  font-family: var(--font-body);
+  font-size: 1rem;
+  /* 16px */
+  text-transform: uppercase;
+  margin: auto 0 0;
+}
+
+.craving-card--1 {
+  background: var(--p1);
+}
+
+.craving-card--1 .craving-card__divider {
+  background: rgba(98, 177, 234, 0.15);
+}
+
+.craving-card--1 .craving-card__step {
+  color: var(--p2);
+}
+
+.craving-card--1 .craving-card__title {
+  color: var(--p2);
+}
+
+.craving-card--1 .craving-card__copy {
+  color: var(--s1);
+}
+
+.craving-card--1 .craving-card__tags {
+  color: var(--s1);
+  border-color: rgba(98, 177, 234, 0.3);
+}
+
+.craving-card--2 {
+  background: var(--s1);
+}
+
+.craving-card--2 .craving-card__divider {
+  background: rgba(1, 0, 154, 0.15);
+}
+
+.craving-card--2 .craving-card__step,
+.craving-card--2 .craving-card__copy,
+.craving-card--2 .craving-card__tags {
+  color: var(--p1);
+}
+
+.craving-card--2 .craving-card__tags {
+  border-color: rgba(1, 0, 154, 0.3);
+}
+
+.craving-card--3 {
+  background: var(--p2);
+}
+
+.craving-card--3 .craving-card__divider {
+  background: rgba(57, 89, 186, 0.15);
+}
+
+.craving-card--3 .craving-card__step,
+.craving-card--3 .craving-card__copy,
+.craving-card--3 .craving-card__tags {
+  color: var(--p1);
+}
+
+.craving-card--3 .craving-card__tags {
+  border-color: rgba(57, 89, 186, 0.3);
+}
+
+.craving-card--4 {
+  background: var(--s2);
+}
+
+.craving-card--4 .craving-card__divider {
+  background: rgba(1, 0, 154, 0.1);
+}
+
+.craving-card--4 .craving-card__step {
+  color: var(--s1);
+}
+
+.craving-card--4 .craving-card__copy {
+  color: var(--s1);
+}
+
+.craving-card--4 .craving-card__tags {
+  color: var(--s1);
+  border-color: rgba(1, 0, 154, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   07 — Make It A Day To Remember Banner
+   -------------------------------------------------------------------------- */
+
+.day-banner {
+  background-color: var(--p1);
+  background-image: url('../img/day-banner-pattern-2.png');
+  background-repeat: repeat;
+  background-size: 30rem 30rem;
+  /* 480px tile, zoomed in and faint — bicycle line-art motif supplied for this section */
+  background-position: center;
+  color: var(--white);
+  padding: 2.5rem 0;
+  /* 40px */
+}
+
+.day-banner__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.day-banner__content {
+  max-width: 36.6875rem;
+}
+
+.day-banner__eyebrow {
+  font-size: var(--fs-label-md);
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #d9f0f4;
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.day-banner__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--white);
+  font-size: 3.25rem;
+  /* 52px */
+  line-height: normal;
+  margin: 0.5rem 0 1.5rem;
+  /* 8px / 24px */
+}
+
+.day-banner__btn {
+  border-width: 2px;
+  border-color: var(--p2);
+  color: var(--p2);
+  font-size: 1.25rem;
+  /* 20px */
+  padding: 0.625rem 1.625rem;
+  /* 10px / 26px */
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.day-banner__btn:hover {
+  background: var(--p2);
+  color: var(--white);
+}
+
+.day-banner__badges {
+  display: flex;
+  gap: 5.625rem;
+  /* 90px */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.day-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  /* 16px */
+  text-align: center;
+}
+
+.day-badge__circle {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.day-badge__circle--sand {
+  background: var(--s3);
+  /* #d6c6b2 — exact Figma match */
+}
+
+.day-badge__circle--teal {
+  background: var(--s2);
+  /* #4eadaa — exact Figma match */
+}
+
+.day-badge__circle--light {
+  background: var(--s1);
+  /* #efefef — exact Figma match */
+}
+
+.day-badge__circle--sky {
+  background: var(--p2);
+  /* #62b1ea — exact Figma match */
+}
+
+.day-badge__circle--navy {
+  background: var(--p3);
+  /* #01009a — exact Figma match */
+}
+
+.day-badge__circle img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+}
+
+.day-badge__label {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   08 — The Peddlers Difference / Why Choose Peddlers 30A
+   -------------------------------------------------------------------------- */
+
+.why {
+  background: var(--s1);
+  padding: 3.75rem 0;
+  /* 60px */
+}
+
+.why .eyebrow {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.why__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.625rem;
+  /* 10px */
+}
+
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3.75rem;
+  /* 60px */
+}
+
+.why__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.25rem;
+  position: relative;
+}
+
+.why__item+.why__item::before {
+  content: "";
+  position: absolute;
+  left: -0.625rem;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background: rgba(98, 177, 234, 0.5);
+}
+
+.why__icon-wrap {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.why__icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
+}
+
+.why__name {
+  color: var(--p1);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-label-lg);
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(98, 177, 234, 0.5);
+}
+
+.why__item .body-copy {
+  color: var(--p1);
+  font-size: 1.375rem;
+  /* 22px */
+  line-height: 1.6;
+}
+
+/* About page's "Navigate Your Paradise" instance of this shared section —
+   matched to Figma node 53:1529. Its own card grid/title spacing, since
+   this page has no eyebrow before the title (unlike the home page's
+   "Why Choose" instance). */
+.why--paradise {
+  background: var(--white);
+  padding: 3.75rem 0;
+  /* 60px */
+}
+
+.page-about .why__title,
+.why--paradise .why__title {
+  margin-top: 0;
+  margin-bottom: 3.125rem;
+  /* 50px */
+}
+
+.why-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.875rem;
+  /* 30px */
+}
+
+.why-card {
+  background: var(--s1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 2.0625rem;
+  /* 33px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.why-card__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-label-lg);
+  color: var(--p1);
+  line-height: normal;
+  margin: 0 0 0.5rem;
+}
+
+.why-card__copy {
+  font-family: var(--font-body);
+  font-size: 1.75rem;
+  /* 28px */
+  font-weight: 400;
+  color: var(--text);
+  opacity: 0.7;
+  line-height: normal;
+  margin: 0;
+}
+
+.why-card img,
+.why-card svg {
+  width: 1.6875rem;
+  /* 27px */
+  height: auto;
+  flex-shrink: 0;
+  color: var(--p1);
+}
+
+/* --------------------------------------------------------------------------
+   About page — Section 5: The Fleet / "A Curated Collection"
+   Matched to Figma node 53:1315.
+   -------------------------------------------------------------------------- */
+
+.fleet {
+  background: var(--s1);
+  padding: 3.75rem 0;
+  /* 60px */
+}
+
+.fleet__inner {
+  padding-left: calc(var(--gutter) + 5rem);
+  padding-right: calc(var(--gutter) + 5rem);
+  /* +80px on top of the .container gutter — matches Figma's nested px-80.
+     calc() against --gutter (not a flat value) since this replaces, rather
+     than adds to, .container's own padding-inline on this element. */
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+  /* 60px */
+}
+
+.fleet__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5625rem;
+  /* 25px */
+  text-align: center;
+}
+
+.fleet__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  line-height: normal;
+}
+
+.fleet__lead {
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--p1);
+  opacity: 0.8;
+  line-height: normal;
+}
+
+.fleet__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  /* 80px */
+  align-items: stretch;
+}
+
+.fleet__col:first-child .fleet__photo {
+  /* Left column's copy is shorter than the right column's, so its photo
+     would otherwise stop short of the right column's bottom edge — push
+     it down to the bottom so both columns end flush. */
+  margin-top: auto;
+}
+
+.fleet__col {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  /* 48px */
+}
+
+.fleet__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95625rem;
+  /* 15.3px */
+}
+
+.fleet__item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.0625rem;
+  /* 17px */
+  border-bottom: 1px solid rgba(1, 0, 154, 0.4);
+}
+
+.fleet__item-title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-label-lg);
+  color: var(--p3);
+  line-height: normal;
+}
+
+.fleet__item-copy {
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--p1);
+  opacity: 0.7;
+  line-height: normal;
+}
+
+.fleet__item-list {
+  list-style: disc;
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--p1);
+  opacity: 0.7;
+  line-height: normal;
+  padding-left: 2.625rem;
+  /* 42px */
+  margin: 0;
+}
+
+.fleet__photo {
+  height: 28.125rem;
+  /* 450px */
+  margin: 0;
+  filter: drop-shadow(0 1.5625rem 1.5625rem rgba(0, 0, 0, 0.25));
+  overflow: hidden;
+}
+
+.fleet__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   09 — Curated Outing / Featured Experiences
+   -------------------------------------------------------------------------- */
+
+.experiences {
+  padding: 5rem 0 3rem;
+  background: var(--white);
+}
+
+.experiences__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+}
+
+.experiences__head .eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-label-md);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.experiences__head .btn {
+  border-color: var(--s2);
+  color: var(--s2);
+  font-size: 1rem;
+  /* 16px */
+  padding: 1.3125rem 3.0625rem;
+  /* 21px / 49px */
+}
+
+.experiences__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.625rem;
+  /* 10px */
+}
+
+.experiences__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--col-gap);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: start;
+}
+
+.exp-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 432 / 660;
+  isolation: isolate;
+}
+
+.exp-card:nth-child(odd) {
+  margin-top: 3.5rem;
+}
+
+.exp-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+
+.exp-card:hover .exp-card__img {
+  transform: scale(1.05);
+}
+
+.exp-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0.85) 100%);
+}
+
+.exp-card__body {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.exp-card__name {
+  color: var(--white);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.9375rem;
+  /* 31px */
+}
+
+.exp-card__meta {
+  margin-top: 0.5rem;
+  /* 8px */
+  font-size: 1.25rem;
+  /* 20px */
+  letter-spacing: 0;
+  color: var(--s1);
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   10 — Our Home Base / Peddlers Pavilion
+   -------------------------------------------------------------------------- */
+
+.pavilion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 52rem;
+  background: var(--s1);
+}
+
+.pavilion__media {
+  position: relative;
+  min-height: 30rem;
+  margin: 0;
+}
+
+.pavilion__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pavilion__panel {
+  display: grid;
+  place-items: center;
+  padding: 3.75rem;
+  /* 60px */
+  background: var(--s1);
+}
+
+.pavilion__content {
+  max-width: 52.5rem;
+  /* 840px */
+  text-align: center;
+}
+
+.pavilion__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.625rem;
+  /* 10px */
+}
+
+.pavilion__body {
+  margin-top: 3.125rem;
+  /* 50px */
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--text-1);
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.pavilion__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5625rem;
+  /* 25px */
+  margin: 3.125rem 0 0;
+  /* 50px top, bottom via button's own margin */
+  padding: 0;
+  list-style: none;
+}
+
+.pavilion__list li {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  /* 24px */
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.875rem;
+  /* 30px */
+  letter-spacing: 0;
+  line-height: 1;
+  color: var(--p1);
+}
+
+.pavilion__list img {
+  width: 1.875rem;
+  height: 1.875rem;
+  object-fit: contain;
+}
+
+.pavilion__content .btn {
+  margin-top: 3.125rem;
+  /* 50px */
+  min-width: 16rem;
+  font-size: 1.25rem;
+  /* 20px */
+  padding: 1.25rem 3rem;
+  /* 20px / 48px */
+  color: var(--s1);
+}
+
+/* --------------------------------------------------------------------------
+   11 — The Pavilion Collection / A Curated Gathering (3x3 Grid)
+   -------------------------------------------------------------------------- */
+
+.gathering {
+  padding: 5rem 0;
+  background: var(--white);
+}
+
+.gathering .eyebrow {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.gathering__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.625rem;
+  /* 10px */
+}
+
+.gathering__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 3.75rem;
+  /* 60px */
+}
+
+.venue-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--s1);
+  overflow: hidden;
+}
+
+.venue-card__media {
+  aspect-ratio: 584 / 430;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+}
+
+.venue-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms var(--ease);
+}
+
+.venue-card:hover .venue-card__media img {
+  transform: scale(1.04);
+}
+
+.venue-card__body {
+  padding: 1.75rem;
+}
+
+.venue-card__name {
+  color: var(--p3);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 700;
+  font-size: var(--fs-label-lg);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.venue-card__copy {
+  margin-top: 1rem;
+  /* 16px */
+  font-size: 1.25rem;
+  /* 20px */
+  line-height: normal;
+  letter-spacing: 0;
+  color: var(--p1);
+}
+
+/* --------------------------------------------------------------------------
+   12 — Shop the Look / Coastal Essentials
+   -------------------------------------------------------------------------- */
+
+.merch {
+  background: var(--s1);
+  padding: 3.75rem 0;
+  /* 60px */
+}
+
+.merch .eyebrow {
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--text-1);
+  font-size: var(--fs-label-md);
+}
+
+.merch__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.625rem;
+  /* 10px */
+}
+
+.merch__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--col-gap);
+  margin-top: 3.75rem;
+  /* 60px */
+  list-style: none;
+  padding: 0;
+}
+
+.merch-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 584 / 620;
+  overflow: hidden;
+}
+
+.merch-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+
+.merch-card:hover img {
+  transform: scale(1.04);
+}
+
+.merch-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem;
+  /* 40px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.merch-card__label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  line-height: 1;
+  color: var(--s1);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.merch-card__plus {
+  width: 2.5rem;
+  /* 40px */
+  height: 2.5rem;
+  background: var(--white);
+  color: var(--p1);
+  border: 1px solid var(--p1);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: var(--fs-body-md);
+}
+
+/* --------------------------------------------------------------------------
+   13 — The Process / The Simple Path to the Trail
+   -------------------------------------------------------------------------- */
+
+.path {
+  padding: 3.8125rem 0 3.75rem;
+  /* 61px 60px */
+  background: var(--white);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.path .eyebrow {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: var(--fs-label-md);
+}
+
+.path__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.625rem;
+  /* 10px */
+}
+
+.path__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 3.75rem;
+  /* 60px */
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.path-card {
+  position: relative;
+  aspect-ratio: 600 / 860;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.path-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+
+.path-card:hover .path-card__img {
+  transform: scale(1.04);
+}
+
+.path-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      #000 14%,
+      rgba(0, 0, 0, 0.2) 65%,
+      rgba(0, 0, 0, 0) 100%);
+}
+
+.path-card__body {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 1;
+  padding: 3rem;
+  /* 48px */
+}
+
+.path-card__num {
+  font-family: var(--font-script);
+  font-size: 3.0625rem;
+  /* 49px */
+  line-height: normal;
+  color: rgba(136, 136, 136, 0.8);
+  display: block;
+}
+
+.path-card__name {
+  margin-top: 1.5625rem;
+  /* 25px */
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.9375rem;
+  /* 31px */
+  color: var(--p2);
+  letter-spacing: normal;
+}
+
+.path-card__copy {
+  margin-top: 1.5625rem;
+  /* 25px */
+  font-size: 1.25rem;
+  /* 20px */
+  line-height: 1.5;
+  color: rgba(239, 239, 239, 0.8);
+}
+
+/* --------------------------------------------------------------------------
+   14 — The Coastal Rhythms (Timeline Flow)
+   -------------------------------------------------------------------------- */
+
+.rhythms {
+  background-color: var(--s2);
+  background-image: url('../img/day-banner-pattern-2.png');
+  background-repeat: repeat;
+  background-size: 30rem 30rem;
+  background-position: center;
+  padding: 3.75rem 0;
+  /* 60px */
+}
+
+.rhythms__title {
+  color: var(--black);
+  font-family: var(--font-script);
+  font-size: 3.25rem;
+  /* 52px */
+  line-height: normal;
+  letter-spacing: 0;
+  margin-bottom: 1.875rem;
+  /* 30px */
+}
+
+.rhythms__timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: flex-start;
+  padding-top: 3.5rem;
+  /* reserves space for the number badge, which floats 56px above the circle */
+}
+
+.rhythms__timeline::before {
+  content: "";
+  position: absolute;
+  top: 6.5rem;
+  /* padding-top + 48px, center of the 96px circle */
+  left: 8%;
+  right: 8%;
+  height: 0;
+  border-top: 0.1875rem dashed rgba(255, 255, 255, 0.4);
+  z-index: 0;
+}
+
+.rhythm-node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 0 1 auto;
+  padding: 0 0.75rem;
+}
+
+.rhythm-node__circle {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--s1);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1),
+    0 0.25rem 0.375rem -0.25rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.25rem;
+}
+
+.rhythm-node__num {
+  position: absolute;
+  top: -3.5rem;
+  /* 32px badge + 24px connector */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--black);
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: #579b9a;
+  box-shadow: 0 0 5px rgba(87, 155, 154, 0.8);
+}
+
+.rhythm-node__num::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.rhythm-node__circle img {
+  width: 3rem;
+  /* 48px */
+  height: 3rem;
+  object-fit: contain;
+}
+
+.rhythm-node__label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.875rem;
+  /* 30px */
+  text-transform: uppercase;
+  color: var(--black);
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+/* --------------------------------------------------------------------------
+   15 — Live Music & Local Events / Coastal Rhythms
+   -------------------------------------------------------------------------- */
+
+.live {
+  padding: 3.75rem 0;
+  /* 60px */
+  background: var(--white);
+}
+
+.live__inner {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 6rem;
+  /* 96px */
+  align-items: center;
+}
+
+.live__media {
+  position: relative;
+}
+
+.live__photo--back {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 1.5625rem 3.125rem -0.75rem rgba(0, 0, 0, 0.1);
+}
+
+.live__photo--front {
+  position: absolute;
+  left: 68.77%;
+  bottom: -4.02rem;
+  /* -64.33px */
+  width: 41.66%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 0.75rem solid var(--white);
+  box-shadow: 0 1.5625rem 3.125rem -0.75rem rgba(0, 0, 0, 0.1);
+}
+
+.live__content {
+  padding: 0 3rem;
+  /* 48px */
+}
+
+.live .eyebrow {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: var(--fs-label-md);
+}
+
+.live__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.625rem;
+  /* 10px */
+}
+
+.live__lead {
+  color: var(--text-1);
+  margin-top: 1rem;
+  /* 16px */
+  font-size: 1.75rem;
+  /* 28px */
+  line-height: 1.5;
+}
+
+.live__list {
+  list-style: none;
+  margin: 1.5625rem 0;
+  /* 25px */
+  padding: 1.5625rem 0;
+  /* 25px */
+  border-top: 1px solid rgba(214, 198, 178, 0.5);
+  border-bottom: 1px solid rgba(214, 198, 178, 0.5);
+}
+
+.live__list li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1.5rem;
+  padding: 0.9375rem 0;
+  border-top: none;
+}
+
+.live__list li:first-child {
+  padding-top: 0;
+}
+
+.live__list li:last-child {
+  padding-bottom: 0;
+}
+
+.live__num {
+  font-family: var(--font-script);
+  font-size: 3rem;
+  /* 48px */
+  color: var(--p2);
+  font-style: normal;
+  line-height: normal;
+}
+
+.live__name {
+  color: var(--p1);
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-lg);
+  margin-bottom: 0.75rem;
+  /* 12px */
+}
+
+.live__copy {
+  color: var(--text-1);
+  font-size: var(--fs-label-md);
+  line-height: 1.5;
+}
+
+.live__cta {
+  margin-top: 0;
+  min-width: 16rem;
+  font-size: 1.25rem;
+  /* 20px */
+  padding: 1.25rem 3rem;
+  /* 20px 48px */
+}
+
+/* --------------------------------------------------------------------------
+   16 — The Coastal Sanctuary / Featured Gallery
+   -------------------------------------------------------------------------- */
+
+.gallery {
+  background: #f4f4f4;
+  padding: 5rem 0;
+}
+
+.gallery__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+
+.gallery__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-script-sm);
+  color: var(--p1);
+  margin-top: var(--sp-2);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.gallery__col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gallery__col figure {
+  background: var(--white);
+  padding: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin: 0;
+}
+
+.gallery__col img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 600ms var(--ease);
+}
+
+.gallery__col figure:last-child {
+  flex-grow: 1;
+  display: flex;
+}
+
+.gallery__col figure:last-child img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__col figure:hover img {
+  transform: scale(1.03);
+}
+
+/* --------------------------------------------------------------------------
+   17 — Guest Testimonials / Refined Experiences
+   -------------------------------------------------------------------------- */
+
+.testimonials {
+  background: var(--white);
+  padding: 3.75rem 0;
+  /* 60px */
+}
+
+.testimonials .eyebrow {
+  color: var(--black);
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: var(--fs-label-md);
+}
+
+.testimonials__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.625rem;
+  /* 10px */
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.125rem;
+  /* 50px */
+  margin-top: 3.75rem;
+  /* 60px */
+  list-style: none;
+  padding: 0;
+}
+
+.quote {
+  text-align: center;
+}
+
+.location-testimonials,
+.rentals-testimonials {
+  background: #EFEFEF !important;
+}
+
+.quote__text {
+  font-size: 1.75rem;
+  /* 28px */
+  line-height: normal;
+  color: var(--p1);
+  opacity: 0.8;
+}
+
+.quote__who {
+  margin-top: 2rem;
+  /* 32px */
+  font-size: 1.25rem;
+  /* 20px */
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--p1);
+  font-weight: 700;
+}
+
+.testimonials__nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 2.5rem;
+  /* 40px */
+}
+
+/* --------------------------------------------------------------------------
+   18 — Assistance / Common Inquiries (FAQ)
+   -------------------------------------------------------------------------- */
+
+.faq {
+  background: var(--white);
+  padding: 3.75rem 0;
+  /* 60px */
+}
+
+.faq .eyebrow {
+  color: var(--text-1);
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: var(--fs-label-md);
+}
+
+.faq__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-top: 0.625rem;
+  /* 10px */
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+  /* 25px */
+  margin-top: 3.75rem;
+  /* 60px */
+  width: 100%;
+}
+
+.faq .accordion__item {
+  background: rgba(239, 239, 239, 0.4);
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.faq .accordion__item.is-open {
+  background: rgba(239, 239, 239, 0.4);
+}
+
+.faq .accordion__trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  /* 32px */
+  font-family: var(--font-body);
+  font-size: 1.9375rem;
+  /* 31px */
+  font-weight: 400;
+  color: var(--p1);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq .accordion__chevron {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: #a0a0a0;
+  transition: transform var(--dur) var(--ease);
+  flex-shrink: 0;
+}
+
+.faq .accordion__item.is-open .accordion__chevron {
+  transform: rotate(180deg);
+}
+
+.faq .accordion__panel {
+  display: none;
+}
+
+.faq .accordion__item.is-open .accordion__panel {
+  display: block;
+}
+
+.faq .accordion__panel>div {
+  padding: 0 2rem 2rem;
+  /* 32px */
+  border-top: 1px solid #e0e0e0;
+  margin-top: 0;
+  padding-top: 0.625rem;
+  /* 10px */
+}
+
+.faq .accordion__panel p {
+  font-size: 1.25rem;
+  /* 20px */
+  line-height: 1.5;
+  color: var(--p2);
+}
+
+
+/* --------------------------------------------------------------------------
+   19 — Closing CTA Banner
+   -------------------------------------------------------------------------- */
+
+.closing {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 32rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.closing__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.closing::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.closing__inner {
+  text-align: center;
+}
+
+.closing__title {
+  color: var(--s3);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 6rem;
+  line-height: normal;
+}
+
+.closing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  /* 32px */
+  margin-top: 3.75rem;
+  /* 60px */
+}
+
+.closing__actions .btn {
+  min-height: 0;
+  padding: 1.5625rem 4rem;
+  /* 25px 64px */
+  font-size: 1.25rem;
+  /* 20px */
+  border-radius: 0;
+}
+
+.closing__actions .btn--primary {
+  background: var(--p3);
+  border-color: var(--p3);
+}
+
+/* --------------------------------------------------------------------------
+   20 — Visit the Pavilion (Contact)
+   -------------------------------------------------------------------------- */
+
+.contact {
+  background: var(--s3);
+  padding: 3.8125rem 0 3.75rem;
+  /* 61px 60px */
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.875rem;
+  /* 30px */
+  align-items: center;
+}
+
+.contact__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  margin-bottom: 3.75rem;
+  /* 60px */
+}
+
+.contact__block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  /* 10px */
+  padding-bottom: 0.6875rem;
+  /* 11px */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contact__block+.contact__block {
+  margin-top: 3.75rem;
+  /* 60px */
+}
+
+.contact__label {
+  font-size: var(--fs-label-md);
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 0.4;
+  margin-bottom: 0;
+}
+
+.contact__value {
+  color: var(--p1);
+  font-size: var(--fs-label-lg);
+  font-weight: 500;
+}
+
+.contact__value a {
+  color: var(--p1);
+}
+
+.contact__bullet {
+  margin: 0 0.5rem;
+  color: var(--p1);
+}
+
+.contact__cta {
+  margin-top: 3.75rem;
+  /* 60px */
+  min-width: 0;
+  padding: 1.25rem 3rem;
+  /* 20px 48px */
+  font-size: 1.25rem;
+  /* 20px */
+}
+
+.contact__map {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1.5625rem 3.125rem -0.75rem rgba(0, 0, 0, 0.25);
+  padding: 1px;
+  background: #fafbf5;
+}
+
+.contact__map img,
+.contact__map iframe {
+  width: 100%;
+  height: 63.3125rem;
+  object-fit: cover;
+  box-shadow: none;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   21 — Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  position: relative;
+  background: var(--s1);
+  padding: 3.75rem 0 0;
+  /* 60px */
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 2fr;
+  gap: var(--sp-7);
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.site-footer__logo img {
+  width: 15rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.site-footer__tagline {
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  /* 17px */
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--p1);
+  margin-top: -0.25rem;
+}
+
+.site-footer__blurb {
+  font-size: 1.125rem;
+  /* 18px */
+  color: var(--text-1);
+  line-height: 1.5;
+  max-width: 24rem;
+}
+
+.site-footer__contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.site-footer__contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1.0625rem;
+  /* 17px */
+  color: var(--text-1);
+  line-height: 1.4;
+}
+
+.site-footer__contact svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+  color: var(--p1);
+  margin-top: 0.125rem;
+}
+
+.site-footer__contact a {
+  color: var(--text-1);
+}
+
+.site-footer__contact a:hover {
+  color: var(--p1);
+}
+
+.site-footer__social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.site-footer__social a {
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: none;
+  border-radius: 9999px;
+  border: 1.5px solid var(--p1);
+  color: var(--p1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.site-footer__social svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.site-footer__social a:hover {
+  background: var(--p1);
+  color: var(--white);
+}
+
+.site-footer__cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-7);
+}
+
+.site-footer__heading {
+  margin-bottom: 1.25rem;
+  /* 20px */
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.9375rem;
+  /* 31px */
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--p3);
+}
+
+.site-footer__cols ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer__cols li+li {
+  margin-top: 1rem;
+  /* 16px */
+}
+
+.site-footer__cols a {
+  font-size: 1.25rem;
+  /* 20px */
+  color: var(--text-1);
+  transition: color var(--dur) var(--ease);
+}
+
+.site-footer__cols a:hover {
+  color: var(--p1);
+  text-decoration: underline;
+}
+
+.site-footer__base {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem 0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-footer__copy {
+  font-size: 0.9375rem;
+  /* 15px */
+  color: var(--text-1);
+}
+
+.site-footer__tag {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1rem;
+  /* 16px */
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: var(--text-1);
+}
+
+.site-footer__tag::before {
+  content: "";
+  width: 1px;
+  height: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.site-footer__rule {
+  height: 1rem;
+  /* 16px */
+  background: var(--p3);
+  width: 100%;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 1440px) {
+  .hero__title {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .about,
+  .pavilion,
+  .contact__inner,
+  .live__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .live__content {
+    padding: 0;
+  }
+
+  .live__photo--front {
+    left: auto;
+    right: 1rem;
+    width: 45%;
+    bottom: -2rem;
+  }
+
+  .rental__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gathering__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rhythms__timeline {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    row-gap: 4rem;
+  }
+
+  .rhythms__timeline::before {
+    display: none;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header__toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .site-header.is-open .site-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  }
+
+  .trust__bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why__grid,
+  .path__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .merch__grid,
+  .rental__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Horizontal Scroll Carousels for Mobile */
+  .categories__grid,
+  .experiences__grid,
+  .gathering__grid,
+  .testimonials__grid,
+  .gallery__grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 7.5%;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    padding-inline: 7.5%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  /* Unlike the other carousels, categories__grid sits inside a .container,
+     so its own 7.5% padding-inline stacks on top of the container's gutter,
+     doubling the inset before the first card. Zero the container's own
+     padding here so the carousel controls the edge spacing by itself. */
+  .categories .container {
+    padding-inline: 0;
+  }
+
+  .categories__grid::-webkit-scrollbar,
+  .experiences__grid::-webkit-scrollbar,
+  .gathering__grid::-webkit-scrollbar,
+  .testimonials__grid::-webkit-scrollbar,
+  .gallery__grid::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+  }
+
+  .about__media {
+    min-height: 22rem;
+  }
+
+  .categories__grid>*,
+  .experiences__grid>*,
+  .gathering__grid>*,
+  .testimonials__grid>*,
+  .gallery__grid>* {
+    flex: 0 0 85%;
+    max-width: 85%;
+    scroll-snap-align: center;
+  }
+
+  .rhythms__timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .day-banner__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .day-banner__badges {
+    justify-content: center;
+  }
+
+  .site-footer__cols {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .site-footer__brand {
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-footer__social {
+    justify-content: center;
+  }
+
+  .site-footer__contact li {
+    justify-content: center;
+  }
+
+  .site-footer__base {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Location page — Why Rent Our Bike (Service Standard) */
+.service-standard {
+  background: var(--s1);
+  padding: 3.75rem 0;
+}
+
+.service-standard .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+}
+
+.service-standard__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service-standard .eyebrow {
+  font-size: 1.25rem;
+}
+
+.service-standard__title {
+  margin-top: 0.875rem;
+  font-weight: 500;
+  font-size: 3.25rem;
+  color: var(--p3);
+}
+
+.service__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.875rem;
+  text-align: left;
+  width: 100%;
+}
+
+.service-card {
+  background: var(--white);
+  align-items: stretch;
+  padding: 2.0625rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card__num {
+  font-family: var(--font-script);
+  font-size: 2.5625rem;
+  color: rgba(136, 136, 136, 0.6);
+  margin-bottom: 1.5rem;
+  line-height: normal;
+}
+
+.service-card__title {
+  font-weight: 500;
+  font-size: var(--fs-label-lg);
+  color: var(--p1);
+  margin-bottom: 1rem;
+}
+
+.service-card__copy {
+  font-size: 1.75rem;
+  color: var(--text);
+}
+
+/* Location page — Your 30A Story Begins Here (split Closing CTA),
+   matched to Figma node 53:2554 (text left / image right, dark background). */
+.closing-split {
+  background: var(--white);
+  padding: 3.75rem var(--gutter);
+}
+
+.closing-split__card {
+  position: relative;
+  height: 31.25rem;
+  /* 500px */
+  display: flex;
+  align-items: center;
+  background: var(--black);
+  padding-inline: 0;
+  overflow: hidden;
+}
+
+.closing-split__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+  padding: 3.75rem;
+  max-width: 67.9%;
+  /* 1222/1800 — matches Figma's text column width within the full-bleed card */
+}
+
+.closing-split__title {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 6rem;
+  color: var(--s3);
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.closing-split__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.closing-split__btn {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 1.5625rem 4rem;
+}
+
+.closing-split__btn--solid {
+  background: var(--s1);
+  color: var(--s2);
+  box-shadow: 0 1.5625rem 3.125rem -0.75rem rgba(0, 0, 0, 0.25);
+}
+
+.closing-split__btn--outline {
+  background: transparent;
+  color: var(--s1);
+  border: 1px solid var(--s1);
+}
+
+.closing-split__media {
+  position: absolute;
+  inset: 0;
+}
+
+.closing-split__media img {
+  position: absolute;
+  width: 119.56%;
+  height: 645.65%;
+  max-width: none;
+  left: 26.12%;
+  top: -363.22%;
+  display: block;
+}
+
+.closing-split__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50.451%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Location page — Near By Beaches Worth To Ride, matched to Figma node 53:2663 */
+.beaches {
+  background: var(--white);
+  padding: 3.75rem 0;
+}
+
+.beaches__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.beaches .eyebrow {
+  font-size: 1.25rem;
+}
+
+.beaches__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  color: var(--p3);
+  margin-top: 0.5rem;
+  line-height: normal;
+}
+
+.beaches__lead {
+  font-size: 1.75rem;
+  color: var(--text);
+  margin-top: 1.25rem;
+  line-height: normal;
+  max-width: 80.875rem;
+}
+
+.beaches__grid {
+  display: flex;
+  align-items: stretch;
+  gap: 1.875rem;
+  margin-top: 3.75rem;
+  text-align: left;
+  width: 100%;
+}
+
+.beach-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  gap: 0.75rem;
+}
+
+.beach-card__media {
+  position: relative;
+  height: 27.5rem;
+  /* 440px, matches Figma's card photos */
+  overflow: hidden;
+}
+
+.beach-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.beach-card__badge {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: var(--p1);
+  color: var(--s1);
+  font-size: 0.625rem;
+  letter-spacing: 0.0625rem;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  backdrop-filter: blur(2px);
+}
+
+.beach-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.beach-card__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-label-lg);
+  color: var(--p3);
+  line-height: normal;
+}
+
+.beach-card__icon {
+  width: 0.775rem;
+  height: 0.775rem;
+  color: var(--p3);
+  flex: none;
+}
+
+.beach-card__tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.035rem;
+  color: var(--p2);
+  text-transform: uppercase;
+}
+
+.beach-card__copy {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.75rem;
+  color: var(--p1);
+  line-height: normal;
+}
+
+.beach-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.beach-card__pill {
+  border: 1px solid rgba(98, 177, 234, 0.3);
+  padding: 0.3125rem 0.8125rem;
+  font-size: 0.75rem;
+  color: var(--p2);
+  text-transform: uppercase;
+}
+
+.beach-card__btn {
+  margin-top: auto;
+  height: 3.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--s3);
+  color: var(--s3);
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.beaches__more {
+  margin-top: 3.75rem;
+  width: 26.71875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9375rem;
+  padding: 1.25rem 0;
+  background: var(--p3);
+  color: var(--p2);
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.beaches__more-icon {
+  width: 0.9375rem;
+  height: 0.75rem;
+  flex: none;
+}
+
+/* Location page — "Just Minutes from Rosemary Beach" journey/route card,
+   matched to Figma node 124:789. */
+.journey {
+  background: var(--white);
+  padding: 3.75rem 0;
+}
+
+.journey__card {
+  background: var(--s1);
+  border: 0.1875rem solid var(--s1);
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.journey__media {
+  flex: none;
+  width: 37rem;
+  /* 592px */
+  margin: 0;
+  overflow: hidden;
+}
+
+.journey__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.journey__panel {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.125rem;
+  /* 50px */
+  padding: 3.75rem;
+}
+
+.journey__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.875rem;
+  /* 30px */
+  width: 58.4375rem;
+  /* 935px */
+  max-width: 100%;
+}
+
+.journey__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  /* 52px */
+  color: var(--p3);
+  text-align: center;
+  line-height: normal;
+}
+
+.journey__lead {
+  font-size: 1.75rem;
+  /* 28px */
+  color: var(--p1);
+  text-align: center;
+  line-height: normal;
+}
+
+.journey__route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+}
+
+.journey__stop {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.875rem;
+  /* 30px */
+}
+
+.journey__track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: none;
+  padding-top: 0.25rem;
+}
+
+.journey__track-dot {
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 9999px;
+  background: var(--p3);
+  flex: none;
+}
+
+.journey__track-line {
+  width: 0.09375rem;
+  flex: 1 0 8rem;
+  background: repeating-linear-gradient(to bottom,
+      var(--p2) 0,
+      var(--p2) 0.5rem,
+      transparent 0.5rem,
+      transparent 0.75rem);
+  margin: 0.25rem 0;
+}
+
+.journey__track-ring {
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 9999px;
+  border: 0.125rem solid var(--p3);
+  flex: none;
+}
+
+.journey__stop-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+  /* 25px */
+}
+
+.journey__stop-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--p1);
+  text-transform: uppercase;
+}
+
+.journey__stop-value {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 2.625rem;
+  /* 42px */
+  color: var(--p3);
+  margin-top: 0.125rem;
+  white-space: nowrap;
+}
+
+.journey__cta {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.75rem;
+  background: var(--p3);
+  color: var(--p2);
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-decoration: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.journey__cta svg {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+
+.journey__divider {
+  align-self: stretch;
+  width: 0.0625rem;
+  background: rgba(1, 0, 154, 0.15);
+  flex: none;
+}
+
+.journey__stats {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex: none;
+}
+
+.journey__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.journey__stat-icon {
+  width: 5.625rem;
+  height: 5.625rem;
+  /* 90px — exported Figma asset already bakes in the circle background */
+  display: block;
+}
+
+.journey__stat-value {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-label-md);
+  color: var(--p1);
+  white-space: nowrap;
+}
+
+.journey__stat-label {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--p1);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .journey__card {
+    flex-direction: column;
+  }
+
+  .journey__media {
+    width: 100%;
+    height: 16rem;
+  }
+
+  .journey__panel {
+    padding: 2.5rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .journey__title {
+    font-size: 2.25rem;
+  }
+
+  .journey__lead {
+    font-size: 1.15rem;
+  }
+
+  .journey__route {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+  .journey__divider {
+    display: none;
+  }
+
+  .journey__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: 2rem;
+    column-gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-standard__title {
+    font-size: 2rem;
+  }
+
+  .service__grid {
+    grid-template-columns: 1fr;
+  }
+}

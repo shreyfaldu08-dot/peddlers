@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Peddlers 30A — Font loading
+
+   The three licensed families used in the Figma file, self-hosted from
+   assets/fonts/. Each family is already first in its stack in tokens.css, so
+   these declarations are what make the page render at the design's metrics.
+
+   Supplied cuts (from FONTS.zip):
+     • Palm Canyon Drive  — Regular          → script display headings
+     • Pitch Sans         — Semibold Italic  → labels, buttons, card titles
+     • GT Walsheim        — Regular (trial)  → body copy and navigation
+
+   Weights NOT supplied, and how they behave:
+     • GT Walsheim Light (300) — falls back to Regular, so `.body-copy` and the
+       hero nav render slightly heavier than the design.
+     • GT Walsheim Bold (700)  — the browser synthesises a faux bold.
+     • Pitch Sans Bold (700, upright) — unused by this page.
+   Drop the real files in and add a matching @font-face block to fix either.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Palm Canyon Drive";
+  src: url("../fonts/PalmCanyonDrive.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pitch Sans";
+  src: url("../fonts/PitchSans-SemiboldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Walsheim Trial";
+  src: url("../fonts/GT-Walsheim-Regular-Trial-BF651b7fc71a47d.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

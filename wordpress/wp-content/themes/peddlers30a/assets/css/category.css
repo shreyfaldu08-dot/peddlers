@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Peddlers 30A — Product Category Page
+   Source: Figma Reference Page 6 "Product Category Page" (1920 × 6537)
+   ========================================================================== */
+
+main > section + section {
+  margin-top: 0;
+}
+
+.page-about .site-header,
+.page-about .site-footer {
+  background: var(--p2);
+}
+
+/* --------------------------------------------------------------------------
+   01 — Hero
+   -------------------------------------------------------------------------- */
+
+.cat-hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 38rem;
+  padding-block: var(--sp-10) var(--sp-8);
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+}
+
+.cat-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cat-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.cat-hero__title {
+  color: var(--s3);
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.cat-hero__lead {
+  max-width: 50rem;
+  margin: var(--sp-5) auto 0;
+  font-family: var(--font-label);
+  font-style: italic;
+  font-size: var(--fs-body-lg);
+  line-height: 1.5;
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   02 — Catalog Grid with Filter Tabs
+   -------------------------------------------------------------------------- */
+
+.cat-catalog {
+  background: var(--s1);
+  padding-block: var(--sp-9);
+}
+
+.cat-catalog__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--sp-6);
+}
+
+.cat-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-8);
+}
+
+.cat-tab-btn {
+  padding: var(--sp-3) var(--sp-6);
+  border: 1px solid var(--p1);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--p1);
+  cursor: pointer;
+  transition: all var(--dur) var(--ease);
+}
+
+.cat-tab-btn:hover {
+  background: rgba(57, 89, 186, 0.08);
+}
+
+.cat-tab-btn.is-active {
+  background: var(--p1);
+  color: var(--s1);
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-6) var(--col-gap);
+}
+
+.cat-product-card {
+  background: var(--white);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.cat-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cat-product-card__media {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  margin-bottom: var(--sp-4);
+  background: #fafafa;
+}
+
+.cat-product-card__media img {
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.cat-product-card__name {
+  font-family: var(--font-label);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-label-sm);
+  color: var(--p1);
+  margin-bottom: var(--sp-2);
+}
+
+.cat-product-card__price {
+  font-size: var(--fs-body-sm);
+  color: var(--text);
+  margin-bottom: var(--sp-4);
+}
+
+.cat-product-card .btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .cat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cat-catalog__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-4);
+  }
+
+  .cat-tabs {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cat-tab-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
