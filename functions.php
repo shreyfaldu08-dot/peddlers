@@ -328,3 +328,184 @@ function peddlers30a_meta_description() {
 	}
 }
 add_action( 'wp_head', 'peddlers30a_meta_description', 1 );
+
+/**
+ * One-time setup, run automatically the first time this theme is active
+ * on a site: creates the 10 non-front-page WordPress Pages (with matching
+ * template assignments) and the 4 nav menus this theme expects, then
+ * flips on pretty permalinks. This lets the theme be deployed to a brand
+ * new WordPress install (e.g. via WP Pusher / git push) with zero manual
+ * wp-admin clicking — it mirrors exactly what was set up by hand during
+ * development. Safe to run more than once: every step checks for an
+ * existing page/menu by name before creating one.
+ */
+function peddlers30a_provision() {
+	if ( get_option( 'peddlers30a_provisioned' ) ) {
+		return;
+	}
+
+	// WordPress creates these on every fresh install; they're not part of
+	// this site, and "privacy-policy" would otherwise collide with our
+	// own page of the same slug below.
+	$sample_page = get_page_by_path( 'sample-page' );
+	if ( $sample_page ) {
+		wp_delete_post( $sample_page->ID, true );
+	}
+
+	$pages = array(
+		'about'             => array( 'title' => 'About Peddlers 30A | Rental & Pavilion, Seacrest Beach', 'template' => 'page-about.php' ),
+		'rentals'           => array( 'title' => '30A Bike Rentals at Peddlers Pavilion, Seacrest Beach', 'template' => 'page-rentals.php' ),
+		'category'          => array( 'title' => 'Discover Our Products — Peddlers 30A', 'template' => 'page-category.php' ),
+		'location'          => array( 'title' => 'Best Bike Rental in Seacrest Beach | Peddlers 30A', 'template' => 'page-location.php' ),
+		'contact'           => array( 'title' => 'Contact Peddlers 30A | Seacrest Beach Bike Rental', 'template' => 'page-contact.php' ),
+		'faq'               => array( 'title' => 'Peddlers 30A FAQ | Bike Rentals, Pricing & Trail Info', 'template' => 'page-faq.php' ),
+		'privacy-policy'    => array( 'title' => 'Privacy Policy | Peddlers 30A Bike Rentals', 'template' => 'page-privacy-policy.php' ),
+		'terms-of-service'  => array( 'title' => 'Terms of Service | Peddlers 30A Bike Rentals', 'template' => 'page-terms-of-service.php' ),
+		'services'          => array( 'title' => 'Services (Legacy) — Peddlers 30A', 'template' => 'page-services.php' ),
+		'product-detail'    => array( 'title' => 'Electric Explorer — Peddlers 30A', 'template' => 'page-product-detail.php' ),
+	);
+
+	$page_ids = array();
+	foreach ( $pages as $slug => $data ) {
+		$existing = get_page_by_path( $slug );
+		if ( $existing ) {
+			// WordPress's own default install already has a page at this
+			// slug (privacy-policy) — bring it in line with our content
+			// rather than leaving its auto-generated title/template in place.
+			wp_update_post( array( 'ID' => $existing->ID, 'post_title' => $data['title'], 'post_status' => 'publish' ) );
+			update_post_meta( $existing->ID, '_wp_page_template', $data['template'] );
+			$page_ids[ $slug ] = $existing->ID;
+			continue;
+		}
+		$id = wp_insert_post(
+			array(
+				'post_type'   => 'page',
+				'post_status' => 'publish',
+				'post_title'  => $data['title'],
+				'post_name'   => $slug,
+			)
+		);
+		if ( ! is_wp_error( $id ) && $id ) {
+			update_post_meta( $id, '_wp_page_template', $data['template'] );
+			$page_ids[ $slug ] = $id;
+		}
+	}
+
+	// Pretty permalinks — every peddlers30a_nav_url() lookup and every
+	// page-{slug}.php template match depends on /%postname%/ URLs.
+	global $wp_rewrite;
+	update_option( 'permalink_structure', '/%postname%/' );
+	if ( $wp_rewrite instanceof WP_Rewrite ) {
+		$wp_rewrite->set_permalink_structure( '/%postname%/' );
+		$wp_rewrite->flush_rules();
+	}
+
+	$menu_url = function ( $slug ) use ( $page_ids ) {
+		if ( 'index' === $slug ) {
+			return home_url( '/' );
+		}
+		return isset( $page_ids[ $slug ] ) ? get_permalink( $page_ids[ $slug ] ) : home_url( '/' );
+	};
+
+	$create_menu = function ( $name, $location, $items ) use ( $page_ids ) {
+		$existing = wp_get_nav_menu_object( $name );
+		$menu_id  = $existing ? $existing->term_id : wp_create_nav_menu( $name );
+		if ( is_wp_error( $menu_id ) ) {
+			return;
+		}
+		if ( ! $existing ) {
+			foreach ( $items as $item ) {
+				if ( '#' === $item['target'] ) {
+					wp_update_nav_menu_item(
+						$menu_id,
+						0,
+						array(
+							'menu-item-title'  => $item['title'],
+							'menu-item-url'    => '#',
+							'menu-item-status' => 'publish',
+						)
+					);
+				} elseif ( 'index' === $item['target'] ) {
+					wp_update_nav_menu_item(
+						$menu_id,
+						0,
+						array(
+							'menu-item-title'  => $item['title'],
+							'menu-item-url'    => home_url( '/' ),
+							'menu-item-status' => 'publish',
+						)
+					);
+				} elseif ( isset( $page_ids[ $item['target'] ] ) ) {
+					wp_update_nav_menu_item(
+						$menu_id,
+						0,
+						array(
+							'menu-item-title'     => $item['title'],
+							'menu-item-object-id' => $page_ids[ $item['target'] ],
+							'menu-item-object'    => 'page',
+							'menu-item-type'      => 'post_type',
+							'menu-item-status'    => 'publish',
+						)
+					);
+				}
+			}
+		}
+		$locations              = get_theme_mod( 'nav_menu_locations' );
+		$locations[ $location ] = $menu_id;
+		set_theme_mod( 'nav_menu_locations', $locations );
+	};
+
+	$create_menu(
+		'Primary Menu',
+		'primary',
+		array(
+			array( 'title' => 'HOME', 'target' => 'index' ),
+			array( 'title' => 'RENTALS', 'target' => 'rentals' ),
+			array( 'title' => 'PRODUCTS', 'target' => 'category' ),
+			array( 'title' => 'LOCATION', 'target' => 'location' ),
+			array( 'title' => 'ABOUT', 'target' => 'about' ),
+			array( 'title' => 'FAQ', 'target' => 'faq' ),
+			array( 'title' => 'CONTACT', 'target' => 'contact' ),
+		)
+	);
+
+	$create_menu(
+		'Footer Quick Links',
+		'footer_quick_links',
+		array(
+			array( 'title' => 'Home', 'target' => 'index' ),
+			array( 'title' => 'Bike Rentals', 'target' => 'rentals' ),
+			array( 'title' => 'About Us', 'target' => 'about' ),
+			array( 'title' => 'FAQ', 'target' => 'faq' ),
+			array( 'title' => 'Contact Us', 'target' => 'contact' ),
+		)
+	);
+
+	$create_menu(
+		'Footer Areas',
+		'footer_areas',
+		array(
+			array( 'title' => 'Seacrest Beach', 'target' => 'location' ),
+			array( 'title' => 'Rosemary Beach', 'target' => 'location' ),
+			array( 'title' => 'Alys Beach', 'target' => 'location' ),
+			array( 'title' => 'Seaside', 'target' => 'location' ),
+			array( 'title' => 'WaterColor', 'target' => 'location' ),
+			array( 'title' => 'Inlet Beach', 'target' => 'location' ),
+			array( 'title' => 'Grayton Beach', 'target' => 'location' ),
+		)
+	);
+
+	$create_menu(
+		'Footer Support',
+		'footer_support',
+		array(
+			array( 'title' => 'Terms of Service', 'target' => 'terms-of-service' ),
+			array( 'title' => 'Privacy Policy', 'target' => 'privacy-policy' ),
+			array( 'title' => 'Accessibility', 'target' => '#' ),
+			array( 'title' => 'Blog', 'target' => '#' ),
+		)
+	);
+
+	update_option( 'peddlers30a_provisioned', 1 );
+}
+add_action( 'init', 'peddlers30a_provision', 20 );
