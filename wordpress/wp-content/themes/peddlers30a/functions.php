@@ -365,6 +365,17 @@ function peddlers30a_provision() {
 		'product-detail'    => array( 'title' => 'Electric Explorer — Peddlers 30A', 'template' => 'page-product-detail.php' ),
 	);
 
+	// One page per neighborhood "Bike Rental" SEO lander, all sharing the
+	// same template -- content lives in inc/location-data.php so adding a
+	// new location later never needs a new page-*.php file.
+	require_once get_template_directory() . '/inc/location-data.php';
+	foreach ( peddlers30a_location_data() as $loc_slug => $loc_data ) {
+		$pages[ $loc_slug ] = array(
+			'title'    => $loc_data['title'],
+			'template' => 'template-bike-rental-location.php',
+		);
+	}
+
 	$page_ids = array();
 	foreach ( $pages as $slug => $data ) {
 		$existing = get_page_by_path( $slug );
