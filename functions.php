@@ -63,16 +63,56 @@ class Peddlers30a_Primary_Walker extends Walker_Nav_Menu {
 	public function end_lvl( &$output, $depth = 0, $args = null ) {}
 
 	public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
-		$active = in_array( 'current-menu-item', $item->classes, true ) || in_array( 'current_page_item', $item->classes, true );
+		$active      = in_array( 'current-menu-item', $item->classes, true ) || in_array( 'current_page_item', $item->classes, true );
+		$is_location = ( 'post_type' === $item->type ) && ( 'location' === get_post_field( 'post_name', $item->object_id ) );
+
+		if ( $is_location ) {
+			$output .= '<div class="site-nav__item site-nav__item--dropdown">';
+		}
+
 		$output .= sprintf(
 			'<a class="site-nav__link%s" href="%s">%s</a>',
 			$active ? ' is-active' : '',
 			esc_url( $item->url ),
 			esc_html( $item->title )
 		);
+
+		if ( $is_location ) {
+			$output .= peddlers30a_location_dropdown_menu();
+			$output .= '</div>';
+		}
 	}
 
 	public function end_el( &$output, $item, $depth = 0, $args = null ) {}
+}
+
+/**
+ * Dropdown under the header's "LOCATION" link — reuses the same "Footer
+ * Areas" menu shown in the footer's "Areas We Cover" column, so an admin
+ * only maintains one list of neighborhood links for both places.
+ */
+function peddlers30a_location_dropdown_menu() {
+	$html = wp_nav_menu(
+		array(
+			'theme_location' => 'footer_areas',
+			'container'      => false,
+			'items_wrap'     => '<div class="site-nav__dropdown"><ul>%3$s</ul></div>',
+			'fallback_cb'    => 'peddlers30a_footer_areas_fallback_wrapped',
+			'echo'           => false,
+		)
+	);
+	return $html ? $html : '';
+}
+
+/**
+ * Same as peddlers30a_footer_areas_fallback() but captured as a string
+ * inside the <div class="site-nav__dropdown"><ul>...</ul></div> wrapper,
+ * to match what wp_nav_menu() would output for a real menu.
+ */
+function peddlers30a_footer_areas_fallback_wrapped() {
+	echo '<div class="site-nav__dropdown">';
+	peddlers30a_footer_areas_fallback();
+	echo '</div>';
 }
 
 /**
