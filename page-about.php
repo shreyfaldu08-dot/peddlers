@@ -5,7 +5,7 @@
     <!-- ==================================================================
            02 — Hero (About Peddlers 30A)
            ================================================================== -->
-    <section class="hero hero--about" style="background-image: url('assets/img/about-hero.jpg?v=2');">
+    <section class="hero hero--about" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/about-hero.jpg?v=2');">
       <div class="container hero__inner">
         <h1 class="hero__title">Seacrest Beach's Favorite Pavilion</h1>
         <p class="hero__lead">

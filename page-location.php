@@ -5,7 +5,7 @@
     <!-- ==================================================================
            02 — Hero (Find Your Perfect Beach Along 30A)
            ================================================================== -->
-    <section class="hero hero--location" style="background-image: url('assets/img/location-hero.jpg'); background-size: cover; background-position: center; height: 80vh; min-height: 700px;">
+    <section class="hero hero--location" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/location-hero.jpg'); background-size: cover; background-position: center; height: 80vh; min-height: 700px;">
       <div class="container hero__inner">
         <h1 class="hero__title">Best Bike Rental in Seacrest Beach, Florida</h1>
         <p class="hero__lead">
