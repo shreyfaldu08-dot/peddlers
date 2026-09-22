@@ -240,7 +240,7 @@ function peddlers30a_footer_areas_fallback() {
 			'Alys Beach'     => 'bike-rentals-alys-beach',
 			'Seaside'        => 'bike-rentals-seaside',
 			'WaterColor'     => 'bike-rentals-watercolor',
-			'Inlet Beach'    => 'location',
+			'Inlet Beach'    => 'bike-rentals-inlet-beach',
 			'Grayton Beach'  => 'bike-rentals-grayton-beach',
 		)
 	);
@@ -541,9 +541,7 @@ function peddlers30a_provision() {
 			array( 'title' => 'Alys Beach', 'target' => 'bike-rentals-alys-beach' ),
 			array( 'title' => 'Seaside', 'target' => 'bike-rentals-seaside' ),
 			array( 'title' => 'WaterColor', 'target' => 'bike-rentals-watercolor' ),
-			// Inlet Beach doesn't have its own bike-rentals page yet -- points
-			// at the general Location page until that content is provided.
-			array( 'title' => 'Inlet Beach', 'target' => 'location' ),
+			array( 'title' => 'Inlet Beach', 'target' => 'bike-rentals-inlet-beach' ),
 			array( 'title' => 'Grayton Beach', 'target' => 'bike-rentals-grayton-beach' ),
 		)
 	);
