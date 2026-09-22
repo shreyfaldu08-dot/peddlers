@@ -276,6 +276,14 @@ function peddlers30a_page_slug_class() {
 		// all the .page-rentals-scoped hero/rental-filter CSS still expects
 		// this exact class.
 		'bike-rentals'     => 'page-rentals',
+		// The "Explore All" page shares the same hero--location markup as
+		// every neighborhood lander and needs the same tan/400-weight
+		// treatment ("page-location"), even though it's a plain Page, not a
+		// Location post -- plus its own "page-locations" class, which the
+		// mobile-only hero-height and non-carousel grid overrides in
+		// mobile.css are scoped to (this page alone has 12 cards and much
+		// shorter hero copy than every other location page).
+		'locations'        => 'page-location page-locations',
 	);
 
 	if ( array_key_exists( $post->post_name, $overrides ) ) {
