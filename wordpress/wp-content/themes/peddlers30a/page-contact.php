@@ -13,7 +13,7 @@
           Planning a morning ride through Seacrest or a full-day cruise toward Alys Beach? Our team is here to help you book, ask, and sort out the details before you arrive.
         </p>
         <div class="hero__actions">
-          <a class="btn btn--primary" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">RESERVE YOUR BIKE</a>
+          <a class="btn btn--primary" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">RESERVE YOUR BIKE</a>
           <a class="btn btn--ghost" href="tel:+18502130040">CALL US</a>
         </div>
       </div>

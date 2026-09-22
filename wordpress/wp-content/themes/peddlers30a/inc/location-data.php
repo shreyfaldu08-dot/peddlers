@@ -1,12 +1,13 @@
 <?php
 /**
- * Content for the "Bike Rental Location" pages (Rosemary Beach, Seaside,
- * WaterColor, Grayton Beach, Alys Beach, Blue Mountain Beach, ...).
+ * One-time seed data for the "Location" custom post type (Rosemary Beach,
+ * Seaside, WaterColor, Grayton Beach, Alys Beach, Blue Mountain Beach, ...).
  *
- * One entry per neighborhood, keyed by the page slug. Add more locations
- * here as content briefs come in -- the template
- * (template-bike-rental-location.php) renders whatever is in this array,
- * so a new location never needs a new template file.
+ * peddlers30a_seed_locations() (inc/location-cpt.php) copies this into real
+ * "location" posts the first time the theme runs, then never reads it
+ * again -- from then on, locations are added/edited under wp-admin >
+ * Locations, not here. This file exists only so that history isn't lost
+ * and so a brand new install seeds with the original 11 neighborhoods.
  */
 function peddlers30a_location_data() {
 	return array(
@@ -756,6 +757,79 @@ function peddlers30a_location_data() {
 				array( 'q' => 'What bikes work best for riding to Dune Allen Beach?', 'a' => "Multi-speed bikes are strongly recommended for the 75-minute daily rental ride between Peddlers and Dune Allen Beach. The 31-mile round trip on Scenic Highway 30A is doable on a beach cruiser for strong riders, but a 7-speed bike makes the full Gulf front ride comfortable both ways." ),
 				array( 'q' => 'What are the best 30A bike rides near Dune Allen Beach FL?', 'a' => "The best 30A bike rentals near Dune Allen Beach connect you to Gulf Place in 5 minutes east and Blue Mountain Beach in 16 minutes east. For a longer Gulf front ride, Grayton Beach is 29 minutes east and Seaside is 35 minutes east along Scenic Highway 30A." ),
 				array( 'q' => 'Is Peddlers the top-rated bike rental near Dune Allen Beach?', 'a' => "Yes. Peddlers 30A is the top-rated bike rental for Dune Allen Beach with a 4.9-star Google rating, 50+ bikes, and 15 years on Scenic Highway 30A. It is 15.5 miles east of Dune Allen Beach in the Seacrest Beach community on Florida's Panhandle Gulf Coast." ),
+			),
+		),
+
+		// Seacrest Beach is the flagship location -- Peddlers Pavilion is
+		// physically there, so unlike the other 11 (all "ride over from
+		// Peddlers to X" landers) its copy is "you're already here."
+		'bike-rentals-seacrest-beach' => array(
+			// journey_to is 'Rosemary Beach' (the actual "From Peddlers to
+			// X" journey card content) -- display_name is what should show
+			// as this post's title in wp-admin instead.
+			'display_name' => 'Seacrest Beach',
+			'title'        => 'Best Bike Rental in Seacrest Beach | Peddlers 30A',
+			'description'  => "Peddlers 30A is Seacrest Beach's go-to bike rental. 4.9 stars, 50+ bikes, helmet and lock included with every rental. Walk in or call 850-213-0040 today.",
+			'h1'           => 'Best Bike Rental in Seacrest Beach, Florida',
+			'direct_answer'=> "Peddlers 30A is the bike rental in Seacrest Beach, located at 10343 E County Hwy 30A, Inlet Beach, FL 32461 on Scenic Highway 30A. Rated 4.9 stars with the largest fleet on 30A, every rental includes a helmet and lock. The shop sits directly on the 30A coastal trail, making Peddlers Pavilion Seacrest Beach's own trailhead.",
+			'hero_lead'    => "30A bike rentals in Seacrest Beach. Walk in to Peddlers Pavilion and step onto the coastal trail in minutes.",
+			'trust_bar'    => array(
+				array( 'heading' => 'AT YOUR DOORSTEP', 'sub' => '' ),
+				array( 'heading' => 'FAMILY FIRST', 'sub' => 'All Ages Fit' ),
+				array( 'heading' => 'LOCK INCLUDED', 'sub' => 'Every Rental' ),
+				array( 'heading' => 'WALK-IN READY', 'sub' => 'Book or Walk In' ),
+				array( 'heading' => 'DELIVERY AVAILABLE', 'sub' => 'Call to Arrange' ),
+			),
+			'rent_eyebrow' => 'RENT IN SEACREST BEACH',
+			'rent_title'   => 'Bikes for Every Seacrest Rider',
+			'local_eyebrow'=> 'SEACREST BEACH',
+			'local_title'  => 'Your Home on the 30A Trail',
+			'local_p1'     => "Seacrest Beach sits at the eastern end of Scenic Highway 30A, a quiet enclave where vacation rentals line the coastal streets and the 30A trail runs right through the middle. It has the feel of an insider's 30A, more local than resort.",
+			'local_p2'     => "Rosemary Beach is 1 minute east on Scenic Highway 30A. Alys Beach is 4 minutes west. Head east and the trail stretches to Camp Helen State Park, 7 miles from the shop. Go west and Seaside, WaterColor, and Grayton Beach open up along the Gulf Coast.",
+			'journey_title'=> "You're Already at the Trailhead",
+			'journey_lead' => "Peddlers Pavilion is on the 30A coastal path in Seacrest Beach. Step out of the shop and you're riding.",
+			'journey_to'   => 'Rosemary Beach',
+			'beaches_heading' => 'Seacrest Beach',
+			'stats'        => array(
+				array( 'value' => '7 Mi', 'label' => 'EAST TO CAMP HELEN' ),
+				array( 'value' => '12 Mi', 'label' => 'WEST TO MIRAMAR' ),
+				array( 'value' => '19 Miles', 'label' => 'MILES OF 30A' ),
+				array( 'value' => '12+', 'label' => 'DESTINATIONS' ),
+			),
+			'callout'      => "Peddlers 30A is at 10343 E County Hwy 30A, Inlet Beach, FL 32461 on Scenic Highway 30A, right on the 30A coastal trail in Seacrest Beach.",
+			'pavilion_eyebrow' => 'YOUR HOME BASE',
+			'pavilion_title'   => 'Where Every Seacrest Beach Ride Begins',
+			'pavilion_lead'    => "Peddlers Pavilion is your base for the week. Kickstand Coffee before the morning ride, the full fleet at the door, and cocktails and live music when you return in the evening.",
+			'categories'   => array(
+				array( 'num' => '01', 'label' => 'CLASSIC CRUISERS', 'title' => 'Rosemary Beach in One Minute', 'copy' => "Classic cruiser bikes handle the flat coastal ride to Rosemary Beach in 1 minute, Alys Beach in 4, and Inlet Beach in 5. Perfect for a morning loop on 30A." ),
+				array( 'num' => '02', 'label' => 'MULTI-SPEED BIKES', 'title' => 'Cover the Full Coastline', 'copy' => "Seagrove Beach is 35 minutes west and Seaside is 40. A 7-speed bike makes the longer Gulf front runs genuinely comfortable from Seacrest Beach." ),
+				array( 'num' => '03', 'label' => 'KIDS & FAMILY', 'title' => 'Start Pedalling Together', 'copy' => "Seacrest Beach is one of the best family trail starts on 30A. Peddlers has kids bikes, cruisers, tandems, trailers, and tag-alongs for every age." ),
+				array( 'num' => '04', 'label' => 'SPECIALTY', 'title' => 'The Gear No One Else Has', 'copy' => "Wee HOO trail-a-bikes and Tug A Bug tag-alongs are available only at Peddlers on 30A. See the full specialty fleet in person before heading out." ),
+			),
+			'why_eyebrow'  => 'THE SERVICE STANDARD',
+			'why_title'    => 'Why Seacrest Beach Riders Choose Peddlers',
+			'why_cards'    => array(
+				array( 'title' => "You're Already Here", 'copy' => "No driving, no delivery window. The shop is at your door. Walk in, pick your bike, and step onto the 30A trail in minutes from your vacation rental." ),
+				array( 'title' => 'Full Fleet In Person', 'copy' => "See every bike in the rack before you choose. Seacrest Beach guests pick their ride in person, with no guessing from a photo online." ),
+				array( 'title' => 'Inspected Every Day', 'copy' => "Every bike is checked before it goes out. The best-maintained fleet on Scenic Highway 30A is right at your doorstep in Seacrest Beach." ),
+				array( 'title' => 'Local Advice Included', 'copy' => "Ask the team which direction suits your group, which ride fits your plan, and which bike works best for your kids." ),
+			),
+			'closing_title'=> 'Your 30A Story Begins Here',
+			'beaches_lead' => "From Seacrest Beach, Rosemary Beach is 1 minute east and Alys Beach is 4 minutes west. Head further for Seagrove at 35 minutes and Seaside at 40 minutes west.",
+			'beaches'      => array(
+				array( 'badge' => '1 MIN RIDE', 'name' => 'Rosemary Beach', 'tag' => 'Cobblestone Lanes, Gulf Views', 'copy' => "Rosemary Beach is 1 minute east of Peddlers on Scenic Highway 30A. Cobblestone lanes, Barrett Square, and West Indies architecture make it a natural first ride from Seacrest Beach.", 'pills' => array( 'Cobblestone Lanes', 'Barrett Square', 'Architecture' ), 'slug' => 'bike-rentals-rosemary-beach' ),
+				array( 'badge' => '4 MIN RIDE', 'name' => 'Alys Beach', 'tag' => 'White Walls, Quiet Courtyards', 'copy' => "Alys Beach is 4 minutes west of Peddlers on the 30A coastal path. Stark white Bermudan architecture, quiet pedestrian lanes, and a stop at Fonville Press mid-ride.", 'pills' => array( 'Architecture', 'Quiet Lanes', 'Fonville Press' ), 'slug' => 'bike-rentals-alys-beach' ),
+				array( 'badge' => '35 MIN RIDE', 'name' => 'Seagrove Beach', 'tag' => 'Old Florida, Quiet Roads', 'copy' => "Seagrove Beach is 35 minutes west of Peddlers. One of 30A's oldest communities with oak canopy shade, beach cottages, and the most local feel on the coast.", 'pills' => array( 'Oak Canopy', 'Beach Cottages', 'Local Feel' ), 'slug' => 'bike-rentals-seagrove-beach' ),
+				array( 'badge' => '5 MIN RIDE', 'name' => 'Inlet Beach', 'tag' => 'Eastern End of 30A', 'copy' => "Inlet Beach is 5 minutes east of Peddlers. Walton County's largest public beach access with boardwalk ramps, restrooms, and seasonal lifeguards on the Gulf.", 'pills' => array( 'Boardwalk Ramps', 'Public Access', 'Lifeguards' ), 'slug' => 'bike-rentals-inlet-beach' ),
+			),
+			'testimonials_title' => 'Stories From Seacrest Beach',
+			'faq_title'    => 'What to Know First',
+			'faqs'         => array(
+				array( 'q' => 'Where is Peddlers 30A located in Seacrest Beach?', 'a' => "Peddlers 30A is at 10343 E County Hwy 30A in Seacrest Beach (Inlet Beach), FL 32461, directly on Scenic Highway 30A. The shop sits on the 30A coastal trail. Walk out of Peddlers Pavilion and you're riding." ),
+				array( 'q' => 'Can I walk from my Seacrest Beach vacation rental to Peddlers?', 'a' => "Most Seacrest Beach vacation rentals are within walking distance of Peddlers Pavilion. The shop is on Scenic Highway 30A in the center of the community. No driving required, no delivery window to plan around." ),
+				array( 'q' => 'Do I need a reservation or can I walk in?', 'a' => "Walk-ins are welcome at Peddlers Pavilion during business hours. During peak summer weekends the fleet fills quickly, so booking ahead is recommended. Weekdays and off-season, walk-in availability is generally good." ),
+				array( 'q' => 'What bikes are best for riding from Seacrest Beach?', 'a' => "Classic cruisers are perfect for the short loops — Rosemary Beach in 1 minute, Alys Beach in 4. For longer rides to Seagrove or Seaside, a 7-speed bike handles the 35 to 40-minute runs more comfortably." ),
+				array( 'q' => 'What is the best bike ride from Seacrest Beach?', 'a' => "The best short ride is Rosemary Beach, 1 minute east. For a half-day, head east to Camp Helen State Park, about 7 miles away. For a full day, go west through Alys Beach, Seagrove, and Seaside, roughly 40 miles round trip from Peddlers." ),
 			),
 		),
 

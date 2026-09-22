@@ -19,15 +19,31 @@
 
     nav.id = nav.id || "site-nav";
 
+    var dropdownItem = nav.querySelector(".site-nav__item--dropdown");
+
     function setOpen(open) {
       header.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      if (!open && dropdownItem) dropdownItem.classList.remove("is-expanded");
     }
 
     toggle.addEventListener("click", function () {
       setOpen(!header.classList.contains("is-open"));
     });
+
+    // LOCATION is a tap-to-expand/collapse trigger, not a link -- toggle its
+    // list in place instead of navigating or closing the whole mobile panel.
+    if (dropdownItem) {
+      var dropdownTrigger = dropdownItem.querySelector(".site-nav__link");
+      if (dropdownTrigger) {
+        dropdownTrigger.addEventListener("click", function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          dropdownItem.classList.toggle("is-expanded");
+        });
+      }
+    }
 
     // Close the panel after choosing a destination.
     nav.addEventListener("click", function (event) {

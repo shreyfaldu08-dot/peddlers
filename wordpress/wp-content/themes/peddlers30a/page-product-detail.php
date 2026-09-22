@@ -108,7 +108,7 @@
                   <p class="product-hero__price-label">From</p>
                   <p class="product-hero__price">$85<span>/day</span></p>
                 </div>
-                <a class="product-hero__book-btn" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Book Now</a>
+                <a class="product-hero__book-btn" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Book Now</a>
               </div>
             </div>
           </div>
