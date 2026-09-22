@@ -608,6 +608,37 @@ function peddlers30a_create_home_page() {
 add_action( 'init', 'peddlers30a_create_home_page', 21 );
 
 /**
+ * Creates the /locations/ "Explore All" page. It was added to
+ * peddlers30a_provision()'s $pages array after that function had already
+ * run (and stays guarded to run only once) on every site provisioned
+ * before this page existed, so it needs its own one-time creation here too.
+ */
+function peddlers30a_create_locations_page() {
+	if ( get_option( 'peddlers30a_locations_page_created' ) ) {
+		return;
+	}
+
+	$page = get_page_by_path( 'locations' );
+	if ( ! $page ) {
+		$id = wp_insert_post(
+			array(
+				'post_type'   => 'page',
+				'post_status' => 'publish',
+				'post_title'  => 'Explore Every 30A Location | Peddlers 30A',
+				'post_name'   => 'locations',
+			)
+		);
+		if ( ! is_wp_error( $id ) && $id ) {
+			update_post_meta( $id, '_wp_page_template', 'page-locations.php' );
+		}
+	}
+
+	update_option( 'peddlers30a_locations_page_created', 1 );
+	flush_rewrite_rules();
+}
+add_action( 'init', 'peddlers30a_create_locations_page', 21 );
+
+/**
  * A few pages were renamed to match the client's approved sitemap (URLs on
  * the left below used to be live). Redirect each old URL permanently so
  * bookmarks/search listings/backlinks land on the new one instead of a 404.
