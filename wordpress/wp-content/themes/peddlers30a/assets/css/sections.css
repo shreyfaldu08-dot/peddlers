@@ -84,11 +84,17 @@ main>section+section {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 0.75rem;
+  /* No margin-top here on purpose: a gap between the link and the dropdown
+     is a dead zone where the mouse leaves :hover before reaching the menu,
+     closing it. padding-top fakes the same visual breathing room without
+     breaking the hover chain. */
+  padding-top: 0.75rem;
   background: var(--white);
+  background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: none;
   box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.12);
-  padding: 0.75rem 0;
+  padding-bottom: 0.75rem;
   min-width: 13rem;
   z-index: 50;
 }
