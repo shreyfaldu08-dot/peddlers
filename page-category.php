@@ -27,7 +27,7 @@
                 Peddlers is known for super friendly service and a HUGE selection of bikes for all ages and styles.
               </p>
             </div>
-            <a class="btn btn--outline rental__view-more" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">View More Bike</a>
+            <a class="btn btn--outline rental__view-more" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">View More Bike</a>
           </div>
 
           <div class="rental-filters">
@@ -242,7 +242,7 @@
         <div class="container closing__inner">
           <h2 class="closing__title">Your 30A Story Begins Here</h2>
           <div class="closing__actions">
-            <a class="btn btn--light" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">RESERVE ONLINE</a>
+            <a class="btn btn--light" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">RESERVE ONLINE</a>
             <a class="btn btn--ghost" href="<?php echo esc_url( peddlers30a_nav_url( 'contact' ) ); ?>">CONTACT OUR TEAM</a>
           </div>
         </div>

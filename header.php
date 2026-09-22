@@ -36,7 +36,7 @@
           <img class="btn__icon" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/icons/phone.svg" alt="" />
           <?php echo esc_html( get_theme_mod( 'phone_number', '(850) 213-0040' ) ); ?>
         </a>
-        <a class="btn btn--sand" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">RESERVE NOW</a>
+        <a class="btn btn--sand" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">RESERVE NOW</a>
       </div>
 
       <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav"

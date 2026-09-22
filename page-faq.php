@@ -808,7 +808,7 @@ get_header();
         <h2 style="font-family: var(--font-body); font-weight: 700; font-size: 2.25rem; color: #ffffff; margin-bottom: 1.5rem;">
           Still Have a Question?</h2>
         <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-          <a class="btn btn--sand" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">RESERVE ONLINE</a>
+          <a class="btn btn--sand" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">RESERVE ONLINE</a>
           <a class="btn" style="background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.4); padding: 0.8rem 2.5rem; font-size: 0.85rem;" href="<?php echo esc_url( peddlers30a_nav_url( 'contact' ) ); ?>">CONTACT OUR TEAM</a>
         </div>
       </div>

@@ -108,8 +108,10 @@ main>section+section {
 .site-nav__dropdown li a {
   display: block;
   padding: 0.5rem 1.25rem;
-  font-family: var(--font-body);
+  font-family: var(--font-body) !important;
   font-size: var(--fs-body-md);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
   color: var(--ink);
   white-space: nowrap;
   transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
@@ -120,9 +122,14 @@ main>section+section {
   background: var(--s1);
 }
 
-.site-nav__item--dropdown:hover .site-nav__dropdown,
-.site-nav__item--dropdown:focus-within .site-nav__dropdown {
-  display: block;
+/* Desktop-only: on mobile this would also fire on tap (a click focuses the
+   link), forcing the dropdown open and fighting the tap-to-expand toggle
+   below. */
+@media (min-width: 769px) {
+  .site-nav__item--dropdown:hover .site-nav__dropdown,
+  .site-nav__item--dropdown:focus-within .site-nav__dropdown {
+    display: block;
+  }
 }
 
 .site-header__actions {
@@ -4237,15 +4244,25 @@ main>section+section {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
   }
 
-  /* No hover on touch -- show the location dropdown inline, always open,
-     nested under the LOCATION link inside the mobile menu panel. */
+  /* No hover on touch -- the location list nests under the LOCATION link
+     inside the mobile menu panel, collapsed until tapped open (12+ cities
+     shown permanently expanded made the mobile menu unusably long). */
   .site-nav__item--dropdown {
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
+  }
+
+  .site-nav__item--dropdown > .site-nav__link::after {
+    transition: transform var(--dur) var(--ease);
+  }
+
+  .site-nav__item--dropdown.is-expanded > .site-nav__link::after {
+    transform: rotate(225deg);
   }
 
   .site-nav__dropdown {
-    display: block;
+    display: none;
     position: static;
     transform: none;
     margin-top: 0.75rem;
@@ -4253,6 +4270,10 @@ main>section+section {
     border: none;
     padding: 0;
     min-width: 0;
+  }
+
+  .site-nav__item--dropdown.is-expanded .site-nav__dropdown {
+    display: block;
   }
 
   .site-nav__dropdown li a {
@@ -4551,7 +4572,8 @@ main>section+section {
 }
 
 .beaches__grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   align-items: stretch;
   gap: 1.875rem;
   margin-top: 3.75rem;
@@ -4562,7 +4584,6 @@ main>section+section {
 .beach-card {
   display: flex;
   flex-direction: column;
-  flex: 1 0 0;
   gap: 0.75rem;
 }
 

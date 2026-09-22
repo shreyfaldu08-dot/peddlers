@@ -5,6 +5,8 @@
  * so the rendered output matches the original HTML build pixel for pixel.
  */
 
+require_once get_template_directory() . '/inc/location-cpt.php';
+
 function peddlers30a_assets() {
 	global $post;
 	$dir = get_template_directory_uri();
@@ -17,15 +19,15 @@ function peddlers30a_assets() {
 	wp_enqueue_style( 'peddlers30a-fonts', $dir . '/assets/css/fonts.css', array(), $is_services ? '62' : '70' );
 	wp_enqueue_style( 'peddlers30a-base', $dir . '/assets/css/base.css', array( 'peddlers30a-tokens' ), $is_services ? '62' : '71' );
 	wp_enqueue_style( 'peddlers30a-components', $dir . '/assets/css/components.css', array( 'peddlers30a-base' ), $is_services ? '62' : '71' );
-	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '188' );
+	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '192' );
 
 	if ( $is_services ) {
 		wp_enqueue_style( 'peddlers30a-services', $dir . '/assets/css/services.css', array( 'peddlers30a-sections' ), '62' );
 	} else {
-		wp_enqueue_style( 'peddlers30a-mobile', $dir . '/assets/css/mobile.css', array( 'peddlers30a-sections' ), '47' );
+		wp_enqueue_style( 'peddlers30a-mobile', $dir . '/assets/css/mobile.css', array( 'peddlers30a-sections' ), '48' );
 	}
 
-	wp_enqueue_script( 'peddlers30a-main', $dir . '/assets/js/main.js', array(), '71', true );
+	wp_enqueue_script( 'peddlers30a-main', $dir . '/assets/js/main.js', array(), '72', true );
 }
 add_action( 'wp_enqueue_scripts', 'peddlers30a_assets' );
 
@@ -64,7 +66,10 @@ class Peddlers30a_Primary_Walker extends Walker_Nav_Menu {
 
 	public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
 		$active      = in_array( 'current-menu-item', $item->classes, true ) || in_array( 'current_page_item', $item->classes, true );
-		$is_location = ( 'post_type' === $item->type ) && ( 'location' === get_post_field( 'post_name', $item->object_id ) );
+		// The LOCATION item is a dropdown trigger, not a link to a specific
+		// page -- matched by its label rather than by target, since it's a
+		// plain custom-URL ("#") menu item with nothing to look up by ID.
+		$is_location = ( 'LOCATION' === strtoupper( trim( $item->title ) ) );
 
 		if ( $is_location ) {
 			$output .= '<div class="site-nav__item site-nav__item--dropdown">';
@@ -110,9 +115,17 @@ function peddlers30a_location_dropdown_menu() {
  * to match what wp_nav_menu() would output for a real menu.
  */
 function peddlers30a_footer_areas_fallback_wrapped() {
+	// wp_nav_menu()'s fallback_cb path always uses the callback's return
+	// value (it ignores the 'echo' arg entirely) -- output buffering here
+	// is required so the markup lands back inside $html in
+	// peddlers30a_location_dropdown_menu() and stays nested under
+	// .site-nav__item--dropdown, instead of leaking out wherever the
+	// primary menu happened to be rendering when this ran.
+	ob_start();
 	echo '<div class="site-nav__dropdown">';
 	peddlers30a_footer_areas_fallback();
 	echo '</div>';
+	return ob_get_clean();
 }
 
 /**
@@ -189,19 +202,19 @@ add_action( 'customize_register', 'peddlers30a_customize_register' );
  */
 function peddlers30a_primary_menu_fallback() {
 	$links = array(
-		'index'    => 'HOME',
-		'rentals'  => 'RENTALS',
-		'category' => 'PRODUCTS',
-		'location' => 'LOCATION',
-		'about'    => 'ABOUT',
-		'faq'      => 'FAQ',
-		'contact'  => 'CONTACT',
+		'index'        => 'HOME',
+		'bike-rentals' => 'RENTALS',
+		'category'     => 'PRODUCTS',
+		'#'            => 'LOCATION',
+		'about'        => 'ABOUT',
+		'faqs'         => 'FAQ',
+		'contact'      => 'CONTACT',
 	);
 	foreach ( $links as $slug => $label ) {
 		printf(
 			'<a class="site-nav__link%s" href="%s">%s</a>',
-			peddlers30a_nav_active( $slug ),
-			esc_url( peddlers30a_nav_url( $slug ) ),
+			( '#' === $slug ) ? '' : peddlers30a_nav_active( $slug ),
+			( '#' === $slug ) ? '#' : esc_url( peddlers30a_nav_url( $slug ) ),
 			esc_html( $label )
 		);
 	}
@@ -224,26 +237,26 @@ function peddlers30a_footer_quick_links_fallback() {
 	peddlers30a_simple_link_list(
 		array(
 			'Home'         => 'index',
-			'Bike Rentals' => 'rentals',
+			'Bike Rentals' => 'bike-rentals',
 			'About Us'     => 'about',
-			'FAQ'          => 'faq',
+			'FAQ'          => 'faqs',
 			'Contact Us'   => 'contact',
 		)
 	);
 }
 
+/**
+ * Built entirely from the "Location" custom post type (Locations in
+ * wp-admin, which includes Seacrest Beach itself) so a newly added
+ * neighborhood shows up here -- and in the header LOCATION dropdown, which
+ * reuses this same function -- with no menu editing.
+ */
 function peddlers30a_footer_areas_fallback() {
-	peddlers30a_simple_link_list(
-		array(
-			'Seacrest Beach' => 'location',
-			'Rosemary Beach' => 'bike-rentals-rosemary-beach',
-			'Alys Beach'     => 'bike-rentals-alys-beach',
-			'Seaside'        => 'bike-rentals-seaside',
-			'WaterColor'     => 'bike-rentals-watercolor',
-			'Inlet Beach'    => 'bike-rentals-inlet-beach',
-			'Grayton Beach'  => 'bike-rentals-grayton-beach',
-		)
-	);
+	$links = array();
+	foreach ( peddlers30a_get_locations() as $location_post ) {
+		$links[ $location_post->post_title ] = $location_post->post_name;
+	}
+	peddlers30a_simple_link_list( $links );
 }
 
 function peddlers30a_footer_support_fallback() {
@@ -274,7 +287,7 @@ function peddlers30a_nav_url( $slug ) {
 	if ( 'index' === $slug ) {
 		return home_url( '/' );
 	}
-	$page = get_page_by_path( $slug );
+	$page = get_page_by_path( $slug, OBJECT, array( 'page', 'location' ) );
 	return $page ? get_permalink( $page ) : home_url( '/' . $slug . '/' );
 }
 
@@ -311,10 +324,23 @@ function peddlers30a_page_slug_class() {
 		return '';
 	}
 
+	// Every neighborhood "Bike Rental" lander (the Location post type) uses
+	// the same hero/pillars/cravings/service-grid markup as the Seacrest
+	// Beach pavilion page, so it needs the same "page-location" styling --
+	// including the .page-location-scoped mobile responsive rules -- no
+	// matter what its own slug is.
+	if ( 'location' === $post->post_type ) {
+		return 'page-location';
+	}
+
 	$overrides = array(
-		'privacy-policy'    => 'page-legal',
-		'terms-of-service'  => 'page-legal',
-		'services'          => '',
+		'privacy-policy'   => 'page-legal',
+		'terms-of-service' => 'page-legal',
+		'services'         => '',
+		// URL is /bike-rentals/ (renamed to match the client's sitemap), but
+		// all the .page-rentals-scoped hero/rental-filter CSS still expects
+		// this exact class.
+		'bike-rentals'     => 'page-rentals',
 	);
 
 	if ( array_key_exists( $post->post_name, $overrides ) ) {
@@ -351,11 +377,11 @@ function peddlers30a_meta_description() {
 	$descriptions = array(
 		'home'              => "Explore the largest bike rental destination on 30A while enjoying great food, shopping, live music and unforgettable family moments.",
 		'about'             => "Learn the story behind Peddlers 30A, a bike rental and pavilion in Seacrest Beach built around the Timpoochee Trail and the 30A lifestyle.",
-		'rentals'           => "Largest bike rental fleet on 30A. Helmet and lock included. Delivery to every community. Walk-ins welcome in Seacrest Beach, FL. Call 850-213-0040.",
+		'bike-rentals'      => "Largest bike rental fleet on 30A. Helmet and lock included. Delivery to every community. Walk-ins welcome in Seacrest Beach, FL. Call 850-213-0040.",
 		'category'          => "Whether you're planning a sunrise ride through Seacrest or a sunset journey to Alys Beach, our team is here to curate your perfect coastal transit.",
-		'location'          => "Peddlers 30A is Seacrest Beach's go-to bike rental. 4.9 stars, 50+ bikes, helmet and lock included with every rental. Walk in or call 850-213-0040 today.",
+		'locations'         => "Every Peddlers 30A location, from Seacrest Beach to Rosemary Beach, Seaside, WaterColor, Alys Beach, and beyond. Ride times, highlights, and directions for each.",
 		'contact'           => "Reach Peddlers Pavilion in Seacrest Beach by phone, email, or inquiry form. Bike rentals along Scenic Highway 30A. Call 850-213-0040 or ask us anything online.",
-		'faq'               => "Everything you need to know before renting a bike on 30A. Booking, pricing, kids options, delivery, trail distances, and hours. Answered by Peddlers Pavilion.",
+		'faqs'              => "Everything you need to know before renting a bike on 30A. Booking, pricing, kids options, delivery, trail distances, and hours. Answered by Peddlers Pavilion.",
 		'privacy-policy'    => "Read the Peddlers 30A privacy policy. Learn how we collect, use, and protect your personal information when you rent bikes or contact us on 30A.",
 		'terms-of-service'  => "Read the Peddlers 30A terms of service. Covers website use, bike rental terms, booking and cancellation policy, liability, and Florida governing law.",
 		'services'          => "From cruising scenic beach roads to grabbing a bite, discovering local finds, and settling in for live music, Peddlers brings the best parts of a 30A day together in one easygoing destination.",
@@ -394,27 +420,20 @@ function peddlers30a_provision() {
 
 	$pages = array(
 		'about'             => array( 'title' => 'About Peddlers 30A | Rental & Pavilion, Seacrest Beach', 'template' => 'page-about.php' ),
-		'rentals'           => array( 'title' => '30A Bike Rentals at Peddlers Pavilion, Seacrest Beach', 'template' => 'page-rentals.php' ),
+		'bike-rentals'      => array( 'title' => '30A Bike Rentals at Peddlers Pavilion, Seacrest Beach', 'template' => 'page-rentals.php' ),
 		'category'          => array( 'title' => 'Discover Our Products — Peddlers 30A', 'template' => 'page-category.php' ),
-		'location'          => array( 'title' => 'Best Bike Rental in Seacrest Beach | Peddlers 30A', 'template' => 'page-location.php' ),
+		'locations'         => array( 'title' => 'Explore Every 30A Location | Peddlers 30A', 'template' => 'page-locations.php' ),
 		'contact'           => array( 'title' => 'Contact Peddlers 30A | Seacrest Beach Bike Rental', 'template' => 'page-contact.php' ),
-		'faq'               => array( 'title' => 'Peddlers 30A FAQ | Bike Rentals, Pricing & Trail Info', 'template' => 'page-faq.php' ),
+		'faqs'              => array( 'title' => 'Peddlers 30A FAQ | Bike Rentals, Pricing & Trail Info', 'template' => 'page-faq.php' ),
 		'privacy-policy'    => array( 'title' => 'Privacy Policy | Peddlers 30A Bike Rentals', 'template' => 'page-privacy-policy.php' ),
 		'terms-of-service'  => array( 'title' => 'Terms of Service | Peddlers 30A Bike Rentals', 'template' => 'page-terms-of-service.php' ),
 		'services'          => array( 'title' => 'Services (Legacy) — Peddlers 30A', 'template' => 'page-services.php' ),
 		'product-detail'    => array( 'title' => 'Electric Explorer — Peddlers 30A', 'template' => 'page-product-detail.php' ),
 	);
 
-	// One page per neighborhood "Bike Rental" SEO lander, all sharing the
-	// same template -- content lives in inc/location-data.php so adding a
-	// new location later never needs a new page-*.php file.
-	require_once get_template_directory() . '/inc/location-data.php';
-	foreach ( peddlers30a_location_data() as $loc_slug => $loc_data ) {
-		$pages[ $loc_slug ] = array(
-			'title'    => $loc_data['title'],
-			'template' => 'template-bike-rental-location.php',
-		);
-	}
+	// Neighborhood "Bike Rental" SEO landers are their own "Location" custom
+	// post type now (see inc/location-cpt.php, Locations in wp-admin) --
+	// peddlers30a_seed_locations() creates/migrates those separately.
 
 	$page_ids = array();
 	foreach ( $pages as $slug => $data ) {
@@ -511,11 +530,11 @@ function peddlers30a_provision() {
 		'primary',
 		array(
 			array( 'title' => 'HOME', 'target' => 'index' ),
-			array( 'title' => 'RENTALS', 'target' => 'rentals' ),
+			array( 'title' => 'RENTALS', 'target' => 'bike-rentals' ),
 			array( 'title' => 'PRODUCTS', 'target' => 'category' ),
-			array( 'title' => 'LOCATION', 'target' => 'location' ),
+			array( 'title' => 'LOCATION', 'target' => '#' ),
 			array( 'title' => 'ABOUT', 'target' => 'about' ),
-			array( 'title' => 'FAQ', 'target' => 'faq' ),
+			array( 'title' => 'FAQ', 'target' => 'faqs' ),
 			array( 'title' => 'CONTACT', 'target' => 'contact' ),
 		)
 	);
@@ -525,26 +544,16 @@ function peddlers30a_provision() {
 		'footer_quick_links',
 		array(
 			array( 'title' => 'Home', 'target' => 'index' ),
-			array( 'title' => 'Bike Rentals', 'target' => 'rentals' ),
+			array( 'title' => 'Bike Rentals', 'target' => 'bike-rentals' ),
 			array( 'title' => 'About Us', 'target' => 'about' ),
-			array( 'title' => 'FAQ', 'target' => 'faq' ),
+			array( 'title' => 'FAQ', 'target' => 'faqs' ),
 			array( 'title' => 'Contact Us', 'target' => 'contact' ),
 		)
 	);
 
-	$create_menu(
-		'Footer Areas',
-		'footer_areas',
-		array(
-			array( 'title' => 'Seacrest Beach', 'target' => 'location' ),
-			array( 'title' => 'Rosemary Beach', 'target' => 'bike-rentals-rosemary-beach' ),
-			array( 'title' => 'Alys Beach', 'target' => 'bike-rentals-alys-beach' ),
-			array( 'title' => 'Seaside', 'target' => 'bike-rentals-seaside' ),
-			array( 'title' => 'WaterColor', 'target' => 'bike-rentals-watercolor' ),
-			array( 'title' => 'Inlet Beach', 'target' => 'bike-rentals-inlet-beach' ),
-			array( 'title' => 'Grayton Beach', 'target' => 'bike-rentals-grayton-beach' ),
-		)
-	);
+	// No "Footer Areas" menu is auto-created -- peddlers30a_footer_areas_fallback()
+	// always renders directly from the Location post type instead, so a newly
+	// added location appears in the footer and header dropdown automatically.
 
 	$create_menu(
 		'Footer Support',
@@ -560,3 +569,52 @@ function peddlers30a_provision() {
 	update_option( 'peddlers30a_provisioned', 1 );
 }
 add_action( 'init', 'peddlers30a_provision', 20 );
+
+/**
+ * A few pages were renamed to match the client's approved sitemap (URLs on
+ * the left below used to be live). Redirect each old URL permanently so
+ * bookmarks/search listings/backlinks land on the new one instead of a 404.
+ */
+function peddlers30a_redirect_renamed_page_urls() {
+	$renames = array(
+		'location' => 'bike-rentals-seacrest-beach',
+		'rentals'  => 'bike-rentals',
+		'faq'      => 'faqs',
+	);
+	$path = trim( (string) parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
+	if ( isset( $renames[ $path ] ) ) {
+		wp_redirect( home_url( '/' . $renames[ $path ] . '/' ), 301 );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'peddlers30a_redirect_renamed_page_urls' );
+
+/**
+ * One-time rename of the "rentals" and "faq" pages to "bike-rentals" and
+ * "faqs" (matching the client's approved sitemap), for sites provisioned
+ * before that rename shipped. Guarded like peddlers30a_provision() so it
+ * only ever runs once -- any admin edits made afterward are left alone.
+ */
+function peddlers30a_migrate_renamed_page_slugs() {
+	if ( get_option( 'peddlers30a_page_slugs_migrated' ) ) {
+		return;
+	}
+	$renames = array(
+		'rentals' => 'bike-rentals',
+		'faq'     => 'faqs',
+	);
+	foreach ( $renames as $old_slug => $new_slug ) {
+		$page = get_page_by_path( $old_slug, OBJECT, 'page' );
+		if ( $page ) {
+			wp_update_post(
+				array(
+					'ID'        => $page->ID,
+					'post_name' => $new_slug,
+				)
+			);
+		}
+	}
+	update_option( 'peddlers30a_page_slugs_migrated', 1 );
+	flush_rewrite_rules();
+}
+add_action( 'init', 'peddlers30a_migrate_renamed_page_slugs', 22 );

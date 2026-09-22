@@ -17,8 +17,8 @@
             parts of a 30A day together in one easygoing destination.
           </p>
           <div class="sv-hero__actions">
-            <a class="btn btn--primary btn--lg" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Explore our services</a>
-            <a class="btn btn--ghost btn--lg" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Rent bikes</a>
+            <a class="btn btn--primary btn--lg" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Explore our services</a>
+            <a class="btn btn--ghost btn--lg" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Rent bikes</a>
           </div>
         </div>
       </section>
@@ -48,7 +48,7 @@
                 crew and set out for beach roads, neighborhood paths, coffee
                 stops, and wherever the day takes you.
               </p>
-              <a class="sv-arrow-link" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Explore bike rentals</a>
+              <a class="sv-arrow-link" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Explore bike rentals</a>
             </li>
             <li>
               <p class="sv-pillars__kicker">02 &mdash; Eat + Shop</p>
@@ -105,7 +105,7 @@
                 coffee runs, neighborhood exploring, beach stops, and sunset
                 rides.
               </p>
-              <a class="btn btn--outline sv-bike__cta" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Book now</a>
+              <a class="btn btn--outline sv-bike__cta" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Book now</a>
             </li>
 
             <li class="sv-bike">
@@ -119,7 +119,7 @@
                 your plans take you beyond a casual cruise around the
                 neighborhood.
               </p>
-              <a class="btn btn--outline sv-bike__cta" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Book now</a>
+              <a class="btn btn--outline sv-bike__cta" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Book now</a>
             </li>
 
             <li class="sv-bike">
@@ -132,7 +132,7 @@
                 Make exploring part of the family vacation with bike options
                 designed to help younger riders and families enjoy 30A together.
               </p>
-              <a class="btn btn--outline sv-bike__cta" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Book now</a>
+              <a class="btn btn--outline sv-bike__cta" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Book now</a>
             </li>
 
             <li class="sv-bike">
@@ -145,7 +145,7 @@
                 From tandems and tricycles to tow-along options, find flexible
                 ways to make the ride work for your group.
               </p>
-              <a class="btn btn--outline sv-bike__cta" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Book now</a>
+              <a class="btn btn--outline sv-bike__cta" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Book now</a>
             </li>
           </ul>
         </div>
@@ -232,7 +232,7 @@
                 Stop by Peddlers, grab your bikes, and start exploring right from
                 the heart of the 30A experience.
               </p>
-              <a class="sv-arrow-link sv-arrow-link--cream" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Reserve for pickup</a>
+              <a class="sv-arrow-link sv-arrow-link--cream" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Reserve for pickup</a>
             </div>
             <figure class="sv-option__media">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sv-option-1.jpg" alt="A rack of coral cruisers ready for collection" />
@@ -247,7 +247,7 @@
                 Staying nearby? Eligible rentals can be delivered so your bikes
                 are ready closer to where your vacation begins.
               </p>
-              <a class="sv-arrow-link sv-arrow-link--cream" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Explore delivery</a>
+              <a class="sv-arrow-link sv-arrow-link--cream" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Explore delivery</a>
             </div>
             <figure class="sv-option__media">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sv-option-2.jpg" alt="Three riders setting off down a tree-lined lane" />
@@ -405,7 +405,7 @@
                 Find the right bike for your crew and start seeing 30A on two
                 wheels.
               </p>
-              <a class="btn btn--outline sv-choice__cta" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Rent bikes</a>
+              <a class="btn btn--outline sv-choice__cta" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Rent bikes</a>
             </li>
             <li class="sv-choice">
               <p class="sv-choice__kicker">02 &mdash; Eat + Shop</p>

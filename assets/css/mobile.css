@@ -897,6 +897,42 @@
   .page-location .hero__lead {
     font-size: 1.15rem !important;
   }
+
+  /* ---- All Locations Index Page Responsive ----
+     This page's hero used the same 80vh/700px inline sizing as every
+     single-location page, but with much shorter copy it left a large
+     empty gap before the card grid -- shrink it here only. Its card grid
+     also doesn't get the horizontal-scroll-carousel treatment every other
+     .beaches__grid gets on mobile, since with 12 cards a swipeable strip
+     is worse than a simple stacked list. */
+  .page-locations .hero--location {
+    height: auto !important;
+    min-height: 32rem !important;
+    padding-block: 6rem 3rem;
+  }
+
+  .page-locations .hero__title {
+    font-size: 2.5rem !important;
+  }
+
+  .page-locations .hero__lead {
+    font-size: 1.15rem !important;
+  }
+
+  .page-locations .beaches__grid {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    overflow-x: visible !important;
+    scroll-snap-type: none !important;
+    gap: 1.5rem !important;
+    padding-bottom: 0 !important;
+  }
+
+  .page-locations .beaches__grid > * {
+    flex: 1 1 auto !important;
+    max-width: none !important;
+  }
   .page-location .rental-filters,
   .page-rentals .rental-filters,
   .page-category .rental-filters {

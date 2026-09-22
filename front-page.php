@@ -9,10 +9,10 @@
       <div class="hero__inner container">
         <h1 class="hero__title">The Best of 30A, All in One Place</h1>
         <p class="hero__lead">
-          Peddlers Pavilion is Seacrest Beach's favorite gathering place on Scenic Highway 30A, top-rated bike rentals, live music, food, drinks, and the Timpoochee Trail right at your door.
+          Peddlers Pavilion is Seacrest Beach's favorite gathering place on Scenic Highway 30A, top-rated bike rentals, live music, food, drinks, and the 30A coastal bike path right at your door.
         </p>
         <div class="hero__actions">
-          <a class="btn btn--primary btn--lg" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Reserve Now</a>
+          <a class="btn btn--primary btn--lg" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Reserve Now</a>
           <a class="btn btn--ghost btn--lg" href="#pavilion">Explore Pavilion</a>
         </div>
       </div>
@@ -64,7 +64,7 @@
             Seacrest Beach's Best Bike Rental and Coastal Pavilion
           </h2>
           <p class="body-copy about__body">
-            We've been renting bikes at the Timpoochee Trail trailhead for 15+ years.
+            We've been renting bikes on Scenic Highway 30A for 15+ years.
           </p>
           <p class="body-copy about__body" style="margin-top: 1rem;">
             Peddlers Pavilion is where your ride starts and where your evening ends: bikes, food, drinks, and live music, all steps from Seacrest Beach, Florida.
@@ -91,7 +91,7 @@
       <div class="container">
         <ul class="categories__grid">
           <li>
-            <a class="media-card" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">
+            <a class="media-card" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">
               <img class="media-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/img/s04-2.jpg" alt="Two riders cruising a shaded 30A trail" />
               <span class="media-card__tag media-card__tag--top">
                 <span class="tag tag--sand">Rent Bikes</span>
@@ -132,7 +132,7 @@
               The largest bike rental fleet on Scenic Highway 30A. Walk-ins rarely wait, groups ride out together, and every bike is inspected before it goes out.
             </p>
           </div>
-          <a class="btn btn--outline rental__view-more" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">See Full Fleet</a>
+          <a class="btn btn--outline rental__view-more" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">See Full Fleet</a>
         </div>
 
         <div class="rental__grid">
@@ -277,7 +277,7 @@
             <p class="eyebrow">Your 30A Rides</p>
             <h2 class="experiences__title">Four Ways to Ride 30A</h2>
           </div>
-          <a class="btn btn--outline" href="<?php echo esc_url( peddlers30a_nav_url( 'location' ) ); ?>">Explore All</a>
+          <a class="btn btn--outline" href="<?php echo esc_url( peddlers30a_nav_url( 'locations' ) ); ?>">Explore All</a>
         </div>
 
         <ul class="experiences__grid">
@@ -777,7 +777,7 @@
             <div class="accordion__panel">
               <div>
                 <p>
-                  Booking is easy. Visit Peddlers Pavilion in Seacrest Beach, FL to rent in person, or reserve your 30A bike rental online before your visit. During peak season, morning slots fill quickly, booking ahead secures your preferred time on the Timpoochee Trail.
+                  Booking is easy. Visit Peddlers Pavilion in Seacrest Beach, FL to rent in person, or reserve your 30A bike rental online before your visit. During peak season, morning slots fill quickly, booking ahead secures your preferred time on the 30A coastal path.
                 </p>
               </div>
             </div>
@@ -860,7 +860,7 @@
           Your 30A Ride Starts Here
         </h2>
         <div class="closing__actions">
-          <a class="btn btn--primary btn--lg" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Reserve Online</a>
+          <a class="btn btn--primary btn--lg" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Reserve Online</a>
           <a class="btn btn--ghost btn--lg" href="<?php echo esc_url( peddlers30a_nav_url( 'contact' ) ); ?>">Contact Our Team</a>
         </div>
       </div>

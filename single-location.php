@@ -1,41 +1,34 @@
 <?php
-/* Template Name: Bike Rental Location */
-
 /**
  * Renders a per-neighborhood "Bike Rental" SEO landing page. Markup and
  * CSS classes are copied 1:1 from location.html (the Seacrest Beach page)
  * per the client's instruction to keep the design identical -- only the
- * text content changes, pulled from inc/location-data.php by page slug.
+ * text content changes, pulled from the "location" post's '_loc_data'
+ * post meta (edited under wp-admin > Locations).
  */
 
-require_once get_template_directory() . '/inc/location-data.php';
+$loc = peddlers30a_get_location_data( get_the_ID() );
 
-$peddlers30a_locations = peddlers30a_location_data();
-$peddlers30a_slug      = get_post()->post_name;
-$peddlers30a_loc       = isset( $peddlers30a_locations[ $peddlers30a_slug ] ) ? $peddlers30a_locations[ $peddlers30a_slug ] : null;
-
-add_action( 'wp_head', function () use ( $peddlers30a_loc ) {
-	if ( ! $peddlers30a_loc ) {
+add_action( 'wp_head', function () use ( $loc ) {
+	if ( empty( $loc['description'] ) ) {
 		return;
 	}
 	?>
-	<meta name="description" content="<?php echo esc_attr( $peddlers30a_loc['description'] ); ?>" />
+	<meta name="description" content="<?php echo esc_attr( $loc['description'] ); ?>" />
 	<?php
 } );
 
-add_filter( 'pre_get_document_title', function ( $title ) use ( $peddlers30a_loc ) {
-	return $peddlers30a_loc ? $peddlers30a_loc['title'] : $title;
+add_filter( 'pre_get_document_title', function ( $title ) use ( $loc ) {
+	return ! empty( $loc['title'] ) ? $loc['title'] : $title;
 } );
 
 get_header();
 
-if ( ! $peddlers30a_loc ) {
+if ( empty( $loc ) ) {
 	echo '<div class="container" style="padding:5rem 0;"><p>Location content coming soon.</p></div>';
 	get_footer();
 	return;
 }
-
-$loc = $peddlers30a_loc;
 ?>
 
     <!-- ==================================================================
@@ -223,7 +216,7 @@ $loc = $peddlers30a_loc;
                 <?php echo esc_html( $cat['copy'] ); ?>
               </p>
             </div>
-            <a class="pillar__btn" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Learn more</a>
+            <a class="pillar__btn" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Learn more</a>
           </article>
           <?php endforeach; ?>
         </div>
@@ -261,6 +254,49 @@ $loc = $peddlers30a_loc;
       </div>
     </section>
 
+    <?php if ( 'bike-rentals-seacrest-beach' === get_post()->post_name ) : ?>
+    <!-- ==================================================================
+           07.5 — The Pavilion Collection (Seacrest Beach only -- this is
+           the actual Pavilion, so its on-site venues are real and fixed,
+           unlike the "beaches to ride to" every other location page has)
+           ================================================================== -->
+    <section class="section gathering" id="gathering">
+      <div class="container">
+        <header class="gathering__head text-center">
+          <p class="eyebrow">The Pavilion Collection</p>
+          <h2 class="gathering__title">A Curated Gathering</h2>
+        </header>
+
+        <div class="gathering__grid">
+          <?php
+          $pavilion_venues = array(
+            array( 'img' => 'Rectangle-19-6.png?v=2', 'name' => "Peddler's Pub", 'copy' => "Cool down with an ice-cold draft beer or a tasty cocktail from our fully stocked bar. It's 5 o'clock somewhere." ),
+            array( 'img' => 'Rectangle-19-3.png', 'name' => 'Sweet Peddler', 'copy' => 'A fun and funky ice cream and candy shop with all the feel-good, nostalgic vibes to put a smile on any face.' ),
+            array( 'img' => 'Rectangle-19-2.png?v=2', 'name' => 'Kickstand Bar', 'copy' => 'From dirty martinis to spiked cherry limeade, our walk-up bar serves all the best liquor drinks on 30A.' ),
+            array( 'img' => 'Rectangle-19-1.png?v=2', 'name' => 'Little Pedal Boutique', 'copy' => 'A boutique blending personalization and style. Build your own look at our charm bar or shop trendy jewelry.' ),
+            array( 'img' => 'Rectangle-19-7.png?v=2', 'name' => 'Beachside Burger Co.', 'copy' => 'Handcrafted burgers with a laid-back coastal vibe. Classic American comfort food perfect for fueling your adventure.' ),
+            array( 'img' => 'Rectangle-19-8.png?v=2', 'name' => 'LMN', 'copy' => 'The latest and greatest brands in clothing, jewelry, and accessories. Stay up to date with beachy fashion trends.' ),
+            array( 'img' => 'Rectangle-19-5.png?v=2', 'name' => "Reel 'Em In", 'copy' => "You'll be hooked! Fresh seafood and homemade recipes that capture the essence of the Emerald Coast." ),
+            array( 'img' => 'Rectangle-19-4.png?v=2', 'name' => "Ticheli's Pizza", 'copy' => 'Homemade Italian pizza sauce and imported flour make for the best tasting wood-oven pizza on 30A.' ),
+            array( 'img' => 'Rectangle-19.png?v=2', 'name' => "Charlie's Donuts", 'copy' => 'Famous gourmet donuts served up with fresh coffee and smoothies. The perfect place to start your day.' ),
+          );
+          foreach ( $pavilion_venues as $venue ) :
+          ?>
+          <article class="venue-card">
+            <figure class="venue-card__media">
+              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/<?php echo esc_attr( $venue['img'] ); ?>" alt="<?php echo esc_attr( $venue['name'] ); ?>" />
+            </figure>
+            <div class="venue-card__body">
+              <h3 class="venue-card__name"><?php echo esc_html( $venue['name'] ); ?></h3>
+              <p class="venue-card__copy"><?php echo esc_html( $venue['copy'] ); ?></p>
+            </div>
+          </article>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </section>
+    <?php endif; ?>
+
     <!-- ==================================================================
            08 — THE SERVICE STANDARD / Why Rent Our Bike
            ================================================================== -->
@@ -294,7 +330,7 @@ $loc = $peddlers30a_loc;
         <div class="closing-split__content">
           <h2 class="closing-split__title"><?php echo esc_html( $loc['closing_title'] ); ?></h2>
           <div class="closing-split__actions">
-            <a class="closing-split__btn closing-split__btn--solid" href="<?php echo esc_url( peddlers30a_nav_url( 'rentals' ) ); ?>">Reserve Online</a>
+            <a class="closing-split__btn closing-split__btn--solid" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">Reserve Online</a>
             <a class="closing-split__btn closing-split__btn--outline" href="<?php echo esc_url( peddlers30a_nav_url( 'contact' ) ); ?>">Contact Our Team</a>
           </div>
         </div>
@@ -307,7 +343,7 @@ $loc = $peddlers30a_loc;
     <section class="section beaches">
       <div class="container beaches__head">
         <p class="eyebrow">BEACHES WORTH THE RIDE</p>
-        <h2 class="beaches__title">Explore 30A From <?php echo esc_html( $loc['journey_to'] ); ?></h2>
+        <h2 class="beaches__title">Explore 30A From <?php echo esc_html( ! empty( $loc['beaches_heading'] ) ? $loc['beaches_heading'] : $loc['journey_to'] ); ?></h2>
         <p class="beaches__lead">
           <?php echo esc_html( $loc['beaches_lead'] ); ?>
         </p>
@@ -338,7 +374,7 @@ $loc = $peddlers30a_loc;
           <?php endforeach; ?>
         </div>
 
-        <a class="beaches__more" href="<?php echo esc_url( peddlers30a_nav_url( 'location' ) ); ?>">
+        <a class="beaches__more" href="<?php echo esc_url( peddlers30a_nav_url( 'locations' ) ); ?>">
           <span>Explore All</span>
           <svg class="beaches__more-icon" viewBox="0 0 15 12" fill="none" aria-hidden="true">
             <path d="M1 6H14M14 6L9 1M14 6L9 11" stroke="currentColor" stroke-width="1.3" />
