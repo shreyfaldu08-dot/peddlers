@@ -54,7 +54,7 @@ get_header();
     <!-- ==================================================================
            02 — Hero
            ================================================================== -->
-    <section class="hero hero--rentals" style="background-image: url('assets/img/hero-bg.jpg');">
+    <section class="hero hero--rentals" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/hero-bg.jpg');">
       <div class="container hero__inner">
         <p class="eyebrow" style="color: var(--s3);">Seacrest Beach, FL</p>
         <h1 class="hero__title">30A Bike Rentals, Right on the Trail</h1>

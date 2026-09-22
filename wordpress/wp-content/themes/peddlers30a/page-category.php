@@ -5,7 +5,7 @@
       <!-- ==================================================================
            02 — Hero (Discover Our Products)
            ================================================================== -->
-      <section class="hero hero--category" style="background-image: url('assets/img/hero-category.jpg');">
+      <section class="hero hero--category" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/hero-category.jpg');">
         <div class="container hero__inner">
           <h1 class="hero__title">Discover Our Products</h1>
           <p class="hero__lead">

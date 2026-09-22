@@ -5,7 +5,7 @@
     <!-- ==================================================================
            02 — Hero (Contact Peddlers 30A)
            ================================================================== -->
-    <section class="hero hero--contact" style="background-image: url('assets/img/about-story.jpg');">
+    <section class="hero hero--contact" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/about-story.jpg');">
       <div class="container hero__inner">
         <p class="eyebrow" style="color: var(--s3);">Reach Out</p>
         <h1 class="hero__title">Contact Peddlers 30A</h1>
@@ -117,7 +117,7 @@
     <!-- ==================================================================
            05 — Seasonal Hours
            ================================================================== -->
-    <section class="section seasonal-hours" style="background-image: url('assets/img/seasonal-hours-bg.jpg');">
+    <section class="section seasonal-hours" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/seasonal-hours-bg.jpg');">
       <div class="seasonal-hours__overlay"></div>
 
       <div class="seasonal-hours__card">
