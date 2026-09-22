@@ -50,19 +50,6 @@
             ?>
           </div>
           <div>
-            <h2 class="site-footer__heading">AREAS WE COVER</h2>
-            <?php
-            wp_nav_menu(
-              array(
-                'theme_location' => 'footer_areas',
-                'container'      => false,
-                'items_wrap'     => '<ul>%3$s</ul>',
-                'fallback_cb'    => 'peddlers30a_footer_areas_fallback',
-              )
-            );
-            ?>
-          </div>
-          <div>
             <h2 class="site-footer__heading">SUPPORT</h2>
             <?php
             wp_nav_menu(

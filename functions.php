@@ -19,7 +19,7 @@ function peddlers30a_assets() {
 	wp_enqueue_style( 'peddlers30a-fonts', $dir . '/assets/css/fonts.css', array(), $is_services ? '62' : '70' );
 	wp_enqueue_style( 'peddlers30a-base', $dir . '/assets/css/base.css', array( 'peddlers30a-tokens' ), $is_services ? '62' : '71' );
 	wp_enqueue_style( 'peddlers30a-components', $dir . '/assets/css/components.css', array( 'peddlers30a-base' ), $is_services ? '62' : '71' );
-	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '192' );
+	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '193' );
 
 	if ( $is_services ) {
 		wp_enqueue_style( 'peddlers30a-services', $dir . '/assets/css/services.css', array( 'peddlers30a-sections' ), '62' );
@@ -27,7 +27,7 @@ function peddlers30a_assets() {
 		wp_enqueue_style( 'peddlers30a-mobile', $dir . '/assets/css/mobile.css', array( 'peddlers30a-sections' ), '48' );
 	}
 
-	wp_enqueue_script( 'peddlers30a-main', $dir . '/assets/js/main.js', array(), '72', true );
+	wp_enqueue_script( 'peddlers30a-main', $dir . '/assets/js/main.js', array(), '73', true );
 }
 add_action( 'wp_enqueue_scripts', 'peddlers30a_assets' );
 
@@ -47,7 +47,6 @@ function peddlers30a_setup() {
 		array(
 			'primary'            => 'Primary Navigation (header)',
 			'footer_quick_links' => 'Footer — Quick Links',
-			'footer_areas'       => 'Footer — Areas We Cover',
 			'footer_support'     => 'Footer — Support',
 		)
 	);
@@ -65,15 +64,7 @@ class Peddlers30a_Primary_Walker extends Walker_Nav_Menu {
 	public function end_lvl( &$output, $depth = 0, $args = null ) {}
 
 	public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
-		$active      = in_array( 'current-menu-item', $item->classes, true ) || in_array( 'current_page_item', $item->classes, true );
-		// The LOCATION item is a dropdown trigger, not a link to a specific
-		// page -- matched by its label rather than by target, since it's a
-		// plain custom-URL ("#") menu item with nothing to look up by ID.
-		$is_location = ( 'LOCATION' === strtoupper( trim( $item->title ) ) );
-
-		if ( $is_location ) {
-			$output .= '<div class="site-nav__item site-nav__item--dropdown">';
-		}
+		$active = in_array( 'current-menu-item', $item->classes, true ) || in_array( 'current_page_item', $item->classes, true );
 
 		$output .= sprintf(
 			'<a class="site-nav__link%s" href="%s">%s</a>',
@@ -81,51 +72,9 @@ class Peddlers30a_Primary_Walker extends Walker_Nav_Menu {
 			esc_url( $item->url ),
 			esc_html( $item->title )
 		);
-
-		if ( $is_location ) {
-			$output .= peddlers30a_location_dropdown_menu();
-			$output .= '</div>';
-		}
 	}
 
 	public function end_el( &$output, $item, $depth = 0, $args = null ) {}
-}
-
-/**
- * Dropdown under the header's "LOCATION" link — reuses the same "Footer
- * Areas" menu shown in the footer's "Areas We Cover" column, so an admin
- * only maintains one list of neighborhood links for both places.
- */
-function peddlers30a_location_dropdown_menu() {
-	$html = wp_nav_menu(
-		array(
-			'theme_location' => 'footer_areas',
-			'container'      => false,
-			'items_wrap'     => '<div class="site-nav__dropdown"><ul>%3$s</ul></div>',
-			'fallback_cb'    => 'peddlers30a_footer_areas_fallback_wrapped',
-			'echo'           => false,
-		)
-	);
-	return $html ? $html : '';
-}
-
-/**
- * Same as peddlers30a_footer_areas_fallback() but captured as a string
- * inside the <div class="site-nav__dropdown"><ul>...</ul></div> wrapper,
- * to match what wp_nav_menu() would output for a real menu.
- */
-function peddlers30a_footer_areas_fallback_wrapped() {
-	// wp_nav_menu()'s fallback_cb path always uses the callback's return
-	// value (it ignores the 'echo' arg entirely) -- output buffering here
-	// is required so the markup lands back inside $html in
-	// peddlers30a_location_dropdown_menu() and stays nested under
-	// .site-nav__item--dropdown, instead of leaking out wherever the
-	// primary menu happened to be rendering when this ran.
-	ob_start();
-	echo '<div class="site-nav__dropdown">';
-	peddlers30a_footer_areas_fallback();
-	echo '</div>';
-	return ob_get_clean();
 }
 
 /**
@@ -205,7 +154,7 @@ function peddlers30a_primary_menu_fallback() {
 		'index'        => 'HOME',
 		'bike-rentals' => 'RENTALS',
 		'category'     => 'PRODUCTS',
-		'#'            => 'LOCATION',
+		'locations'    => 'LOCATION',
 		'about'        => 'ABOUT',
 		'faqs'         => 'FAQ',
 		'contact'      => 'CONTACT',
@@ -213,8 +162,8 @@ function peddlers30a_primary_menu_fallback() {
 	foreach ( $links as $slug => $label ) {
 		printf(
 			'<a class="site-nav__link%s" href="%s">%s</a>',
-			( '#' === $slug ) ? '' : peddlers30a_nav_active( $slug ),
-			( '#' === $slug ) ? '#' : esc_url( peddlers30a_nav_url( $slug ) ),
+			peddlers30a_nav_active( $slug ),
+			esc_url( peddlers30a_nav_url( $slug ) ),
 			esc_html( $label )
 		);
 	}
@@ -243,20 +192,6 @@ function peddlers30a_footer_quick_links_fallback() {
 			'Contact Us'   => 'contact',
 		)
 	);
-}
-
-/**
- * Built entirely from the "Location" custom post type (Locations in
- * wp-admin, which includes Seacrest Beach itself) so a newly added
- * neighborhood shows up here -- and in the header LOCATION dropdown, which
- * reuses this same function -- with no menu editing.
- */
-function peddlers30a_footer_areas_fallback() {
-	$links = array();
-	foreach ( peddlers30a_get_locations() as $location_post ) {
-		$links[ $location_post->post_title ] = $location_post->post_name;
-	}
-	peddlers30a_simple_link_list( $links );
 }
 
 function peddlers30a_footer_support_fallback() {
@@ -532,7 +467,7 @@ function peddlers30a_provision() {
 			array( 'title' => 'HOME', 'target' => 'index' ),
 			array( 'title' => 'RENTALS', 'target' => 'bike-rentals' ),
 			array( 'title' => 'PRODUCTS', 'target' => 'category' ),
-			array( 'title' => 'LOCATION', 'target' => '#' ),
+			array( 'title' => 'LOCATION', 'target' => 'locations' ),
 			array( 'title' => 'ABOUT', 'target' => 'about' ),
 			array( 'title' => 'FAQ', 'target' => 'faqs' ),
 			array( 'title' => 'CONTACT', 'target' => 'contact' ),
@@ -550,10 +485,6 @@ function peddlers30a_provision() {
 			array( 'title' => 'Contact Us', 'target' => 'contact' ),
 		)
 	);
-
-	// No "Footer Areas" menu is auto-created -- peddlers30a_footer_areas_fallback()
-	// always renders directly from the Location post type instead, so a newly
-	// added location appears in the footer and header dropdown automatically.
 
 	$create_menu(
 		'Footer Support',
