@@ -196,12 +196,12 @@ function peddlers30a_footer_areas_fallback() {
 	peddlers30a_simple_link_list(
 		array(
 			'Seacrest Beach' => 'location',
-			'Rosemary Beach' => 'location',
-			'Alys Beach'     => 'location',
-			'Seaside'        => 'location',
-			'WaterColor'     => 'location',
+			'Rosemary Beach' => 'bike-rentals-rosemary-beach',
+			'Alys Beach'     => 'bike-rentals-alys-beach',
+			'Seaside'        => 'bike-rentals-seaside',
+			'WaterColor'     => 'bike-rentals-watercolor',
 			'Inlet Beach'    => 'location',
-			'Grayton Beach'  => 'location',
+			'Grayton Beach'  => 'bike-rentals-grayton-beach',
 		)
 	);
 }
@@ -497,12 +497,14 @@ function peddlers30a_provision() {
 		'footer_areas',
 		array(
 			array( 'title' => 'Seacrest Beach', 'target' => 'location' ),
-			array( 'title' => 'Rosemary Beach', 'target' => 'location' ),
-			array( 'title' => 'Alys Beach', 'target' => 'location' ),
-			array( 'title' => 'Seaside', 'target' => 'location' ),
-			array( 'title' => 'WaterColor', 'target' => 'location' ),
+			array( 'title' => 'Rosemary Beach', 'target' => 'bike-rentals-rosemary-beach' ),
+			array( 'title' => 'Alys Beach', 'target' => 'bike-rentals-alys-beach' ),
+			array( 'title' => 'Seaside', 'target' => 'bike-rentals-seaside' ),
+			array( 'title' => 'WaterColor', 'target' => 'bike-rentals-watercolor' ),
+			// Inlet Beach doesn't have its own bike-rentals page yet -- points
+			// at the general Location page until that content is provided.
 			array( 'title' => 'Inlet Beach', 'target' => 'location' ),
-			array( 'title' => 'Grayton Beach', 'target' => 'location' ),
+			array( 'title' => 'Grayton Beach', 'target' => 'bike-rentals-grayton-beach' ),
 		)
 	);
 
