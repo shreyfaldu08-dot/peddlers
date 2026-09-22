@@ -314,7 +314,7 @@ $loc = $peddlers30a_loc;
 
         <div class="beaches__grid">
           <?php foreach ( $loc['beaches'] as $i => $beach ) : ?>
-          <article class="beach-card">
+          <a class="beach-card" href="<?php echo esc_url( peddlers30a_nav_url( $beach['slug'] ) ); ?>">
             <div class="beach-card__media">
               <span class="beach-card__badge"><?php echo esc_html( $beach['badge'] ); ?></span>
               <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/beach-<?php echo (int) ( $i % 4 + 1 ); ?>.png" alt="<?php echo esc_attr( $beach['name'] ); ?>" />
@@ -334,7 +334,7 @@ $loc = $peddlers30a_loc;
               <span class="beach-card__pill"><?php echo esc_html( $pill ); ?></span>
               <?php endforeach; ?>
             </div>
-          </article>
+          </a>
           <?php endforeach; ?>
         </div>
 
