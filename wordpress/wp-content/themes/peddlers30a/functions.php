@@ -625,3 +625,25 @@ function peddlers30a_migrate_renamed_page_slugs() {
 	flush_rewrite_rules();
 }
 add_action( 'init', 'peddlers30a_migrate_renamed_page_slugs', 22 );
+
+/**
+ * One-time trim of every Location post's "Beaches Worth the Ride" list down
+ * to 4 cards (the desktop grid is 4-per-row; a 5th card left a lonely
+ * second row). Guarded like the other migrations -- an admin adding a 5th
+ * card back later via the meta box is a deliberate edit, not something
+ * this should keep undoing.
+ */
+function peddlers30a_migrate_trim_location_beaches() {
+	if ( get_option( 'peddlers30a_beaches_trimmed' ) ) {
+		return;
+	}
+	foreach ( peddlers30a_get_locations() as $location_post ) {
+		$loc = peddlers30a_get_location_data( $location_post->ID );
+		if ( ! empty( $loc['beaches'] ) && count( $loc['beaches'] ) > 4 ) {
+			$loc['beaches'] = array_slice( $loc['beaches'], 0, 4 );
+			update_post_meta( $location_post->ID, '_loc_data', $loc );
+		}
+	}
+	update_option( 'peddlers30a_beaches_trimmed', 1 );
+}
+add_action( 'init', 'peddlers30a_migrate_trim_location_beaches', 23 );
