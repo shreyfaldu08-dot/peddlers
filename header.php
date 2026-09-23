@@ -19,7 +19,7 @@
 
       <nav class="site-nav" id="site-nav" aria-label="Primary">
         <div class="site-nav__head">
-          <span class="site-nav__head-label">Menu</span>
+          <img class="site-nav__head-logo" src="<?php echo esc_url( peddlers30a_logo_url() ); ?>" alt="Peddlers 30A" />
           <button class="site-nav__close" type="button" aria-label="Close menu">
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M2 2L14 14M14 2L2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
@@ -37,13 +37,6 @@
           )
         );
         ?>
-        <div class="site-nav__foot">
-          <a class="btn btn--primary" href="tel:<?php echo esc_attr( get_theme_mod( 'phone_number_link', '+18502130040' ) ); ?>">
-            <img class="btn__icon" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/icons/phone.svg" alt="" />
-            <?php echo esc_html( get_theme_mod( 'phone_number', '(850) 213-0040' ) ); ?>
-          </a>
-          <a class="btn btn--sand" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">RESERVE NOW</a>
-        </div>
       </nav>
 
       <div class="site-header__actions">
