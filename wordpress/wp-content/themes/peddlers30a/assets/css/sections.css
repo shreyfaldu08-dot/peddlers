@@ -4254,8 +4254,11 @@ main>section+section {
      on .journey__route/.journey__stats (below) is the safety net if a
      given width is too tight for one row, so icons/text only need a
      modest reduction from desktop, not a drastic one. */
+  /* Percentage instead of a fixed rem so the photo keeps roughly
+     desktop's proportion (~33% of the card) across the whole tablet
+     range, instead of looking fixed/small on a wider iPad. */
   .journey__media {
-    width: 17rem !important;
+    width: 42% !important;
   }
 
   .journey__panel {
