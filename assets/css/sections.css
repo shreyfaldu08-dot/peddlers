@@ -60,10 +60,9 @@ main>section+section {
   border-bottom: 2px solid var(--p1);
 }
 
-/* Sidebar-only chrome (menu label, close button, bottom CTA) — hidden on
-   the desktop row nav, switched on inside the sidebar media query below. */
-.site-nav__head,
-.site-nav__foot {
+/* Sidebar-only chrome (logo row, close button) — hidden on the desktop row
+   nav, switched on inside the sidebar media query below. */
+.site-nav__head {
   display: none;
 }
 
@@ -4174,9 +4173,8 @@ main>section+section {
     overflow: hidden;
   }
 
-  /* Sidebar header row: small "Menu" eyebrow + round close button, pinned
-     above the links so the panel reads as its own screen, not a dropped
-     list. */
+  /* Sidebar header row: brand logo + round close button, pinned above the
+     links so the panel reads as its own screen, not a dropped list. */
   .site-nav__head {
     display: flex;
     align-items: center;
@@ -4185,14 +4183,10 @@ main>section+section {
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
   }
 
-  .site-nav__head-label {
-    font-family: var(--font-label);
-    font-style: italic;
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: var(--tracking-wide);
-    text-transform: uppercase;
-    color: var(--p1);
+  .site-nav__head-logo {
+    width: 9rem;
+    height: 1.8rem;
+    object-fit: contain;
   }
 
   .site-nav__close {
@@ -4244,23 +4238,6 @@ main>section+section {
     background: rgba(57, 89, 186, 0.08);
     border-left-color: var(--p1);
     color: var(--p1);
-  }
-
-  /* Bottom CTA block -- call + reserve, always reachable without scrolling
-     past a long menu, pinned to the foot of the drawer. */
-  .site-nav__foot {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: auto;
-    padding: 1.5rem 1.75rem 2rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.07);
-    background: var(--cream);
-  }
-
-  .site-nav__foot .btn {
-    width: 100%;
-    justify-content: center;
   }
 }
 
