@@ -4149,13 +4149,20 @@ main>section+section {
   .site-footer__cols {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  /* Location-family pages (hero--location, pillars/cravings/beaches
-     grids, closing CTA) never got a tablet-width pass -- these were
-     locked to 4-per-row desktop grids and a nowrap title that only
-     fit at full desktop widths. !important on the two rules whose base
-     definitions live further down this file (later source order would
-     otherwise win over this earlier media query at equal specificity). */
+/* ==========================================================================
+   Location-family pages — iPad / tablet pass (769px–1280px)
+   Covers every common iPad width in both orientations (768/810/820/834
+   portrait through 1024/1112/1180/1194/1366 landscape). These grids and
+   this card were locked to desktop-only layouts (4-per-row grids, a
+   fixed-width photo + nowrap labels) with nothing between them and the
+   768px mobile rules, so anything in this range rendered cut off or
+   overcrowded. !important on rules whose base definitions live further
+   down this file, where later source order would otherwise win over an
+   earlier media query at equal specificity.
+   ========================================================================== */
+@media (max-width: 1280px) {
   .pillars__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -4172,9 +4179,48 @@ main>section+section {
     flex: 1 1 calc(50% - 0.9375rem);
   }
 
-  .closing-split__title {
-    font-size: 3.75rem !important;
-    white-space: normal !important;
+  /* Filter pills (5 fixed-width buttons) wrapped unevenly once they
+     could no longer all fit on one row -- stack them like mobile does
+     instead of leaving a lopsided partial row. */
+  .rental-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rental-filters__btn {
+    width: 100%;
+    max-width: 26rem;
+  }
+
+  /* Journey/route card: the 37rem fixed-width photo plus nowrap stat
+     labels left almost no room for the panel content at tablet widths,
+     cutting off the heading and squeezing the 4 stats. Stack it like
+     mobile does. */
+  .journey__card {
+    flex-direction: column !important;
+  }
+
+  .journey__media {
+    width: 100% !important;
+    height: 16rem !important;
+  }
+
+  .journey__route {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 2rem !important;
+  }
+
+  .journey__divider {
+    display: none !important;
+  }
+
+  .journey__stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    justify-items: center;
+    row-gap: 2rem;
+    column-gap: 1.5rem;
   }
 }
 
@@ -4399,10 +4445,15 @@ main>section+section {
 .closing-split__title {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 6rem;
+  /* Fluid instead of a fixed 6rem + nowrap -- every location has a
+     different-length title ("Your Seagrove Beach Ride Starts Here" vs
+     "Your 30A Story Begins Here"), so a single breakpoint jump kept
+     missing some widths/lengths. This scales continuously and always
+     wraps instead of overflowing. */
+  font-size: clamp(2.25rem, 1.2rem + 3.5vw, 6rem);
   color: var(--s3);
   line-height: normal;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .closing-split__actions {
