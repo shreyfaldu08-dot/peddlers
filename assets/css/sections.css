@@ -4187,7 +4187,7 @@ main>section+section {
    down this file, where later source order would otherwise win over an
    earlier media query at equal specificity.
    ========================================================================== */
-@media (max-width: 1280px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   /* Trust bar (5 pills): the desktop 138px gap between items was sized
      for a ~1800px canvas and forced a wrap to a lonely 5th item at any
      tablet width. Force one row -- each item flexes to share the
@@ -4247,35 +4247,63 @@ main>section+section {
     max-width: calc(50% - 0.5rem);
   }
 
-  /* Journey/route card: the 37rem fixed-width photo plus nowrap stat
-     labels left almost no room for the panel content at tablet widths,
-     cutting off the heading and squeezing the 4 stats. Stack it like
-     mobile does. */
-  .journey__card {
-    flex-direction: column !important;
+  /* Journey/route card: the 37rem fixed-width photo left almost no room
+     for the panel content at tablet widths. Same side-by-side layout
+     and row-based FROM/TO + stats structure as desktop, just scaled
+     down to fit -- narrower photo, smaller gaps/icons/text. */
+  .journey__media {
+    width: 15rem !important;
   }
 
-  .journey__media {
-    width: 100% !important;
-    height: 16rem !important;
+  .journey__panel {
+    padding: 2rem !important;
+    gap: 1.75rem !important;
+    /* Base rule is flex: 1 0 0 -- flex-shrink:0 means it refuses to
+       shrink below its content's natural width no matter how little
+       room is left, which is what was pushing the card past the
+       viewport. min-width:0 is the standard fix for a flex item with
+       text content that needs to actually shrink. */
+    min-width: 0 !important;
+  }
+
+  .journey__title {
+    font-size: 2rem !important;
   }
 
   .journey__route {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 2rem !important;
+    flex-wrap: wrap !important;
+    row-gap: 1.75rem !important;
+    column-gap: 1.25rem !important;
   }
 
   .journey__divider {
     display: none !important;
   }
 
+  .journey__stop {
+    gap: 1rem !important;
+  }
+
+  .journey__stop-labels {
+    gap: 0.75rem !important;
+  }
+
   .journey__stats {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    justify-items: center;
-    row-gap: 2rem;
-    column-gap: 1.5rem;
+    flex-wrap: wrap !important;
+    gap: 1.25rem !important;
+  }
+
+  .journey__stat-icon {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+
+  .journey__stat-value {
+    font-size: 1.125rem !important;
+  }
+
+  .journey__stat-label {
+    font-size: 0.8125rem !important;
   }
 }
 
