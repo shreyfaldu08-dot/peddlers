@@ -137,40 +137,11 @@
     height: 2.1rem;
   }
 
-  .site-header__toggle {
-    display: flex;
-  }
-
-  .site-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1.25rem 1rem;
-    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.12);
-    z-index: 100;
-    gap: 0;
-  }
-
-  .site-header.is-open .site-nav {
-    display: flex;
-  }
-
-  .site-nav__link {
-    padding: 0.85rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-    font-size: 0.9rem;
-  }
-
-  .site-nav__link.is-active {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-    border-left: 3px solid var(--p1);
-    padding-left: 0.75rem;
-  }
+  /* .site-header__toggle / .site-nav (open sidebar) styling now lives
+     entirely in sections.css's max-width:1440px block, so it's
+     consistent across the whole hamburger range instead of this file
+     and that one defining two different (and conflicting) panel
+     styles for the ≤768px slice of it. */
 
   /* Phone button — icon only on tablet/mobile */
   .merch-card__label {

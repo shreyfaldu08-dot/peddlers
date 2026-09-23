@@ -4111,38 +4111,68 @@ main>section+section {
     display: flex;
   }
 
+  /* .site-header is position:sticky + z-index:50, which makes it (and
+     everything inside it, including .site-nav despite its own higher
+     z-index) a single stacking context sitting BELOW the overlay's
+     z-index:90 -- the overlay was painting over the sidebar itself,
+     not just the page behind it. Raise the header above the overlay. */
+  .site-header.is-open {
+    z-index: 110;
+  }
+
+  /* Sidebar drawer, not a dropdown: fixed to the right edge, full
+     height, slides in over a dimmed backdrop instead of pushing the
+     header taller. Stays display:flex at all times so the transform
+     transition can animate it in and out (display can't transition);
+     it's just parked off-screen to the right when closed. */
   .site-nav {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(22rem, 85vw);
+    gap: 0;
+    background: var(--white);
+    padding: 6rem 2rem 2rem;
+    box-shadow: -0.5rem 0 2rem rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform var(--dur) var(--ease);
   }
 
   .site-header.is-open .site-nav {
-    display: flex;
-    flex-direction: column;
-    /* Base .site-nav gap (3rem) is sized for a spread-out horizontal
-       desktop row -- as a vertical dropdown list that left a huge gap
-       between every link. Remove it in favor of each link's own
-       compact padding/divider below. */
-    gap: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    padding: 2rem;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    transform: translateX(0);
   }
 
-  /* This used to only be styled at the 768px "phone" breakpoint, but
-     the dropdown itself now opens all the way up to 1440px -- anything
-     wider than a phone but narrower than 1440px got the unstyled
-     desktop link (no padding/divider), which is what left the huge
-     gaps in the dropdown. */
-  .site-header.is-open .site-nav__link {
+  .site-header__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur) var(--ease);
+    z-index: 90;
+  }
+
+  .site-header__overlay:not([hidden]) {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body.has-open-nav {
+    overflow: hidden;
+  }
+
+  .site-nav__link {
     padding: 0.85rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
   }
 
-  .site-header.is-open .site-nav__link.is-active {
+  .site-nav__link.is-active {
     border-left: 3px solid var(--p1);
     padding-left: 0.75rem;
   }

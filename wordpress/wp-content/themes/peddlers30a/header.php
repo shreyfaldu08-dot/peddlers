@@ -46,4 +46,6 @@
     </div>
   </header>
 
+  <div class="site-header__overlay" hidden></div>
+
   <main>
