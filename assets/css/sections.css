@@ -4414,11 +4414,10 @@ main>section+section {
 
 .closing-split__media img {
   position: absolute;
-  width: 119.56%;
-  height: 645.65%;
-  max-width: none;
-  left: 26.12%;
-  top: -363.22%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
@@ -4426,7 +4425,7 @@ main>section+section {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50.451%, rgba(0, 0, 0, 0) 100%);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 /* Location page — Near By Beaches Worth To Ride, matched to Figma node 53:2663 */
