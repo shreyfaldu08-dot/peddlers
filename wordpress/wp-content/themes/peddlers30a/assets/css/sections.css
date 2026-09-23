@@ -4250,9 +4250,12 @@ main>section+section {
   /* Journey/route card: the 37rem fixed-width photo left almost no room
      for the panel content at tablet widths. Same side-by-side layout
      and row-based FROM/TO + stats structure as desktop, just scaled
-     down to fit -- narrower photo, smaller gaps/icons/text. */
+     down to fit -- narrower photo, smaller gaps/icons/text. flex-wrap
+     on .journey__route/.journey__stats (below) is the safety net if a
+     given width is too tight for one row, so icons/text only need a
+     modest reduction from desktop, not a drastic one. */
   .journey__media {
-    width: 15rem !important;
+    width: 17rem !important;
   }
 
   .journey__panel {
@@ -4289,21 +4292,27 @@ main>section+section {
   }
 
   .journey__stats {
+    /* Base rule is flex: none -- it refuses to shrink or wrap onto its
+       own row at all, which is what was pushing the 4th stat past the
+       panel edge. Give it the full row (it wraps under the from/to
+       block via .journey__route's own flex-wrap above) so its icons
+       can then wrap into 2 rows if that width isn't enough for 4. */
+    flex: 1 1 100% !important;
     flex-wrap: wrap !important;
     gap: 1.25rem !important;
   }
 
   .journey__stat-icon {
-    width: 3.5rem !important;
-    height: 3.5rem !important;
+    width: 4.5rem !important;
+    height: 4.5rem !important;
   }
 
   .journey__stat-value {
-    font-size: 1.125rem !important;
+    font-size: 1.375rem !important;
   }
 
   .journey__stat-label {
-    font-size: 0.8125rem !important;
+    font-size: 1rem !important;
   }
 }
 
