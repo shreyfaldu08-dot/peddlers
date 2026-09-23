@@ -4188,6 +4188,27 @@ main>section+section {
    earlier media query at equal specificity.
    ========================================================================== */
 @media (max-width: 1280px) {
+  /* Trust bar (5 pills): the desktop 138px gap between items was sized
+     for a ~1800px canvas and forced a wrap to a lonely 5th item at any
+     tablet width. Force one row -- each item flexes to share the
+     available width equally and its label wraps to 2 lines if needed,
+     instead of the row wrapping. */
+  .trust-bar__inner {
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .trust-bar__item {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .trust-bar__label {
+    font-size: 0.9375rem;
+    white-space: normal;
+    text-align: center;
+  }
+
   .pillars__grid {
     grid-template-columns: repeat(2, 1fr);
   }
