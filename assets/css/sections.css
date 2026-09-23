@@ -4205,16 +4205,25 @@ main>section+section {
   }
 
   /* Filter pills (5 fixed-width buttons) wrapped unevenly once they
-     could no longer all fit on one row -- stack them like mobile does
-     instead of leaving a lopsided partial row. */
+     could no longer all fit on one row. A single-column stack wasted the
+     tablet's extra width and looked plain, so use a 2-up grid instead
+     (5 buttons -> 2/2/1, with the last one centered on its own row). */
   .rental-filters {
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    justify-items: stretch;
   }
 
   .rental-filters__btn {
     width: 100%;
-    max-width: 26rem;
+  }
+
+  .rental-filters__btn:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: calc(50% - 0.5rem);
   }
 
   /* Journey/route card: the 37rem fixed-width photo plus nowrap stat
