@@ -19,15 +19,15 @@ function peddlers30a_assets() {
 	wp_enqueue_style( 'peddlers30a-fonts', $dir . '/assets/css/fonts.css', array(), $is_services ? '62' : '70' );
 	wp_enqueue_style( 'peddlers30a-base', $dir . '/assets/css/base.css', array( 'peddlers30a-tokens' ), $is_services ? '62' : '71' );
 	wp_enqueue_style( 'peddlers30a-components', $dir . '/assets/css/components.css', array( 'peddlers30a-base' ), $is_services ? '62' : '71' );
-	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '208' );
+	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '210' );
 
 	if ( $is_services ) {
 		wp_enqueue_style( 'peddlers30a-services', $dir . '/assets/css/services.css', array( 'peddlers30a-sections' ), '62' );
 	} else {
-		wp_enqueue_style( 'peddlers30a-mobile', $dir . '/assets/css/mobile.css', array( 'peddlers30a-sections' ), '48' );
+		wp_enqueue_style( 'peddlers30a-mobile', $dir . '/assets/css/mobile.css', array( 'peddlers30a-sections' ), '49' );
 	}
 
-	wp_enqueue_script( 'peddlers30a-main', $dir . '/assets/js/main.js', array(), '73', true );
+	wp_enqueue_script( 'peddlers30a-main', $dir . '/assets/js/main.js', array(), '74', true );
 }
 add_action( 'wp_enqueue_scripts', 'peddlers30a_assets' );
 

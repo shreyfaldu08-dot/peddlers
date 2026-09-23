@@ -15,6 +15,7 @@
 
     var toggle = header.querySelector(".site-header__toggle");
     var nav = header.querySelector(".site-nav");
+    var overlay = document.querySelector(".site-header__overlay");
     if (!toggle || !nav) return;
 
     nav.id = nav.id || "site-nav";
@@ -23,11 +24,21 @@
       header.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      if (overlay) overlay.hidden = !open;
+      document.body.classList.toggle("has-open-nav", open);
     }
 
     toggle.addEventListener("click", function () {
       setOpen(!header.classList.contains("is-open"));
     });
+
+    // Tapping the dimmed backdrop closes the sidebar, same as choosing
+    // a destination or pressing Escape.
+    if (overlay) {
+      overlay.addEventListener("click", function () {
+        setOpen(false);
+      });
+    }
 
     // Close the panel after choosing a destination.
     nav.addEventListener("click", function (event) {
