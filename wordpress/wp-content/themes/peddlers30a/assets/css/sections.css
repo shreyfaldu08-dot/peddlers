@@ -4101,6 +4101,31 @@ main>section+section {
   .hero__title {
     font-size: 5rem;
   }
+
+  /* The full desktop header (logo + 7 nav links + phone button + Reserve
+     Now) needs ~1440px to fit on one line without wrapping/overflowing --
+     anything narrower (every iPad, most laptops-in-a-window) was forcing
+     the page into horizontal scroll. Switch to the hamburger menu here
+     instead of only at the old 768px "phone" breakpoint. */
+  .site-header__toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .site-header.is-open .site-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -4225,26 +4250,6 @@ main>section+section {
 }
 
 @media (max-width: 768px) {
-  .site-header__toggle {
-    display: flex;
-  }
-
-  .site-nav {
-    display: none;
-  }
-
-  .site-header.is-open .site-nav {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    padding: 2rem;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-  }
-
   .trust__bar {
     grid-template-columns: repeat(2, 1fr);
   }
