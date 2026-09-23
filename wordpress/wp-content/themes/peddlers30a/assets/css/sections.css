@@ -4149,6 +4149,33 @@ main>section+section {
   .site-footer__cols {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Location-family pages (hero--location, pillars/cravings/beaches
+     grids, closing CTA) never got a tablet-width pass -- these were
+     locked to 4-per-row desktop grids and a nowrap title that only
+     fit at full desktop widths. !important on the two rules whose base
+     definitions live further down this file (later source order would
+     otherwise win over this earlier media query at equal specificity). */
+  .pillars__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .beaches__grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .cravings__grid {
+    flex-wrap: wrap;
+  }
+
+  .cravings__grid > * {
+    flex: 1 1 calc(50% - 0.9375rem);
+  }
+
+  .closing-split__title {
+    font-size: 3.75rem !important;
+    white-space: normal !important;
+  }
 }
 
 @media (max-width: 768px) {
