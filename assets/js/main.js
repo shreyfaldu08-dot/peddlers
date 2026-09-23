@@ -16,6 +16,7 @@
     var toggle = header.querySelector(".site-header__toggle");
     var nav = header.querySelector(".site-nav");
     var overlay = document.querySelector(".site-header__overlay");
+    var closeBtn = header.querySelector(".site-nav__close");
     if (!toggle || !nav) return;
 
     nav.id = nav.id || "site-nav";
@@ -36,6 +37,12 @@
     // a destination or pressing Escape.
     if (overlay) {
       overlay.addEventListener("click", function () {
+        setOpen(false);
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
         setOpen(false);
       });
     }
