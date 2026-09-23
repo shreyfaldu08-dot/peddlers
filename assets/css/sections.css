@@ -60,6 +60,13 @@ main>section+section {
   border-bottom: 2px solid var(--p1);
 }
 
+/* Sidebar-only chrome (menu label, close button, bottom CTA) — hidden on
+   the desktop row nav, switched on inside the sidebar media query below. */
+.site-nav__head,
+.site-nav__foot {
+  display: none;
+}
+
 .site-header__actions {
   display: flex;
   align-items: center;
@@ -4136,7 +4143,7 @@ main>section+section {
     width: min(22rem, 85vw);
     gap: 0;
     background: var(--white);
-    padding: 6rem 2rem 2rem;
+    padding: 0;
     box-shadow: -0.5rem 0 2rem rgba(0, 0, 0, 0.15);
     overflow-y: auto;
     z-index: 100;
@@ -4167,14 +4174,93 @@ main>section+section {
     overflow: hidden;
   }
 
-  .site-nav__link {
-    padding: 0.85rem 0;
+  /* Sidebar header row: small "Menu" eyebrow + round close button, pinned
+     above the links so the panel reads as its own screen, not a dropped
+     list. */
+  .site-nav__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.75rem 1.75rem 1.25rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
   }
 
+  .site-nav__head-label {
+    font-family: var(--font-label);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--p1);
+  }
+
+  .site-nav__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: var(--s1);
+    color: var(--text);
+    transition: background var(--dur) var(--ease), color var(--dur) var(--ease), transform var(--dur) var(--ease);
+  }
+
+  .site-nav__close svg {
+    width: 0.9375rem;
+    height: 0.9375rem;
+  }
+
+  .site-nav__close:hover {
+    background: var(--p1);
+    color: var(--white);
+    transform: rotate(90deg);
+  }
+
+  /* Links get card-like hover/active states instead of plain underlines --
+     easier to tap and reads as a proper app menu, not a stacked list. */
+  .site-nav__link {
+    display: block;
+    margin: 0.25rem 1rem 0;
+    padding: 0.9375rem 1rem;
+    border-left: 3px solid transparent;
+    border-radius: 0.625rem;
+    font-size: 1.0625rem;
+    transition: background var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  }
+
+  .site-nav__head + .site-nav__link {
+    margin-top: 1.25rem;
+  }
+
+  .site-nav__link:hover {
+    background: var(--cream);
+    color: var(--p1);
+  }
+
   .site-nav__link.is-active {
-    border-left: 3px solid var(--p1);
-    padding-left: 0.75rem;
+    background: rgba(57, 89, 186, 0.08);
+    border-left-color: var(--p1);
+    color: var(--p1);
+  }
+
+  /* Bottom CTA block -- call + reserve, always reachable without scrolling
+     past a long menu, pinned to the foot of the drawer. */
+  .site-nav__foot {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding: 1.5rem 1.75rem 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    background: var(--cream);
+  }
+
+  .site-nav__foot .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
