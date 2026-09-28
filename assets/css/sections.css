@@ -1464,7 +1464,7 @@ main>section+section {
 .bike-card__media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 500ms var(--ease);
 }
 
@@ -1569,7 +1569,15 @@ main>section+section {
 }
 
 .rental--catalog .bike-card__media {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: auto;
+}
+
+/* Full 21-item catalog uses real product photos at mixed aspect ratios --
+   letting each card size to its own image (instead of forcing a square box
+   with object-fit: contain) removes the empty grey letterbox bars above and
+   below shorter/wider photos. */
+.rental--catalog .bike-card__media img {
+  height: auto;
 }
 
 /* Category page's "Largest Bike Rental" instance of this shared section —
