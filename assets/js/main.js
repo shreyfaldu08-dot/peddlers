@@ -489,6 +489,38 @@
     });
   }
 
+  /* ------------------------------------------------------------------------
+     Rental catalog filters (Bike Rentals / Kids Bikes / Peddler's Products /
+     Take Your Kids Along / Adult Bikes) -- each .bike-card carries a
+     data-category list; "all" just shows everything back.
+     ------------------------------------------------------------------------ */
+  function initRentalFilters() {
+    var groups = document.querySelectorAll(".rental-filters");
+    Array.prototype.forEach.call(groups, function (group) {
+      var grid = group.parentElement.querySelector(".rental__grid");
+      if (!grid) return;
+      var buttons = group.querySelectorAll(".rental-filters__btn");
+      var cards = grid.querySelectorAll(".bike-card");
+
+      function applyFilter(filter) {
+        Array.prototype.forEach.call(cards, function (card) {
+          var cats = (card.getAttribute("data-category") || "").split(/\s+/);
+          var show = filter === "all" || cats.indexOf(filter) !== -1;
+          card.style.display = show ? "" : "none";
+        });
+      }
+
+      Array.prototype.forEach.call(buttons, function (btn) {
+        btn.addEventListener("click", function () {
+          Array.prototype.forEach.call(buttons, function (b) {
+            b.classList.toggle("is-active", b === btn);
+          });
+          applyFilter(btn.getAttribute("data-filter") || "all");
+        });
+      });
+    });
+  }
+
   function init() {
     initHeader();
     initRails();
@@ -497,6 +529,7 @@
     initSegmented();
     initMarquees();
     initDateSelector();
+    initRentalFilters();
     initLenis();
   }
 

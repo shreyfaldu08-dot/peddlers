@@ -58,6 +58,17 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Full 21-item catalog -- qualifier text for the trail-a-bike/trailer
+       attachments that only work with a customer's own bike. */
+    .bike-card__note {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: none;
+      letter-spacing: 0;
+    }
   </style>
 </head>
 
@@ -130,101 +141,242 @@
         </div>
 
         <div class="rental-filters">
-          <button class="rental-filters__btn is-active" type="button">BIKE RENTALS</button>
-          <button class="rental-filters__btn" type="button">KIDS BIKES</button>
-          <button class="rental-filters__btn" type="button">PEDDLER'S PRODUCTS</button>
-          <button class="rental-filters__btn" type="button">TAKE YOUR KIDS ALONG</button>
-          <button class="rental-filters__btn" type="button">ADULT BIKES</button>
+          <button class="rental-filters__btn is-active" type="button" data-filter="all">BIKE RENTALS</button>
+          <button class="rental-filters__btn" type="button" data-filter="kids-bikes">KIDS BIKES</button>
+          <button class="rental-filters__btn" type="button" data-filter="peddlers-products">PEDDLER'S PRODUCTS</button>
+          <button class="rental-filters__btn" type="button" data-filter="kids-along">TAKE YOUR KIDS ALONG</button>
+          <button class="rental-filters__btn" type="button" data-filter="adult-bikes">ADULT BIKES</button>
         </div>
 
         <div class="rental__grid">
-          <!-- Row 1 -->
-          <article class="bike-card">
+          <article class="bike-card" data-category="peddlers-products">
             <figure class="bike-card__media">
-              <img class="media-cover" src="assets/img/s05-1.jpg" alt="Adult Female Cruiser" />
-            </figure>
-            <div class="bike-card__body">
-              <h3 class="bike-card__title">Adult Female Cruiser</h3>
-              <p class="bike-card__price">From: <span>$40.00</span></p>
-              <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
-            </div>
-          </article>
-
-          <article class="bike-card">
-            <figure class="bike-card__media">
-              <img class="media-cover" src="assets/img/s05-4.jpg" alt="20 inch Kids Cruiser-Coral" />
-            </figure>
-            <div class="bike-card__body">
-              <h3 class="bike-card__title">20&Prime; Kids Cruiser-Coral</h3>
-              <p class="bike-card__price">From: <span>$40.00</span></p>
-              <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
-            </div>
-          </article>
-
-          <article class="bike-card">
-            <figure class="bike-card__media">
-              <img class="media-cover" src="assets/img/s05-3.jpg" alt="Bike and Burley Combo" />
-            </figure>
-            <div class="bike-card__body">
-              <h3 class="bike-card__title">Bike and Burley Combo</h3>
-              <p class="bike-card__price">From: <span>$70.00</span></p>
-              <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
-            </div>
-          </article>
-
-          <article class="bike-card">
-            <figure class="bike-card__media">
-              <img class="media-cover" src="assets/img/s05-2.jpg" alt="Bike Basket" />
+              <img class="media-cover" src="assets/img/products/bike-basket.jpg" alt="Bike Basket" />
             </figure>
             <div class="bike-card__body">
               <h3 class="bike-card__title">Bike Basket</h3>
               <p class="bike-card__price">From: <span>$5.00</span></p>
-              <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/bike-basket/" target="_blank" rel="noopener">BOOK NOW</a>
             </div>
           </article>
 
-          <!-- Row 2 -->
-          <article class="bike-card">
+          <article class="bike-card" data-category="adult-bikes">
             <figure class="bike-card__media">
-              <img class="media-cover" src="assets/img/s05-1.jpg" alt="Adult Female Cruiser" />
+              <img class="media-cover" src="assets/img/products/adult-female-cruiser.jpg" alt="Adult Female Cruiser" />
             </figure>
             <div class="bike-card__body">
               <h3 class="bike-card__title">Adult Female Cruiser</h3>
               <p class="bike-card__price">From: <span>$40.00</span></p>
-              <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/adult-female-cruiser/" target="_blank" rel="noopener">BOOK NOW</a>
             </div>
           </article>
 
-          <article class="bike-card">
+          <article class="bike-card" data-category="adult-bikes">
             <figure class="bike-card__media">
-              <img class="media-cover" src="assets/img/s05-4.jpg" alt="20 inch Kids Cruiser-Coral" />
+              <img class="media-cover" src="assets/img/products/adult-unisex-cruiser.jpg" alt="Adult Unisex Cruiser" />
             </figure>
             <div class="bike-card__body">
-              <h3 class="bike-card__title">20&Prime; Kids Cruiser-Coral</h3>
+              <h3 class="bike-card__title">Adult Unisex Cruiser</h3>
               <p class="bike-card__price">From: <span>$40.00</span></p>
-              <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/adult-unisex-cruiser/" target="_blank" rel="noopener">BOOK NOW</a>
             </div>
           </article>
 
-          <article class="bike-card">
+          <article class="bike-card" data-category="adult-bikes">
             <figure class="bike-card__media">
-              <img class="media-cover" src="assets/img/s05-3.jpg" alt="Bike and Burley Combo" />
+              <img class="media-cover" src="assets/img/products/adult-mens-cruiser.jpg" alt="Adult Men's Cruiser" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">Adult Men's Cruiser</h3>
+              <p class="bike-card__price">From: <span>$40.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/adult-mens-cruiser/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="adult-bikes">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/adult-7-speed-mens.jpg" alt="Adult 7 Speed Men's" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">Adult 7 Speed Men's</h3>
+              <p class="bike-card__price">From: <span>$50.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/adult-7-speed-mens/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="adult-bikes">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/adult-7-speed-unisex.jpg" alt="Adult 7 Speed Unisex" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">Adult 7 Speed Unisex</h3>
+              <p class="bike-card__price">From: <span>$50.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/adult-7-speed-unisex/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-bikes">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/16-kids-cruiser-girls.jpg" alt="16&Prime; Kids Cruiser - Girls" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">16&Prime; Kids Cruiser - Girls</h3>
+              <p class="bike-card__price">From: <span>$40.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/16-kids-cruiser-girls/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-bikes">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/20-kids-cruiser-coral.jpg" alt="20&Prime; Kids Cruiser - Coral" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">20&Prime; Kids Cruiser - Coral</h3>
+              <p class="bike-card__price">From: <span>$40.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/20-kids-cruiser-coral/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-bikes">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/24-kids-cruiser-seafoam.jpg" alt="24&Prime; Kids Cruiser - Seafoam" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">24&Prime; Kids Cruiser - Seafoam</h3>
+              <p class="bike-card__price">From: <span>$40.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/24-kids-cruiser-seafoam/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-bikes">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/16-kids-cruiser-boys.jpg" alt="16&Prime; Kids Cruiser - Boys" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">16&Prime; Kids Cruiser - Boys</h3>
+              <p class="bike-card__price">From: <span>$40.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/16-kids-cruiser-boys/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-bikes">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/20-kids-cruiser-blue.jpg" alt="20&Prime; Kids Cruiser - Blue" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">20&Prime; Kids Cruiser - Blue</h3>
+              <p class="bike-card__price">From: <span>$40.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/20-kids-cruiser-blue/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-bikes">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/24-kids-cruiser-gray.jpg" alt="24&Prime; Kids Cruiser - Gray" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">24&Prime; Kids Cruiser - Gray</h3>
+              <p class="bike-card__price">From: <span>$40.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/24-kids-cruiser-gray/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="adult-bikes kids-along">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/bike-and-burley-combo.jpg" alt="Bike and Burley Combo" />
             </figure>
             <div class="bike-card__body">
               <h3 class="bike-card__title">Bike and Burley Combo</h3>
               <p class="bike-card__price">From: <span>$70.00</span></p>
-              <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/bike-and-burley-combo/" target="_blank" rel="noopener">BOOK NOW</a>
             </div>
           </article>
 
-          <article class="bike-card">
+          <article class="bike-card" data-category="adult-bikes">
             <figure class="bike-card__media">
-              <img class="media-cover" src="assets/img/s05-2.jpg" alt="Bike Basket" />
+              <img class="media-cover" src="assets/img/products/adult-tricycle.jpg" alt="Adult Tricycle" />
             </figure>
             <div class="bike-card__body">
-              <h3 class="bike-card__title">Bike Basket</h3>
-              <p class="bike-card__price">From: <span>$5.00</span></p>
-              <a class="btn btn--outline bike-card__cta" href="product-detail.html">BOOK NOW</a>
+              <h3 class="bike-card__title">Adult Tricycle</h3>
+              <p class="bike-card__price">From: <span>$50.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/adult-tricycle/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-bikes">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/kids-tricycle.jpg" alt="Kids Tricycle" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">Kids Tricycle</h3>
+              <p class="bike-card__price">From: <span>$50.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/kids-tricycle/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-along">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/baby-seat-bicycle.jpg" alt="Baby Seat Bicycle" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">Baby Seat Bicycle</h3>
+              <p class="bike-card__price">From: <span>$50.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/baby-seat-bicycle/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-along">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/kazoo-kids-tandem.png" alt="Kazoo Kid's Tandem" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">Kazoo Kid's Tandem</h3>
+              <p class="bike-card__price">From: <span>$60.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/kazoo-kids-tandem/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-along">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/burley-for-use-with-customer-bike.jpg" alt="Burley (for use with customer bike)" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">Burley <span class="bike-card__note">(for use with customer bike)</span></h3>
+              <p class="bike-card__price">From: <span>$40.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/burley-for-use-with-customer-bike/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-along">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/tug-a-bug-kids-tandem-for-use-with-customer-bike.jpg" alt="Tug A Bug Kid's Tandem (for use with customer bike)" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">Tug A Bug Kid's Tandem <span class="bike-card__note">(for use with customer bike)</span></h3>
+              <p class="bike-card__price">From: <span>$40.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/tug-a-bug-kids-tandem-for-use-with-customer-bike/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-bikes">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/monkey-faction.jpg" alt="Monkey Faction" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">Monkey Faction</h3>
+              <p class="bike-card__price">From: <span>$30.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/monkey-faction/" target="_blank" rel="noopener">BOOK NOW</a>
+            </div>
+          </article>
+
+          <article class="bike-card" data-category="kids-along">
+            <figure class="bike-card__media">
+              <img class="media-cover" src="assets/img/products/wee-hoo-1-seater-for-use-with-customer-bike.jpg" alt="Wee HOO - 1 Seater (for use with customer bike)" />
+            </figure>
+            <div class="bike-card__body">
+              <h3 class="bike-card__title">Wee HOO - 1 Seater <span class="bike-card__note">(for use with customer bike)</span></h3>
+              <p class="bike-card__price">From: <span>$40.00</span></p>
+              <a class="btn btn--outline bike-card__cta" href="https://shop.peddlers30a.com/store/wee-hoo-1-seater-for-use-with-customer-bike/" target="_blank" rel="noopener">BOOK NOW</a>
             </div>
           </article>
         </div>
@@ -813,7 +965,7 @@
     <div class="site-footer__rule"></div>
   </footer>
 
-  <script src="assets/js/main.js?v=80"></script>
+  <script src="assets/js/main.js?v=81"></script>
 </body>
 
 </html>
