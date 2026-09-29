@@ -3698,6 +3698,7 @@ main>section+section {
   padding: 2rem;
   /* 32px */
   font-family: var(--font-body);
+  font-style: normal;
   font-size: 1.9375rem;
   /* 31px */
   font-weight: 400;

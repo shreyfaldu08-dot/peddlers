@@ -21,10 +21,10 @@ function peddlers30a_assets() {
 	wp_enqueue_style( 'peddlers30a-fonts', $dir . '/assets/css/fonts.css', array(), $is_services ? '62' : '70' );
 	wp_enqueue_style( 'peddlers30a-base', $dir . '/assets/css/base.css', array( 'peddlers30a-tokens' ), $is_services ? '62' : '71' );
 	wp_enqueue_style( 'peddlers30a-components', $dir . '/assets/css/components.css', array( 'peddlers30a-base' ), $is_services ? '62' : '71' );
-	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '213' );
+	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '214' );
 
 	if ( $is_blog ) {
-		wp_enqueue_style( 'peddlers30a-blog', $dir . '/assets/css/blog.css', array( 'peddlers30a-sections' ), '5' );
+		wp_enqueue_style( 'peddlers30a-blog', $dir . '/assets/css/blog.css', array( 'peddlers30a-sections' ), '6' );
 	}
 
 	if ( $is_services ) {
