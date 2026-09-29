@@ -718,9 +718,12 @@ add_action( 'init', 'peddlers30a_set_blog_permalink_structure', 23 );
  */
 function peddlers30a_redirect_renamed_page_urls() {
 	$renames = array(
-		'location' => 'bike-rentals-seacrest-beach',
-		'rentals'  => 'bike-rentals',
-		'faq'      => 'faqs',
+		'location'    => 'bike-rentals-seacrest-beach',
+		'rentals'     => 'bike-rentals',
+		'faq'         => 'faqs',
+		// Blog posts moved from the site root to /blog/ once permalinks
+		// switched to a /blog/%postname%/ structure.
+		'what-is-30a' => 'blog/what-is-30a',
 	);
 	$path = trim( (string) parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
 	if ( isset( $renames[ $path ] ) ) {
