@@ -23,7 +23,7 @@ function peddlers30a_assets() {
 	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '213' );
 
 	if ( $is_blog ) {
-		wp_enqueue_style( 'peddlers30a-blog', $dir . '/assets/css/blog.css', array( 'peddlers30a-sections' ), '1' );
+		wp_enqueue_style( 'peddlers30a-blog', $dir . '/assets/css/blog.css', array( 'peddlers30a-sections' ), '2' );
 	}
 
 	if ( $is_services ) {
