@@ -692,6 +692,26 @@ function peddlers30a_seed_blog_posts() {
 add_action( 'init', 'peddlers30a_seed_blog_posts', 22 );
 
 /**
+ * Nests every post under /blog/ (e.g. /blog/what-is-30a/) instead of the
+ * flat /what-is-30a/ the default "%postname%" structure gives 'post' items.
+ * Pages and the Location CPT have their own rewrite rules and are
+ * unaffected -- this only changes the tag WordPress expands for posts.
+ */
+function peddlers30a_set_blog_permalink_structure() {
+	if ( get_option( 'peddlers30a_blog_permalinks_set' ) ) {
+		return;
+	}
+
+	if ( '/%postname%/' === get_option( 'permalink_structure' ) ) {
+		update_option( 'permalink_structure', '/blog/%postname%/' );
+		flush_rewrite_rules();
+	}
+
+	update_option( 'peddlers30a_blog_permalinks_set', 1 );
+}
+add_action( 'init', 'peddlers30a_set_blog_permalink_structure', 23 );
+
+/**
  * A few pages were renamed to match the client's approved sitemap (URLs on
  * the left below used to be live). Redirect each old URL permanently so
  * bookmarks/search listings/backlinks land on the new one instead of a 404.
