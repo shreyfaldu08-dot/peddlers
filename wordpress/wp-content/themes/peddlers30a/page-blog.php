@@ -23,7 +23,7 @@ get_header();
            ================================================================== -->
     <section class="section" id="posts">
       <div class="container">
-        <div class="rental-filters" data-grid=".blog__grid" data-card=".blog-card">
+        <div class="rental-filters blog-filters" data-grid=".blog__grid" data-card=".blog-card">
           <button class="rental-filters__btn is-active" type="button" data-filter="all">ALL POSTS</button>
           <button class="rental-filters__btn" type="button" data-filter="30a-guide">30A GUIDE</button>
         </div>
