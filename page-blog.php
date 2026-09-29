@@ -21,7 +21,7 @@ get_header();
     <!-- ==================================================================
            03 — Category filters + post grid
            ================================================================== -->
-    <section class="section" id="posts">
+    <section class="section section--pad-sm" id="posts">
       <div class="container">
         <div class="blog__grid">
           <a class="blog-card" href="<?php echo esc_url( peddlers30a_nav_url( 'what-is-30a' ) ); ?>" data-category="30a-guide">
