@@ -6,6 +6,7 @@
  */
 
 require_once get_template_directory() . '/inc/location-cpt.php';
+require_once get_template_directory() . '/inc/blog-seed.php';
 
 function peddlers30a_assets() {
 	global $post;
@@ -14,7 +15,7 @@ function peddlers30a_assets() {
 	// services.html predates the approved 7-page spec and was never wired
 	// into mobile.css — it ships its own standalone stylesheet instead.
 	$is_services = $post && 'services' === $post->post_name;
-	$is_blog     = $post && in_array( $post->post_name, array( 'blog', 'what-is-30a' ), true );
+	$is_blog     = ( $post && 'blog' === $post->post_name ) || is_singular( 'post' );
 
 	wp_enqueue_style( 'peddlers30a-tokens', $dir . '/assets/css/tokens.css', array(), '72' );
 	wp_enqueue_style( 'peddlers30a-fonts', $dir . '/assets/css/fonts.css', array(), $is_services ? '62' : '70' );
@@ -273,6 +274,13 @@ function peddlers30a_page_slug_class() {
 		return 'page-location';
 	}
 
+	// Every blog article shares the landing page's hero styling (white lead
+	// text over the dark overlay), so it gets the same "page-blog" class the
+	// landing page gets from its own slug.
+	if ( 'post' === $post->post_type ) {
+		return 'page-blog';
+	}
+
 	$overrides = array(
 		'privacy-policy'   => 'page-legal',
 		'terms-of-service' => 'page-legal',
@@ -289,10 +297,6 @@ function peddlers30a_page_slug_class() {
 		// mobile.css are scoped to (this page alone has 12 cards and much
 		// shorter hero copy than every other location page).
 		'locations'        => 'page-location page-locations',
-		// The article template shares the blog landing page's hero styling
-		// (white lead text over the dark overlay), so it needs the same
-		// "page-blog" class the landing page gets from its own slug.
-		'what-is-30a'      => 'page-blog',
 	);
 
 	if ( array_key_exists( $post->post_name, $overrides ) ) {
@@ -587,38 +591,24 @@ function peddlers30a_create_locations_page() {
 add_action( 'init', 'peddlers30a_create_locations_page', 21 );
 
 /**
- * Creates the /blog/ landing page and the first article, /what-is-30a/.
+ * Creates the /blog/ landing page.
  */
 function peddlers30a_create_blog_pages() {
 	if ( get_option( 'peddlers30a_blog_pages_created' ) ) {
 		return;
 	}
 
-	$pages = array(
-		'blog'        => array(
-			'title'    => 'Blog | 30A Guides & Trail Tips | Peddlers 30A',
-			'template' => 'page-blog.php',
-		),
-		'what-is-30a' => array(
-			'title'    => "What Is 30A? A Local's Guide to Scenic Highway 30A, Florida",
-			'template' => 'page-what-is-30a.php',
-		),
-	);
-
-	foreach ( $pages as $slug => $page ) {
-		if ( get_page_by_path( $slug ) ) {
-			continue;
-		}
+	if ( ! get_page_by_path( 'blog' ) ) {
 		$id = wp_insert_post(
 			array(
 				'post_type'   => 'page',
 				'post_status' => 'publish',
-				'post_title'  => $page['title'],
-				'post_name'   => $slug,
+				'post_title'  => 'Blog | 30A Guides & Trail Tips | Peddlers 30A',
+				'post_name'   => 'blog',
 			)
 		);
 		if ( ! is_wp_error( $id ) && $id ) {
-			update_post_meta( $id, '_wp_page_template', $page['template'] );
+			update_post_meta( $id, '_wp_page_template', 'page-blog.php' );
 		}
 	}
 
@@ -626,6 +616,80 @@ function peddlers30a_create_blog_pages() {
 	flush_rewrite_rules();
 }
 add_action( 'init', 'peddlers30a_create_blog_pages', 21 );
+
+/**
+ * Seeds the "30A Guide" category and the first article, /what-is-30a/, as a
+ * real Post -- not a hardcoded template -- so it shows up in wp-admin >
+ * Posts like any other blog entry and can be edited normally from there.
+ */
+function peddlers30a_seed_blog_posts() {
+	if ( get_option( 'peddlers30a_blog_posts_seeded' ) ) {
+		return;
+	}
+
+	$term    = term_exists( '30a-guide', 'category' );
+	$term_id = 0;
+	if ( ! $term ) {
+		$term = wp_insert_term( '30A Guide', 'category', array( 'slug' => '30a-guide' ) );
+	}
+	if ( ! is_wp_error( $term ) ) {
+		$term_id = is_array( $term ) ? $term['term_id'] : $term;
+	}
+
+	if ( ! get_page_by_path( 'what-is-30a', OBJECT, 'post' ) ) {
+		$post_id = wp_insert_post(
+			array(
+				'post_type'    => 'post',
+				'post_status'  => 'publish',
+				'post_title'   => "What Is 30A? A Local's Guide to Scenic Highway 30A, Florida",
+				'post_name'    => 'what-is-30a',
+				'post_content' => peddlers30a_what_is_30a_content(),
+				'post_excerpt' => "30A is a 19-mile coastal road connecting 15 beach communities in South Walton County -- not a single beach or resort. Here's the geography, the Timpoochee Trail, and how most visitors actually get around.",
+				'post_date'    => '2026-09-29 09:00:00',
+			)
+		);
+
+		if ( ! is_wp_error( $post_id ) && $post_id ) {
+			if ( $term_id ) {
+				wp_set_post_categories( $post_id, array( $term_id ) );
+			}
+
+			$image_path = get_template_directory() . '/assets/img/Cycling-in-Seaside.png';
+			if ( file_exists( $image_path ) ) {
+				require_once ABSPATH . 'wp-admin/includes/image.php';
+				require_once ABSPATH . 'wp-admin/includes/file.php';
+				require_once ABSPATH . 'wp-admin/includes/media.php';
+
+				$upload = wp_upload_bits( 'cycling-in-seaside.png', null, file_get_contents( $image_path ) );
+				if ( empty( $upload['error'] ) ) {
+					$attach_id = wp_insert_attachment(
+						array(
+							'post_mime_type' => 'image/png',
+							'post_title'     => 'Cyclists on the Timpoochee Trail, Scenic Highway 30A',
+							'post_status'    => 'inherit',
+						),
+						$upload['file'],
+						$post_id
+					);
+					if ( ! is_wp_error( $attach_id ) ) {
+						wp_update_attachment_metadata( $attach_id, wp_generate_attachment_metadata( $attach_id, $upload['file'] ) );
+						set_post_thumbnail( $post_id, $attach_id );
+					}
+				}
+			}
+		}
+	}
+
+	// WordPress's own "Hello world!" sample post has no place on a client
+	// blog -- remove it the same run that seeds the real first article.
+	$hello_world = get_page_by_path( 'hello-world', OBJECT, 'post' );
+	if ( $hello_world ) {
+		wp_delete_post( $hello_world->ID, true );
+	}
+
+	update_option( 'peddlers30a_blog_posts_seeded', 1 );
+}
+add_action( 'init', 'peddlers30a_seed_blog_posts', 22 );
 
 /**
  * A few pages were renamed to match the client's approved sitemap (URLs on
