@@ -6,23 +6,8 @@
   color: var(--s1);
 }
 
-/* The shared .rental-filters component is built for 5 full-width buttons
-   spaced across the row -- with only 2 categories here, that same
-   space-between layout shoves them to opposite ends of the page. Compact,
-   left-aligned pills instead. */
-.rental-filters.blog-filters {
-  justify-content: flex-start;
-  margin: 0 0 3.75rem;
-}
-
-.rental-filters.blog-filters .rental-filters__btn {
-  width: auto;
-  padding: 0.875rem 2rem;
-  font-size: 0.875rem;
-}
-
 /* --------------------------------------------------------------------------
-   Landing page — category filters + card grid
+   Landing page — post grid
    -------------------------------------------------------------------------- */
 
 .blog__grid {
