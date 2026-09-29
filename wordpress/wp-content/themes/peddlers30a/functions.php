@@ -692,6 +692,32 @@ function peddlers30a_seed_blog_posts() {
 add_action( 'init', 'peddlers30a_seed_blog_posts', 22 );
 
 /**
+ * One-time re-save of the "What Is 30A" post's content for sites that
+ * already seeded it before the wpautop <br> fix shipped -- each accordion
+ * button's <span>/<svg> sat on their own lines in the original seed, so
+ * wpautop injected <br> tags that became extra flex items and pushed the
+ * question text and chevron in from both edges (reading as centered).
+ */
+function peddlers30a_fix_blog_faq_markup() {
+	if ( get_option( 'peddlers30a_blog_faq_markup_fixed' ) ) {
+		return;
+	}
+
+	$post = get_page_by_path( 'what-is-30a', OBJECT, 'post' );
+	if ( $post ) {
+		wp_update_post(
+			array(
+				'ID'           => $post->ID,
+				'post_content' => peddlers30a_what_is_30a_content(),
+			)
+		);
+	}
+
+	update_option( 'peddlers30a_blog_faq_markup_fixed', 1 );
+}
+add_action( 'init', 'peddlers30a_fix_blog_faq_markup', 24 );
+
+/**
  * Nests every post under /blog/ (e.g. /blog/what-is-30a/) instead of the
  * flat /what-is-30a/ the default "%postname%" structure gives 'post' items.
  * Pages and the Location CPT have their own rewrite rules and are
