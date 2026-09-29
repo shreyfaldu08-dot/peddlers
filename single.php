@@ -1,17 +1,37 @@
 <?php
 /**
  * Single blog post template -- reuses the rentals/locations hero pattern
- * and the .article__* typography from blog.css. Any post created in
- * wp-admin > Posts renders through this file automatically.
+ * plus a 3-column layout (table of contents / article body / CTA+form)
+ * built from the .article__* components in blog.css. Any post created in
+ * wp-admin > Posts renders through this file automatically; the table of
+ * contents is generated from whatever <h2> headings that post's content
+ * happens to contain, so it works for any future article without edits
+ * here.
  */
 
 get_header();
 
 while ( have_posts() ) :
 	the_post();
+
 	$peddlers30a_hero_img = has_post_thumbnail()
 		? get_the_post_thumbnail_url( get_the_ID(), 'full' )
 		: get_template_directory_uri() . '/assets/img/Cycling-in-Seaside.png';
+
+	$peddlers30a_toc = array();
+	$peddlers30a_content = preg_replace_callback(
+		'/<h2([^>]*)>(.*?)<\/h2>/is',
+		function ( $matches ) use ( &$peddlers30a_toc ) {
+			$text = trim( wp_strip_all_tags( $matches[2] ) );
+			$slug = sanitize_title( $text );
+			$peddlers30a_toc[] = array(
+				'id'   => $slug,
+				'text' => $text,
+			);
+			return '<h2' . $matches[1] . ' id="' . esc_attr( $slug ) . '">' . $matches[2] . '</h2>';
+		},
+		apply_filters( 'the_content', get_the_content() )
+	);
 	?>
 
     <!-- ==================================================================
@@ -33,15 +53,50 @@ while ( have_posts() ) :
            03 — Article
            ================================================================== -->
     <section class="section article">
-      <div class="container article__inner">
+      <div class="container">
         <p class="article__meta">
           <span>By <?php the_author(); ?></span>
           <span><?php echo esc_html( get_the_date() ); ?></span>
           <span>Back to <a href="<?php echo esc_url( peddlers30a_nav_url( 'blog' ) ); ?>">Blog</a></span>
         </p>
 
-        <div class="article__content">
-          <?php the_content(); ?>
+        <div class="article-layout">
+          <?php if ( ! empty( $peddlers30a_toc ) ) : ?>
+          <aside class="article-toc">
+            <p class="article-toc__title">Table of contents</p>
+            <ol class="article-toc__list">
+              <?php foreach ( $peddlers30a_toc as $peddlers30a_item ) : ?>
+              <li><a href="#<?php echo esc_attr( $peddlers30a_item['id'] ); ?>"><?php echo esc_html( $peddlers30a_item['text'] ); ?></a></li>
+              <?php endforeach; ?>
+            </ol>
+          </aside>
+          <?php endif; ?>
+
+          <div class="article-main">
+            <?php echo $peddlers30a_content; ?>
+          </div>
+
+          <aside class="article-sidebar">
+            <div class="article-sidebar__cta">
+              <h3>Ready to Ride <em>30A</em>?</h3>
+              <a class="btn btn--sand" href="<?php echo esc_url( peddlers30a_nav_url( 'bike-rentals' ) ); ?>">RESERVE NOW</a>
+            </div>
+            <div class="article-sidebar__form">
+              <h3>Have a Question?</h3>
+              <form class="inquiry-form" onsubmit="event.preventDefault(); alert('Thank you! Your inquiry has been sent.');">
+                <div class="inquiry-form__field">
+                  <input type="text" placeholder="FULL NAME" required />
+                </div>
+                <div class="inquiry-form__field">
+                  <input type="email" placeholder="EMAIL ADDRESS" required />
+                </div>
+                <div class="inquiry-form__field">
+                  <textarea placeholder="YOUR QUESTION"></textarea>
+                </div>
+                <button class="inquiry-form__submit" type="submit">SEND MESSAGE</button>
+              </form>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
