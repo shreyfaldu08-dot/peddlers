@@ -497,10 +497,12 @@
   function initRentalFilters() {
     var groups = document.querySelectorAll(".rental-filters");
     Array.prototype.forEach.call(groups, function (group) {
-      var grid = group.parentElement.querySelector(".rental__grid");
+      var gridSelector = group.getAttribute("data-grid") || ".rental__grid";
+      var cardSelector = group.getAttribute("data-card") || ".bike-card";
+      var grid = group.parentElement.querySelector(gridSelector);
       if (!grid) return;
       var buttons = group.querySelectorAll(".rental-filters__btn");
-      var cards = grid.querySelectorAll(".bike-card");
+      var cards = grid.querySelectorAll(cardSelector);
 
       function applyFilter(filter) {
         Array.prototype.forEach.call(cards, function (card) {

@@ -14,6 +14,7 @@ function peddlers30a_assets() {
 	// services.html predates the approved 7-page spec and was never wired
 	// into mobile.css — it ships its own standalone stylesheet instead.
 	$is_services = $post && 'services' === $post->post_name;
+	$is_blog     = $post && in_array( $post->post_name, array( 'blog', 'what-is-30a' ), true );
 
 	wp_enqueue_style( 'peddlers30a-tokens', $dir . '/assets/css/tokens.css', array(), '72' );
 	wp_enqueue_style( 'peddlers30a-fonts', $dir . '/assets/css/fonts.css', array(), $is_services ? '62' : '70' );
@@ -21,13 +22,17 @@ function peddlers30a_assets() {
 	wp_enqueue_style( 'peddlers30a-components', $dir . '/assets/css/components.css', array( 'peddlers30a-base' ), $is_services ? '62' : '71' );
 	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '213' );
 
+	if ( $is_blog ) {
+		wp_enqueue_style( 'peddlers30a-blog', $dir . '/assets/css/blog.css', array( 'peddlers30a-sections' ), '1' );
+	}
+
 	if ( $is_services ) {
 		wp_enqueue_style( 'peddlers30a-services', $dir . '/assets/css/services.css', array( 'peddlers30a-sections' ), '62' );
 	} else {
 		wp_enqueue_style( 'peddlers30a-mobile', $dir . '/assets/css/mobile.css', array( 'peddlers30a-sections' ), '49' );
 	}
 
-	wp_enqueue_script( 'peddlers30a-main', $dir . '/assets/js/main.js', array(), '76', true );
+	wp_enqueue_script( 'peddlers30a-main', $dir . '/assets/js/main.js', array(), '77', true );
 }
 add_action( 'wp_enqueue_scripts', 'peddlers30a_assets' );
 
@@ -200,7 +205,7 @@ function peddlers30a_footer_support_fallback() {
 			'Terms of Service' => 'terms-of-service',
 			'Privacy Policy'   => 'privacy-policy',
 			'Accessibility'    => '#',
-			'Blog'              => '#',
+			'Blog'              => 'blog',
 		)
 	);
 }
@@ -284,6 +289,10 @@ function peddlers30a_page_slug_class() {
 		// mobile.css are scoped to (this page alone has 12 cards and much
 		// shorter hero copy than every other location page).
 		'locations'        => 'page-location page-locations',
+		// The article template shares the blog landing page's hero styling
+		// (white lead text over the dark overlay), so it needs the same
+		// "page-blog" class the landing page gets from its own slug.
+		'what-is-30a'      => 'page-blog',
 	);
 
 	if ( array_key_exists( $post->post_name, $overrides ) ) {
@@ -576,6 +585,47 @@ function peddlers30a_create_locations_page() {
 	flush_rewrite_rules();
 }
 add_action( 'init', 'peddlers30a_create_locations_page', 21 );
+
+/**
+ * Creates the /blog/ landing page and the first article, /what-is-30a/.
+ */
+function peddlers30a_create_blog_pages() {
+	if ( get_option( 'peddlers30a_blog_pages_created' ) ) {
+		return;
+	}
+
+	$pages = array(
+		'blog'        => array(
+			'title'    => 'Blog | 30A Guides & Trail Tips | Peddlers 30A',
+			'template' => 'page-blog.php',
+		),
+		'what-is-30a' => array(
+			'title'    => "What Is 30A? A Local's Guide to Scenic Highway 30A, Florida",
+			'template' => 'page-what-is-30a.php',
+		),
+	);
+
+	foreach ( $pages as $slug => $page ) {
+		if ( get_page_by_path( $slug ) ) {
+			continue;
+		}
+		$id = wp_insert_post(
+			array(
+				'post_type'   => 'page',
+				'post_status' => 'publish',
+				'post_title'  => $page['title'],
+				'post_name'   => $slug,
+			)
+		);
+		if ( ! is_wp_error( $id ) && $id ) {
+			update_post_meta( $id, '_wp_page_template', $page['template'] );
+		}
+	}
+
+	update_option( 'peddlers30a_blog_pages_created', 1 );
+	flush_rewrite_rules();
+}
+add_action( 'init', 'peddlers30a_create_blog_pages', 21 );
 
 /**
  * A few pages were renamed to match the client's approved sitemap (URLs on
