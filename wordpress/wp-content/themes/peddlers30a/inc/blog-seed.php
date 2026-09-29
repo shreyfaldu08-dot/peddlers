@@ -305,12 +305,7 @@ function peddlers30a_what_is_30a_content() {
 </h2>
 <div class="faq__list">
   <div class="accordion__item is-open">
-    <button class="accordion__trigger" type="button" aria-expanded="true">
-      <span>What does "30A" stand for?</span>
-      <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </button>
+    <button class="accordion__trigger" type="button" aria-expanded="true"> <span>What does "30A" stand for?</span> <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </button>
     <div class="accordion__panel">
       <p>
         Named after Walton County Road 30-A, the highway started as an alternate coastal route to old State
@@ -321,12 +316,7 @@ function peddlers30a_what_is_30a_content() {
   </div>
 
   <div class="accordion__item">
-    <button class="accordion__trigger" type="button" aria-expanded="false">
-      <span>Where is 30A located in Florida?</span>
-      <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </button>
+    <button class="accordion__trigger" type="button" aria-expanded="false"> <span>Where is 30A located in Florida?</span> <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </button>
     <div class="accordion__panel">
       <p>
         30A runs along the coast of South Walton County in the Florida Panhandle, positioned between Destin
@@ -337,12 +327,7 @@ function peddlers30a_what_is_30a_content() {
   </div>
 
   <div class="accordion__item">
-    <button class="accordion__trigger" type="button" aria-expanded="false">
-      <span>What is the best area to stay on 30A for a first visit?</span>
-      <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </button>
+    <button class="accordion__trigger" type="button" aria-expanded="false"> <span>What is the best area to stay on 30A for a first visit?</span> <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </button>
     <div class="accordion__panel">
       <p>
         Starting in the eastern corridor, Seacrest Beach through Rosemary Beach gives you the trail's most
@@ -353,12 +338,7 @@ function peddlers30a_what_is_30a_content() {
   </div>
 
   <div class="accordion__item">
-    <button class="accordion__trigger" type="button" aria-expanded="false">
-      <span>Do you need a car to get around 30A?</span>
-      <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </button>
+    <button class="accordion__trigger" type="button" aria-expanded="false"> <span>Do you need a car to get around 30A?</span> <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </button>
     <div class="accordion__panel">
       <p>
         Most visitors rent a car to reach 30A, then discover they rarely need it after that. The Timpoochee
@@ -369,12 +349,7 @@ function peddlers30a_what_is_30a_content() {
   </div>
 
   <div class="accordion__item">
-    <button class="accordion__trigger" type="button" aria-expanded="false">
-      <span>How long does it take to bike from one end of 30A to the other?</span>
-      <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </button>
+    <button class="accordion__trigger" type="button" aria-expanded="false"> <span>How long does it take to bike from one end of 30A to the other?</span> <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </button>
     <div class="accordion__panel">
       <p>
         Riding the full Timpoochee Trail end to end takes roughly two and a half to three hours on a beach
@@ -385,12 +360,7 @@ function peddlers30a_what_is_30a_content() {
   </div>
 
   <div class="accordion__item">
-    <button class="accordion__trigger" type="button" aria-expanded="false">
-      <span>What are coastal dune lakes and why does 30A have them?</span>
-      <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </button>
+    <button class="accordion__trigger" type="button" aria-expanded="false"> <span>What are coastal dune lakes and why does 30A have them?</span> <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </button>
     <div class="accordion__panel">
       <p>
         Coastal dune lakes are shallow freshwater bodies that form between sand dunes and the Gulf. They
@@ -401,12 +371,7 @@ function peddlers30a_what_is_30a_content() {
   </div>
 
   <div class="accordion__item">
-    <button class="accordion__trigger" type="button" aria-expanded="false">
-      <span>When is the best time to visit 30A?</span>
-      <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </button>
+    <button class="accordion__trigger" type="button" aria-expanded="false"> <span>When is the best time to visit 30A?</span> <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </button>
     <div class="accordion__panel">
       <p>
         Spring and fall bring mild temperatures and manageable crowds, with the Timpoochee Trail at its best.
