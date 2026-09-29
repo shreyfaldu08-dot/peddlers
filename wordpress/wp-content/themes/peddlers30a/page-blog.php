@@ -24,24 +24,39 @@ get_header();
     <section class="section section--pad-sm" id="posts">
       <div class="container">
         <div class="blog__grid">
-          <a class="blog-card" href="<?php echo esc_url( peddlers30a_nav_url( 'what-is-30a' ) ); ?>" data-category="30a-guide">
+          <?php
+          $peddlers30a_posts = new WP_Query(
+            array(
+              'post_type'      => 'post',
+              'post_status'    => 'publish',
+              'posts_per_page' => 12,
+            )
+          );
+          while ( $peddlers30a_posts->have_posts() ) :
+            $peddlers30a_posts->the_post();
+            $peddlers30a_cats = get_the_category();
+          ?>
+          <a class="blog-card" href="<?php the_permalink(); ?>">
             <figure class="blog-card__media">
-              <span class="blog-card__badge">30A Guide</span>
-              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/Cycling-in-Seaside.png" alt="Cyclist riding the Timpoochee Trail on Scenic Highway 30A" />
+              <?php if ( ! empty( $peddlers30a_cats ) ) : ?>
+              <span class="blog-card__badge"><?php echo esc_html( $peddlers30a_cats[0]->name ); ?></span>
+              <?php endif; ?>
+              <?php if ( has_post_thumbnail() ) : ?>
+                <?php the_post_thumbnail( 'large' ); ?>
+              <?php else : ?>
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/Cycling-in-Seaside.png" alt="" />
+              <?php endif; ?>
             </figure>
             <div class="blog-card__body">
               <div class="blog-card__meta">
-                <span>Peddlers 30A Team</span>
-                <span>September 29, 2026</span>
+                <span><?php the_author(); ?></span>
+                <span><?php echo esc_html( get_the_date() ); ?></span>
               </div>
-              <h2 class="blog-card__title">What Is 30A? A Local's Guide to Scenic Highway 30A, Florida</h2>
-              <p class="blog-card__excerpt">
-                30A is a 19-mile coastal road connecting 15 beach communities in South Walton County -- not a single
-                beach or resort. Here's the geography, the Timpoochee Trail, and how most visitors actually get
-                around.
-              </p>
+              <h2 class="blog-card__title"><?php the_title(); ?></h2>
+              <p class="blog-card__excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 28 ) ); ?></p>
             </div>
           </a>
+          <?php endwhile; wp_reset_postdata(); ?>
         </div>
       </div>
     </section>
