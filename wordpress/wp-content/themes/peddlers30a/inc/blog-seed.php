@@ -299,6 +299,7 @@ function peddlers30a_what_is_30a_content() {
   </ol>
 </div>
 
+<div class="faq">
 <h2 style="font-family: var(--font-body); font-weight: 700; font-size: 1.625rem; color: var(--ink); margin-top: 3rem; margin-bottom: 1.5rem;">
   Frequently Asked Questions About 30A, Florida
 </h2>
@@ -414,6 +415,7 @@ function peddlers30a_what_is_30a_content() {
       </p>
     </div>
   </div>
+</div>
 </div>
 
 <div class="article__body" style="margin-top: 3rem;">

@@ -523,6 +523,42 @@
     });
   }
 
+  /* ------------------------------------------------------------------------
+     Article table of contents -- highlights the link for whichever section
+     heading is currently in view.
+     ------------------------------------------------------------------------ */
+  function initArticleToc() {
+    var toc = document.querySelector(".article-toc__list");
+    if (!toc || !("IntersectionObserver" in window)) return;
+
+    var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+    var sections = links
+      .map(function (link) {
+        var id = link.getAttribute("href").slice(1);
+        return document.getElementById(id);
+      })
+      .filter(Boolean);
+    if (!sections.length) return;
+
+    function setActive(id) {
+      links.forEach(function (link) {
+        link.classList.toggle("is-active", link.getAttribute("href") === "#" + id);
+      });
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-20% 0px -70% 0px" }
+    );
+    sections.forEach(function (section) {
+      observer.observe(section);
+    });
+  }
+
   function init() {
     initHeader();
     initRails();
@@ -532,6 +568,7 @@
     initMarquees();
     initDateSelector();
     initRentalFilters();
+    initArticleToc();
     initLenis();
   }
 

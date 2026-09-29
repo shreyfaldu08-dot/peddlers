@@ -103,11 +103,6 @@
   padding-block: var(--sp-11);
 }
 
-.article__inner {
-  max-width: 52rem;
-  margin-inline: auto;
-}
-
 .article__meta {
   display: flex;
   gap: 0.75rem;
@@ -116,7 +111,133 @@
   text-transform: uppercase;
   letter-spacing: 0.03rem;
   color: var(--p2);
+  margin-bottom: 2rem;
+}
+
+/* Three-column layout: table of contents, article body, CTA + inquiry
+   form -- table stakes on a long-form guide so a reader can jump straight
+   to the section they need instead of scrolling past all 9. */
+.article-layout {
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr) 18rem;
+  gap: 3rem;
+  align-items: start;
+}
+
+.article-toc,
+.article-sidebar {
+  position: sticky;
+  top: 6.5rem;
+}
+
+.article-toc__title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ink);
   margin-bottom: 1rem;
+}
+
+.article-toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid var(--s1);
+  max-height: calc(100vh - 10rem);
+  overflow-y: auto;
+  counter-reset: toc;
+}
+
+.article-toc__list li {
+  counter-increment: toc;
+}
+
+.article-toc__list a {
+  display: block;
+  padding: 0.5rem 0 0.5rem 1rem;
+  margin-left: -2px;
+  border-left: 2px solid transparent;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.article-toc__list a::before {
+  content: counter(toc) ". ";
+}
+
+.article-toc__list a:hover {
+  color: var(--p1);
+}
+
+.article-toc__list a.is-active {
+  border-left-color: var(--p1);
+  color: var(--p1);
+  font-weight: 500;
+}
+
+.article-sidebar__cta {
+  background: var(--p1);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.article-sidebar__cta h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.article-sidebar__cta h3 em {
+  font-style: normal;
+  color: var(--s3);
+}
+
+.article-sidebar__cta .btn {
+  width: 100%;
+}
+
+.article-sidebar__form {
+  background: var(--s1);
+  padding: 1.75rem;
+}
+
+.article-sidebar__form h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.article-sidebar__form .inquiry-form {
+  gap: 1rem;
+}
+
+.article-sidebar__form .inquiry-form__field input,
+.article-sidebar__form .inquiry-form__field textarea {
+  padding: 0.875rem 1rem;
+  font-size: 0.8125rem;
+  background: var(--white);
+}
+
+.article-sidebar__form .inquiry-form__field textarea {
+  height: 5rem;
+}
+
+.article-sidebar__form .inquiry-form__submit {
+  padding: 0.875rem 1rem;
+  font-size: 0.8125rem;
+  border-color: var(--p1);
+  color: var(--p1);
+}
+
+.article-sidebar__form .inquiry-form__submit:hover {
+  background: var(--p1);
+  color: var(--white);
 }
 
 .article__meta span + span::before {
@@ -246,6 +367,29 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+/* The article FAQ reuses the sitewide .faq/.accordion__* component (its
+   card background, spacing and open/closed panel display are all scoped
+   under a .faq ancestor) but sits inside an already-padded content column,
+   so its own section padding/background need to be neutralized here. */
+.article-main .faq {
+  padding: 0;
+  background: transparent;
+}
+
+.article-main .faq .accordion__trigger {
+  padding: 1.5rem;
+  font-size: 1.125rem;
+}
+
+.article-main .faq .accordion__chevron {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: var(--p1);
+}
+
 .article-table th {
   font-family: var(--font-body);
   font-weight: 700;
@@ -256,6 +400,30 @@
 
 .article-table tr:last-child td {
   border-bottom: none;
+}
+
+/* Below 1280px the TOC column is the first to go -- there isn't room for
+   three columns and the reader can still get a sense of the piece's shape
+   from the section headings alone. */
+@media (max-width: 1280px) {
+  .article-layout {
+    grid-template-columns: minmax(0, 1fr) 18rem;
+  }
+
+  .article-toc {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .article-sidebar {
+    position: static;
+    max-width: 26rem;
+  }
 }
 
 @media (max-width: 1024px) {

@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/css/base.css?v=80" />
   <link rel="stylesheet" href="assets/css/components.css?v=81" />
   <link rel="stylesheet" href="assets/css/sections.css?v=213" />
-  <link rel="stylesheet" href="assets/css/blog.css?v=4" />
+  <link rel="stylesheet" href="assets/css/blog.css?v=5" />
   <link rel="stylesheet" href="assets/css/mobile.css?v=47" />
 </head>
 
@@ -69,13 +69,30 @@
            03 — Article
            ================================================================== -->
     <section class="section article">
-      <div class="container article__inner">
+      <div class="container">
         <p class="article__meta">
           <span>By Peddlers 30A Team</span>
           <span>September 29, 2026</span>
           <span>Back to <a href="blog.html">Blog</a></span>
         </p>
 
+        <div class="article-layout">
+        <aside class="article-toc">
+          <p class="article-toc__title">Table of contents</p>
+          <ol class="article-toc__list">
+            <li><a href="#short-answer">What Is 30A? The Short Answer</a></li>
+            <li><a href="#where-located">Where Is 30A Located in Florida?</a></li>
+            <li><a href="#30a-map">30A Map: The 15 Beach Communities</a></li>
+            <li><a href="#blue-mountain-beach">Blue Mountain Beach: The Highest Point</a></li>
+            <li><a href="#30a-vs-destin">What Makes 30A Different</a></li>
+            <li><a href="#getting-around">How to Get Around Without a Car</a></li>
+            <li><a href="#things-to-do">Best Things to Do on 30A</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+            <li><a href="#final-thoughts">Final Thoughts</a></li>
+          </ol>
+        </aside>
+
+        <div class="article-main">
         <div class="article__callout">
           <p class="article__callout-label">Direct Answer</p>
           <p>
@@ -111,7 +128,7 @@
             they arrive.
           </p>
 
-          <h2>What Is 30A? The Short Answer</h2>
+          <h2 id="short-answer">What Is 30A? The Short Answer</h2>
           <p>
             Most people searching for what is 30a in Florida expect to find a beach, a town, or a resort name. 30A is
             none of those.
@@ -143,7 +160,7 @@
             of the most recognized marks on the Florida Gulf Coast.
           </p>
 
-          <h2>Where Is 30A Located in Florida?</h2>
+          <h2 id="where-located">Where Is 30A Located in Florida?</h2>
           <p>
             30A runs along the southern edge of South Walton County in the Florida Panhandle, positioned between two
             of Florida's most-visited beach destinations: Destin to the west and Panama City Beach to the east.
@@ -183,7 +200,7 @@
             Timpoochee Trail trailhead sits on the eastern corridor.
           </p>
 
-          <h2>30A Map: The 15 Beach Communities</h2>
+          <h2 id="30a-map">30A Map: The 15 Beach Communities</h2>
           <p>30A does not have one center. It has 15 of them.</p>
           <p>
             The communities spread from east to west across the full length of the corridor. They differ
@@ -240,7 +257,7 @@
             crowd density both change noticeably.
           </p>
 
-          <h2>Blue Mountain Beach: The Highest Point on the Gulf Coast</h2>
+          <h2 id="blue-mountain-beach">Blue Mountain Beach: The Highest Point on the Gulf Coast</h2>
           <p>Blue Mountain Beach sits in the western mid-section of 30A and deserves more than a bullet point.</p>
           <p>
             At approximately 65 feet in elevation, Blue Mountain Beach is the highest natural point along the entire
@@ -254,7 +271,7 @@
             eastern corridor and want something different. The views and the pace are the product.
           </p>
 
-          <h2>What Makes 30A Different from Destin and Panama City Beach</h2>
+          <h2 id="30a-vs-destin">What Makes 30A Different from Destin and Panama City Beach</h2>
           <p>
             Two specific rules govern development on 30A that do not apply to Destin or Panama City Beach.
           </p>
@@ -299,7 +316,7 @@
             hour east or west.
           </p>
 
-          <h2>How to Get Around 30A Without a Car</h2>
+          <h2 id="getting-around">How to Get Around 30A Without a Car</h2>
           <p>Getting between communities is where most first-timers overcomplicate the trip.</p>
           <p>The practical answer is the Timpoochee Trail.</p>
           <p>
@@ -354,7 +371,7 @@
             map included. Walk-ins are welcome for individual riders.
           </p>
 
-          <h2>Best Things to Do on 30A, Florida</h2>
+          <h2 id="things-to-do">Best Things to Do on 30A, Florida</h2>
           <p>
             The Timpoochee Trail connects every activity on this list. Most of these stops are reachable by bike from
             anywhere on the eastern corridor in under an hour.
@@ -371,7 +388,8 @@
         <!-- ============================================================
                FAQ
                ============================================================ -->
-        <h2 style="font-family: var(--font-body); font-weight: 700; font-size: 1.625rem; color: var(--ink); margin-top: 3rem; margin-bottom: 1.5rem;">
+        <div class="faq">
+        <h2 id="faq" style="font-family: var(--font-body); font-weight: 700; font-size: 1.625rem; color: var(--ink); margin-top: 3rem; margin-bottom: 1.5rem;">
           Frequently Asked Questions About 30A, Florida
         </h2>
         <div class="faq__list">
@@ -487,9 +505,10 @@
             </div>
           </div>
         </div>
+        </div>
 
         <div class="article__body" style="margin-top: 3rem;">
-          <h2>Final Thoughts</h2>
+          <h2 id="final-thoughts">Final Thoughts</h2>
           <p>
             30A is 15 communities, a 19-mile trail, and a Gulf Coast that operates nothing like the resort strips on
             either side of it. The height limits, the coastal dune lakes, and the quartz sand are not accidents. They
@@ -501,6 +520,30 @@
             all at the same address. The trail starts the moment you walk out the door. No reservation required for
             most visits.
           </p>
+        </div>
+        </div>
+
+        <aside class="article-sidebar">
+          <div class="article-sidebar__cta">
+            <h3>Ready to Ride <em>30A</em>?</h3>
+            <a class="btn btn--sand" href="rentals.html">RESERVE NOW</a>
+          </div>
+          <div class="article-sidebar__form">
+            <h3>Have a Question?</h3>
+            <form class="inquiry-form" onsubmit="event.preventDefault(); alert('Thank you! Your inquiry has been sent.');">
+              <div class="inquiry-form__field">
+                <input type="text" placeholder="FULL NAME" required />
+              </div>
+              <div class="inquiry-form__field">
+                <input type="email" placeholder="EMAIL ADDRESS" required />
+              </div>
+              <div class="inquiry-form__field">
+                <textarea placeholder="YOUR QUESTION"></textarea>
+              </div>
+              <button class="inquiry-form__submit" type="submit">SEND MESSAGE</button>
+            </form>
+          </div>
+        </aside>
         </div>
       </div>
     </section>
@@ -593,7 +636,7 @@
     <div class="site-footer__rule"></div>
   </footer>
 
-  <script src="assets/js/main.js?v=82"></script>
+  <script src="assets/js/main.js?v=83"></script>
 </body>
 
 </html>
