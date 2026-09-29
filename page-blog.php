@@ -7,7 +7,7 @@ get_header();
     <!-- ==================================================================
            02 — Hero
            ================================================================== -->
-    <section class="hero hero--rentals" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/Cycling-in-Seaside.png');">
+    <section class="hero hero--rentals" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/Cycling-in-Seaside.png'); height: 32rem;">
       <div class="container hero__inner">
         <p class="eyebrow" style="color: var(--s3);">Peddlers 30A</p>
         <h1 class="hero__title">The 30A Blog</h1>
@@ -23,11 +23,6 @@ get_header();
            ================================================================== -->
     <section class="section" id="posts">
       <div class="container">
-        <div class="rental-filters blog-filters" data-grid=".blog__grid" data-card=".blog-card">
-          <button class="rental-filters__btn is-active" type="button" data-filter="all">ALL POSTS</button>
-          <button class="rental-filters__btn" type="button" data-filter="30a-guide">30A GUIDE</button>
-        </div>
-
         <div class="blog__grid">
           <a class="blog-card" href="<?php echo esc_url( peddlers30a_nav_url( 'what-is-30a' ) ); ?>" data-category="30a-guide">
             <figure class="blog-card__media">
