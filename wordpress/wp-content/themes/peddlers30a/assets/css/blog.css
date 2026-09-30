@@ -120,7 +120,7 @@
 }
 
 .article-featured-image {
-  padding-top: 3rem;
+  padding-top: 1.5rem;
   padding-bottom: 0;
 }
 
@@ -158,16 +158,14 @@
   text-align: center;
 }
 
-/* Full image, never cropped -- but a portrait photo at full column width
-   turned out taller than the whole viewport, so cap the height instead
-   and let width follow proportionally (centered when that makes it
-   narrower than the column). */
+/* Full image, never cropped -- capped so it and the title both land in
+   view together instead of the photo alone filling the first screen. */
 .article__featured-image img {
   display: inline-block;
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 28rem;
+  max-height: 20rem;
 }
 
 .article__meta a {
