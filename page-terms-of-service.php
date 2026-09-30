@@ -133,7 +133,7 @@ get_header();
         <h2>2. Booking and Reservations</h2>
         <p>
           <strong>Making a reservation:</strong> You may book a bike rental online at peddlers30a.com, by phone at
-          850-213-0040, or by email at hello@peddlers30a.com. Walk-in rentals are also available during business
+          850-213-0040, or by email at reservations@peddlers30a.com. Walk-in rentals are also available during business
           hours, subject to availability.
         </p>
         <p>
@@ -160,7 +160,7 @@ get_header();
         </p>
         <ul>
           <li>Phone: 850-213-0040</li>
-          <li>Email: hello@peddlers30a.com</li>
+          <li>Email: reservations@peddlers30a.com</li>
         </ul>
         <p>We will confirm cancellation terms at the time of booking.</p>
       </section>
@@ -284,7 +284,7 @@ get_header();
           Inlet Beach, FL 32461
         </p>
         <p>
-          Email: <a href="mailto:hello@peddlers30a.com">hello@peddlers30a.com</a><br />
+          Email: <a href="mailto:reservations@peddlers30a.com">reservations@peddlers30a.com</a><br />
           Phone: <a href="tel:+18502130040">850-213-0040</a>
         </p>
         <p>Business Hours: Mon&ndash;Fri 8 AM&ndash;6 PM &middot; Sat 7 AM&ndash;7 PM &middot; Sun 9 AM&ndash;5 PM</p>

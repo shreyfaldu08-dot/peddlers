@@ -24,7 +24,7 @@ function peddlers30a_assets() {
 	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '214' );
 
 	if ( $is_blog ) {
-		wp_enqueue_style( 'peddlers30a-blog', $dir . '/assets/css/blog.css', array( 'peddlers30a-sections' ), '7' );
+		wp_enqueue_style( 'peddlers30a-blog', $dir . '/assets/css/blog.css', array( 'peddlers30a-sections' ), '8' );
 	}
 
 	if ( $is_services ) {
@@ -116,7 +116,7 @@ function peddlers30a_customize_register( $wp_customize ) {
 	$fields = array(
 		'phone_number'      => array( 'default' => '(850) 213-0040', 'label' => 'Phone number (displayed)' ),
 		'phone_number_link' => array( 'default' => '+18502130040', 'label' => 'Phone number (tel: link, digits only)' ),
-		'email_address'     => array( 'default' => 'hello@peddlers30a.com', 'label' => 'Email address' ),
+		'email_address'     => array( 'default' => 'reservations@peddlers30a.com', 'label' => 'Email address' ),
 		'address_line1'     => array( 'default' => '10343 E County Hwy 30A,', 'label' => 'Address — line 1' ),
 		'address_line2'     => array( 'default' => 'Inlet Beach, FL 32461', 'label' => 'Address — line 2' ),
 		'footer_tagline'    => array( 'default' => 'Explore. Rent. Enjoy.', 'label' => 'Footer tagline' ),
@@ -716,6 +716,25 @@ function peddlers30a_fix_blog_faq_markup() {
 	update_option( 'peddlers30a_blog_faq_markup_fixed', 1 );
 }
 add_action( 'init', 'peddlers30a_fix_blog_faq_markup', 24 );
+
+/**
+ * The client's contact email changed from hello@ to reservations@
+ * peddlers30a.com. Sites that already saved the old address via
+ * Appearance > Customize won't pick up the new code default on their
+ * own, so update the saved value here if it still matches the old one.
+ */
+function peddlers30a_migrate_contact_email() {
+	if ( get_option( 'peddlers30a_contact_email_migrated' ) ) {
+		return;
+	}
+
+	if ( 'hello@peddlers30a.com' === get_theme_mod( 'email_address' ) ) {
+		set_theme_mod( 'email_address', 'reservations@peddlers30a.com' );
+	}
+
+	update_option( 'peddlers30a_contact_email_migrated', 1 );
+}
+add_action( 'init', 'peddlers30a_migrate_contact_email', 24 );
 
 /**
  * Nests every post under /blog/ (e.g. /blog/what-is-30a/) instead of the
