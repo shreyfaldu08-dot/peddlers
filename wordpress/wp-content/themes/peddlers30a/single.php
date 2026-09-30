@@ -34,21 +34,6 @@ while ( have_posts() ) :
 	);
 	?>
 
-    <!-- ==================================================================
-           02 — Title
-           ================================================================== -->
-    <section class="section article-header">
-      <div class="container">
-        <?php
-        $peddlers30a_cats = get_the_category();
-        if ( ! empty( $peddlers30a_cats ) ) :
-        ?>
-        <p class="eyebrow"><?php echo esc_html( $peddlers30a_cats[0]->name ); ?></p>
-        <?php endif; ?>
-        <h1 class="article__title-page"><?php the_title(); ?></h1>
-      </div>
-    </section>
-
     <p class="article__meta">
       <span>By <?php the_author(); ?></span>
       <span><?php echo esc_html( get_the_date() ); ?></span>
@@ -56,7 +41,7 @@ while ( have_posts() ) :
     </p>
 
     <!-- ==================================================================
-           03 — Article
+           02 — Article
            ================================================================== -->
     <section class="section article">
       <div class="container">
@@ -73,6 +58,14 @@ while ( have_posts() ) :
           <?php endif; ?>
 
           <div class="article-main">
+            <?php
+            $peddlers30a_cats = get_the_category();
+            if ( ! empty( $peddlers30a_cats ) ) :
+            ?>
+            <p class="eyebrow"><?php echo esc_html( $peddlers30a_cats[0]->name ); ?></p>
+            <?php endif; ?>
+            <h1 class="article__title-page"><?php the_title(); ?></h1>
+
             <!-- Featured image (full, uncropped) -->
             <figure class="article__featured-image">
               <img src="<?php echo esc_url( $peddlers30a_hero_img ); ?>" alt="<?php the_title_attribute(); ?>" />
