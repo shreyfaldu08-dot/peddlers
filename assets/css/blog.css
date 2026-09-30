@@ -111,14 +111,6 @@
   padding-bottom: var(--sp-11);
 }
 
-/* Title sits on the plain page background, above the full uncropped
-   photo -- no overlay needed since the image is no longer a text
-   backdrop. */
-.article-header {
-  padding-top: 3rem;
-  padding-bottom: 1.5rem;
-}
-
 .article__title-page {
   font-family: var(--font-body);
   font-weight: 700;
@@ -126,6 +118,7 @@
   line-height: 1.15;
   color: var(--ink);
   margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .article__meta {
