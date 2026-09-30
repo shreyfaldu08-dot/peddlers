@@ -35,31 +35,38 @@ while ( have_posts() ) :
 	?>
 
     <!-- ==================================================================
-           02 — Hero
+           02 — Title
            ================================================================== -->
-    <section class="hero hero--rentals" style="background-image: url('<?php echo esc_url( $peddlers30a_hero_img ); ?>'); height: 28rem;">
-      <div class="container hero__inner">
+    <section class="section article-header">
+      <div class="container">
         <?php
         $peddlers30a_cats = get_the_category();
         if ( ! empty( $peddlers30a_cats ) ) :
         ?>
-        <p class="eyebrow" style="color: var(--s3);"><?php echo esc_html( $peddlers30a_cats[0]->name ); ?></p>
+        <p class="eyebrow"><?php echo esc_html( $peddlers30a_cats[0]->name ); ?></p>
         <?php endif; ?>
-        <h1 class="hero__title" style="font-size: clamp(2rem, 1.4rem + 2.2vw, 3.75rem);"><?php the_title(); ?></h1>
+        <h1 class="article__title-page"><?php the_title(); ?></h1>
       </div>
     </section>
 
+    <p class="article__meta">
+      <span>By <?php the_author(); ?></span>
+      <span><?php echo esc_html( get_the_date() ); ?></span>
+      <span>Back to <a href="<?php echo esc_url( peddlers30a_nav_url( 'blog' ) ); ?>">Blog</a></span>
+    </p>
+
     <!-- ==================================================================
-           03 — Article
+           03 — Featured image (full, uncropped)
+           ================================================================== -->
+    <figure class="article__featured-image">
+      <img src="<?php echo esc_url( $peddlers30a_hero_img ); ?>" alt="<?php the_title_attribute(); ?>" />
+    </figure>
+
+    <!-- ==================================================================
+           04 — Article
            ================================================================== -->
     <section class="section article">
       <div class="container">
-        <p class="article__meta">
-          <span>By <?php the_author(); ?></span>
-          <span><?php echo esc_html( get_the_date() ); ?></span>
-          <span>Back to <a href="<?php echo esc_url( peddlers30a_nav_url( 'blog' ) ); ?>">Blog</a></span>
-        </p>
-
         <div class="article-layout">
           <?php if ( ! empty( $peddlers30a_toc ) ) : ?>
           <aside class="article-toc">
@@ -102,7 +109,7 @@ while ( have_posts() ) :
     </section>
 
     <!-- ==================================================================
-           04 — Booking CTA
+           05 — Booking CTA
            ================================================================== -->
     <section class="section" style="background: var(--p1); padding: 4rem 0; text-align: center;">
       <div class="container">
