@@ -6,6 +6,13 @@
   color: var(--s1);
 }
 
+/* The base .hero class carries a min-height: 45rem floor -- both blog
+   heroes are meant to be shorter than the sitewide default, so this
+   overrides that floor to let their own inline height actually apply. */
+.page-blog .hero--rentals {
+  min-height: 0;
+}
+
 /* --------------------------------------------------------------------------
    Landing page — post grid
    -------------------------------------------------------------------------- */

@@ -7,7 +7,7 @@ get_header();
     <!-- ==================================================================
            02 — Hero
            ================================================================== -->
-    <section class="hero hero--rentals" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/Cycling-in-Seaside.png');">
+    <section class="hero hero--rentals" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/Cycling-in-Seaside.png'); height: 28rem;">
       <div class="container hero__inner">
         <p class="eyebrow" style="color: var(--s3);">Peddlers 30A</p>
         <h1 class="hero__title">The 30A Blog</h1>
