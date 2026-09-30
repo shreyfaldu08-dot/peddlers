@@ -107,7 +107,7 @@
    -------------------------------------------------------------------------- */
 
 .article {
-  padding-block: var(--sp-11);
+  padding-bottom: var(--sp-11);
 }
 
 .article__meta {
