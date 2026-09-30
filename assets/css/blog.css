@@ -146,7 +146,7 @@
 .article-toc,
 .article-sidebar {
   position: sticky;
-  top: calc(var(--nav-h) + 3.75rem);
+  top: calc(var(--nav-h) + 5.75rem);
 }
 
 .article-toc__title {
