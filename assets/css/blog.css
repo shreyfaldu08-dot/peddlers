@@ -6,14 +6,6 @@
   color: var(--s1);
 }
 
-/* The base .hero class carries a min-height: 45rem floor that silently
-   overrides any shorter inline height set on it -- both the blog landing
-   hero and the single-article hero need to actually render shorter, not
-   just declare a shorter height that this floor then overrides. */
-.page-blog .hero--rentals {
-  min-height: 0;
-}
-
 /* --------------------------------------------------------------------------
    Landing page — post grid
    -------------------------------------------------------------------------- */
