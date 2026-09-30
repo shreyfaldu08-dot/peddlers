@@ -205,7 +205,7 @@ get_header();
               <div>
                 <p>
                   You can reserve online at peddlers30a.com, call us at 850-213-0040, or email
-                  hello@peddlers30a.com. Online is the fastest option. If you have questions about which bike is
+                  reservations@peddlers30a.com. Online is the fastest option. If you have questions about which bike is
                   right for your group, call us and we'll sort it out together.
                 </p>
               </div>
@@ -344,7 +344,7 @@ get_header();
               <div>
                 <p>
                   Contact us directly for deposit details. Policies can vary based on rental type and duration.
-                  Call us at 850-213-0040 or email hello@peddlers30a.com before your trip and we'll give you the
+                  Call us at 850-213-0040 or email reservations@peddlers30a.com before your trip and we'll give you the
                   full picture.
                 </p>
               </div>
@@ -620,7 +620,7 @@ get_header();
               <div>
                 <p>
                   Delivery fees and logistics depend on your location and order size. Call us at 850-213-0040 or
-                  email hello@peddlers30a.com when booking and we'll give you the full details for your specific
+                  email reservations@peddlers30a.com when booking and we'll give you the full details for your specific
                   address.
                 </p>
               </div>

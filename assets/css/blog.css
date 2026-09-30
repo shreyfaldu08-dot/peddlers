@@ -6,6 +6,23 @@
   color: var(--s1);
 }
 
+/* The base .hero class carries a min-height: 45rem floor that silently
+   overrides any shorter inline height on the landing page's hero -- this
+   is the one hero on the site meant to be noticeably shorter, so it needs
+   its own override. Scoped to the landing page only (:not(.single)) so
+   the single-post hero keeps the sitewide tall-hero height. */
+.page-blog:not(.single) .hero--rentals {
+  min-height: 0;
+}
+
+/* The sitewide .hero::after tint (rgba(0,0,0,0.45), needed for text
+   contrast on pages where the hero photo is just a backdrop) muddies the
+   featured image on an article -- the photo is the point here, so lighten
+   it substantially while keeping just enough contrast for the title. */
+.single-post .hero--rentals::after {
+  background: rgba(0, 0, 0, 0.15);
+}
+
 /* --------------------------------------------------------------------------
    Landing page — post grid
    -------------------------------------------------------------------------- */

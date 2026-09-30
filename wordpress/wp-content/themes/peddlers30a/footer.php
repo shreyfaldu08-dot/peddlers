@@ -23,7 +23,7 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="M2 7l10 6 10-6" /></svg>
-              <a href="mailto:<?php echo esc_attr( get_theme_mod( 'email_address', 'hello@peddlers30a.com' ) ); ?>"><?php echo esc_html( get_theme_mod( 'email_address', 'hello@peddlers30a.com' ) ); ?></a>
+              <a href="mailto:<?php echo esc_attr( get_theme_mod( 'email_address', 'reservations@peddlers30a.com' ) ); ?>"><?php echo esc_html( get_theme_mod( 'email_address', 'reservations@peddlers30a.com' ) ); ?></a>
             </li>
           </ul>
           <div class="site-footer__social">

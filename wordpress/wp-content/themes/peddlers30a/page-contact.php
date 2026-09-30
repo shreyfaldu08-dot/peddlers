@@ -93,7 +93,7 @@
               </svg>
             </div>
             <p class="direct-card__label">Email Us</p>
-            <p class="direct-card__value">hello@peddlers30a.com</p>
+            <p class="direct-card__value">reservations@peddlers30a.com</p>
           </div>
 
           <div class="direct-card">
@@ -129,7 +129,7 @@
           <div class="seasonal-hours__notice">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
             <p>
-              After-hours assistance? Email us at hello@peddlers30a.com. We monitor until 10 PM.
+              <strong>Please note:</strong> Hours may vary seasonally or during special events. Please check our <a href="https://share.google/e4Gs6efjT6WCD5mdl" target="_blank" rel="noopener">Google Business Profile</a> for the most up-to-date hours before visiting.
             </p>
           </div>
         </div>
@@ -168,7 +168,7 @@
             <p class="contact__label">CONNECT</p>
             <p class="contact__value">
               <a href="tel:+18502130040">850-213-0040</a> <span class="contact__bullet">&bull;</span> <a
-                href="mailto:hello@peddlers30a.com">hello@peddlers30a.com</a>
+                href="mailto:reservations@peddlers30a.com">reservations@peddlers30a.com</a>
             </p>
           </div>
 

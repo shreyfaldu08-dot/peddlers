@@ -630,7 +630,7 @@ get_header();
             <p class="contact__label">CONNECT</p>
             <p class="contact__value">
               <a href="tel:+18502130040">850-213-0040</a> <span class="contact__bullet">&bull;</span> <a
-                href="mailto:hello@peddlers30a.com">hello@peddlers30a.com</a>
+                href="mailto:reservations@peddlers30a.com">reservations@peddlers30a.com</a>
             </p>
           </div>
 

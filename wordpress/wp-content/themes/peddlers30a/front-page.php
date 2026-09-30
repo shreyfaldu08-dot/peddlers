@@ -26,7 +26,7 @@
         <ul class="trust__bar">
           <li class="trust__item">
             <img class="trust__icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/s02-1.svg" alt="" />
-            <p class="trust__title">4.9 GOOGLE RATING</p>
+            <p class="trust__title">4.3 GOOGLE RATING</p>
             <p class="trust__meta" aria-label="Rated 4.9 out of 5">★★★★★</p>
           </li>
           <li class="trust__item">
@@ -36,7 +36,7 @@
           </li>
           <li class="trust__item">
             <img class="trust__icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/s02-3.svg" alt="" />
-            <p class="trust__title">50+ BIKES</p>
+            <p class="trust__title">1k+ BIKES</p>
             <p class="trust__meta">Beach-Tested Bikes</p>
           </li>
           <li class="trust__item">
@@ -138,38 +138,38 @@
         <div class="rental__grid">
           <article class="bike-card">
             <figure class="bike-card__media">
-              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/s05-1.jpg" alt="Adult Female Cruiser" />
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/adult-female-cruiser.jpg" alt="Adult Female Cruiser" />
             </figure>
             <h3 class="bike-card__name">Adult Female Cruiser</h3>
             <p class="bike-card__price">From: $40.00</p>
-            <a class="btn btn--outline btn--block" href="<?php echo esc_url( peddlers30a_nav_url( 'product-detail' ) ); ?>">BOOK NOW</a>
+            <a class="btn btn--outline btn--block" href="https://shop.peddlers30a.com/store/adult-female-cruiser/" target="_blank" rel="noopener">BOOK NOW</a>
           </article>
 
           <article class="bike-card">
             <figure class="bike-card__media">
-              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/s05-4.jpg" alt="20&quot; Kids Cruiser-Coral" />
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/20-kids-cruiser-coral.jpg" alt="20&quot; Kids Cruiser-Coral" />
             </figure>
             <h3 class="bike-card__name">20" Kids Cruiser-Coral</h3>
             <p class="bike-card__price">From: $40.00</p>
-            <a class="btn btn--outline btn--block" href="<?php echo esc_url( peddlers30a_nav_url( 'product-detail' ) ); ?>">BOOK NOW</a>
+            <a class="btn btn--outline btn--block" href="https://shop.peddlers30a.com/store/20-kids-cruiser-coral/" target="_blank" rel="noopener">BOOK NOW</a>
           </article>
 
           <article class="bike-card">
             <figure class="bike-card__media">
-              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/s05-3.jpg" alt="Bike and Burley Combo" />
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/bike-and-burley-combo.jpg" alt="Bike and Burley Combo" />
             </figure>
             <h3 class="bike-card__name">Bike and Burley Combo</h3>
             <p class="bike-card__price">From: $70.00</p>
-            <a class="btn btn--outline btn--block" href="<?php echo esc_url( peddlers30a_nav_url( 'product-detail' ) ); ?>">BOOK NOW</a>
+            <a class="btn btn--outline btn--block" href="https://shop.peddlers30a.com/store/bike-and-burley-combo/" target="_blank" rel="noopener">BOOK NOW</a>
           </article>
 
           <article class="bike-card">
             <figure class="bike-card__media">
-              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/s05-2.jpg" alt="Bike Basket" />
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/bike-basket.jpg" alt="Bike Basket" />
             </figure>
             <h3 class="bike-card__name">Bike Basket</h3>
             <p class="bike-card__price">From: $5.00</p>
-            <a class="btn btn--outline btn--block" href="<?php echo esc_url( peddlers30a_nav_url( 'product-detail' ) ); ?>">BOOK NOW</a>
+            <a class="btn btn--outline btn--block" href="https://shop.peddlers30a.com/store/bike-basket/" target="_blank" rel="noopener">BOOK NOW</a>
           </article>
         </div>
       </div>
@@ -793,7 +793,7 @@
             <div class="accordion__panel">
               <div>
                 <p>
-                  Pick up at Peddlers Pavilion, 10343 E County Hwy 30A, Seacrest Beach, FL 32461; directly beside the Timpoochee Trail. The top-rated bike rental on 30A is steps from the path, so you're riding within minutes of arrival. Delivery to your vacation rental is also available.
+                  Pick up your bike at Peddlers Pavilion, 10343 E County Hwy 30A, Seacrest Beach, FL 32461. We also offer delivery directly to your vacation rental for added convenience.
                 </p>
               </div>
             </div>
@@ -841,7 +841,7 @@
             <div class="accordion__panel">
               <div>
                 <p>
-                  Yes. Beach cruisers are available at $70 for a full week, better value than the $40/day rate. Ask about multi-day rates for other bikes when booking at Peddlers Pavilion or calling 850-213-0040. The best way to explore all of 30A is with more than one day on the trail.
+                  Yes! Multi-day and weekly bike rentals are available. Contact Peddlers Pavilion when booking to ask about current rental rates and available options.
                 </p>
               </div>
             </div>
@@ -884,7 +884,7 @@
             <p class="contact__value">
               <a href="tel:+18502130040">(850) 213-0040</a>
               <span class="contact__bullet">•</span>
-              <a href="mailto:hello@peddlers30a.com">hello@peddlers30a.com</a>
+              <a href="mailto:reservations@peddlers30a.com">reservations@peddlers30a.com</a>
             </p>
           </div>
 

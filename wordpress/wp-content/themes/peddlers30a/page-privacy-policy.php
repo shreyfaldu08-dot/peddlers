@@ -237,7 +237,7 @@ get_header();
         </ul>
         <p>
           To exercise any of these rights, contact us at
-          <a href="mailto:hello@peddlers30a.com">hello@peddlers30a.com</a> or call
+          <a href="mailto:reservations@peddlers30a.com">reservations@peddlers30a.com</a> or call
           <a href="tel:+18502130040">850-213-0040</a>.
         </p>
       </section>
@@ -278,7 +278,7 @@ get_header();
           Inlet Beach, FL 32461
         </p>
         <p>
-          Email: <a href="mailto:hello@peddlers30a.com">hello@peddlers30a.com</a><br />
+          Email: <a href="mailto:reservations@peddlers30a.com">reservations@peddlers30a.com</a><br />
           Phone: <a href="tel:+18502130040">850-213-0040</a>
         </p>
         <p>We will respond to all privacy inquiries within 5 business days.</p>

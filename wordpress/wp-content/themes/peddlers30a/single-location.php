@@ -79,38 +79,38 @@ if ( empty( $loc ) ) {
         <div class="rental__grid">
           <article class="bike-card">
             <figure class="bike-card__media">
-              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/s05-1.jpg" alt="Adult Female Cruiser" />
+              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/products/adult-female-cruiser.jpg" alt="Adult Female Cruiser" />
             </figure>
             <h3 class="bike-card__name">Adult Female Cruiser</h3>
             <p class="bike-card__price">From: $40.00</p>
-            <a class="btn btn--outline btn--block" href="<?php echo esc_url( peddlers30a_nav_url( 'product-detail' ) ); ?>">BOOK NOW</a>
+            <a class="btn btn--outline btn--block" href="https://shop.peddlers30a.com/store/adult-female-cruiser/" target="_blank" rel="noopener">BOOK NOW</a>
           </article>
 
           <article class="bike-card">
             <figure class="bike-card__media">
-              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/s05-4.jpg" alt="20&quot; Kids Cruiser-Coral" />
+              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/products/20-kids-cruiser-coral.jpg" alt="20&quot; Kids Cruiser-Coral" />
             </figure>
             <h3 class="bike-card__name">20&Prime; Kids Cruiser-Coral</h3>
             <p class="bike-card__price">From: $40.00</p>
-            <a class="btn btn--outline btn--block" href="<?php echo esc_url( peddlers30a_nav_url( 'product-detail' ) ); ?>">BOOK NOW</a>
+            <a class="btn btn--outline btn--block" href="https://shop.peddlers30a.com/store/20-kids-cruiser-coral/" target="_blank" rel="noopener">BOOK NOW</a>
           </article>
 
           <article class="bike-card">
             <figure class="bike-card__media">
-              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/s05-3.jpg" alt="Bike and Burley Combo" />
+              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/products/bike-and-burley-combo.jpg" alt="Bike and Burley Combo" />
             </figure>
             <h3 class="bike-card__name">Bike and Burley Combo</h3>
             <p class="bike-card__price">From: $70.00</p>
-            <a class="btn btn--outline btn--block" href="<?php echo esc_url( peddlers30a_nav_url( 'product-detail' ) ); ?>">BOOK NOW</a>
+            <a class="btn btn--outline btn--block" href="https://shop.peddlers30a.com/store/bike-and-burley-combo/" target="_blank" rel="noopener">BOOK NOW</a>
           </article>
 
           <article class="bike-card">
             <figure class="bike-card__media">
-              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/s05-2.jpg" alt="Bike Basket" />
+              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/products/bike-basket.jpg" alt="Bike Basket" />
             </figure>
             <h3 class="bike-card__name">Bike Basket</h3>
             <p class="bike-card__price">From: $5.00</p>
-            <a class="btn btn--outline btn--block" href="<?php echo esc_url( peddlers30a_nav_url( 'product-detail' ) ); ?>">BOOK NOW</a>
+            <a class="btn btn--outline btn--block" href="https://shop.peddlers30a.com/store/bike-basket/" target="_blank" rel="noopener">BOOK NOW</a>
           </article>
         </div>
       </div>
@@ -484,7 +484,7 @@ if ( empty( $loc ) ) {
           <div class="contact__block">
             <p class="contact__label">CONNECT</p>
             <p class="contact__value">
-              <a href="tel:+18502130040">(850) 213-0040</a> <span class="contact__bullet">&bull;</span> <a href="mailto:hello@peddlers30a.com">hello@peddlers30a.com</a>
+              <a href="tel:+18502130040">(850) 213-0040</a> <span class="contact__bullet">&bull;</span> <a href="mailto:reservations@peddlers30a.com">reservations@peddlers30a.com</a>
             </p>
           </div>
 
