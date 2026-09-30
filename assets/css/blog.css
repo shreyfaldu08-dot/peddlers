@@ -111,6 +111,23 @@
   padding-bottom: var(--sp-11);
 }
 
+/* Title sits on the plain page background, above the full uncropped
+   photo -- no overlay needed since the image is no longer a text
+   backdrop. */
+.article-header {
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+}
+
+.article__title-page {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(2rem, 1.4rem + 2.2vw, 3.375rem);
+  line-height: 1.15;
+  color: var(--ink);
+  margin-top: 0.5rem;
+}
+
 .article__meta {
   display: flex;
   flex-wrap: wrap;
@@ -121,11 +138,24 @@
   letter-spacing: 0.03rem;
   color: var(--white);
   background: var(--p1);
-  padding: 1rem 1.5rem;
-  margin-bottom: 2rem;
+  padding: 1rem var(--gutter);
+  margin: 0 0 2rem;
   position: sticky;
   top: var(--nav-h);
   z-index: 45;
+}
+
+/* The photo renders at its own natural aspect ratio, full width, with
+   nothing cropped off -- this is the point of the section, so no
+   object-fit/cover and no fixed height. */
+.article__featured-image {
+  margin: 0 0 1.5rem;
+}
+
+.article__featured-image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .article__meta a {
