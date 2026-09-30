@@ -122,6 +122,9 @@
   background: var(--p1);
   padding: 1rem 1.5rem;
   margin-bottom: 2rem;
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 45;
 }
 
 .article__meta a {
@@ -143,7 +146,7 @@
 .article-toc,
 .article-sidebar {
   position: sticky;
-  top: 6.5rem;
+  top: calc(var(--nav-h) + 3.75rem);
 }
 
 .article-toc__title {
