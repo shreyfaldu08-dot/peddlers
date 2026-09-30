@@ -111,17 +111,12 @@
   padding-bottom: var(--sp-11);
 }
 
-/* The featured image now sits above the title (its own section gives the
-   nav clearance), so the header only needs a small gap under the image's
-   own bottom margin -- not the full nav-clearance padding. */
+/* Title sits on the plain page background, above the full uncropped
+   photo -- no overlay needed since the image is no longer a text
+   backdrop. */
 .article-header {
-  padding-top: 1.5rem;
+  padding-top: 3rem;
   padding-bottom: 1.5rem;
-}
-
-.article-featured-image {
-  padding-top: 1.5rem;
-  padding-bottom: 0;
 }
 
 .article__title-page {
@@ -150,22 +145,17 @@
   z-index: 45;
 }
 
-/* The photo renders at its own natural aspect ratio, full width, with
-   nothing cropped off -- this is the point of the section, so no
+/* The photo renders at its own natural aspect ratio, full column width,
+   with nothing cropped off -- this is the point of the section, so no
    object-fit/cover and no fixed height. */
 .article__featured-image {
   margin: 0 0 1.5rem;
-  text-align: center;
 }
 
-/* Full image, never cropped -- capped so it and the title both land in
-   view together instead of the photo alone filling the first screen. */
 .article__featured-image img {
-  display: inline-block;
-  width: auto;
+  display: block;
+  width: 100%;
   height: auto;
-  max-width: 100%;
-  max-height: 20rem;
 }
 
 .article__meta a {
