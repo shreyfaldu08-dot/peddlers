@@ -24,7 +24,7 @@ function peddlers30a_assets() {
 	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '214' );
 
 	if ( $is_blog ) {
-		wp_enqueue_style( 'peddlers30a-blog', $dir . '/assets/css/blog.css', array( 'peddlers30a-sections' ), '18' );
+		wp_enqueue_style( 'peddlers30a-blog', $dir . '/assets/css/blog.css', array( 'peddlers30a-sections' ), '19' );
 	}
 
 	if ( $is_services ) {
@@ -654,18 +654,18 @@ function peddlers30a_seed_blog_posts() {
 				wp_set_post_categories( $post_id, array( $term_id ) );
 			}
 
-			$image_path = get_template_directory() . '/assets/img/Cycling-in-Seaside.png';
+			$image_path = get_template_directory() . '/assets/img/hero-aerial.jpg';
 			if ( file_exists( $image_path ) ) {
 				require_once ABSPATH . 'wp-admin/includes/image.php';
 				require_once ABSPATH . 'wp-admin/includes/file.php';
 				require_once ABSPATH . 'wp-admin/includes/media.php';
 
-				$upload = wp_upload_bits( 'cycling-in-seaside.png', null, file_get_contents( $image_path ) );
+				$upload = wp_upload_bits( 'hero-aerial.jpg', null, file_get_contents( $image_path ) );
 				if ( empty( $upload['error'] ) ) {
 					$attach_id = wp_insert_attachment(
 						array(
-							'post_mime_type' => 'image/png',
-							'post_title'     => 'Cyclists on the Timpoochee Trail, Scenic Highway 30A',
+							'post_mime_type' => 'image/jpeg',
+							'post_title'     => 'Aerial view of Scenic Highway 30A',
 							'post_status'    => 'inherit',
 						),
 						$upload['file'],

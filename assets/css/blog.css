@@ -111,12 +111,17 @@
   padding-bottom: var(--sp-11);
 }
 
-/* Title sits on the plain page background, above the full uncropped
-   photo -- no overlay needed since the image is no longer a text
-   backdrop. */
+/* The featured image now sits above the title (its own section gives the
+   nav clearance), so the header only needs a small gap under the image's
+   own bottom margin -- not the full nav-clearance padding. */
 .article-header {
-  padding-top: 3rem;
+  padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.article-featured-image {
+  padding-top: 3rem;
+  padding-bottom: 0;
 }
 
 .article__title-page {
