@@ -35,18 +35,7 @@ while ( have_posts() ) :
 	?>
 
     <!-- ==================================================================
-           02 — Featured image (uncropped)
-           ================================================================== -->
-    <section class="section article-featured-image">
-      <div class="container">
-        <figure class="article__featured-image">
-          <img src="<?php echo esc_url( $peddlers30a_hero_img ); ?>" alt="<?php the_title_attribute(); ?>" />
-        </figure>
-      </div>
-    </section>
-
-    <!-- ==================================================================
-           03 — Title
+           02 — Title
            ================================================================== -->
     <section class="section article-header">
       <div class="container">
@@ -67,7 +56,7 @@ while ( have_posts() ) :
     </p>
 
     <!-- ==================================================================
-           04 — Article
+           03 — Article
            ================================================================== -->
     <section class="section article">
       <div class="container">
@@ -84,6 +73,11 @@ while ( have_posts() ) :
           <?php endif; ?>
 
           <div class="article-main">
+            <!-- Featured image (full, uncropped) -->
+            <figure class="article__featured-image">
+              <img src="<?php echo esc_url( $peddlers30a_hero_img ); ?>" alt="<?php the_title_attribute(); ?>" />
+            </figure>
+
             <?php echo $peddlers30a_content; ?>
           </div>
 
