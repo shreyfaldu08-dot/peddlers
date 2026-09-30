@@ -37,7 +37,7 @@ while ( have_posts() ) :
     <!-- ==================================================================
            02 — Hero
            ================================================================== -->
-    <section class="hero hero--rentals" style="background-image: url('<?php echo esc_url( $peddlers30a_hero_img ); ?>'); height: 24rem;">
+    <section class="hero hero--rentals" style="background-image: url('<?php echo esc_url( $peddlers30a_hero_img ); ?>');">
       <div class="container hero__inner">
         <?php
         $peddlers30a_cats = get_the_category();
