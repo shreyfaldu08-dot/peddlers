@@ -56,14 +56,7 @@ while ( have_posts() ) :
     </p>
 
     <!-- ==================================================================
-           03 — Featured image (full, uncropped)
-           ================================================================== -->
-    <figure class="article__featured-image">
-      <img src="<?php echo esc_url( $peddlers30a_hero_img ); ?>" alt="<?php the_title_attribute(); ?>" />
-    </figure>
-
-    <!-- ==================================================================
-           04 — Article
+           03 — Article
            ================================================================== -->
     <section class="section article">
       <div class="container">
@@ -80,6 +73,11 @@ while ( have_posts() ) :
           <?php endif; ?>
 
           <div class="article-main">
+            <!-- Featured image (full, uncropped) -->
+            <figure class="article__featured-image">
+              <img src="<?php echo esc_url( $peddlers30a_hero_img ); ?>" alt="<?php the_title_attribute(); ?>" />
+            </figure>
+
             <?php echo $peddlers30a_content; ?>
           </div>
 
