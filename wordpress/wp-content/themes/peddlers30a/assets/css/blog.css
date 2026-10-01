@@ -459,6 +459,81 @@
   border-bottom: none;
 }
 
+/* Author bio card at the end of the article -- no staff headshot exists
+   yet, so a lettermark avatar stands in for a photo. */
+.author-box {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding: 1.75rem;
+  background: var(--cream);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.author-box__avatar {
+  flex-shrink: 0;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--p1);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02rem;
+}
+
+.author-box__name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--ink);
+  margin-bottom: 0.125rem;
+}
+
+.author-box__role {
+  font-size: 0.875rem;
+  color: var(--p2);
+  margin-bottom: 0.75rem;
+}
+
+.author-box__bio {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.author-box__social {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.author-box__social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--p1);
+  color: var(--white);
+}
+
+.author-box__social svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (max-width: 480px) {
+  .author-box {
+    flex-direction: column;
+  }
+}
+
 /* Below 1280px the TOC column is the first to go -- there isn't room for
    three columns and the reader can still get a sense of the piece's shape
    from the section headings alone. */
