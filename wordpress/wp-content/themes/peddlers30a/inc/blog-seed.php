@@ -5,8 +5,23 @@
  * this is plain post_content, fully editable from wp-admin > Posts once
  * created.
  */
+
+/**
+ * Collapses source-line wrapping inside paragraph-level elements. wpautop turns
+ * every remaining newline into a <br>, which would break sentences mid-line.
+ */
+function peddlers30a_unwrap_lines( $html ) {
+	return preg_replace_callback(
+		'#<(p|li|td|th|span)\b[^>]*>.*?</\1>#s',
+		function ( $m ) {
+			return preg_replace( '/\s*\n\s*/', ' ', $m[0] );
+		},
+		$html
+	);
+}
+
 function peddlers30a_what_is_30a_content() {
-	return <<<'HTML'
+	$html = <<<'HTML'
 <div class="article__callout">
   <p class="article__callout-label">Direct Answer</p>
   <p>
@@ -398,4 +413,5 @@ function peddlers30a_what_is_30a_content() {
   </p>
 </div>
 HTML;
+	return peddlers30a_unwrap_lines( $html );
 }
