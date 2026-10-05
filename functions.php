@@ -7,6 +7,7 @@
 
 require_once get_template_directory() . '/inc/location-cpt.php';
 require_once get_template_directory() . '/inc/blog-seed.php';
+require_once get_template_directory() . '/inc/blog-seed-guides.php';
 
 function peddlers30a_assets() {
 	global $post;
@@ -716,6 +717,112 @@ function peddlers30a_fix_blog_faq_markup() {
 	update_option( 'peddlers30a_blog_faq_markup_fixed', 1 );
 }
 add_action( 'init', 'peddlers30a_fix_blog_faq_markup', 24 );
+
+/**
+ * Seeds the four guide articles that follow /what-is-30a/ as real Posts in
+ * the 30A Guide category, each with its own featured image. Skips any slug
+ * that already exists, so it is safe on a site where an editor has already
+ * created one by hand.
+ */
+function peddlers30a_seed_guide_posts() {
+	if ( get_option( 'peddlers30a_guide_posts_seeded' ) ) {
+		return;
+	}
+
+	$term = term_exists( '30a-guide', 'category' );
+	if ( ! $term ) {
+		$term = wp_insert_term( '30A Guide', 'category', array( 'slug' => '30a-guide' ) );
+	}
+	$term_id = is_wp_error( $term ) ? 0 : ( is_array( $term ) ? $term['term_id'] : $term );
+
+	require_once ABSPATH . 'wp-admin/includes/image.php';
+	require_once ABSPATH . 'wp-admin/includes/file.php';
+	require_once ABSPATH . 'wp-admin/includes/media.php';
+
+	// This runs on an anonymous front-end request, where WordPress's post
+	// filter would strip the accordion <svg> chevrons and inline styles from
+	// the (trusted, theme-authored) content on save.
+	kses_remove_filters();
+
+	foreach ( peddlers30a_guide_posts() as $guide ) {
+		if ( get_page_by_path( $guide['slug'], OBJECT, 'post' ) ) {
+			continue;
+		}
+
+		$post_id = wp_insert_post(
+			array(
+				'post_type'    => 'post',
+				'post_status'  => 'publish',
+				'post_title'   => $guide['title'],
+				'post_name'    => $guide['slug'],
+				'post_content' => call_user_func( $guide['content'] ),
+				'post_excerpt' => $guide['excerpt'],
+				'post_date'    => $guide['date'],
+			)
+		);
+		if ( is_wp_error( $post_id ) || ! $post_id ) {
+			continue;
+		}
+
+		if ( $term_id ) {
+			wp_set_post_categories( $post_id, array( (int) $term_id ) );
+		}
+
+		$image_path = get_template_directory() . '/assets/img/' . $guide['image'];
+		if ( ! file_exists( $image_path ) ) {
+			continue;
+		}
+		$upload = wp_upload_bits( $guide['image'], null, file_get_contents( $image_path ) );
+		if ( ! empty( $upload['error'] ) ) {
+			continue;
+		}
+		$attach_id = wp_insert_attachment(
+			array(
+				'post_mime_type' => 'image/jpeg',
+				'post_title'     => $guide['alt'],
+				'post_status'    => 'inherit',
+			),
+			$upload['file'],
+			$post_id
+		);
+		if ( ! is_wp_error( $attach_id ) ) {
+			wp_update_attachment_metadata( $attach_id, wp_generate_attachment_metadata( $attach_id, $upload['file'] ) );
+			set_post_thumbnail( $post_id, $attach_id );
+		}
+	}
+
+	kses_init();
+
+	update_option( 'peddlers30a_guide_posts_seeded', 1 );
+}
+add_action( 'init', 'peddlers30a_seed_guide_posts', 23 );
+
+/**
+ * One-time re-save of the "What Is 30A" post for sites that seeded it with
+ * paragraphs wrapped across several source lines -- wpautop turned each of
+ * those newlines into a <br>, so the Direct Answer box (and other copy)
+ * broke mid-sentence. The seed now collapses that whitespace itself.
+ */
+function peddlers30a_unwrap_blog_lines() {
+	if ( get_option( 'peddlers30a_blog_lines_unwrapped' ) ) {
+		return;
+	}
+
+	$post = get_page_by_path( 'what-is-30a', OBJECT, 'post' );
+	if ( $post ) {
+		kses_remove_filters();
+		wp_update_post(
+			array(
+				'ID'           => $post->ID,
+				'post_content' => peddlers30a_what_is_30a_content(),
+			)
+		);
+		kses_init();
+	}
+
+	update_option( 'peddlers30a_blog_lines_unwrapped', 1 );
+}
+add_action( 'init', 'peddlers30a_unwrap_blog_lines', 25 );
 
 /**
  * The client's contact email changed from hello@ to reservations@
