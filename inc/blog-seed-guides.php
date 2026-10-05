@@ -218,6 +218,8 @@ function peddlers30a_guide_how_to_get_to_30a_content() {
     <button class="accordion__trigger" type="button" aria-expanded="false"> <span>Is there a shuttle or public transport from the airport to 30A?</span> <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </button>
     <div class="accordion__panel">
       <p>No scheduled public transit connects ECP or VPS directly to 30A. Private shuttles exist but require advance booking and availability varies by season. Most visitors rent a car at the airport for the arrival drive, then switch to bikes for all travel within the 30A corridor.</p>
+    </div>
+  </div>
 </div>
 </div>
 
@@ -383,6 +385,8 @@ function peddlers30a_guide_rosemary_beach_content() {
     <button class="accordion__trigger" type="button" aria-expanded="false"> <span>When is the best time to visit Rosemary Beach?</span> <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </button>
     <div class="accordion__panel">
       <p>Mornings before 9am are the quietest for riding, even in July. Spring and fall bring milder temperatures and thinner crowds, while summer brings the busiest beaches and fullest tables. Sunday visits also line up with the farmers market at North Barrett Square.</p>
+    </div>
+  </div>
 </div>
 </div>
 
@@ -566,6 +570,8 @@ function peddlers30a_guide_things_to_do_30a_content() {
     <button class="accordion__trigger" type="button" aria-expanded="false"> <span>What are the best towns on 30A?</span> <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </button>
     <div class="accordion__panel">
       <p>Rosemary Beach and Seaside are the best towns on 30A for first-time visitors: Rosemary Beach for its walkable town square and architecture, Seaside for the amphitheater and Saturday farmers market. Both sit within 45 minutes of the Seacrest Beach trailhead by bike.</p>
+    </div>
+  </div>
 </div>
 </div>
 
@@ -701,6 +707,8 @@ function peddlers30a_guide_visiting_30a_content() {
     <button class="accordion__trigger" type="button" aria-expanded="false"> <span>How to get to 30A Florida from the airport?</span> <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <polyline points="6 9 12 15 18 9"></polyline> </svg> </button>
     <div class="accordion__panel">
       <p>Fly into Northwest Florida Beaches International (ECP) for the eastern end or Destin-Fort Walton Beach (VPS) for the western end, then drive 30 to 40 minutes in a rental car. Driving in from I-10, take Exit 85 south on County Road 331. Park once and ride bikes after.</p>
+    </div>
+  </div>
 </div>
 </div>
 
