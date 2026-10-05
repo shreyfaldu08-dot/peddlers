@@ -825,6 +825,35 @@ function peddlers30a_unwrap_blog_lines() {
 add_action( 'init', 'peddlers30a_unwrap_blog_lines', 25 );
 
 /**
+ * One-time re-save of the four guide posts for sites that seeded them from
+ * the first version of the content, where the FAQ's last accordion item was
+ * left unclosed -- that swallowed the author box and the whole right sidebar
+ * into the FAQ list.
+ */
+function peddlers30a_fix_guide_posts_markup() {
+	if ( get_option( 'peddlers30a_guide_markup_fixed' ) || ! get_option( 'peddlers30a_guide_posts_seeded' ) ) {
+		return;
+	}
+
+	kses_remove_filters();
+	foreach ( peddlers30a_guide_posts() as $guide ) {
+		$post = get_page_by_path( $guide['slug'], OBJECT, 'post' );
+		if ( $post ) {
+			wp_update_post(
+				array(
+					'ID'           => $post->ID,
+					'post_content' => call_user_func( $guide['content'] ),
+				)
+			);
+		}
+	}
+	kses_init();
+
+	update_option( 'peddlers30a_guide_markup_fixed', 1 );
+}
+add_action( 'init', 'peddlers30a_fix_guide_posts_markup', 26 );
+
+/**
  * The client's contact email changed from hello@ to reservations@
  * peddlers30a.com. Sites that already saved the old address via
  * Appearance > Customize won't pick up the new code default on their
