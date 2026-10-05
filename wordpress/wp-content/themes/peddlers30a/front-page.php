@@ -480,10 +480,10 @@
           Take Peddlers Home With You
         </h2>
 
-        <ul class="merch__grid">
+        <ul class="merch__grid merch__grid--two">
           <li>
             <a class="merch-card" href="<?php echo esc_url( peddlers30a_nav_url( 'category' ) ); ?>">
-              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/merch-tshirts.jpg" alt="T-shirts" />
+              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/merch-tshirts-v2.png" alt="T-shirts" />
               <div class="merch-card__overlay">
                 <span class="merch-card__label">T-SHIRTS</span>
                 <span class="merch-card__plus">+</span>
@@ -492,18 +492,9 @@
           </li>
           <li>
             <a class="merch-card" href="<?php echo esc_url( peddlers30a_nav_url( 'category' ) ); ?>">
-              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/merch-hats.jpg" alt="Hats" />
+              <img class="media-cover merch-card__img--top" src="<?php echo get_template_directory_uri(); ?>/assets/img/merch-hats-v2.jpg" alt="Hats" />
               <div class="merch-card__overlay">
                 <span class="merch-card__label">HATS</span>
-                <span class="merch-card__plus">+</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a class="merch-card" href="<?php echo esc_url( peddlers30a_nav_url( 'category' ) ); ?>">
-              <img class="media-cover" src="<?php echo get_template_directory_uri(); ?>/assets/img/merch-accessories.jpg" alt="Accessories" />
-              <div class="merch-card__overlay">
-                <span class="merch-card__label">ACCESSORIES</span>
                 <span class="merch-card__plus">+</span>
               </div>
             </a>

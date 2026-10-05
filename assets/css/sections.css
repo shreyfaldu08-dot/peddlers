@@ -3094,11 +3094,26 @@ main>section+section {
   padding: 0;
 }
 
+/* Two-up layout while Accessories is removed (Hoodies to follow) -- wider
+   cards, so a landscape crop keeps the photos from towering. Drop the
+   modifier when a third card comes back. */
+.merch__grid--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.merch__grid--two .merch-card {
+  aspect-ratio: 4 / 3;
+}
+
 .merch-card {
   position: relative;
   display: block;
   aspect-ratio: 584 / 620;
   overflow: hidden;
+}
+
+.merch-card .merch-card__img--top {
+  object-position: center 20%;
 }
 
 .merch-card img {
