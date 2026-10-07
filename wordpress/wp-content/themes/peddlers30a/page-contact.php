@@ -34,30 +34,9 @@
             Fill out the form below and we will get back to you within 2 hours during business hours. For faster help, call us directly at 850-213-0040.
           </p>
 
-          <form class="inquiry-form" onsubmit="event.preventDefault(); alert('Thank you! Your inquiry has been sent.');">
-            <div class="inquiry-form__field">
-              <input type="text" placeholder="FULL NAME" required />
-            </div>
-
-            <div class="inquiry-form__row">
-              <div class="inquiry-form__field">
-                <input type="email" placeholder="EMAIL ADDRESS" required />
-              </div>
-              <div class="inquiry-form__field">
-                <input type="tel" placeholder="PHONE NUMBER" />
-              </div>
-            </div>
-
-            <div class="inquiry-form__field">
-              <input type="text" placeholder="RENTAL DATES" />
-            </div>
-
-            <div class="inquiry-form__field">
-              <textarea placeholder="YOUR MESSAGE"></textarea>
-            </div>
-
-            <button class="inquiry-form__submit" type="submit">SEND MESSAGE</button>
-          </form>
+          <div class="inquiry-forminator">
+            <?php echo do_shortcode( '[forminator_form id="80"]' ); ?>
+          </div>
         </div>
       </div>
     </section>
