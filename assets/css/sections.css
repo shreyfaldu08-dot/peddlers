@@ -499,10 +499,12 @@ main>section+section {
    original .inquiry-form look: placeholder-only uppercase fields, hairline
    borders, outlined full-width submit. Selectors are scoped under the panel
    and kept more specific than Forminator's own design stylesheet. */
+/* Block (not flex) on the form: Forminator leaves several empty hidden
+   elements after the last row, and each would add its own flex gap. Spacing
+   comes from the row margins instead, and Forminator's own -15px row margins
+   / 15px column gutters / 30px row spacing are overridden. */
 .inquiry-forminator .forminator-ui.forminator-custom-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: block;
   margin: 0;
   padding: 0;
 }
@@ -511,14 +513,24 @@ main>section+section {
   display: flex;
   flex-wrap: nowrap;
   gap: 2rem;
-  margin: 0;
+  margin: 0 0 2rem !important;
+}
+
+.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-row.forminator-row-last {
+  margin-bottom: 0 !important;
 }
 
 .inquiry-forminator .forminator-ui.forminator-custom-form .forminator-col {
   flex: 1 1 0;
   min-width: 0;
-  margin: 0;
-  padding: 0;
+  max-width: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Date field: leave room for Forminator's calendar icon. */
+.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-input-with-icon .forminator-input {
+  padding-left: 3rem !important;
 }
 
 .inquiry-forminator .forminator-ui.forminator-custom-form .forminator-field {
@@ -591,11 +603,15 @@ main>section+section {
 }
 
 .inquiry-forminator .forminator-ui.forminator-custom-form .forminator-response-message {
-  margin: 0;
+  margin: 0 !important;
   padding: 1rem;
   border-radius: 0;
   font-size: 1rem;
   color: var(--p1);
+}
+
+.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-response-message[aria-hidden="false"] {
+  margin-bottom: 2rem !important;
 }
 
 @media (max-width: 768px) {
