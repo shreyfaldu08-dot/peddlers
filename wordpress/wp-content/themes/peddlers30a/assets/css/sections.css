@@ -602,16 +602,50 @@ main>section+section {
   color: #b3261e;
 }
 
+/* Success / error message above the form. Forminator's own padding, colours
+   and borders are overridden so it reads as a clean outlined box. */
 .inquiry-forminator .forminator-ui.forminator-custom-form .forminator-response-message {
   margin: 0 !important;
-  padding: 1rem;
-  border-radius: 0;
-  font-size: 1rem;
-  color: var(--p1);
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
 }
 
 .inquiry-forminator .forminator-ui.forminator-custom-form .forminator-response-message.forminator-show {
-  margin-bottom: 2rem !important;
+  margin: 0 0 2rem !important;
+  padding: 1rem 1.25rem !important;
+  border: 1px solid var(--s2) !important;
+  border-radius: 0 !important;
+  background: var(--white) !important;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--p1) !important;
+}
+
+.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-response-message.forminator-show.forminator-error {
+  border-color: #b3261e !important;
+  color: #b3261e !important;
+}
+
+/* jQuery UI date picker (Forminator appends it to <body>, outside the form).
+   Forminator's stylesheet makes its background transparent and leaves it at
+   z-index 1, so the form showed through it and the popup sat under the
+   Inquiry Now modal. */
+body .ui-datepicker.forminator-calendar--default {
+  z-index: 1100 !important;
+  width: auto !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.18) !important;
+}
+
+body .ui-datepicker.forminator-calendar--default .ui-datepicker-calendar td a.ui-state-active,
+body .ui-datepicker.forminator-calendar--default .ui-datepicker-calendar td a:hover {
+  background: var(--p1) !important;
+  border-color: var(--p1) !important;
+  color: var(--white) !important;
 }
 
 @media (max-width: 768px) {
