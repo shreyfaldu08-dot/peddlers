@@ -743,6 +743,13 @@ html.is-modal-open {
   padding: 3rem;
   background: var(--s1);
   outline: none;
+  /* Still scrolls with wheel/touch/keys; only the scrollbar is hidden. */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.inquiry-modal__dialog::-webkit-scrollbar {
+  display: none;
 }
 
 .inquiry-modal__close {
