@@ -641,6 +641,19 @@ body .ui-datepicker.forminator-calendar--default {
   box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.18) !important;
 }
 
+/* Inside the Inquiry Now popup the calendar opens within the form, so the
+   form's own select styling (large padding, uppercase) would clip the
+   calendar's month/year dropdowns to blank boxes. */
+.inquiry-forminator .forminator-ui.forminator-custom-form .ui-datepicker select {
+  height: 2rem !important;
+  min-height: 0 !important;
+  padding: 0 0.5rem !important;
+  background: #ffffff !important;
+  font-size: 0.875rem !important;
+  line-height: 2rem !important;
+  text-transform: none !important;
+}
+
 body .ui-datepicker.forminator-calendar--default .ui-datepicker-calendar td a.ui-state-active,
 body .ui-datepicker.forminator-calendar--default .ui-datepicker-calendar td a:hover {
   background: var(--p1) !important;
