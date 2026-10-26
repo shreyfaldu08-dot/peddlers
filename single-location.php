@@ -60,59 +60,17 @@ if ( empty( $loc ) ) {
     <!-- ==================================================================
            04 — Largest Bike Rental (4 Cards)
            ================================================================== -->
-    <section class="section rental rental--location" id="rent">
-      <div class="container text-center">
-        <p class="eyebrow"><?php echo esc_html( $loc['rent_eyebrow'] ); ?></p>
-        <h2 class="rental__title"><?php echo esc_html( $loc['rent_title'] ); ?></h2>
-        <p class="body-copy rental__subtitle">
-          <?php echo esc_html( $loc['hero_lead'] ); ?>
-        </p>
-
-        <div class="rental-filters">
-          <button class="rental-filters__btn">BIKE RENTALS</button>
-          <button class="rental-filters__btn">KIDS BIKES</button>
-          <button class="rental-filters__btn is-active">PEDDLER'S PRODUCTS</button>
-          <button class="rental-filters__btn">TAKE YOUR KIDS ALONG</button>
-          <button class="rental-filters__btn">ADULT BIKES</button>
+    <section class="section rental rental--catalog rental--location" id="rent">
+      <div class="container">
+        <div class="rental__head">
+          <p class="eyebrow"><?php echo esc_html( $loc['rent_eyebrow'] ); ?></p>
+          <h2 class="rental__title"><?php echo esc_html( $loc['rent_title'] ); ?></h2>
+          <p class="body-copy rental__subtitle">
+            <?php echo esc_html( $loc['hero_lead'] ); ?>
+          </p>
         </div>
 
-        <div class="rental__grid">
-          <article class="bike-card">
-            <figure class="bike-card__media">
-              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/products/adult-female-cruiser.jpg" alt="Adult Female Cruiser" />
-            </figure>
-            <h3 class="bike-card__name">Adult Female Cruiser</h3>
-            <p class="bike-card__price">From: $40.00</p>
-            <a class="btn btn--outline btn--block" href="https://shop.peddlers30a.com/store/adult-female-cruiser/" target="_blank" rel="noopener">BOOK NOW</a>
-          </article>
-
-          <article class="bike-card">
-            <figure class="bike-card__media">
-              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/products/20-kids-cruiser-coral.jpg" alt="20&quot; Kids Cruiser-Coral" />
-            </figure>
-            <h3 class="bike-card__name">20&Prime; Kids Cruiser-Coral</h3>
-            <p class="bike-card__price">From: $40.00</p>
-            <a class="btn btn--outline btn--block" href="https://shop.peddlers30a.com/store/20-kids-cruiser-coral/" target="_blank" rel="noopener">BOOK NOW</a>
-          </article>
-
-          <article class="bike-card">
-            <figure class="bike-card__media">
-              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/products/bike-and-burley-combo.jpg" alt="Bike and Burley Combo" />
-            </figure>
-            <h3 class="bike-card__name">Bike and Burley Combo</h3>
-            <p class="bike-card__price">From: $70.00</p>
-            <a class="btn btn--outline btn--block" href="https://shop.peddlers30a.com/store/bike-and-burley-combo/" target="_blank" rel="noopener">BOOK NOW</a>
-          </article>
-
-          <article class="bike-card">
-            <figure class="bike-card__media">
-              <img class="media-cover" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/products/bike-basket.jpg" alt="Bike Basket" />
-            </figure>
-            <h3 class="bike-card__name">Bike Basket</h3>
-            <p class="bike-card__price">From: $5.00</p>
-            <a class="btn btn--outline btn--block" href="https://shop.peddlers30a.com/store/bike-basket/" target="_blank" rel="noopener">BOOK NOW</a>
-          </article>
-        </div>
+        <?php peddlers30a_render_rental_catalog(); ?>
       </div>
     </section>
 
