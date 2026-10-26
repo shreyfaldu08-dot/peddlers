@@ -34,7 +34,7 @@ function peddlers30a_rental_products() {
 
 /**
  * Outputs the filter buttons and the product grid. Product links point at
- * the shop on the main domain (/store/<product>/), not a shop subdomain.
+ * the shop on the main domain (/shop/<product>/), not a shop subdomain.
  */
 function peddlers30a_render_rental_catalog() {
 	?>
@@ -55,7 +55,7 @@ function peddlers30a_render_rental_catalog() {
             <div class="bike-card__body">
               <h3 class="bike-card__title"><?php echo wp_kses_post( $product['title'] ); ?><?php if ( ! empty( $product['note'] ) ) : ?> <span class="bike-card__note"><?php echo esc_html( $product['note'] ); ?></span><?php endif; ?></h3>
               <p class="bike-card__price">From: <span>$<?php echo esc_html( $product['price'] ); ?></span></p>
-              <a class="btn btn--outline bike-card__cta" href="<?php echo esc_url( home_url( '/store/' . $product['slug'] . '/' ) ); ?>" target="_blank" rel="noopener">BOOK NOW</a>
+              <a class="btn btn--outline bike-card__cta" href="<?php echo esc_url( home_url( '/shop/' . $product['slug'] . '/' ) ); ?>" target="_blank" rel="noopener">BOOK NOW</a>
             </div>
           </article>
           <?php endforeach; ?>
