@@ -1623,6 +1623,17 @@ main>section+section {
   font-size: var(--fs-label-md);
 }
 
+/* Qualifier under the trail-a-bike/trailer titles that only work with a
+   customer's own bike. */
+.bike-card__note {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
 /* Push button to bottom of card regardless of title length */
 .bike-card .btn,
 .bike-card__cta {

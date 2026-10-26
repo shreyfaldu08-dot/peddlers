@@ -8,6 +8,7 @@
 require_once get_template_directory() . '/inc/location-cpt.php';
 require_once get_template_directory() . '/inc/blog-seed.php';
 require_once get_template_directory() . '/inc/blog-seed-guides.php';
+require_once get_template_directory() . '/inc/rental-catalog.php';
 
 function peddlers30a_assets() {
 	global $post;
@@ -22,7 +23,7 @@ function peddlers30a_assets() {
 	wp_enqueue_style( 'peddlers30a-fonts', $dir . '/assets/css/fonts.css', array(), $is_services ? '62' : '70' );
 	wp_enqueue_style( 'peddlers30a-base', $dir . '/assets/css/base.css', array( 'peddlers30a-tokens' ), $is_services ? '62' : '71' );
 	wp_enqueue_style( 'peddlers30a-components', $dir . '/assets/css/components.css', array( 'peddlers30a-base' ), $is_services ? '62' : '71' );
-	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '217' );
+	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '218' );
 
 	if ( $is_blog ) {
 		wp_enqueue_style( 'peddlers30a-blog', $dir . '/assets/css/blog.css', array( 'peddlers30a-sections' ), '23' );
