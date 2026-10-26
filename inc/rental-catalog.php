@@ -33,10 +33,11 @@ function peddlers30a_rental_products() {
 }
 
 /**
- * Outputs the filter buttons and the product grid. Product links point at
- * the shop on the main domain (/shop/<product>/), not a shop subdomain.
+ * Outputs the filter buttons and the product grid. In 'shop' mode each card
+ * links to the shop on the main domain (/shop/<product>/); in 'inquiry' mode
+ * (location pages) it is an "Inquiry Now" button that opens the inquiry popup.
  */
-function peddlers30a_render_rental_catalog() {
+function peddlers30a_render_rental_catalog( $mode = 'shop' ) {
 	?>
         <div class="rental-filters">
           <button class="rental-filters__btn is-active" type="button" data-filter="all">BIKE RENTALS</button>
@@ -55,7 +56,11 @@ function peddlers30a_render_rental_catalog() {
             <div class="bike-card__body">
               <h3 class="bike-card__title"><?php echo wp_kses_post( $product['title'] ); ?><?php if ( ! empty( $product['note'] ) ) : ?> <span class="bike-card__note"><?php echo esc_html( $product['note'] ); ?></span><?php endif; ?></h3>
               <p class="bike-card__price">From: <span>$<?php echo esc_html( $product['price'] ); ?></span></p>
+              <?php if ( 'inquiry' === $mode ) : ?>
+              <button class="btn btn--outline bike-card__cta" type="button" data-inquiry-open>INQUIRY NOW</button>
+              <?php else : ?>
               <a class="btn btn--outline bike-card__cta" href="<?php echo esc_url( home_url( '/shop/' . $product['slug'] . '/' ) ); ?>" target="_blank" rel="noopener">BOOK NOW</a>
+              <?php endif; ?>
             </div>
           </article>
           <?php endforeach; ?>

@@ -511,7 +511,7 @@ main>section+section {
 
 .inquiry-forminator .forminator-ui.forminator-custom-form .forminator-row {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap !important;
   gap: 2rem;
   margin: 0 0 2rem !important;
 }
@@ -521,9 +521,9 @@ main>section+section {
 }
 
 .inquiry-forminator .forminator-ui.forminator-custom-form .forminator-col {
-  flex: 1 1 0;
+  flex: 1 1 0 !important;
   min-width: 0;
-  max-width: none;
+  max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -577,7 +577,7 @@ main>section+section {
 }
 
 .inquiry-forminator .forminator-ui.forminator-custom-form .forminator-button-submit {
-  width: 100%;
+  width: 100% !important;
   padding: 1.25rem 2rem !important;
   border: 1px solid var(--s2) !important;
   border-radius: 0 !important;
@@ -610,7 +610,7 @@ main>section+section {
   color: var(--p1);
 }
 
-.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-response-message[aria-hidden="false"] {
+.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-response-message.forminator-show {
   margin-bottom: 2rem !important;
 }
 
@@ -618,6 +618,121 @@ main>section+section {
   .inquiry-forminator .forminator-ui.forminator-custom-form .forminator-row {
     flex-direction: column;
     gap: 2rem;
+  }
+}
+
+/* Rental inquiry form extras: section headings, nested name row, selects. */
+.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-row .forminator-row.forminator-no-margin {
+  margin-bottom: 0 !important;
+}
+
+.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-title {
+  margin: 0 !important;
+  font-family: var(--font-body) !important;
+  font-weight: 500 !important;
+  font-size: 1.25rem !important;
+  line-height: normal !important;
+  color: var(--p3) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+}
+
+.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-row:has(.forminator-field-section) {
+  margin-bottom: 1rem !important;
+}
+
+.inquiry-forminator .forminator-ui.forminator-custom-form .select2-container .select2-selection--single,
+.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-select2 + .select2 .select2-selection {
+  height: auto !important;
+  padding: 1.125rem 1rem !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--p1) !important;
+  text-transform: uppercase;
+}
+
+.inquiry-forminator .forminator-ui.forminator-custom-form .select2-selection__rendered,
+.inquiry-forminator .forminator-ui.forminator-custom-form .select2-selection__placeholder {
+  padding: 0 !important;
+  color: var(--p1) !important;
+  line-height: normal !important;
+}
+
+/* Inquiry Now popup (location pages). */
+html.is-modal-open {
+  overflow: hidden;
+}
+
+.inquiry-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.inquiry-modal[hidden] {
+  display: none;
+}
+
+.inquiry-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.inquiry-modal__dialog {
+  position: relative;
+  width: 100%;
+  max-width: 46rem;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding: 3rem;
+  background: var(--s1);
+  outline: none;
+}
+
+.inquiry-modal__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  padding: 0.25rem 0.5rem;
+  border: 0;
+  background: transparent;
+  font-size: 2.25rem;
+  line-height: 1;
+  color: var(--p1);
+  cursor: pointer;
+}
+
+.inquiry-modal__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 2.25rem;
+  line-height: normal;
+  color: var(--p3);
+}
+
+.inquiry-modal__lead {
+  margin: 0.75rem 0 2rem;
+  font-size: 1.0625rem;
+  color: var(--p1);
+}
+
+@media (max-width: 640px) {
+  .inquiry-modal {
+    padding: 0.75rem;
+  }
+
+  .inquiry-modal__dialog {
+    max-height: calc(100vh - 1.5rem);
+    padding: 2.25rem 1.25rem 1.5rem;
   }
 }
 

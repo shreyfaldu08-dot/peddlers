@@ -70,7 +70,7 @@ if ( empty( $loc ) ) {
           </p>
         </div>
 
-        <?php peddlers30a_render_rental_catalog(); ?>
+        <?php peddlers30a_render_rental_catalog( 'inquiry' ); ?>
       </div>
     </section>
 
@@ -419,5 +419,7 @@ if ( empty( $loc ) ) {
         </figure>
       </div>
     </section>
+
+<?php peddlers30a_render_inquiry_modal(); ?>
 
 <?php get_footer(); ?>

@@ -35,7 +35,7 @@
           </p>
 
           <div class="inquiry-forminator">
-            <?php echo do_shortcode( '[forminator_form id="80"]' ); ?>
+            <?php peddlers30a_render_inquiry_form(); ?>
           </div>
         </div>
       </div>

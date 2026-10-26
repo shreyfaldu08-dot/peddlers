@@ -9,6 +9,7 @@ require_once get_template_directory() . '/inc/location-cpt.php';
 require_once get_template_directory() . '/inc/blog-seed.php';
 require_once get_template_directory() . '/inc/blog-seed-guides.php';
 require_once get_template_directory() . '/inc/rental-catalog.php';
+require_once get_template_directory() . '/inc/inquiry-form.php';
 
 function peddlers30a_assets() {
 	global $post;
@@ -23,7 +24,7 @@ function peddlers30a_assets() {
 	wp_enqueue_style( 'peddlers30a-fonts', $dir . '/assets/css/fonts.css', array(), $is_services ? '62' : '70' );
 	wp_enqueue_style( 'peddlers30a-base', $dir . '/assets/css/base.css', array( 'peddlers30a-tokens' ), $is_services ? '62' : '71' );
 	wp_enqueue_style( 'peddlers30a-components', $dir . '/assets/css/components.css', array( 'peddlers30a-base' ), $is_services ? '62' : '71' );
-	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '218' );
+	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '221' );
 
 	if ( $is_blog ) {
 		wp_enqueue_style( 'peddlers30a-blog', $dir . '/assets/css/blog.css', array( 'peddlers30a-sections' ), '23' );
@@ -35,7 +36,7 @@ function peddlers30a_assets() {
 		wp_enqueue_style( 'peddlers30a-mobile', $dir . '/assets/css/mobile.css', array( 'peddlers30a-sections' ), '49' );
 	}
 
-	wp_enqueue_script( 'peddlers30a-main', $dir . '/assets/js/main.js', array(), '78', true );
+	wp_enqueue_script( 'peddlers30a-main', $dir . '/assets/js/main.js', array(), '79', true );
 }
 add_action( 'wp_enqueue_scripts', 'peddlers30a_assets' );
 
@@ -130,6 +131,7 @@ function peddlers30a_customize_register( $wp_customize ) {
 		'social_tiktok'     => array( 'default' => 'https://tiktok.com', 'label' => 'TikTok URL' ),
 		'social_pinterest'  => array( 'default' => 'https://pinterest.com', 'label' => 'Pinterest URL' ),
 		'social_youtube'    => array( 'default' => 'https://youtube.com', 'label' => 'YouTube URL' ),
+		'inquiry_form_id'   => array( 'default' => '80', 'label' => 'Inquiry form ID (Forminator) -- Contact page and Inquiry Now popup' ),
 	);
 
 	foreach ( $fields as $key => $field ) {

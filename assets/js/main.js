@@ -559,7 +559,45 @@
     });
   }
 
+  /* ------------------------------------------------------------------------
+     "Inquiry Now" popup on the location pages -- any [data-inquiry-open]
+     button opens #inquiry-modal; backdrop, X and Esc close it.
+     ------------------------------------------------------------------------ */
+  function initInquiryModal() {
+    var modal = document.getElementById("inquiry-modal");
+    if (!modal) return;
+    var dialog = modal.querySelector(".inquiry-modal__dialog");
+    var lastTrigger = null;
+
+    function open(trigger) {
+      lastTrigger = trigger;
+      modal.hidden = false;
+      document.documentElement.classList.add("is-modal-open");
+      dialog.scrollTop = 0;
+      dialog.focus();
+    }
+
+    function close() {
+      modal.hidden = true;
+      document.documentElement.classList.remove("is-modal-open");
+      if (lastTrigger) lastTrigger.focus();
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll("[data-inquiry-open]"), function (btn) {
+      btn.addEventListener("click", function () {
+        open(btn);
+      });
+    });
+    Array.prototype.forEach.call(modal.querySelectorAll("[data-inquiry-close]"), function (el) {
+      el.addEventListener("click", close);
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !modal.hidden) close();
+    });
+  }
+
   function init() {
+    initInquiryModal();
     initHeader();
     initRails();
     initTestimonialsNav();
