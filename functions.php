@@ -24,7 +24,7 @@ function peddlers30a_assets() {
 	wp_enqueue_style( 'peddlers30a-fonts', $dir . '/assets/css/fonts.css', array(), $is_services ? '62' : '70' );
 	wp_enqueue_style( 'peddlers30a-base', $dir . '/assets/css/base.css', array( 'peddlers30a-tokens' ), $is_services ? '62' : '71' );
 	wp_enqueue_style( 'peddlers30a-components', $dir . '/assets/css/components.css', array( 'peddlers30a-base' ), $is_services ? '62' : '71' );
-	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '224' );
+	wp_enqueue_style( 'peddlers30a-sections', $dir . '/assets/css/sections.css', array( 'peddlers30a-components' ), '225' );
 
 	if ( $is_blog ) {
 		wp_enqueue_style( 'peddlers30a-blog', $dir . '/assets/css/blog.css', array( 'peddlers30a-sections' ), '23' );
@@ -620,6 +620,34 @@ function peddlers30a_create_blog_pages() {
 	flush_rewrite_rules();
 }
 add_action( 'init', 'peddlers30a_create_blog_pages', 21 );
+
+/**
+ * Creates the /thank-you/ page the rental inquiry form redirects to after a
+ * successful submit (so analytics can count it as a conversion).
+ */
+function peddlers30a_create_thank_you_page() {
+	if ( get_option( 'peddlers30a_thank_you_page_created' ) ) {
+		return;
+	}
+
+	if ( ! get_page_by_path( 'thank-you' ) ) {
+		$id = wp_insert_post(
+			array(
+				'post_type'   => 'page',
+				'post_status' => 'publish',
+				'post_title'  => 'Thank You | Peddlers 30A',
+				'post_name'   => 'thank-you',
+			)
+		);
+		if ( ! is_wp_error( $id ) && $id ) {
+			update_post_meta( $id, '_wp_page_template', 'page-thank-you.php' );
+		}
+	}
+
+	update_option( 'peddlers30a_thank_you_page_created', 1 );
+	flush_rewrite_rules();
+}
+add_action( 'init', 'peddlers30a_create_thank_you_page', 21 );
 
 /**
  * Seeds the "30A Guide" category and the first article, /what-is-30a/, as a

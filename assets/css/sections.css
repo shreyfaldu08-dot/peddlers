@@ -790,6 +790,50 @@ html.is-modal-open {
   }
 }
 
+/* Thank You page -- the rental inquiry form redirects here after submit. */
+.thank-you {
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  background: var(--white);
+}
+
+.thank-you__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.thank-you__title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 3.25rem;
+  line-height: normal;
+  color: var(--p3);
+  margin-top: 0.625rem;
+}
+
+.thank-you__lead {
+  max-width: 40rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+.thank-you__lead a {
+  color: var(--p1);
+  text-decoration: underline;
+}
+
+.thank-you__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
 /* Contact page — "Direct Connection", matched to Figma node 53:2904. */
 .direct-connection {
   background: var(--white);
