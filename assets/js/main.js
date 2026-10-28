@@ -596,8 +596,21 @@
     });
   }
 
+  /* ------------------------------------------------------------------------
+     Rental start date -- only pick from the calendar (past dates are
+     disabled there); typing a date by hand could bypass that and then fail
+     silently, so the field is read-only.
+     ------------------------------------------------------------------------ */
+  function initDatepickerInputs() {
+    Array.prototype.forEach.call(document.querySelectorAll("input.forminator-datepicker"), function (input) {
+      input.readOnly = true;
+      input.setAttribute("inputmode", "none");
+    });
+  }
+
   function init() {
     initInquiryModal();
+    initDatepickerInputs();
     initHeader();
     initRails();
     initTestimonialsNav();
