@@ -709,6 +709,26 @@ body .ui-datepicker.forminator-calendar--default .ui-datepicker-calendar td a:ho
   line-height: normal !important;
 }
 
+/* Radio buttons (e.g. Delivery / Pick-up). Forminator takes the selected
+   dot's colour from a per-form stylesheet that isn't loaded on this site, so
+   the dot stayed transparent and a selected radio looked untouched, as if it
+   never worked. */
+.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-radio .forminator-radio-bullet {
+  border: 1px solid var(--p1) !important;
+  background: transparent !important;
+}
+
+.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-radio .forminator-radio-bullet::before {
+  background-color: var(--p1) !important;
+}
+
+.inquiry-forminator .forminator-ui.forminator-custom-form .forminator-radio .forminator-radio-label {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--p1) !important;
+  text-transform: uppercase;
+}
+
 /* Inquiry Now popup (location pages). */
 html.is-modal-open {
   overflow: hidden;
